@@ -5,27 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ARG AutoSign Shop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
 
-    <!-- table style -->
-    <style>
-        table, th, td {
-            border:1px solid black;
-            text-align: left;
-            border-collapse: collapse;
-            width: 50%;
-            font-size: 20;
-            margin-top: 5%;
-        }
-        table, th{
-            text-align: center;
-            width: 50%;
-        }
-    </style>
 </head>
 <body>
     <!-- DISPLAY THE DATA ON DATABASE -->
-    <table>
+    <table class="table table-hover table-dark">
         <!-- table -->
         <tr>
             <th>Full Name</th>
@@ -51,7 +38,7 @@
                     <td><br>"
                         .$row["fullName"].
                     "</td>
-                    <td>"
+                    <td>0"
                         .$row["phoneNumber"].
                     "</td>
                     <td>"
