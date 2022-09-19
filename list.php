@@ -12,7 +12,7 @@
 </head>
 <body>
     <!-- DISPLAY THE DATA ON DATABASE -->
-    <table class="table table-hover table-dark">
+    <table class="table table-striped">
         <!-- table -->
         <tr>
             <th>Pangalan</th>
@@ -55,6 +55,7 @@
         ?>
     </table>
 
-    <button onclick="history.back()">Go Back</button>
+    
+    <button onclick="history.back()" type="button" class="btn btn-success">Back</button>
 </body>
 </html>
