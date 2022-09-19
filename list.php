@@ -15,7 +15,7 @@
     <table class="table table-hover table-dark">
         <!-- table -->
         <tr>
-            <th>Full Name</th>
+            <th>Pangalan</th>
             <th>Phone Number</th>
             <th>Time</th>
         </tr>
