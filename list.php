@@ -18,6 +18,7 @@
             <th>Full Name</th>
             <th>Phone Number</th>
             <th>Time</th>
+            <th>Services</th>
         </tr>
 
         <!-- connection -->
@@ -27,7 +28,7 @@
             die('Connection Failed: ' .$conn->connect_error);
         }
         // SQL
-        $sql = "SELECT fullName, phoneNumber, time from customer_request";
+        $sql = "SELECT fullName, phoneNumber, time, services from customer_request";
         $result = $conn->query($sql);
         
         if($result-> num_rows > 0){
@@ -43,6 +44,9 @@
                     "</td>
                     <td>"
                         .$row["time"].
+                    "</td>
+                    <td>"
+                        .$row["services"].
                     "</td>
                 </tr>";
             }
