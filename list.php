@@ -36,7 +36,7 @@
             while($row = $result->fetch_assoc()){
                 echo 
                 "<tr>
-                    <td><br>"
+                    <td>"
                         .$row["fullName"].
                     "</td>
                     <td>0"
@@ -62,3 +62,4 @@
     <button onclick="history.back()">Go Back</button>
 </body>
 </html>
+
