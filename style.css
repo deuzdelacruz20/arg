@@ -7,13 +7,15 @@
   font-family: 'Montserrat', sans-serif;
 }
 body{
-    background: #fff;
-    background-image: url("img/bg.png");
+    background: linear-gradient(120deg, #71b7e6, #9b59b6);
+    background-position: center;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
-  }
-
+}
+html{
+    height: 100%;
+}
 .container-body{
     max-width: 500px;
     width: 100%;
@@ -33,3 +35,4 @@ body{
     padding: 30px;
     border-radius: 10px;
   }
+  
