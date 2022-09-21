@@ -29,7 +29,7 @@
                         <div class="form-group mt-3">
                             <label for="services">Services</label>
                             <select class="form-select" aria-label="Default select example" name="services">
-                                <option>---Select a Service---</option>
+                                <option disabled>---Select a Service---</option>
                                 <option>Full Wrap</option>
                                 <option>Hood Wrap</option>
                             </select>
