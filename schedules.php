@@ -24,8 +24,6 @@ include 'connect.php';
             <th>Services</th>
             <th>Operations</th>
         </tr>
-
-        connection
         <?php
         // $conn = new mysqli('localhost','root','','arg');
         // if($conn->connect_error){
