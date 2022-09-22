@@ -15,10 +15,12 @@
     <table class="table table-hover table-dark">
         <!-- table -->
         <tr>
+            <th>ID</th>
             <th>Full Name</th>
             <th>Phone Number</th>
             <th>Time</th>
             <th>Services</th>
+            <th>Action</th>
         </tr>
 
         <!-- connection -->
@@ -28,7 +30,7 @@
             die('Connection Failed: ' .$conn->connect_error);
         }
         // SQL
-        $sql = "SELECT fullName, phoneNumber, time, services from customer_request";
+        $sql = "SELECT id, fullName, phoneNumber, time, services from customer_request";
         $result = $conn->query($sql);
         
         if($result-> num_rows > 0){
@@ -36,6 +38,9 @@
             while($row = $result->fetch_assoc()){
                 echo 
                 "<tr>
+                    <td>"
+                        .$row["id"].
+                    "</td>
                     <td>"
                         .$row["fullName"].
                     "</td>
@@ -58,7 +63,6 @@
         $conn->close();
         ?>
     </table>
-
     <button onclick="history.back()">Go Back</button>
 </body>
 </html>
