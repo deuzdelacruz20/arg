@@ -29,7 +29,7 @@
     }
 ?>
 
-<button onclick="history.back()">Go Back</button>
+<!-- <button onclick="history.back()">Go Back</button> -->
 <!-- 
 <form action="list.php" method="post">
     <button type="submit" class="btn">Go to list of request</button>

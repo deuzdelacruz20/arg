@@ -1,5 +1,7 @@
 <?php 
 include 'connect.php';
+include 'include/navigation.php';
+
 if(isset($_POST['submit'])){
     $fullName = $_POST['fullName'];
     $phoneNumber = $_POST['phoneNumber'];
