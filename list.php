@@ -1,3 +1,5 @@
+<?php include 'include/navigation.php';?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
