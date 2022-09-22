@@ -1,4 +1,6 @@
-<?php include 'include/navigation.php';
+<?php 
+include 'include/navigation.php';
+include 'connect.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,15 +22,16 @@
             <th>Phone Number</th>
             <th>Time</th>
             <th>Services</th>
-            <th>Action</th>
+            <th>Operations</th>
         </tr>
 
-        <!-- connection -->
+        connection
         <?php
-        $conn = new mysqli('localhost','root','','arg');
-        if($conn->connect_error){
-            die('Connection Failed: ' .$conn->connect_error);
-        }
+        // $conn = new mysqli('localhost','root','','arg');
+        // if($conn->connect_error){
+        //     die('Connection Failed: ' .$conn->connect_error);
+        // }
+
         // SQL
         $sql = "SELECT id, fullName, phoneNumber, time, services from customer_request";
         $result = $conn->query($sql);

@@ -206,7 +206,7 @@ if(isset($_POST['submit'])){
                                 </form>
                             </div>
                             <div class="col">
-                                <form action="list.php" method="post">
+                                <form action="schedules.php" method="post">
                                     <button type="submit" name="submit" class="btn btn-success p-3">List Request</button>
                                 </form>
                             </div>
