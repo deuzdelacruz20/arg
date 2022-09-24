@@ -26,7 +26,7 @@
               <a class="nav-link" href="schedules.php">Schedules</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about.php">About</a>
+              <a class="nav-link" href="../../arg/php/about.php">About</a>
             </li>
           </ul>
         </div>
