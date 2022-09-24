@@ -71,7 +71,7 @@ if(isset($_POST['submit'])){
                                             value="7AM"
                                             id="7AM"  
                                         />
-                                        7:00 AM - 8:00 AM
+                                        7:00 AM
                                     </label>  
                                 </div>
                                 
@@ -84,7 +84,7 @@ if(isset($_POST['submit'])){
                                             value="8AM"
                                             id="8AM"  
                                         />
-                                        8:00 AM - 9:00 AM
+                                        8:00 AM
                                     </label>  
                                 </div>
 
@@ -97,7 +97,7 @@ if(isset($_POST['submit'])){
                                             value="9AM"
                                             id="9AM"  
                                         />
-                                        9:00 AM - 10:00 AM
+                                        9:00 AM
                                     </label>  
                                 </div>
 
@@ -110,7 +110,7 @@ if(isset($_POST['submit'])){
                                             value="10AM"
                                             id="10AM"  
                                         />
-                                        10:00 AM - 11:00 AM
+                                        10:00 AM
                                     </label>  
                                 </div>
 
@@ -123,7 +123,7 @@ if(isset($_POST['submit'])){
                                             value="11AM"
                                             id="11AM"  
                                         />
-                                        11:00 AM - 12:00 AM
+                                        11:00 AM
                                     </label>  
                                 </div>
 
@@ -141,7 +141,7 @@ if(isset($_POST['submit'])){
                                             value="1PM"
                                             id="1PM"  
                                         />
-                                        1:00 PM - 2:00 PM
+                                        1:00 PM
                                     </label>  
                                 </div>
 
@@ -154,7 +154,7 @@ if(isset($_POST['submit'])){
                                             value="2PM"
                                             id="2PM"  
                                         />
-                                        2:00 PM - 3:00 PM
+                                        2:00 PM
                                     </label>  
                                 </div>
 
@@ -167,7 +167,7 @@ if(isset($_POST['submit'])){
                                             value="3PM"
                                             id="3PM"  
                                         />
-                                        3:00 PM - 4:00 PM
+                                        3:00 PM
                                     </label>  
                                 </div>
                                 
@@ -180,7 +180,7 @@ if(isset($_POST['submit'])){
                                             value="4PM"
                                             id="4PM"  
                                         />
-                                        4:00 PM - 5:00 PM
+                                        4:00 PM
                                     </label>  
                                 </div>
 
@@ -193,7 +193,7 @@ if(isset($_POST['submit'])){
                                             value="5PM"
                                             id="5PM"  
                                         />
-                                        5:00 PM - 6:00 PM
+                                        5:00 PM
                                     </label>  
                                 </div>
                             </div>
@@ -201,18 +201,9 @@ if(isset($_POST['submit'])){
                     </div>
                         <!-- button -->
                     <div class="container mt-4">
-                        <div class="row">
-                            <div class="col">
-                                <form >
-                                    <button type="submit" class="btn btn-primary p-3" name="submit">Submit</button>
-                                </form>
-                            </div>
-                            <div class="col">
-                                <form action="schedules.php" method="post">
-                                    <button type="submit" name="submit" class="btn btn-success p-3">List Request</button>
-                                </form>
-                            </div>
-                        </div>
+                        <form >
+                            <button type="submit" class="btn btn-primary p-3" name="submit">Submit</button>
+                        </form>
                     </div>
             </form>
         </div>
