@@ -10,20 +10,20 @@
 </head>
 <body>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="homepage.php">ARG Autosign</a>
+        <a class="navbar-brand" href="../../arg/homepage.php">ARG Autosign</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" href="homepage.php">Home <span class="sr-only"></span></a>
+              <a class="nav-link" href="../../arg/homepage.php">Home<span class="sr-only"></span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="designTemplates.php">Design Templates</a>
+              <a class="nav-link" href="../../arg/php/designTemplates.php">Design Templates</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="schedules.php">Schedules</a>
+              <a class="nav-link" href="../../arg/php/schedules.php">Schedules</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="../../arg/php/about.php">About</a>
