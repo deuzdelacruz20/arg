@@ -67,9 +67,9 @@ include 'connect.php';
             }
             echo "</table>";
         }
-        else{
-            echo "0 result";
-        }
+        // else{
+        //     echo "0 result";
+        // }
         $conn->close();
         ?>
     </table>
