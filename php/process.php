@@ -4,7 +4,6 @@ include 'connect.php';
     // if($conn->connect_error){
     //     die('Connection Failed: ' .$conn->connect_error);
     // }
-session_start();
 
 if (isset($_GET['delete'])){
     $id = $_GET['delete'];
