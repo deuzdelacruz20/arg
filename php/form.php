@@ -2,6 +2,7 @@
 include 'connect.php';
 include '../include/navigation.php';
 
+// create
 if(isset($_POST['submit'])){
     $fullName = $_POST['fullName'];
     $phoneNumber = $_POST['phoneNumber'];
@@ -48,7 +49,7 @@ if(isset($_POST['submit'])){
                     <!-- Services -->
                     <div class="form-group mt-3">
                         <label for="services">Services</label>
-                        <select class="form-select" aria-label="Default select example" name="services">
+                        <select class="form-select" aria-label="Default select example" name="services" >
                             <option disabled>---Select a Service---</option>
                             <option>Full Wrap</option>
                             <option>Hood Wrap</option>

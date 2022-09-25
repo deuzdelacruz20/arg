@@ -28,12 +28,7 @@ include 'connect.php';
         </tr>
         
         <?php
-        // $conn = new mysqli('localhost','root','','arg');
-        // if($conn->connect_error){
-        //     die('Connection Failed: ' .$conn->connect_error);
-        // }
-
-        // SQL
+        // READ
         $sql = "SELECT id, fullName, phoneNumber, time, services from customer_request";
         $result = $conn->query($sql);
         
@@ -59,7 +54,7 @@ include 'connect.php';
                     "</td>
                     <td>"
                     ?>
-                    <a href="form.php?edit="<?php echo $row['id']?>><button type="button" class="btn btn-primary">Update</button></a>
+                    <a href="form.php?edit=<?php echo $row['id']?>"><button type="button" class="btn btn-primary">Update</button></a>
                     <a href="process.php?delete=<?php echo $row['id']?>"><button type="button" class="btn btn-danger">Delete</button></a>
                     </td>
                 </tr>
