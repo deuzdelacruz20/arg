@@ -13,7 +13,7 @@ if(isset($_POST['submit'])){
     $stmt->bind_param("siss", $fullName, $phoneNumber, $time, $services);
     $stmt->execute();
     $_SESSION['message'] = "Submitted Successfully";
-    header("location: form1hr.php");
+    header("location: form.php");
 }
 ?>
 

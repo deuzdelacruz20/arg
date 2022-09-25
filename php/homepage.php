@@ -16,7 +16,7 @@
   </head>
 <body>
   <h1>Homepage haha</h1>
-  <a href="form1hr.php">
+  <a href="form.php">
     <div class="sched">
         <button type="button" class="btn btn-primary btn-lg" style="float:right;" >Schedule An Appointment</button>
       </div>
