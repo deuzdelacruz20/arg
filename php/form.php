@@ -1,21 +1,7 @@
 <?php 
 include 'connect.php';
 include '../include/navigation.php';
-
-// create
-if(isset($_POST['submit'])){
-    $fullName = $_POST['fullName'];
-    $phoneNumber = $_POST['phoneNumber'];
-    $time = $_POST['time'];
-    $services = $_POST['services'];
-
-    $stmt = $conn->prepare("insert into customer_request(fullName, phoneNumber, time, services) 
-    values(?,?,?,?)");
-    $stmt->bind_param("siss", $fullName, $phoneNumber, $time, $services);
-    $stmt->execute();
-    $_SESSION['message'] = "Submitted Successfully";
-    header("location: form.php");
-}
+include 'process.php';
 ?>
 
 <!DOCTYPE html>

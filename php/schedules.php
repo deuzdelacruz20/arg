@@ -54,7 +54,7 @@ include 'connect.php';
                     "</td>
                     <td>"
                     ?>
-                    <a href="form.php?edit=<?php echo $row['id']?>"><button type="button" class="btn btn-primary">Update</button></a>
+                    <a href="process.php?update=<?php echo $row['id']?>"><button type="button" class="btn btn-primary">Update</button></a>
                     <a href="process.php?delete=<?php echo $row['id']?>"><button type="button" class="btn btn-danger">Delete</button></a>
                     </td>
                 </tr>
