@@ -1,7 +1,47 @@
 <?php 
 include 'connect.php';
 include '../include/navigation.php';
-include 'process.php';
+
+// if (isset($_GET['updateid'])){
+//     $id = $_GET['updateid'];
+//     $fullName = $_POST['fullName'];
+//     $phoneNumber = $_POST['phoneNumber'];
+//     $time = $_POST['time'];
+//     $services = $_POST['services'];
+
+//     $conn->query("UPDATE `customer_request` SET 
+//     `fullName`='$fullName',
+//     `phoneNumber`='$phoneNumber',
+//     `time`='$time',
+//     `services`='$services' WHERE id = '$id'");
+
+// }
+
+    // $fullName = '';
+    // $phoneNumber = '';
+    // $time = '';
+    // $services = '';
+
+    // if (isset($_GET['updateid'])){
+    //     $id = $_GET['updateid'];
+    //     $result = $$conn->query("SELECT * FROM customer_request WHERE id = $id");
+
+    //     if(count($result)==1){
+    //         $row = $result->fetch_array();
+    //         $fullName = $row['fullName'];
+    //         $phoneNumber = $row['phoneNumber'];
+    //         $time = $row['time'];
+    //         $services = $row['services'];
+    //     }
+    // }
+
+    // if(isset($_POST['update'])){
+    //     $fullName = $_POST['fullName'];
+    //     $phoneNumber = $_POST['phoneNumber'];
+    //     $time = $_POST['time'];
+    //     $services = $_POST['services'];
+    // }
+
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +60,7 @@ include 'process.php';
     <div class="container container-body">
         <div class="panel">
             <!-- header -->
-            <h2>Schedule An Appointment</h2>
+            <h2>Update Appointment</h2>
                 <form method="post">
                     <!-- Full Name -->
                     <div class="form-group mt-3">
@@ -31,7 +71,9 @@ include 'process.php';
                         id="fullName" 
                         name="fullName" 
                         placeholder="Enter your Name" 
-                        style="font-style: italic;">
+                        style="font-style: italic;"
+                        value="<?php echo $fullName; ?>"
+                        >
                     </div>
                     <!-- Phone number -->
                     <div class="form-group mt-3"> 
@@ -201,7 +243,7 @@ include 'process.php';
                         <!-- button -->
                     <div class="container mt-4">
                         <form >
-                            <button type="submit" class="btn btn-primary p-3" name="submit">Submit</button>
+                            <button type="submit" class="btn btn-primary p-3" name="update">Update Details</button>
                         </form>
                     </div>
             </form>

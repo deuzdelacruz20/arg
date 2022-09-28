@@ -1,7 +1,13 @@
-<?php
-    // CONNECTION
-    $conn=new mysqli('localhost','root','','arg');
-    if(!$conn){
-        die(mysqli_error($conn));
-    }
-?>
+<?php 
+
+$sname = "localhost";
+$uname = "root";
+$password = "";
+
+$db_name = "arg";
+
+$conn  = mysqli_connect($sname, $uname, $password, $db_name);
+
+if (!$conn) {
+	echo "Connection failed!";
+}
