@@ -1,3 +1,5 @@
+<?php include '../include/navigation.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,9 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ARG AutoSign Shop</title>
-    <script id="replace_with_navbar" src="nav.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <h1>Schedules</h1>
+    <h1>Design Templates</h1>
 </body>
 </html>
