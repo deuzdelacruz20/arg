@@ -2,6 +2,23 @@
 include 'connect.php';
 include '../include/navigation.php';
 
+// if( isset( $_GET['id'])) {
+//     $id = $_GET['id']; 
+// if(count($_POST) > 0){
+//     mysqli_query($conn, 
+//     "UPDATE `customer_request` SET 
+//     `fullName`='".$_POST['fullName']."',
+//     `phoneNumber`='".$_POST['phoneNumber']."',
+//     `time`='".$_POST['time']."',
+//     `services`='".$_POST['services']."' 
+//     WHERE id = '".$_POST['id']."'");
+
+//     $message = "<p style= 'color:green;'>Record Updated Successfully</p>";
+// }
+// $result = mysqli_query($conn, "SELECT * FROM customer_request WHERE id='".$_GET['id']."'");
+// $row = mysqli_fetch_array($result);
+// }
+
 // if (isset($_GET['updateid'])){
 //     $id = $_GET['updateid'];
 //     $fullName = $_POST['fullName'];
@@ -9,11 +26,11 @@ include '../include/navigation.php';
 //     $time = $_POST['time'];
 //     $services = $_POST['services'];
 
-//     $conn->query("UPDATE `customer_request` SET 
-//     `fullName`='$fullName',
-//     `phoneNumber`='$phoneNumber',
-//     `time`='$time',
-//     `services`='$services' WHERE id = '$id'");
+    // $conn->query("UPDATE `customer_request` SET 
+    // `fullName`='$fullName',
+    // `phoneNumber`='$phoneNumber',
+    // `time`='$time',
+    // `services`='$services' WHERE id = '$id'");
 
 // }
 
@@ -72,7 +89,7 @@ include '../include/navigation.php';
                         name="fullName" 
                         placeholder="Enter your Name" 
                         style="font-style: italic;"
-                        value="<?php echo $fullName; ?>"
+                        value="<?php echo $row['fullName']?>"
                         >
                     </div>
                     <!-- Phone number -->
@@ -84,7 +101,8 @@ include '../include/navigation.php';
                         id="phoneNumber" 
                         name="phoneNumber" 
                         placeholder="Enter your Number" 
-                        style="font-style: italic;">
+                        style="font-style: italic;"
+                        >
                     </div>
                     <!-- Services -->
                     <div class="form-group mt-3">
