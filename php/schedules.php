@@ -49,8 +49,8 @@ include 'backend/database.php';
 						<th>ID</th>
                         <th>Full Name</th>
                         <th>Phone Number</th>
-						<th>Time</th>
-                        <th>Services</th>
+						<th>Services</th>
+                        <th>Time</th>
                         <th>Operations</th>
                     </tr>
                 </thead>
@@ -72,8 +72,8 @@ include 'backend/database.php';
 					<td><?php echo $row["id"]; ?></td>
 					<td><?php echo $row["fullName"]; ?></td>
 					<td>0<?php echo $row["phoneNumber"]; ?></td>
-					<td><?php echo $row["time"]; ?></td>
 					<td><?php echo $row["services"]; ?></td>
+					<td><?php echo $row["time"]; ?></td>
 					<td>
 						<a href="#editEmployeeModal" class="edit" data-toggle="modal">
 							<i class="material-icons update" data-toggle="tooltip" 
@@ -117,13 +117,13 @@ include 'backend/database.php';
 							<input type="text" id="phoneNumber" name="phoneNumber" class="form-control" required>
 						</div>
 						<div class="form-group">
-							<label>Time</label>
-							<input type="phone" id="time" name="time" class="form-control" required>
-						</div>
-						<div class="form-group">
 							<label>Services</label>
 							<input type="text" id="services" name="services" class="form-control" required>
-						</div>					
+						</div>	
+						<div class="form-group">
+							<label>Time</label>
+							<input type="phone" id="time" name="time" class="form-control" required>
+						</div>			
 					</div>
 					<div class="modal-footer">
 					    <input type="hidden" value="1" name="type">
