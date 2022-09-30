@@ -51,6 +51,7 @@
 			}
 		});
 	});
+	// DELETE
 	$(document).on("click", ".delete", function() { 
 		var id=$(this).attr("data-id");
 		$('#id_d').val(id);
