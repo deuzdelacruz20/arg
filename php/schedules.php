@@ -299,11 +299,156 @@ include 'backend/database.php';
 							</div>
 							<div class="form-group">
 								<label>Services</label>
-								<input type="text" id="services_u" name="services" class="form-control" required>
+								<select class="form-select" aria-label="Default select example" name="services" required>
+                                    <option disabled selected>--- Select a Service ---</option>
+                                    <option>Full Wrap</option>
+                                    <option>Hood Wrap</option>
+                                    <option>Headlight Film</option>
+                                    <option>Customize plate</option>
+                                    <option>Signage</option>
+                                </select>
 							</div>
 							<div class="form-group">
 								<label>Time</label>
-								<input type="text" id="time_u" name="time" class="form-control" required>
+                                <div class="row">
+                            <div class="col-sm">
+                                <h5>Morning</h5>
+                                <!-- TIME 7AM -->
+                                <div class="time-group">
+                                    <label for="7AM" class="radio-inline">
+                                        <input 
+                                            type="radio" 
+                                            name="time" 
+                                            value="7AM"
+                                            id="7AM"  
+                                        />
+                                        7:00 AM
+                                    </label>  
+                                </div>
+                                
+                                <!-- TIME 8AM -->
+                                <div class="time-group">
+                                    <label for="8AM" class="radio-inline">
+                                        <input 
+                                            type="radio" 
+                                            name="time" 
+                                            value="8AM"
+                                            id="8AM"  
+                                        />
+                                        8:00 AM
+                                    </label>  
+                                </div>
+
+                                <!-- TIME 9AM -->
+                                <div class="time-group">
+                                    <label for="9AM" class="radio-inline">
+                                        <input 
+                                            type="radio" 
+                                            name="time" 
+                                            value="9AM"
+                                            id="9AM"  
+                                        />
+                                        9:00 AM
+                                    </label>  
+                                </div>
+
+                                <!-- TIME 10AM -->
+                                <div class="time-group">
+                                    <label for="10AM" class="radio-inline">
+                                        <input 
+                                            type="radio" 
+                                            name="time" 
+                                            value="10AM"
+                                            id="10AM"  
+                                        />
+                                        10:00 AM
+                                    </label>  
+                                </div>
+
+                                <!-- TIME 11AM -->
+                                <div class="time-group">
+                                    <label for="11AM" class="radio-inline">
+                                        <input 
+                                            type="radio" 
+                                            name="time" 
+                                            value="11AM"
+                                            id="11AM"  
+                                        />
+                                        11:00 AM
+                                    </label>  
+                                </div>
+
+                            </div>
+
+                            <div class="col-sm">
+                                <h5>Afternoon</h5>
+
+                                <!-- TIME 1PM -->
+                                <div class="time-group">
+                                    <label for="1PM" class="radio-inline">
+                                        <input 
+                                            type="radio" 
+                                            name="time" 
+                                            value="1PM"
+                                            id="1PM"  
+                                        />
+                                        1:00 PM
+                                    </label>  
+                                </div>
+
+                                <!-- TIME 2PM -->
+                                <div class="time-group">
+                                    <label for="1PM" class="radio-inline">
+                                        <input 
+                                            type="radio" 
+                                            name="time" 
+                                            value="2PM"
+                                            id="2PM"  
+                                        />
+                                        2:00 PM
+                                    </label>  
+                                </div>
+
+                                <!-- TIME 3PM -->
+                                <div class="time-group">
+                                    <label for="3PM" class="radio-inline">
+                                        <input 
+                                            type="radio" 
+                                            name="time" 
+                                            value="3PM"
+                                            id="3PM"  
+                                        />
+                                        3:00 PM
+                                    </label>  
+                                </div>
+                                
+                                <!-- TIME 4PM -->
+                                <div class="time-group">
+                                    <label for="4PM" class="radio-inline">
+                                        <input 
+                                            type="radio" 
+                                            name="time" 
+                                            value="4PM"
+                                            id="4PM"  
+                                        />
+                                        4:00 PM
+                                    </label>  
+                                </div>
+
+                                <!-- TIME 5PM -->
+                                <div class="time-group">
+                                    <label for="5PM" class="radio-inline">
+                                        <input 
+                                            type="radio" 
+                                            name="time" 
+                                            value="5PM"
+                                            id="5PM"  
+                                        />
+                                        5:00 PM
+                                    </label>  
+                                </div>
+                            </div>
+                        </div>
 							</div>				
 						</div>
 						<div class="modal-footer">

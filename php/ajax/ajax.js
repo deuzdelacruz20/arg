@@ -73,6 +73,8 @@
 			}
 		});
 	});
+
+	// DELETE UNCHECKED
 	$(document).on("click", "#delete_multiple", function() {
 		var user = [];
 		$(".user_checkbox:checked").each(function() {
