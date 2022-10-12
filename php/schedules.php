@@ -20,10 +20,17 @@ include 'backend/database.php';
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="ajax/ajax.js"></script>
+    <!-- Calendar css -->
+    <link rel="stylesheet" href="../css/calendar.css">
 
 </head>
 <body>
-<div class="container">
+    <div id="calendar"></div>
+
+    <script src="../js/calendar.js"></script>
+    <script src="../js/script.js"></script>
+
+    <div class="container">
 	<p id="success"></p>
         <div class="table-wrapper" style="background-color: white; border-radius: 10px;">
             <div class="table-title" style="border-top-left-radius: 10px; border-top-right-radius: 10px;">
