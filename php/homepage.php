@@ -24,7 +24,7 @@ include 'backend/database.php';
 </head>
 <body>
 
-    <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Schedule an Appointment</span></a>				
+    <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"> <span>Schedule an Appointment</span></a>				
 
 		<!-- Add Modal HTML -->
 		<div id="addEmployeeModal" class="modal fade">
