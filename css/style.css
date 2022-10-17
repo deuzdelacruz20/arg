@@ -47,4 +47,8 @@ html{
     padding: 30px;
     border-radius: 10px;
   }
+
+  table table-hover table-dark{
+    margin-left: 50px;
+  }
   
