@@ -50,7 +50,7 @@ include 'backend/database.php';
 				<tbody>
 				
 				<?php
-				$result = mysqli_query($conn,"SELECT * FROM crud");
+				$result = mysqli_query($conn,"SELECT * FROM inventory");
 					while($row = mysqli_fetch_array($result)) {
 				?>
 				<tr id="<?php echo $row["id"]; ?>">

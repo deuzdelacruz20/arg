@@ -21,14 +21,8 @@
 	$(document).on('click','.update',function(e) {
 		var id=$(this).attr("data-id");
 		var name=$(this).attr("data-name");
-		var email=$(this).attr("data-email");
-		var phone=$(this).attr("data-phone");
-		var city=$(this).attr("data-city");
 		$('#id_u').val(id);
 		$('#name_u').val(name);
-		$('#email_u').val(email);
-		$('#phone_u').val(phone);
-		$('#city_u').val(city);
 	});
 	// <!-- Update -->
 	$(document).on('click','#update',function(e) {
