@@ -25,7 +25,7 @@ include '../include/navigation.php';
     <div class="container container-body">
         <div class="panel">
             <!-- header -->
-            <h2>Schedule An Appointment</h2>
+           
                 <form method="post">
                     <!-- Full Name -->
                     <div class="form-group mt-3">

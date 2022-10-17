@@ -21,10 +21,11 @@ include 'backend/database.php';
 	<script src="ajax/ajax.js"></script>
 	<link rel="stylesheet" href="../css/schedules.css">
 
+    <style></style>
 </head>
 <body>
 
-    <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"> <span>Schedule an Appointment</span></a>				
+    <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal" style="font-size: 26px; float: right; margin-right: 200px; margin-top: 350px; "> <span>Schedule An Appointment</span></a>				
 
 		<!-- Add Modal HTML -->
 		<div id="addEmployeeModal" class="modal fade">
