@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 20, 2022 at 06:50 AM
+-- Generation Time: Sep 29, 2022 at 08:04 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -28,18 +28,42 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `customer_request` (
+  `id` int(11) NOT NULL,
   `fullName` varchar(50) NOT NULL,
   `phoneNumber` bigint(11) NOT NULL,
-  `time` enum('7AM','8AM','9AM','10AM','11AM','1PM','2PM','3PM','4PM','5PM') NOT NULL
+  `time` enum('7AM','8AM','9AM','10AM','11AM','1PM','2PM','3PM','4PM','5PM') NOT NULL,
+  `services` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `customer_request`
 --
 
-INSERT INTO `customer_request` (`fullName`, `phoneNumber`, `time`) VALUES
-('Deuz De la Cruz', 9123789456, '8AM'),
-('Aldous Turgo', 9789123456, '3PM');
+INSERT INTO `customer_request` (`id`, `fullName`, `phoneNumber`, `time`, `services`) VALUES
+(58, 'Ronald Parcarey', 9789456123, '9AM', 'Headlight Film'),
+(59, 'Leigh Ayuma', 9123456789, '1PM', 'Signage'),
+(63, 'Vince Mendoza', 9456789123, '1PM', 'Signage'),
+(67, 'Deuz De la Cruz', 9123456789, '8AM', 'Hood Wrap');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `customer_request`
+--
+ALTER TABLE `customer_request`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `customer_request`
+--
+ALTER TABLE `customer_request`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
