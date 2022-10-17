@@ -25,7 +25,7 @@ include 'backend/database.php';
 
 </head>
 <body>
-    <div id="calendar" style="margin-right: 100px;"></div>
+    <div id="calendar" style="margin-left: 20px; margin-right: 20px; background-color:white; margin-top:1%; padding:10px; border-radius: 10px;"></div>
 
     <script src="../js/calendar.js"></script>
     <script src="../js/script.js"></script>
