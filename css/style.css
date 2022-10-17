@@ -25,14 +25,6 @@ html{
     padding: 30px;
     border-radius: 10px;
   }
-
-    /* Schedule an appointment button */
-    .btn-primary{ 
-      margin-top: 350px;
-      margin-right: 100px;
-      color: #71b7e6;
-    }
-  
     .navbar-brand
     {
       margin-left: 50px;
