@@ -26,7 +26,7 @@
               <a class="nav-link" href="../../arg/php/designTemplates.php" style="text-decoration: none;">Design Templates</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../../arg/php/schedules.php" style="text-decoration: none;">Schedules</a>
+              <a class="nav-link" href="../../arg/schedules/schedules.php" style="text-decoration: none;">Schedules</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="../../arg/php/about.php" style="text-decoration: none;">About</a>
