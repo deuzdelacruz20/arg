@@ -18,8 +18,46 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="ajax/ajax.js"></script>
     <link rel="stylesheet" href="../css/schedules.css">
+
+    <style>
+        .border{
+            border-radius: 10px;
+        }
+
+        .container{
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <h1>Design Templates</h1>
+
+    <div class="container px-4">
+        <div class="row gx-5">
+            <div class="col">
+                <div class="p-3 border bg-light">TEMPLATE 1</div>
+            </div>
+            <div class="col">
+                <div class="p-3 border bg-light">TEMPLATE 2</div>
+            </div>
+            <div class="col">
+                <div class="p-3 border bg-light">TEMPLATE 3</div>
+            </div>
+        </div>
+    </div>
+        <br>
+    <div class="container px-4">
+        <div class="row gx-5">
+            <div class="col">
+                <div class="p-3 border bg-light">TEMPLATE 4</div>
+            </div>
+            <div class="col">
+                <div class="p-3 border bg-light">TEMPLATE 5</div>
+            </div>
+            <div class="col">
+                <div class="p-3 border bg-light">TEMPLATE 6</div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
