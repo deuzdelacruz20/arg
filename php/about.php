@@ -30,33 +30,36 @@
      <div class="content-box-lg">
          <div class="container">
              <div class="row">
-                 <div class="col-md-4">
-                    <div class="about-item text-center">
+                 <div class="col-md-4" >
+                    <div class="about-item text-center"style="background:white; border-radius:5px;">
                      <i class="fa fa-book"></i>
                      <h3>MISSION</h3>
                      <hr>
                      <p> We deliver creative Print & Marketing Solutions that make our clients successful. We keep our promises, provide creative solutions, and achieve our client’s goals. </p>
                      </div>
                  </div>
-                 <div class="col-md-4">
+                 <div class="col-md-4" style="background:white; border-radius:5px;">
                     <div class="about-item text-center">
                      <i class="fa fa-globe"></i>
                      <h3>VISSION</h3>
                      <hr>
                      <p> "To be the world's most premier printing solution company delivering premium quality product to our customers." </p>
                      </div>
-                     <div class="footer-area">
+                     
+</div>
+<div class="footer-area">
           <div class="callus">
             <h3>CALL US</h3>
             <p>091234567890 </p>   
           </div>
+
           <div class="visitus">
             <h3>VISIT US</h3>
             <p>Barangay Isabang Tayabas City </p>
            
           </div>
 </div>
-                 
+        </div>         
       </div>   
  </section>
     
