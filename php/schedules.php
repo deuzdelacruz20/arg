@@ -22,6 +22,13 @@ include 'backend/database.php';
 	<script src="ajax/ajax.js"></script>
     <!-- Calendar css -->
     <link rel="stylesheet" href="../css/calendar.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        body{
+            background: linear-gradient(120deg, #71b7e6, #9b59b6);
+        }
+    </style>
 
 </head>
 <body>
