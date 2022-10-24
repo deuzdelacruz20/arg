@@ -28,6 +28,12 @@ include '../backend/database.php';
     </style>
 </head>
 <body>
+    
+    <video width="560" height="315" autoplay loop muted style="margin-left: 10%;">
+    <source src="../videos/AFTER DARK 🌑- Valorant Edit.mp4" type="video/mp4" />
+    Your browser does not support the video element.
+    </video>
+
 
     <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal" style="font-size: 26px; float: right; margin-right: 200px; margin-top: 350px; "> <span>Schedule An Appointment</span></a>				
 
