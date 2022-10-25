@@ -6,7 +6,7 @@ if(count($_POST)>0){
 	if($_POST['type']==1){
 		$fullName=$_POST['fullName'];
 		$phoneNumber=$_POST['phoneNumber'];
-		$time=$_POST['date'];
+		$date=$_POST['date'];
 		$time=$_POST['time'];
 		$services=$_POST['services'];
 		$sql = "INSERT INTO `customer_request`( `fullName`, `phoneNumber`,`date`,`time`,`services`) 
@@ -28,7 +28,7 @@ if(count($_POST)>0){
 		$fullName=$_POST['fullName'];
 		$phoneNumber=$_POST['phoneNumber'];
 		$services=$_POST['services'];
-		$services=$_POST['date'];
+		$date=$_POST['date'];
 		$time=$_POST['time'];
 		$sql = "UPDATE `customer_request` SET `fullName`='$fullName',`phoneNumber`='$phoneNumber',`services`='$services',`date`='$date',`time`='$time' WHERE id=$id";
 		if (mysqli_query($conn, $sql)) {
