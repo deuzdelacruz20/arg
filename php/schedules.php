@@ -1,6 +1,6 @@
 <?php 
 include '../include/navigation.php';
-include 'backend/database.php';
+include '../backend/database.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,23 +9,29 @@ include 'backend/database.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ARG AutoSign Shop</title>
-    <link rel="stylesheet" href="../css/schedules.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-	
+	 -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="ajax/ajax.js"></script>
-    <!-- Calendar css -->
+	<script src="../ajax/ajax.js"></script>
+
     <link rel="stylesheet" href="../css/calendar.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        body{
+            background: linear-gradient(120deg, #71b7e6, #9b59b6);
+        }
+    </style>
 
 </head>
 <body>
-    <div id="calendar"></div>
+    <div id="calendar" style="margin-left: 20px; margin-right: 20px; background-color:white; margin-top:1%; padding:10px; border-radius: 10px;"></div>
 
     <script src="../js/calendar.js"></script>
     <script src="../js/script.js"></script>
@@ -123,7 +129,7 @@ include 'backend/database.php';
 						</div>
 						<div class="form-group">
 							<label>Services</label>
-							<select class="form-select" aria-label="Default select example" name="services" required>
+							<select class="form-select" aria-label="Default select example" name="services" required style="width: 100%; height:35px;">
                             <option disabled selected>--- Select a Service ---</option>
                             <option>Full Wrap</option>
                             <option>Hood Wrap</option>
@@ -135,7 +141,7 @@ include 'backend/database.php';
 						<div class="form-group">
 							<label>Time</label>
 							<div class="row">
-                            <div class="col-sm">
+                            <div class="col-sm-4">
                                 <h5>Morning</h5>
                                 <!-- TIME 7AM -->
                                 <div class="time-group">
@@ -204,7 +210,7 @@ include 'backend/database.php';
 
                             </div>
 
-                            <div class="col-sm">
+                            <div class="col-sm-4">
                                 <h5>Afternoon</h5>
 
                                 <!-- TIME 1PM -->
