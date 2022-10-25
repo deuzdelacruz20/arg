@@ -55,7 +55,7 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="../../arg/php/homepage.php">Home</a></li>
+        <li><a href="../../arg/php/homepage.php">Home</a></li>
         <li><a href="../../arg/php/designTemplates.php">Design Templates</a></li>
         <li><a href="../../arg/php/schedules.php">Schedules</a></li>
         <li><a href="../../arg/php/about.php">About</a></li>
