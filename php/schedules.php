@@ -21,7 +21,7 @@ include '../backend/database.php';
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="../ajax/ajax.js"></script>
 
-    <link rel="stylesheet" href="../css/calendar.css">
+    <!-- <link rel="stylesheet" href="../css/calendar.css"> -->
     <link rel="stylesheet" href="../css/style.css">
 
     <style>
@@ -33,10 +33,10 @@ include '../backend/database.php';
 </head>
 
 <body>
-    <div id="calendar" style="margin-left: 20px; margin-right: 20px; background-color:white; margin-top:1%; padding:10px; border-radius: 10px;"></div>
+    <!-- <div id="calendar" style="margin-left: 20px; margin-right: 20px; background-color:white; margin-top:1%; padding:10px; border-radius: 10px;"></div>
 
     <script src="../js/calendar.js"></script>
-    <script src="../js/script.js"></script>
+    <script src="../js/script.js"></script> -->
 
     <div class="container">
         <p id="success"></p>
