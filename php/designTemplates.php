@@ -29,14 +29,15 @@
     </style>
 </head>
 <body>
-    <h1>Design Templates</h1>
+    
 
-    <div class="container" style="background-color: white; border-radius:10px;">
+    <div class="container" style="background-color: white; border-radius:10px; width: 98%; height: 750px;">
     <ul class="nav nav-tabs">
-        <li class="active"><a href="#home">Home</a></li>
-        <li><a href="#template1">Template 1</a></li>
-        <li><a href="#template2">Template 2</a></li>
-        <li><a href="#template3">Template 3</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#template1">Motorcycles</a></li>
+        <li><a href="#template2">Cars</a></li>
+        <li><a href="#template3">SUVs</a></li>
+        <li><a href="#template4">Vans</a></li>
     </ul>
 
     <div class="tab-content">
@@ -52,8 +53,8 @@
         <h3>Template 2</h3>
         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
         </div>
-        <div id="template3" class="tab-pane fade">
-        <h3>Template 3</h3>
+        <div id="template4" class="tab-pane fade">
+        <h3>Template 4</h3>
         <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
         </div>
     </div>

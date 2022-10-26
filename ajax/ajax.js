@@ -24,10 +24,12 @@
 		var fullName=$(this).attr("data-fullName");
 		var phoneNumber=$(this).attr("data-phoneNumber");
 		var services=$(this).attr("data-services");
+		var date=$(this).attr("data-date");
 		var time=$(this).attr("data-time");
 		$('#id_u').val(id);
 		$('#fullName_u').val(fullName);
 		$('#phoneNumber_u').val(phoneNumber);
+		$('#date_u').val(date);
 		$('#time_u').val(time);
 		$('#services_u').val(services);
 	});
