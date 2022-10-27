@@ -50,7 +50,6 @@
               <div class="about-item text-center">
                 <i class="fa fa-globe"></i>
                 <h3>VISION</h3>
-                <h3>HAHAHAHAHAHAHAHAH</h3>
                 <hr>
                 <p> "To be the world's most premier printing solution company delivering premium quality product to our customers." </p>
               </div>
