@@ -21,11 +21,11 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="../ajax/ajax.js"></script>
 
-  <!-- <style>
+  <style>
     body{
       background: linear-gradient(120deg, #71b7e6, #9b59b6);
     }
-  </style> -->
+  </style>
 </head>
 
 <body>
