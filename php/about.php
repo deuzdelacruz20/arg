@@ -42,7 +42,7 @@
                  <div class="col-md-4" style="background:white; border-radius:5px;">
                     <div class="about-item text-center">
                      <i class="fa fa-globe"></i>
-                     <h3>VISSION</h3>
+                     <h3>VISION</h3>
                      <hr>
                      <p> "To be the world's most premier printing solution company delivering premium quality product to our customers." </p>
                      </div>
