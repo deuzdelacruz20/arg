@@ -21,40 +21,45 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="../ajax/ajax.js"></script>
 
+  <!-- <style>
+    body{
+      background: linear-gradient(120deg, #71b7e6, #9b59b6);
+    }
+  </style> -->
 </head>
 
 <body>
-<section id="ABOUT">
-     <div class="about-1">
-         <h1> ABOUT </h1>
-         
-     </div>
-     <div id="about-2">
-     <div class="content-box-lg">
-         <div class="container">
-             <div class="row">
-                 <div class="col-md-4" >
-                    <div class="about-item text-center"style="background:white; border-radius:5px;">
-                     <i class="fa fa-book"></i>
-                     <h3>MISSION</h3>
-                     <hr>
-                     <p> We deliver creative Print & Marketing Solutions that make our clients successful. We keep our promises, provide creative solutions, and achieve our client’s goals. </p>
-                     </div>
-                 </div>
-                 <div class="col-md-4" style="background:white; border-radius:5px;">
-                    <div class="about-item text-center">
-                     <i class="fa fa-globe"></i>
-                     <h3>VISION</h3>
-                     <hr>
-                     <p> "To be the world's most premier printing solution company delivering premium quality product to our customers." </p>
-                     </div>
-                     
-</div>
-<div class="footer-area">
-          <div class="callus">
-            <h3>CALL US</h3>
-            <p>091234567890 </p>   
-          </div>
+  <section id="ABOUT">
+    <div class="about-1">
+      <h1> ABOUT </h1>
+
+    </div>
+    <div id="about-2">
+      <div class="content-box-lg">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="about-item text-center" style="background:white; border-radius:5px;">
+                <i class="fa fa-book"></i>
+                <h3>MISSION</h3>
+                <hr>
+                <p> We deliver creative Print & Marketing Solutions that make our clients successful. We keep our promises, provide creative solutions, and achieve our client’s goals. </p>
+              </div>
+            </div>
+            <div class="col-md-4" style="background:white; border-radius:5px;">
+              <div class="about-item text-center">
+                <i class="fa fa-globe"></i>
+                <h3>VISION</h3>
+                <hr>
+                <p> "To be the world's most premier printing solution company delivering premium quality product to our customers." </p>
+              </div>
+
+            </div>
+            <div class="footer-area">
+              <div class="callus">
+                <h3>CALL US</h3>
+                <p>091234567890 </p>
+              </div>
 
             </div>
             <div class="footer-area">
