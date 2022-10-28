@@ -292,14 +292,21 @@ include '../include/navigation.php';
 		$("#firstName").keyup(function(event) {
 			validateInputs();
 		});
-
 		$("#lastName").keyup(function(event) {
 			validateInputs();
 		});
-
 		$("#phoneNumber").keyup(function(event) {
 			validateInputs();
 		});
+		// $("#date").keyup(function(event) {
+		// 	validateInputs();
+		// });
+		// $("#services").keyup(function(event) {
+		// 	validateInputs();
+		// });
+		// $("#time").keyup(function(event) {
+		// 	validateInputs();
+		// });
 
 		function validateInputs() {
 			var disableButton = false;
@@ -307,8 +314,18 @@ include '../include/navigation.php';
 			var firstName = $("#firstName").val();
 			var lastName = $("#lastName").val();
 			var phoneNumber = $("#phoneNumber").val();
+			// var date = $("#date").val();
+			// var services = $("#services").val();
+			// var time = $("#time").val();
 
-			if (firstName.length == 0 || lastName.length == 0 || phoneNumber.length == 0)
+			if (
+				firstName.length == 0 || 
+				lastName.length == 0 || 
+				phoneNumber.length == 0
+				// date.value.length == 0 || 
+				// services.empty ||
+				// time.empty
+				)
 				disableButton = true;
 
 			$('#btn-add').attr('disabled', disableButton);
@@ -318,14 +335,21 @@ include '../include/navigation.php';
 		$("#firstName_u").keyup(function(event) {
 			updateValidateInputs();
 		});
-
 		$("#lastName_u").keyup(function(event) {
 			updateValidateInputs();
 		});
-
 		$("#phoneNumber_u").keyup(function(event) {
 			updateValidateInputs();
 		});
+		// $("#date_u").keyup(function(event) {
+		// 	updateValidateInputs();
+		// });
+		// $("#services_u").keyup(function(event) {
+		// 	updateValidateInputs();
+		// });
+		// $("#time_u").keyup(function(event) {
+		// 	updateValidateInputs();
+		// });
 
 		function updateValidateInputs() {
 			var disableButton = false;
@@ -333,8 +357,18 @@ include '../include/navigation.php';
 			var firstName_u = $("#firstName_u").val();
 			var lastName_u = $("#lastName_u").val();
 			var phoneNumber_u = $("#phoneNumber_u").val();
+			// var date_u = $("#date_u").val();
+			// var services_u = $("#services_u").val();
+			// var time_u = $("#time_u").val();
 
-			if (firstName_u.length == 0 || lastName_u.length == 0 || phoneNumber_u.length == 0)
+			if (
+				firstName_u.length == 0 || 
+				lastName_u.length == 0 || 
+				phoneNumber_u.length == 0 
+				// || date_u.empty || 
+				// services_u.empty || 
+				// time_u.empty
+				)
 				disableButton = true;
 
 			$('#update').attr('disabled', disableButton);
