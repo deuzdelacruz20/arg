@@ -319,13 +319,13 @@ include '../include/navigation.php';
 			// var time = $("#time").val();
 
 			if (
-				firstName.length == 0 || 
-				lastName.length == 0 || 
+				firstName.length == 0 ||
+				lastName.length == 0 ||
 				phoneNumber.length == 0
 				// date.value.length == 0 || 
 				// services.empty ||
 				// time.empty
-				)
+			)
 				disableButton = true;
 
 			$('#btn-add').attr('disabled', disableButton);
@@ -362,13 +362,13 @@ include '../include/navigation.php';
 			// var time_u = $("#time_u").val();
 
 			if (
-				firstName_u.length == 0 || 
-				lastName_u.length == 0 || 
-				phoneNumber_u.length == 0 
+				firstName_u.length == 0 ||
+				lastName_u.length == 0 ||
+				phoneNumber_u.length == 0
 				// || date_u.empty || 
 				// services_u.empty || 
 				// time_u.empty
-				)
+			)
 				disableButton = true;
 
 			$('#update').attr('disabled', disableButton);
