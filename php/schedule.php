@@ -159,15 +159,7 @@ include '../include/navigation.php';
 							<td><?php echo $row["time"]; ?></td>
 							<td>
 								<a href="#editEmployeeModal" class="edit" data-toggle="modal">
-									<i class="material-icons update" data-toggle="tooltip" 
-									data-id="<?php echo $row["id"]; ?>" 
-									data-firstName="<?php echo $row["firstName"]; ?>" 
-									data-lastName="<?php echo $row["lastName"]; ?>" 
-									data-phoneNumber="<?php echo $row["phoneNumber"]; ?>" 
-									data-date="<?php echo $row["date"]; ?>"
-									data-services="<?php echo $row["services"]; ?>"
-									data-time="<?php echo $row["time"]; ?>"
-									title="Edit">&#xE254;</i>
+									<i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-firstName="<?php echo $row["firstName"]; ?>" data-lastName="<?php echo $row["lastName"]; ?>" data-phoneNumber="<?php echo $row["phoneNumber"]; ?>" data-date="<?php echo $row["date"]; ?>" data-services="<?php echo $row["services"]; ?>" data-time="<?php echo $row["time"]; ?>" title="Edit">&#xE254;</i>
 								</a>
 								<a href="#deleteEmployeeModal" class="delete" data-id="<?php echo $row["id"]; ?>" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
 							</td>
@@ -296,6 +288,7 @@ include '../include/navigation.php';
 	</div>
 
 	<script>
+		// DISABLE ADD BUTTON
 		$("#firstName").keyup(function(event) {
 			validateInputs();
 		});
@@ -306,17 +299,6 @@ include '../include/navigation.php';
 
 		$("#phoneNumber").keyup(function(event) {
 			validateInputs();
-		});
-		$("#firstName_u").keyup(function(event) {
-			updateValidateInputs();
-		});
-
-		$("#lastName_u").keyup(function(event) {
-			updateValidateInputs();
-		});
-
-		$("#phoneNumber_u").keyup(function(event) {
-			updateValidateInputs();
 		});
 
 		function validateInputs() {
@@ -331,6 +313,19 @@ include '../include/navigation.php';
 
 			$('#btn-add').attr('disabled', disableButton);
 		}
+
+		// DISABLE UPDATE BUTTON
+		$("#firstName_u").keyup(function(event) {
+			updateValidateInputs();
+		});
+
+		$("#lastName_u").keyup(function(event) {
+			updateValidateInputs();
+		});
+
+		$("#phoneNumber_u").keyup(function(event) {
+			updateValidateInputs();
+		});
 
 		function updateValidateInputs() {
 			var disableButton = false;
