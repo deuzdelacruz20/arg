@@ -307,6 +307,17 @@ include '../include/navigation.php';
 		$("#phoneNumber").keyup(function(event) {
 			validateInputs();
 		});
+		$("#firstName_u").keyup(function(event) {
+			updateValidateInputs();
+		});
+
+		$("#lastName_u").keyup(function(event) {
+			updateValidateInputs();
+		});
+
+		$("#phoneNumber_u").keyup(function(event) {
+			updateValidateInputs();
+		});
 
 		function validateInputs() {
 			var disableButton = false;
@@ -319,6 +330,19 @@ include '../include/navigation.php';
 				disableButton = true;
 
 			$('#btn-add').attr('disabled', disableButton);
+		}
+
+		function updateValidateInputs() {
+			var disableButton = false;
+
+			var firstName_u = $("#firstName_u").val();
+			var lastName_u = $("#lastName_u").val();
+			var phoneNumber_u = $("#phoneNumber_u").val();
+
+			if (firstName_u.length == 0 || lastName_u.length == 0 || phoneNumber_u.length == 0)
+				disableButton = true;
+
+			$('#update').attr('disabled', disableButton);
 		}
 	</script>
 
