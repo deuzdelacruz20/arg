@@ -96,10 +96,16 @@ include '../backend/database.php';
                   <p>AVAILABLE STOCKS: <?php echo $row["designStocks"]; ?></p>
                   <p>CATEGORY: <?php echo $row["designCategory"]; ?></p>
                   <p style="text-align: center;">
-                    <a href="#" class="btn btn-success">Buy and Schedule now</a>
-                    <a href="#editDesignModal" class="btn btn-primary" data-toggle="modal">Update</a>
-                    <a href="#" class="btn btn-danger">Delete</a>
+                    <a href="#" class="btn btn-success" style="width: 100%;">Buy and Schedule now</a>
                   </p>
+                  <div class="row">
+                    <div class="col-xs-6">
+                      <a href="#editDesignModal" class="btn btn-primary" data-toggle="modal" style="width: 100%;">Update</a>
+                    </div>
+                    <div class="col-xs-6">
+                      <a href="#" class="btn btn-danger" style="width: 100%;">Delete</a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
