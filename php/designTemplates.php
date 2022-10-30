@@ -1,4 +1,6 @@
-<?php include '../include/navigation.php';
+<?php
+include '../include/navigation.php';
+include '../backend/database.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +24,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-  <script src="../ajax/ajax.js"></script>
+  <script src="../ajax/designTemplates.js"></script>
   <link rel="stylesheet" href="../css/style.css">
 
   <style>
@@ -50,7 +52,7 @@
     </div> -->
 
 
-  <div class="container" style="background-color: white; border-radius:10px; ">
+  <div class="container" style="background-color: white; border-radius:10px;">
     <!-- width: 98%; height: 750px; -->
     <ul class="nav nav-tabs">
       <li><a href="#home">Home</a></li>
@@ -65,7 +67,7 @@
       <div id="home" class="tab-pane fade in active">
         <h3>HOME</h3>
         <div class="row">
-          <div class="col-sm-6 col-md-4">
+          <!-- <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
               <img src="../pictures/template_1.png" alt="...">
               <div class="caption">
@@ -73,12 +75,37 @@
                 <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
                 <p style="text-align: center;">
                   <a href="#" class="btn btn-success" role="button">Buy and Schedule now</a>
-                  <a href="#" class="btn btn-primary" role="button">Update</a>
+                  <a href="#editDesignModal" class="btn btn-primary" data-toggle="modal">Update</a>
                   <a href="#" class="btn btn-danger" role="button">Delete</a>
                 </p>
               </div>
             </div>
-          </div>
+          </div> -->
+
+
+          <?php
+          $result = mysqli_query($conn, "SELECT * FROM design_templates");
+          while ($row = mysqli_fetch_array($result)) {
+          ?>
+            <div class="col-sm-6 col-md-4">
+              <div class="thumbnail" style="background-color:#E8E8E8;">
+                <img src="../pictures/template_1.png" alt="...">
+                <div class="caption">
+                  <h3><?php echo $row["designName"]; ?></h3>
+                  <p>PRICE: <?php echo $row["designPrice"]; ?></p>
+                  <p>AVAILABLE STOCKS: <?php echo $row["designStocks"]; ?></p>
+                  <p>CATEGORY: <?php echo $row["designCategory"]; ?></p>
+                  <p style="text-align: center;">
+                    <a href="#" class="btn btn-success">Buy and Schedule now</a>
+                    <a href="#editDesignModal" class="btn btn-primary" data-toggle="modal">Update</a>
+                    <a href="#" class="btn btn-danger">Delete</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          <?php
+          }
+          ?>
 
         </div>
       </div>
@@ -114,6 +141,7 @@
     });
   </script>
 
+  <!-- ADD DESIGN -->
   <div id="addDesignTemplateModal" class="modal fade">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -125,20 +153,63 @@
           <div class="modal-body">
             <div class="form-group">
               <label>DESIGN NAME</label>
-              <input type="text" id="firstName" name="firstName" class="form-control" required>
+              <input type="text" id="designName" name="designName" class="form-control" required>
             </div>
             <div class="form-group">
               <label>PRICE</label>
-              <input type="phone" id="phoneNumber" name="phoneNumber" class="form-control" required>
+              <input type="phone" id="designPrice" name="designPrice" class="form-control" required>
             </div>
             <div class="form-group">
               <label>STOCKS</label>
-              <input type="number" min="0" value="1" id="phoneNumber" name="phoneNumber" class="form-control" required>
+              <input type="number" min="0" value="1" id="designStocks" name="designStocks" class="form-control" required>
             </div>
             <div class="form-group">
               <label>CATEGORY</label>
-              <select name="services" id="services" class="form-control">
-                <option value="" selected="selected" disabled style="text-align: center;">-Select category-</option>
+              <select name="designCategory" id="designCategory" class="form-control">
+                <option value="" selected="selected" disabled style="text-align: center;">-SELECT CATEGORY-</option>
+                <option value="Motorcycles">Motorcycles</option>
+                <option value="Cars">Cars</option>
+                <option value="SUVs">SUVs</option>
+                <option value="Vans">Vans</option>
+              </select>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <input type="hidden" value="1" name="type">
+            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+            <button type="button" class="btn btn-success" id="btn-add">Add</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- UPDATE DESIGN INFO -->
+  <div id="editDesignModal" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form id="update_form">
+          <div class="modal-header">
+            <h4 class="modal-title">Edit Design Template</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label>DESIGN NAME</label>
+              <input type="text" id="designName" name="designName" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label>PRICE</label>
+              <input type="phone" id="designPrice" name="designPrice" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label>STOCKS</label>
+              <input type="number" min="0" value="1" id="designStocks" name="designStocks" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label>CATEGORY</label>
+              <select name="designCategory" id="designCategory" class="form-control">
+                <option value="" selected="selected" disabled style="text-align: center;">-SELECT CATEGORY-</option>
                 <option value="">Motorcycles</option>
                 <option value="">Cars</option>
                 <option value="">SUVs</option>
@@ -147,9 +218,9 @@
             </div>
           </div>
           <div class="modal-footer">
-            <input type="hidden" value="1" name="type">
+            <input type="hidden" value="2" name="type">
             <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-            <button type="button" class="btn btn-success" id="btn-add" disabled>Add</button>
+            <button type="button" class="btn btn-info" id="update">Update</button>
           </div>
         </form>
       </div>
