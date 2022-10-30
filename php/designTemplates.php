@@ -23,7 +23,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
   <script src="../ajax/ajax.js"></script>
-  <link rel="stylesheet" href="../css/schedules.css">
+  <link rel="stylesheet" href="../css/style.css">
 
   <style>
     body {
