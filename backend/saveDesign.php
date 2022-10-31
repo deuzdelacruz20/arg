@@ -20,19 +20,16 @@ if (count($_POST) > 0) {
 if (count($_POST) > 0) {
 	if ($_POST['type'] == 2) {
 		$id = $_POST['id'];
-		$firstName = $_POST['firstName'];
-		$lastName = $_POST['lastName'];
-		$phoneNumber = $_POST['phoneNumber'];
-		$date = $_POST['date'];
-		$services = $_POST['services'];
-		$time = $_POST['time'];
+		$designName = $_POST['designName'];
+		$designPrice = $_POST['designPrice'];
+		$designStocks = $_POST['designStocks'];
+		$designCategory = $_POST['designCategory'];
+
 		$sql = "UPDATE `customer_request` SET 
-		`firstName`='$firstName',
-		`lastName`='$lastName',
-		`phoneNumber`='$phoneNumber'
-		`date`='$date'
-		`services`='$services'
-		`time`='$time'
+		`designName`='$designName',
+		`designPrice`='$designPrice',
+		`designStocks`='$designStocks',
+		`designCategory`='$designCategory'
 		WHERE id=$id";
 
 		if (mysqli_query($conn, $sql)) {

@@ -26,82 +26,6 @@ include '../include/navigation.php';
 			background-attachment: fixed;
 		}
 	</style>
-
-	<script>
-		var services = {
-			"Full Wrap": {
-				"7:00 AM - 9:00 AM": [],
-				"9:00 AM - 11:00 AM": [],
-				"1:00 PM - 3:00 PM": [],
-				"3:00 PM - 5:00 PM": []
-			},
-			"Hood Wrap": {
-				"7:00 AM - 8:00 AM": [],
-				"8:00 AM - 9:00 AM": [],
-				"9:00 AM - 10:00 AM": [],
-				"10:00 AM - 11:00 AM": [],
-				"1:00 PM - 2:00 PM": [],
-				"2:00 PM - 3:00 PM": [],
-				"3:00 PM - 4:00 PM": [],
-				"4:00 PM - 5:00 PM": [],
-				"5:00 PM - 6:00 PM": []
-			},
-			"HeadLight Film": {
-				"7:00 AM - 8:00 AM": [],
-				"8:00 AM - 9:00 AM": [],
-				"9:00 AM - 10:00 AM": [],
-				"10:00 AM - 11:00 AM": [],
-				"1:00 PM - 2:00 PM": [],
-				"2:00 PM - 3:00 PM": [],
-				"3:00 PM - 4:00 PM": [],
-				"4:00 PM - 5:00 PM": [],
-				"5:00 PM - 6:00 PM": []
-			},
-			"Customized Plate": {
-				"7:00 AM - 8:00 AM": [],
-				"8:00 AM - 9:00 AM": [],
-				"9:00 AM - 10:00 AM": [],
-				"10:00 AM - 11:00 AM": [],
-				"1:00 PM - 2:00 PM": [],
-				"2:00 PM - 3:00 PM": [],
-				"3:00 PM - 4:00 PM": [],
-				"4:00 PM - 5:00 PM": [],
-				"5:00 PM - 6:00 PM": []
-			},
-			"Signage": {
-				"7:00 AM - 8:00 AM": [],
-				"8:00 AM - 9:00 AM": [],
-				"9:00 AM - 10:00 AM": [],
-				"10:00 AM - 11:00 AM": [],
-				"1:00 PM - 2:00 PM": [],
-				"2:00 PM - 3:00 PM": [],
-				"3:00 PM - 4:00 PM": [],
-				"4:00 PM - 5:00 PM": [],
-				"5:00 PM - 6:00 PM": []
-			}
-		}
-		window.onload = function() {
-			var servicesSel = document.getElementById("services");
-			var timeSel = document.getElementById("time");
-			for (var x in services) {
-				servicesSel.options[servicesSel.options.length] = new Option(x, x);
-			}
-			servicesSel.onchange = function() {
-				timeSel.length = 1;
-				//display correct values
-				for (var y in services[this.value]) {
-					timeSel.options[timeSel.options.length] = new Option(y, y);
-				}
-			}
-			timeSel.onchange = function() {
-				//display correct values
-				var z = services[servicesSel.value][this.value];
-				for (var i = 0; i < z.length; i++) {
-					chapterSel.options[chapterSel.options.length] = new Option(z[i], z[i]);
-				}
-			}
-		}
-	</script>
 </head>
 
 <body>
@@ -167,14 +91,9 @@ include '../include/navigation.php';
 									data-phoneNumber="<?php echo $row["phoneNumber"]; ?>" 
 									data-date="<?php echo $row["date"]; ?>" 
 									data-services="<?php echo $row["services"]; ?>" 
-									data-time="<?php echo $row["time"]; ?>" 
-									title="Edit">&#xE254;</i>
+									data-time="<?php echo $row["time"]; ?>" title="Edit">&#xE254;</i>
 								</a>
-								<a href="#deleteEmployeeModal" class="delete" 
-								data-id="<?php echo $row["id"]; ?>" 
-								data-toggle="modal"><i class="material-icons" 
-								data-toggle="tooltip" 
-								title="Delete">&#xE872;</i></a>
+								<a href="#deleteEmployeeModal" class="delete" data-id="<?php echo $row["id"]; ?>" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
 							</td>
 						</tr>
 					<?php
@@ -266,6 +185,32 @@ include '../include/navigation.php';
 							<label>PHONE NUMBER</label>
 							<input type="phone" id="phoneNumber_u" name="phoneNumber" class="form-control" required>
 						</div>
+						<div class="form-group">
+							<label>DATE</label>
+							<input type="date" id="date_u" name="date" class="form-control" required>
+						</div>
+						<script language="javascript">
+							// DISABLE PAST DATES
+							var today = new Date();
+							var dd = String(today.getDate()).padStart(2, '0');
+							var mm = String(today.getMonth() + 1).padStart(2, '0');
+							var yyyy = today.getFullYear();
+
+							today = yyyy + '-' + mm + '-' + dd;
+							$('#date_u').attr('min', today);
+						</script>
+						<div class="form-group">
+							<label>SERVICES</label>
+							<select name="services" id="services_u" class="form-control">
+								<option value="" selected="selected" disabled style="text-align: center;">-Select service-</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label>TIME SLOTS</label>
+							<select name="time" id="time_u" class="form-control">
+								<option value="<?php echo $row["time"]; ?>" selected="selected" disabled style="text-align: center;">Please select service first</option>
+							</select>
+						</div>
 					</div>
 					<div class="modal-footer">
 						<input type="hidden" value="2" name="type">
@@ -299,7 +244,8 @@ include '../include/navigation.php';
 			</div>
 		</div>
 	</div>
-
+	
+	<!-- FOR DISABLING BUTTON IN REQUIRED INPUT -->
 	<script>
 		// DISABLE ADD BUTTON
 		$("#firstName").keyup(function(event) {
@@ -385,6 +331,160 @@ include '../include/navigation.php';
 				disableButton = true;
 
 			$('#update').attr('disabled', disableButton);
+		}
+	</script>
+
+	<!-- FOR SERVICES ADD MODAL -->
+	<script>
+		var services = {
+			"Full Wrap": {
+				"7:00 AM - 9:00 AM": [],
+				"9:00 AM - 11:00 AM": [],
+				"1:00 PM - 3:00 PM": [],
+				"3:00 PM - 5:00 PM": []
+			},
+			"Hood Wrap": {
+				"7:00 AM - 8:00 AM": [],
+				"8:00 AM - 9:00 AM": [],
+				"9:00 AM - 10:00 AM": [],
+				"10:00 AM - 11:00 AM": [],
+				"1:00 PM - 2:00 PM": [],
+				"2:00 PM - 3:00 PM": [],
+				"3:00 PM - 4:00 PM": [],
+				"4:00 PM - 5:00 PM": [],
+				"5:00 PM - 6:00 PM": []
+			},
+			"HeadLight Film": {
+				"7:00 AM - 8:00 AM": [],
+				"8:00 AM - 9:00 AM": [],
+				"9:00 AM - 10:00 AM": [],
+				"10:00 AM - 11:00 AM": [],
+				"1:00 PM - 2:00 PM": [],
+				"2:00 PM - 3:00 PM": [],
+				"3:00 PM - 4:00 PM": [],
+				"4:00 PM - 5:00 PM": [],
+				"5:00 PM - 6:00 PM": []
+			},
+			"Customized Plate": {
+				"7:00 AM - 8:00 AM": [],
+				"8:00 AM - 9:00 AM": [],
+				"9:00 AM - 10:00 AM": [],
+				"10:00 AM - 11:00 AM": [],
+				"1:00 PM - 2:00 PM": [],
+				"2:00 PM - 3:00 PM": [],
+				"3:00 PM - 4:00 PM": [],
+				"4:00 PM - 5:00 PM": [],
+				"5:00 PM - 6:00 PM": []
+			},
+			"Signage": {
+				"7:00 AM - 8:00 AM": [],
+				"8:00 AM - 9:00 AM": [],
+				"9:00 AM - 10:00 AM": [],
+				"10:00 AM - 11:00 AM": [],
+				"1:00 PM - 2:00 PM": [],
+				"2:00 PM - 3:00 PM": [],
+				"3:00 PM - 4:00 PM": [],
+				"4:00 PM - 5:00 PM": [],
+				"5:00 PM - 6:00 PM": []
+			}
+		}
+		window.onload = function() {
+			var servicesSel = document.getElementById("services");
+			var timeSel = document.getElementById("time");
+			for (var x in services) {
+				servicesSel.options[servicesSel.options.length] = new Option(x, x);
+			}
+			servicesSel.onchange = function() {
+				timeSel.length = 1;
+				//display correct values
+				for (var y in services[this.value]) {
+					timeSel.options[timeSel.options.length] = new Option(y, y);
+				}
+			}
+			timeSel.onchange = function() {
+				//display correct values
+				var z = services[servicesSel.value][this.value];
+				for (var i = 0; i < z.length; i++) {
+					chapterSel.options[chapterSel.options.length] = new Option(z[i], z[i]);
+				}
+			}
+		}
+	</script>
+
+	<!-- FOR SERVICES UPDATE MODAL -->
+	<script>
+		var services_u = {
+			"Full Wrap": {
+				"7:00 AM - 9:00 AM": [],
+				"9:00 AM - 11:00 AM": [],
+				"1:00 PM - 3:00 PM": [],
+				"3:00 PM - 5:00 PM": []
+			},
+			"Hood Wrap": {
+				"7:00 AM - 8:00 AM": [],
+				"8:00 AM - 9:00 AM": [],
+				"9:00 AM - 10:00 AM": [],
+				"10:00 AM - 11:00 AM": [],
+				"1:00 PM - 2:00 PM": [],
+				"2:00 PM - 3:00 PM": [],
+				"3:00 PM - 4:00 PM": [],
+				"4:00 PM - 5:00 PM": [],
+				"5:00 PM - 6:00 PM": []
+			},
+			"HeadLight Film": {
+				"7:00 AM - 8:00 AM": [],
+				"8:00 AM - 9:00 AM": [],
+				"9:00 AM - 10:00 AM": [],
+				"10:00 AM - 11:00 AM": [],
+				"1:00 PM - 2:00 PM": [],
+				"2:00 PM - 3:00 PM": [],
+				"3:00 PM - 4:00 PM": [],
+				"4:00 PM - 5:00 PM": [],
+				"5:00 PM - 6:00 PM": []
+			},
+			"Customized Plate": {
+				"7:00 AM - 8:00 AM": [],
+				"8:00 AM - 9:00 AM": [],
+				"9:00 AM - 10:00 AM": [],
+				"10:00 AM - 11:00 AM": [],
+				"1:00 PM - 2:00 PM": [],
+				"2:00 PM - 3:00 PM": [],
+				"3:00 PM - 4:00 PM": [],
+				"4:00 PM - 5:00 PM": [],
+				"5:00 PM - 6:00 PM": []
+			},
+			"Signage": {
+				"7:00 AM - 8:00 AM": [],
+				"8:00 AM - 9:00 AM": [],
+				"9:00 AM - 10:00 AM": [],
+				"10:00 AM - 11:00 AM": [],
+				"1:00 PM - 2:00 PM": [],
+				"2:00 PM - 3:00 PM": [],
+				"3:00 PM - 4:00 PM": [],
+				"4:00 PM - 5:00 PM": [],
+				"5:00 PM - 6:00 PM": []
+			}
+		}
+		window.onload = function() {
+			var servicesSel = document.getElementById("services_u");
+			var timeSel = document.getElementById("time_u");
+			for (var x in services_u) {
+				servicesSel.options[servicesSel.options.length] = new Option(x, x);
+			}
+			servicesSel.onchange = function() {
+				timeSel.length = 1;
+				//display correct values
+				for (var y in services_u[this.value]) {
+					timeSel.options[timeSel.options.length] = new Option(y, y);
+				}
+			}
+			timeSel.onchange = function() {
+				//display correct values
+				var z = services_u[servicesSel.value][this.value];
+				for (var i = 0; i < z.length; i++) {
+					chapterSel.options[chapterSel.options.length] = new Option(z[i], z[i]);
+				}
+			}
 		}
 	</script>
 
