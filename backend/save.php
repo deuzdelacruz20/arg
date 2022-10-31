@@ -31,9 +31,9 @@ if (count($_POST) > 0) {
 		$sql = "UPDATE `customer_request` SET 
 		`firstName`='$firstName',
 		`lastName`='$lastName',
-		`phoneNumber`='$phoneNumber'
-		`date`='$date'
-		`services`='$services'
+		`phoneNumber`='$phoneNumber',
+		`date`='$date',
+		`services`='$services',
 		`time`='$time'
 		WHERE id=$id";
 
