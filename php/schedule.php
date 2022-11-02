@@ -409,7 +409,7 @@ include '../backend/database.php';
     </script>
 
     <!-- EDIT MODAL CASCADING DROPDOWN SCRIPT -->
-    <script>
+    <!-- <script>
         var services_u = {
             "Full Wrap": {
                 "7:00 AM - 9:00 AM": [],
@@ -483,7 +483,7 @@ include '../backend/database.php';
                 }
             }
         }
-    </script>
+    </script> -->
 </body>
 
 </html>
