@@ -29,6 +29,7 @@ include '../backend/database.php';
         }
     </style>
 
+    <!-- ADD MODAL CASCADING DROPDOWN SCRIPT -->
     <script>
         var services = {
             "Full Wrap": {
@@ -85,6 +86,83 @@ include '../backend/database.php';
         window.onload = function() {
             var servicesSel = document.getElementById("services");
             var timeSel = document.getElementById("time");
+            for (var x in services) {
+                servicesSel.options[servicesSel.options.length] = new Option(x, x);
+            }
+            servicesSel.onchange = function() {
+                timeSel.length = 1;
+                //display correct values
+                for (var y in services[this.value]) {
+                    timeSel.options[timeSel.options.length] = new Option(y, y);
+                }
+            }
+            timeSel.onchange = function() {
+                //display correct values
+                var z = services[servicesSel.value][this.value];
+                for (var i = 0; i < z.length; i++) {
+                    chapterSel.options[chapterSel.options.length] = new Option(z[i], z[i]);
+                }
+            }
+        }
+    </script>
+
+    <!-- EDIT MODAL CASCADING DROPDOWN SCRIPT -->
+    <script>
+        var services_u = {
+            "Full Wrap": {
+                "7:00 AM - 9:00 AM": [],
+                "9:00 AM - 11:00 AM": [],
+                "1:00 PM - 3:00 PM": [],
+                "3:00 PM - 5:00 PM": []
+            },
+            "Hood Wrap": {
+                "7:00 AM - 8:00 AM": [],
+                "8:00 AM - 9:00 AM": [],
+                "9:00 AM - 10:00 AM": [],
+                "10:00 AM - 11:00 AM": [],
+                "1:00 PM - 2:00 PM": [],
+                "2:00 PM - 3:00 PM": [],
+                "3:00 PM - 4:00 PM": [],
+                "4:00 PM - 5:00 PM": [],
+                "5:00 PM - 6:00 PM": []
+            },
+            "HeadLight Film": {
+                "7:00 AM - 8:00 AM": [],
+                "8:00 AM - 9:00 AM": [],
+                "9:00 AM - 10:00 AM": [],
+                "10:00 AM - 11:00 AM": [],
+                "1:00 PM - 2:00 PM": [],
+                "2:00 PM - 3:00 PM": [],
+                "3:00 PM - 4:00 PM": [],
+                "4:00 PM - 5:00 PM": [],
+                "5:00 PM - 6:00 PM": []
+            },
+            "Customized Plate": {
+                "7:00 AM - 8:00 AM": [],
+                "8:00 AM - 9:00 AM": [],
+                "9:00 AM - 10:00 AM": [],
+                "10:00 AM - 11:00 AM": [],
+                "1:00 PM - 2:00 PM": [],
+                "2:00 PM - 3:00 PM": [],
+                "3:00 PM - 4:00 PM": [],
+                "4:00 PM - 5:00 PM": [],
+                "5:00 PM - 6:00 PM": []
+            },
+            "Signage": {
+                "7:00 AM - 8:00 AM": [],
+                "8:00 AM - 9:00 AM": [],
+                "9:00 AM - 10:00 AM": [],
+                "10:00 AM - 11:00 AM": [],
+                "1:00 PM - 2:00 PM": [],
+                "2:00 PM - 3:00 PM": [],
+                "3:00 PM - 4:00 PM": [],
+                "4:00 PM - 5:00 PM": [],
+                "5:00 PM - 6:00 PM": []
+            }
+        }
+        window.onload = function() {
+            var servicesSel = document.getElementById("services_u");
+            var timeSel = document.getElementById("time_u");
             for (var x in services) {
                 servicesSel.options[servicesSel.options.length] = new Option(x, x);
             }
@@ -246,20 +324,42 @@ include '../backend/database.php';
                     <div class="modal-body">
                         <input type="hidden" id="id_u" name="id" class="form-control" required>
                         <div class="form-group">
-                            <label>Name</label>
-                            <input type="text" id="fullName_u" name="fullName" class="form-control" required>
+                            <label>FIRST NAME</label>
+                            <input type="text" id="firstName_u" name="firstName" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label>Phone Number</label>
+                            <label>LAST NAME</label>
+                            <input type="text" id="lastName_u" name="lastName" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>PHONE NUMBER</label>
                             <input type="phone" id="phoneNumber_u" name="phoneNumber" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label>Services</label>
-                            <input type="text" id="services_u" name="services" class="form-control" required>
+                            <label>DATE</label>
+                            <input type="date" id="date_u" name="date" class="form-control" required>
+                        </div>
+                        <script language="javascript">
+                            // DISABLE PAST DATES
+                            var today = new Date();
+                            var dd = String(today.getDate()).padStart(2, '0');
+                            var mm = String(today.getMonth() + 1).padStart(2, '0');
+                            var yyyy = today.getFullYear();
+
+                            today = yyyy + '-' + mm + '-' + dd;
+                            $('#date').attr('min', today);
+                        </script>
+                        <div class="form-group">
+                            <label>SERVICES</label>
+                            <select name="services" id="services_u" class="form-control">
+                                <option value="" selected="selected" disabled style="text-align: center;">-Select service-</option>
+                            </select>
                         </div>
                         <div class="form-group">
-                            <label>Time</label>
-                            <input type="text" id="time_u" name="time" class="form-control" required>
+                            <label>TIME SLOTS</label>
+                            <select name="time" id="time_u" class="form-control">
+                                <option value="" selected="selected" disabled style="text-align: center;">Please select service first</option>
+                            </select>
                         </div>
                     </div>
                     <div class="modal-footer">
