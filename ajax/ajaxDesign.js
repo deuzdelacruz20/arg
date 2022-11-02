@@ -20,19 +20,15 @@ $(document).on('click', '#btn-add', function (e) {
 });
 $(document).on('click', '.update', function (e) {
 	var id = $(this).attr("data-id");
-	var firstName = $(this).attr("data-firstName");
-	var lastName = $(this).attr("data-lastName");
-	var phoneNumber = $(this).attr("data-phoneNumber");
-	var date = $(this).attr("data-date");
-	var services = $(this).attr("data-services");
-	var time = $(this).attr("data-time");
+	var designName = $(this).attr("data-designName");
+	var designPrice = $(this).attr("data-designPrice");
+	var designStocks = $(this).attr("data-designStocks");
+	var designCategory = $(this).attr("data-designCategory");
 	$('#id_u').val(id);
-	$('#firstName_u').val(firstName);
-	$('#lastName_u').val(lastName);
-	$('#phoneNumber_u').val(phoneNumber);
-	$('#date_u').val(date);
-	$('#services_u').val(services);
-	$('#time_u').val(time);
+	$('#designName_u').val(designName);
+	$('#designPrice_u').val(designPrice);
+	$('#designStocks_u').val(designStocks);
+	$('#designCategory_u').val(designCategory);
 });
 // <!-- Update -->
 $(document).on('click', '#update', function (e) {
@@ -54,7 +50,6 @@ $(document).on('click', '#update', function (e) {
 		}
 	});
 });
-// DELETE
 $(document).on("click", ".delete", function () {
 	var id = $(this).attr("data-id");
 	$('#id_d').val(id);
@@ -72,11 +67,10 @@ $(document).on("click", "#delete", function () {
 		success: function (dataResult) {
 			$('#deleteEmployeeModal').modal('hide');
 			$("#" + dataResult).remove();
-
+			location.reload();
 		}
 	});
 });
-// DELETE CHECKBOX
 $(document).on("click", "#delete_multiple", function () {
 	var user = [];
 	$(".user_checkbox:checked").each(function () {
@@ -93,7 +87,7 @@ $(document).on("click", "#delete_multiple", function () {
 			console.log(selected_values);
 			$.ajax({
 				type: "POST",
-				url: "../backend/save.php",
+				url: "../backend/saveDesign.php",
 				cache: false,
 				data: {
 					type: 4,

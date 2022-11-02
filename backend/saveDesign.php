@@ -7,6 +7,7 @@ if (count($_POST) > 0) {
 		$designPrice = $_POST['designPrice'];
 		$designStocks = $_POST['designStocks'];
 		$designCategory = $_POST['designCategory'];
+
 		$sql = "INSERT INTO `design_templates`(`designName`,`designPrice`,`designStocks`,`designCategory`) 
 		VALUES ('$designName','$designPrice','$designStocks','$designCategory')";
 		if (mysqli_query($conn, $sql)) {
@@ -25,11 +26,13 @@ if (count($_POST) > 0) {
 		$designStocks = $_POST['designStocks'];
 		$designCategory = $_POST['designCategory'];
 
-		$sql = "UPDATE `customer_request` SET 
+
+		$sql = "UPDATE `design_templates` SET 
 		`designName`='$designName',
 		`designPrice`='$designPrice',
 		`designStocks`='$designStocks',
 		`designCategory`='$designCategory'
+
 		WHERE id=$id";
 
 		if (mysqli_query($conn, $sql)) {
@@ -43,7 +46,7 @@ if (count($_POST) > 0) {
 if (count($_POST) > 0) {
 	if ($_POST['type'] == 3) {
 		$id = $_POST['id'];
-		$sql = "DELETE FROM `customer_request` WHERE id=$id ";
+		$sql = "DELETE FROM `design_templates` WHERE id=$id ";
 		if (mysqli_query($conn, $sql)) {
 			echo $id;
 		} else {
@@ -55,7 +58,7 @@ if (count($_POST) > 0) {
 if (count($_POST) > 0) {
 	if ($_POST['type'] == 4) {
 		$id = $_POST['id'];
-		$sql = "DELETE FROM customer_request WHERE id in ($id)";
+		$sql = "DELETE FROM design_templates WHERE id in ($id)";
 		if (mysqli_query($conn, $sql)) {
 			echo $id;
 		} else {
