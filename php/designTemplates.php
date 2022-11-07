@@ -56,7 +56,8 @@ include '../backend/database.php';
 									<p>AVAILABLE STOCKS: <?php echo $row["designStocks"]; ?></p>
 									<p>CATEGORY: <?php echo $row["designCategory"]; ?></p>
 									<p style="text-align: center;">
-										<a href="#" class="btn btn-success" style="width: 100%;">Buy and Schedule now</a>
+										<!-- <a href="#" class="btn btn-success" style="width: 100%;">Buy and Schedule now</a> -->
+										<a href="#buyModal" class="btn btn-success" data-toggle="modal" style="width: 100%;"><span>Buy and Schedule now</span></a>
 									</p>
 									<div class="row">
 										<div class="col-xs-6">
@@ -378,7 +379,64 @@ include '../backend/database.php';
 			</div>
 		</div>
 	</div>
+	<!-- Buy Modal HTML -->
+	<div id="buyModal" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form id="user_form">
+					<div class="modal-header">
+						<h4 class="modal-title">Schedule An Appointment</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label>FIRST NAME</label>
+							<input type="text" id="firstName" name="firstName" class="form-control" required>
+						</div>
+						<div class="form-group">
+							<label>LAST NAME</label>
+							<input type="text" id="lastName" name="lastName" class="form-control" required>
+						</div>
+						<div class="form-group">
+							<label>PHONE NUMBER</label>
+							<input type="phone" id="phoneNumber" name="phoneNumber" class="form-control" required>
+						</div>
+						<div class="form-group">
+							<label>DATE</label>
+							<input type="date" id="date" name="date" class="form-control" required>
+						</div>
+						<script language="javascript">
+							// DISABLE PAST DATES
+							var today = new Date();
+							var dd = String(today.getDate()).padStart(2, '0');
+							var mm = String(today.getMonth() + 1).padStart(2, '0');
+							var yyyy = today.getFullYear();
 
+							today = yyyy + '-' + mm + '-' + dd;
+							$('#date').attr('min', today);
+						</script>
+						<div class="form-group">
+							<label>SERVICES</label>
+							<select name="services" id="services" class="form-control">
+								<option value="" selected="selected" disabled style="text-align: center;">-Select service-</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label>TIME SLOTS</label>
+							<select name="time" id="time" class="form-control">
+								<option value="" selected="selected" disabled style="text-align: center;">Please select service first</option>
+							</select>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<input type="hidden" value="1" name="type">
+						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+						<button type="button" class="btn btn-success" id="btn-add" disabled>Submit</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
 </body>
 
 </html>
