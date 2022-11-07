@@ -30,6 +30,7 @@
           <li><a href="../../arg/php/designTemplates.php">Design Templates</a></li>
           <li><a href="../../arg/php/schedule.php">Schedules</a></li>
           <li><a href="../../arg/php/about.php">About</a></li>
+          <li><a href="../../arg/php/inventory.php">Inventory</a></li>
         </ul>
       </div>
     </div>
