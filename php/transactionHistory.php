@@ -32,7 +32,7 @@ include '../backend/database.php';
 </head>
 
 <body>
-    <div class="container">
+    <div class="container" style="width: 100%; height: 100%; overflow: auto;">
         <p id="success"></p>
         <div class="table-wrapper">
             <div class="table-title">
@@ -55,14 +55,14 @@ include '../backend/database.php';
                                 <label for="selectAll"></label>
                             </span>
                         </th>
-                        <th>ID</th>
-                        <th>FIRST NAME</th>
-                        <th>LAST NAME</th>
-                        <th>PHONE NUMBER</th>
-                        <th>DATE</th>
-                        <th>SERVICES</th>
-                        <th>TIMESLOT</th>
-                        <th>DATE ADDED</th>
+                        <th width="5%">ID</th>
+                        <th width="10%">FIRST NAME</th>
+                        <th width="10%">LAST NAME</th>
+                        <th width="15%">PHONE NUMBER</th>
+                        <th width="10%">DATE</th>
+                        <th width="15%">SERVICES</th>
+                        <th width="15%">TIMESLOT</th>
+                        <th width="40%">DATE ADDED</th>
                         <!-- <th>ACTION</th> -->
                     </tr>
                 </thead>
