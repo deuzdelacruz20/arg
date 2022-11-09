@@ -114,7 +114,7 @@ include '../backend/database.php';
     </video>
 
 
-    <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal" style="font-size: 26px; float: right; margin-right: 200px; margin-top: 350px; "> <span>Schedule An Appointment</span></a>
+    <a href="#addEmployeeModal" class="btn btn-primary" data-toggle="modal" style="font-size: 26px; float: right; margin-right: 200px; margin-top: 350px; "> <span>Schedule An Appointment</span></a>
 
     <!-- Add Modal HTML -->
     <div id="addEmployeeModal" class="modal fade">
