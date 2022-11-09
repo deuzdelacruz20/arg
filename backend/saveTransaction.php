@@ -9,8 +9,9 @@ if (count($_POST) > 0) {
 		$date = $_POST['date'];
 		$services = $_POST['services'];
 		$time = $_POST['time'];
+		
 		$sql = "INSERT INTO `customer_request`(`firstName`,`lastName`,`phoneNumber`,`date`,`services`,`time`, `timestamp`) 
-		VALUES ('$firstName','$lastName','$phoneNumber','$date','$services','$time',current_timestamp())";
+		VALUES ('$firstName','$lastName','$phoneNumber','$date','$services','$time', current_timestamp())";
 		if (mysqli_query($conn, $sql)) {
 			echo json_encode(array("statusCode" => 200));
 		} else {
