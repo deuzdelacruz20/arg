@@ -123,7 +123,7 @@ include '../backend/database.php';
                         </div>
                         <div class="form-group">
                             <label>PHONE NUMBER</label>
-                            <input type="phone" id="phoneNumber" name="phoneNumber" class="form-control" required>
+                            <input type="phone" id="phoneNumber" name="phoneNumber" class="form-control" maxlength = "11" required>
                         </div>
                         <div class="form-group">
                             <label>DATE</label>
