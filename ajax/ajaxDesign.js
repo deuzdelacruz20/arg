@@ -1,15 +1,26 @@
 // <!-- Add user -->
 $(document).on('click', '#btn-add', function (e) {
-	var data = $("#user_form").serialize();
+
+	var fd = new FormData();
+	fd.append("type", $("#save_id").val());
+	fd.append( "designImage", $("#designImage")[0].files[0]); // image
+	fd.append("designName", $('#designName').val());
+	fd.append("designPrice", $('#designPrice').val());
+	fd.append("designStocks", $('#designStocks').val());
+	fd.append("designCategory", $('#designCategory').val());
 	$.ajax({
-		data: data,
-		type: "post",
+		data: fd,
+		type: "POST",
+		processData: false,
+		contentType: false,
+		cache: false,
 		url: "../backend/saveDesign.php",
 		success: function (dataResult) {
 			var dataResult = JSON.parse(dataResult);
+			console.log(dataResult);
 			if (dataResult.statusCode == 200) {
 				$('#addEmployeeModal').modal('hide');
-				alert('Data added successfully !');
+				alert(dataResult.message);
 				location.reload();
 			}
 			else if (dataResult.statusCode == 201) {

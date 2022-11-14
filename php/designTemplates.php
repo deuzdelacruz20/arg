@@ -49,7 +49,7 @@ include '../backend/database.php';
 					?>
 						<div class="col-sm-6 col-md-4">
 							<div class="thumbnail" style="background-color:#E8E8E8;">
-								<img src="../pictures/template_1.png" alt="...">
+								<img src="<?php echo '../image/' .  $row["designImage"] ?>" alt="...">
 								<div class="caption">
 									<h3><?php echo $row["designName"]; ?></h3>
 									<p>PRICE: <?php echo $row["designPrice"]; ?></p>
@@ -303,9 +303,12 @@ include '../backend/database.php';
 								<option value="Vans">Vans</option>
 							</select>
 						</div>
+						
+						<label for="designImage" class="form-label">Image Upload</label>
+						<input class="form-control" type="file" id="designImage" name="designImage" />
 					</div>
 					<div class="modal-footer">
-						<input type="hidden" value="1" name="type">
+						<input type="hidden" value="1" name="type" id ="save_id">
 						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
 						<button type="button" class="btn btn-success" id="btn-add">Add</button>
 					</div>
