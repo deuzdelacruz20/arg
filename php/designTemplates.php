@@ -282,6 +282,10 @@ include '../backend/database.php';
 					</div>
 					<div class="modal-body">
 						<div class="form-group">
+							<label for="designImage" class="form-label">UPLOAD IMAGE</label>
+							<input class="form-control" type="file" id="designImage" name="designImage" />
+						</div>
+						<div class="form-group">
 							<label>DESIGN NAME</label>
 							<input type="text" id="designName" name="designName" class="form-control" required>
 						</div>
@@ -303,12 +307,9 @@ include '../backend/database.php';
 								<option value="Vans">Vans</option>
 							</select>
 						</div>
-						
-						<label for="designImage" class="form-label">Image Upload</label>
-						<input class="form-control" type="file" id="designImage" name="designImage" />
 					</div>
 					<div class="modal-footer">
-						<input type="hidden" value="1" name="type" id ="save_id">
+						<input type="hidden" value="1" name="type" id="save_id">
 						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
 						<button type="button" class="btn btn-success" id="btn-add">Add</button>
 					</div>
@@ -402,7 +403,7 @@ include '../backend/database.php';
 						</div>
 						<div class="form-group">
 							<label>PHONE NUMBER</label>
-							<input type="phone" id="phoneNumber" name="phoneNumber" class="form-control" maxlength = "11" required>
+							<input type="phone" id="phoneNumber" name="phoneNumber" class="form-control" maxlength="11" required>
 						</div>
 						<div class="form-group">
 							<label>DATE</label>

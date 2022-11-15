@@ -1,15 +1,27 @@
 // <!-- Add user -->
 $(document).on('click', '#btn-add', function (e) {
-	var data = $("#user_form").serialize();
+
+	var fd = new FormData();
+	fd.append("type", $("#save_id").val());
+	fd.append("inventoryImage", $("#inventoryImage")[0].files[0]); // image
+	fd.append("itemName", $('#itemName').val());
+	fd.append("itemPrice", $('#itemPrice').val());
+	fd.append("itemStocks", $('#itemStocks').val());
+	fd.append("itemCategory", $('#itemCategory').val());
+
 	$.ajax({
-		data: data,
-		type: "post",
+		data: fd,
+		type: "POST",
+		processData: false,
+		contentType: false,
+		cache: false,
 		url: "../backend/saveInventory.php",
 		success: function (dataResult) {
 			var dataResult = JSON.parse(dataResult);
+			console.log(dataResult);
 			if (dataResult.statusCode == 200) {
 				$('#addEmployeeModal').modal('hide');
-				alert('Data added successfully !');
+				alert(dataResult.message);
 				location.reload();
 			}
 			else if (dataResult.statusCode == 201) {
@@ -18,6 +30,8 @@ $(document).on('click', '#btn-add', function (e) {
 		}
 	});
 });
+
+// UPDATE
 $(document).on('click', '.update', function (e) {
 	var id = $(this).attr("data-id");
 	var itemName = $(this).attr("data-itemName");
@@ -31,7 +45,7 @@ $(document).on('click', '.update', function (e) {
 	$('#itemStocks_u').val(itemStocks);
 	$('#itemCategory_u').val(itemCategory);
 });
-// <!-- Update -->
+
 $(document).on('click', '#update', function (e) {
 	var data = $("#update_form").serialize();
 	$.ajax({
@@ -51,6 +65,8 @@ $(document).on('click', '#update', function (e) {
 		}
 	});
 });
+
+// DELETE
 $(document).on("click", ".delete", function () {
 	var id = $(this).attr("data-id");
 	$('#id_d').val(id);
@@ -72,6 +88,8 @@ $(document).on("click", "#delete", function () {
 		}
 	});
 });
+
+// DELETE MULTIPLE
 $(document).on("click", "#delete_multiple", function () {
 	var user = [];
 	$(".user_checkbox:checked").each(function () {
