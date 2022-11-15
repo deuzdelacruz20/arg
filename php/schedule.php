@@ -32,7 +32,7 @@ include '../backend/database.php';
 </head>
 
 <body>
-    <div class="container">
+    <div class="container" style="width: 100%; height: 100%; overflow: auto;">
         <p id="success"></p>
         <div class="table-wrapper">
             <div class="table-title">

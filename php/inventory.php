@@ -28,7 +28,7 @@ include '../backend/database.php';
 </head>
 
 <body>
-	<div class="container" style="background-color: white; border-radius:10px;">
+	<div class="container" style="background-color: white; border-radius:10px; width: 97%; height: 97%; overflow: auto;">
 		<ul class="nav nav-tabs">
 			<li><a href="#home">All Items</a></li>
 			<li><a href="#template1">Motorcycles</a></li>
