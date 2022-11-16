@@ -49,7 +49,7 @@ include '../backend/database.php';
 					?>
 						<div class="col-sm-6 col-md-4">
 							<div class="thumbnail" style="background-color:#E8E8E8;">
-								<img src="<?php echo '../image/' .  $row["designImage"] ?>" alt="...">
+								<img src="<?php echo '../image/' .  $row["designImage"] ?>" alt="..." style="max-width: 242px; max-height:200px;">
 								<div class="caption">
 									<h3><?php echo $row["designName"]; ?></h3>
 									<p>PRICE: <?php echo $row["designPrice"]; ?></p>
@@ -93,7 +93,7 @@ include '../backend/database.php';
 					?>
 						<div class="col-sm-6 col-md-4">
 							<div class="thumbnail" style="background-color:#E8E8E8;">
-								<img src="../pictures/template_1.png" alt="...">
+								<img src="<?php echo '../image/' .  $row["designImage"] ?>" alt="..." style="max-width: 242px; max-height:200px;">
 								<div class="caption">
 									<h3><?php echo $row["designName"]; ?></h3>
 									<p>PRICE: <?php echo $row["designPrice"]; ?></p>
@@ -135,7 +135,7 @@ include '../backend/database.php';
 					?>
 						<div class="col-sm-6 col-md-4">
 							<div class="thumbnail" style="background-color:#E8E8E8;">
-								<img src="../pictures/template_1.png" alt="...">
+								<img src="<?php echo '../image/' .  $row["designImage"] ?>" alt="..." style="max-width: 242px; max-height:200px;">
 								<div class="caption">
 									<h3><?php echo $row["designName"]; ?></h3>
 									<p>PRICE: <?php echo $row["designPrice"]; ?></p>
@@ -177,7 +177,7 @@ include '../backend/database.php';
 					?>
 						<div class="col-sm-6 col-md-4">
 							<div class="thumbnail" style="background-color:#E8E8E8;">
-								<img src="../pictures/template_1.png" alt="...">
+								<img src="<?php echo '../image/' .  $row["designImage"] ?>" alt="..." style="max-width: 242px; max-height:200px;">
 								<div class="caption">
 									<h3><?php echo $row["designName"]; ?></h3>
 									<p>PRICE: <?php echo $row["designPrice"]; ?></p>
@@ -219,7 +219,7 @@ include '../backend/database.php';
 					?>
 						<div class="col-sm-6 col-md-4">
 							<div class="thumbnail" style="background-color:#E8E8E8;">
-								<img src="../pictures/template_1.png" alt="...">
+								<img src="<?php echo '../image/' .  $row["designImage"] ?>" alt="..." style="max-width: 242px; max-height:200px;">
 								<div class="caption">
 									<h3><?php echo $row["designName"]; ?></h3>
 									<p>PRICE: <?php echo $row["designPrice"]; ?></p>
