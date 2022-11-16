@@ -40,21 +40,21 @@ include '../backend/database.php';
                     <div class="col-sm-6">
                         <h2>TRANSACTION <b>HISTORY</b></h2>
                     </div>
-                    <div class="col-sm-6">
+                    <!-- <div class="col-sm-6">
                         <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
                         <a href="JavaScript:void(0);" class="btn btn-danger" id="delete_multiple"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
-                        <th>
+                        <!-- <th>
                             <span class="custom-checkbox">
                                 <input type="checkbox" id="selectAll">
                                 <label for="selectAll"></label>
                             </span>
-                        </th>
+                        </th> -->
                         <th width="5%">ID</th>
                         <th width="10%">FIRST NAME</th>
                         <th width="10%">LAST NAME</th>
@@ -73,12 +73,12 @@ include '../backend/database.php';
                     while ($row = mysqli_fetch_array($result)) {
                     ?>
                         <tr id="<?php echo $row["id"]; ?>">
-                            <td>
+                            <!-- <td>
                                 <span class="custom-checkbox">
                                     <input type="checkbox" class="user_checkbox" data-user-id="<?php echo $row["id"]; ?>">
                                     <label for="checkbox2"></label>
                                 </span>
-                            </td>
+                            </td> -->
                             <td><?php echo $row["id"]; ?></td>
                             <td><?php echo $row["firstName"]; ?></td>
                             <td><?php echo $row["lastName"]; ?></td>
