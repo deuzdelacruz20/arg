@@ -14,8 +14,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
- 
- 
+
+
 
   <nav class="navbar navbar-default">
     <div class="container-fluid">
@@ -35,6 +35,9 @@
           <li><a href="../../arg/php/about.php">About</a></li>
           <li><a href="../../arg/php/inventory.php">Inventory</a></li>
           <li><a href="../../arg/php/transactionHistory.php">Transaction History</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="logout.php">Logout</a></li>
         </ul>
       </div>
     </div>
