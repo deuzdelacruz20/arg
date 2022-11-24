@@ -22,6 +22,7 @@
     <style>
     body{
         background: linear-gradient(120deg, #71b7e6, #9b59b6);
+        background-attachment: fixed;
     }
     </style>
     
