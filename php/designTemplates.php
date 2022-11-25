@@ -49,7 +49,11 @@ include '../backend/database.php';
 					?>
 						<div class="col-sm-6 col-md-4">
 							<div class="thumbnail" style="background-color:#E8E8E8;">
+<<<<<<< HEAD
 								<img src="<?php echo '../image/' .  $row["designImage"] ?>" alt="..." style="height: 200px; width: 200px;">
+=======
+								<img src="<?php echo '../image/' .  $row["designImage"] ?>" alt="..." style="max-width: 242px; max-height:200px;">
+>>>>>>> 628dd61b403fe97af8307cd300faaf799f7aa81c
 								<div class="caption">
 									<h3><?php echo $row["designName"]; ?></h3>
 									<p>PRICE: <?php echo $row["designPrice"]; ?></p>
@@ -93,7 +97,7 @@ include '../backend/database.php';
 					?>
 						<div class="col-sm-6 col-md-4">
 							<div class="thumbnail" style="background-color:#E8E8E8;">
-								<img src="../pictures/template_1.png" alt="...">
+								<img src="<?php echo '../image/' .  $row["designImage"] ?>" alt="..." style="max-width: 242px; max-height:200px;">
 								<div class="caption">
 									<h3><?php echo $row["designName"]; ?></h3>
 									<p>PRICE: <?php echo $row["designPrice"]; ?></p>
@@ -135,7 +139,7 @@ include '../backend/database.php';
 					?>
 						<div class="col-sm-6 col-md-4">
 							<div class="thumbnail" style="background-color:#E8E8E8;">
-								<img src="../pictures/template_1.png" alt="...">
+								<img src="<?php echo '../image/' .  $row["designImage"] ?>" alt="..." style="max-width: 242px; max-height:200px;">
 								<div class="caption">
 									<h3><?php echo $row["designName"]; ?></h3>
 									<p>PRICE: <?php echo $row["designPrice"]; ?></p>
@@ -177,7 +181,7 @@ include '../backend/database.php';
 					?>
 						<div class="col-sm-6 col-md-4">
 							<div class="thumbnail" style="background-color:#E8E8E8;">
-								<img src="../pictures/template_1.png" alt="...">
+								<img src="<?php echo '../image/' .  $row["designImage"] ?>" alt="..." style="max-width: 242px; max-height:200px;">
 								<div class="caption">
 									<h3><?php echo $row["designName"]; ?></h3>
 									<p>PRICE: <?php echo $row["designPrice"]; ?></p>
@@ -219,7 +223,7 @@ include '../backend/database.php';
 					?>
 						<div class="col-sm-6 col-md-4">
 							<div class="thumbnail" style="background-color:#E8E8E8;">
-								<img src="../pictures/template_1.png" alt="...">
+								<img src="<?php echo '../image/' .  $row["designImage"] ?>" alt="..." style="max-width: 242px; max-height:200px;">
 								<div class="caption">
 									<h3><?php echo $row["designName"]; ?></h3>
 									<p>PRICE: <?php echo $row["designPrice"]; ?></p>
@@ -282,6 +286,10 @@ include '../backend/database.php';
 					</div>
 					<div class="modal-body">
 						<div class="form-group">
+							<label for="designImage" class="form-label">UPLOAD IMAGE</label>
+							<input class="form-control" type="file" id="designImage" name="designImage" />
+						</div>
+						<div class="form-group">
 							<label>DESIGN NAME</label>
 							<input type="text" id="designName" name="designName" class="form-control" required>
 						</div>
@@ -303,12 +311,9 @@ include '../backend/database.php';
 								<option value="Vans">Vans</option>
 							</select>
 						</div>
-						
-						<label for="designImage" class="form-label">Image Upload</label>
-						<input class="form-control" type="file" id="designImage" name="designImage" />
 					</div>
 					<div class="modal-footer">
-						<input type="hidden" value="1" name="type" id ="save_id">
+						<input type="hidden" value="1" name="type" id="save_id">
 						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
 						<button type="button" class="btn btn-success" id="btn-add">Add</button>
 					</div>
@@ -402,7 +407,7 @@ include '../backend/database.php';
 						</div>
 						<div class="form-group">
 							<label>PHONE NUMBER</label>
-							<input type="phone" id="phoneNumber" name="phoneNumber" class="form-control" maxlength = "11" required>
+							<input type="phone" id="phoneNumber" name="phoneNumber" class="form-control" maxlength="11" required>
 						</div>
 						<div class="form-group">
 							<label>DATE</label>

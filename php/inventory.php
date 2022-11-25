@@ -48,7 +48,7 @@ include '../backend/database.php';
 					?>
 						<div class="col-sm-6 col-md-4">
 							<div class="thumbnail" style="background-color:#E8E8E8;">
-								<img src="../image/download.svg" alt="...">
+								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 242px; height:200px;">
 								<div class="caption">
 									<h3><?php echo $row["itemName"]; ?></h3>
 									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
@@ -92,7 +92,7 @@ include '../backend/database.php';
 					?>
 						<div class="col-sm-6 col-md-4">
 							<div class="thumbnail" style="background-color:#E8E8E8;">
-								<img src="../image/download.svg" alt="...">
+								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 242px; height:200px;">
 								<div class="caption">
 									<h3><?php echo $row["itemName"]; ?></h3>
 									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
@@ -134,7 +134,7 @@ include '../backend/database.php';
 					?>
 						<div class="col-sm-6 col-md-4">
 							<div class="thumbnail" style="background-color:#E8E8E8;">
-								<img src="../image/download.svg" alt="...">
+								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 242px; height:200px;">
 								<div class="caption">
 									<h3><?php echo $row["itemName"]; ?></h3>
 									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
@@ -176,7 +176,7 @@ include '../backend/database.php';
 					?>
 						<div class="col-sm-6 col-md-4">
 							<div class="thumbnail" style="background-color:#E8E8E8;">
-								<img src="../image/download.svg" alt="...">
+								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 242px; height:200px;">
 								<div class="caption">
 									<h3><?php echo $row["itemName"]; ?></h3>
 									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
@@ -218,7 +218,7 @@ include '../backend/database.php';
 					?>
 						<div class="col-sm-6 col-md-4">
 							<div class="thumbnail" style="background-color:#E8E8E8;">
-								<img src="../image/download.svg" alt="...">
+								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 242px; height:200px;">
 								<div class="caption">
 									<h3><?php echo $row["itemName"]; ?></h3>
 									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
@@ -281,6 +281,10 @@ include '../backend/database.php';
 					</div>
 					<div class="modal-body">
 						<div class="form-group">
+							<label for="inventoryImage" class="form-label">UPLOAD IMAGE</label>
+							<input class="form-control" type="file" id="inventoryImage" name="inventoryImage" />
+						</div>
+						<div class="form-group">
 							<label>ITEM NAME</label>
 							<input type="text" id="itemName" name="itemName" class="form-control" required>
 						</div>
@@ -304,7 +308,7 @@ include '../backend/database.php';
 						</div>
 					</div>
 					<div class="modal-footer">
-						<input type="hidden" value="1" name="type">
+						<input type="hidden" value="1" name="type" id="save_id">
 						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
 						<button type="button" class="btn btn-success" id="btn-add">Add</button>
 					</div>
