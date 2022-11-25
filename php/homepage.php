@@ -22,7 +22,16 @@ include '../backend/database.php';
     <script src="../ajax/ajax.js"></script>
     <link rel="stylesheet" href="../css/style.css">
 
-    
+    <style>
+        body {
+            /* background: linear-gradient(120deg, #71b7e6, #9b59b6);
+            background-attachment: fixed; */
+
+            background-image: url(../image/bg.jpg);
+
+        }
+    </style>
+
     <script>
         var services = {
             "Full Wrap": {
@@ -130,7 +139,7 @@ include '../backend/database.php';
                         </div>
                         <div class="form-group">
                             <label>PHONE NUMBER</label>
-                            <input type="phone" id="phoneNumber" name="phoneNumber" class="form-control" maxlength = "11" required>
+                            <input type="phone" id="phoneNumber" name="phoneNumber" class="form-control" maxlength="11" required>
                         </div>
                         <div class="form-group">
                             <label>DATE</label>
@@ -186,7 +195,7 @@ include '../backend/database.php';
                         </div>
                         <div class="form-group">
                             <label>Phone Number</label>
-                            <input type="phone" id="phoneNumber_u" name="phoneNumber" class="form-control" maxlength = "11" required>
+                            <input type="phone" id="phoneNumber_u" name="phoneNumber" class="form-control" maxlength="11" required>
                         </div>
                         <div class="form-group">
                             <label>Services</label>
