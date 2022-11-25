@@ -49,11 +49,7 @@ include '../backend/database.php';
 					?>
 						<div class="col-sm-6 col-md-4">
 							<div class="thumbnail" style="background-color:#E8E8E8;">
-<<<<<<< HEAD
 								<img src="<?php echo '../image/' .  $row["designImage"] ?>" alt="..." style="height: 200px; width: 200px;">
-=======
-								<img src="<?php echo '../image/' .  $row["designImage"] ?>" alt="..." style="max-width: 242px; max-height:200px;">
->>>>>>> 628dd61b403fe97af8307cd300faaf799f7aa81c
 								<div class="caption">
 									<h3><?php echo $row["designName"]; ?></h3>
 									<p>PRICE: <?php echo $row["designPrice"]; ?></p>
