@@ -32,7 +32,36 @@ include '../backend/database.php';
             background-repeat: no-repeat;
             height: 100%;
             background-size: cover;
+            background-attachment: fixed;
+        }
 
+        /* The heart of the matter */
+
+        .horizontal-scrollable>.row {
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .horizontal-scrollable>.row>.col-xs-4 {
+            display: inline-block;
+            float: none;
+        }
+
+        /* Decorations */
+
+        .col-xs-4 {
+            color: white;
+            font-size: 24px;
+            padding-bottom: 20px;
+            padding-top: 18px;
+        }
+
+        .col-xs-4:nth-child(2n+1) {
+            background: white;
+        }
+
+        .col-xs-4:nth-child(2n+2) {
+            background: white;
         }
     </style>
 
@@ -89,20 +118,20 @@ include '../backend/database.php';
                 "5:00 PM - 6:00 PM": []
             }
         }
-        window.onload = function() {
+        window.onload = function () {
             var servicesSel = document.getElementById("services");
             var timeSel = document.getElementById("time");
             for (var x in services) {
                 servicesSel.options[servicesSel.options.length] = new Option(x, x);
             }
-            servicesSel.onchange = function() {
+            servicesSel.onchange = function () {
                 timeSel.length = 1;
                 //display correct values
                 for (var y in services[this.value]) {
                     timeSel.options[timeSel.options.length] = new Option(y, y);
                 }
             }
-            timeSel.onchange = function() {
+            timeSel.onchange = function () {
                 //display correct values
                 var z = services[servicesSel.value][this.value];
                 for (var i = 0; i < z.length; i++) {
@@ -115,13 +144,101 @@ include '../backend/database.php';
 
 <body>
 
-    <video width="560" height="315" autoplay loop muted style="margin-left: 10%;">
+    <!-- <video width="560" height="315" autoplay loop muted style="margin-left: 10%;">
         <source src="../videos/AFTER DARK 🌑- Valorant Edit.mp4" type="video/mp4" />
         Your browser does not support the video element.
     </video>
 
 
-    <a href="#addEmployeeModal" class="btn btn-primary" data-toggle="modal" style="font-size: 26px; float: right; margin-right: 200px; margin-top: 350px; "> <span>Schedule An Appointment</span></a>
+    <a href="#addEmployeeModal" class="btn btn-primary" data-toggle="modal" style="font-size: 26px; float: right; margin-right: 200px; margin-top: 350px; "> <span>Schedule An Appointment</span></a> -->
+
+    <div class="container overflow-hidden">
+        <!-- <img src="../image/qrcode.jpg" style="border-radius: 5px;"> -->
+        <div class="row gx-5">
+            <div class="col-md-4">
+                <video width="560" height="315" autoplay loop muted style="margin-left: 10%;">
+                    <source src="../videos/Midnight Run. (R34 GTR, FD RX7, Evo and more) _ Zhiyun Crane 3 Lab _ 4K.mp4" type="video/mp4" />
+                    Your browser does not support the video element.
+                </video>
+            </div>
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-4">
+                <a href="#addEmployeeModal" class="btn btn-primary" data-toggle="modal"
+                    style="font-size: 26px; float: right; margin-right: 5%; margin-top: 300px; "> <span>Schedule An
+                        Appointment</span></a>
+
+            </div>
+        </div>
+        <div class="row gx-5">
+            <div class="col-md-4">
+                <video width="560" height="315" autoplay loop muted style="margin-left: 10%;">
+                    <source src="../videos/Motorcycle Montage _ Yamaha Aerox 155 _ USING YOUR PHONE.mp4" type="video/mp4" />
+                    Your browser does not support the video element.
+                </video>
+            </div>
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-4">
+
+            </div>
+        </div>
+    </div>
+<br>
+<br>
+    <div class="container" style="border-radius: 25px; background-color:#fff;">
+        <h1 style="text-align:center;color:green;">
+            ARG AUTOSIGN SHOP
+        </h1>
+        <h3>
+            Information about the website
+        </h3>
+        <div class="container horizontal-scrollable" style="width: 100%;">
+            <div class="row text-center">
+                <div class="col-xs-4"><img src="../image/1.jpg" width="300px" height="200px"></div>
+                <div class="col-xs-4"><img src="../image/2.jpg" width="300px" height="200px"></div>
+                <div class="col-xs-4"><img src="../image/3.jpg" width="300px" height="200px"></div>
+                <div class="col-xs-4"><img src="../image/4.jpg" width="300px" height="200px"></div>
+                <div class="col-xs-4"><img src="../image/5.jpg" width="300px" height="200px"></div>
+                <div class="col-xs-4"><img src="../image/6.jpg" width="300px" height="200px"></div>
+                <div class="col-xs-4"><img src="../image/7.jpg" width="300px" height="200px"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container overflow-hidden">
+        <!-- <img src="../image/qrcode.jpg" style="border-radius: 5px;"> -->
+        <div class="row gx-5">
+            <div class="col-md-4">
+                <video width="560" height="315" autoplay loop muted style="margin-left: 10%;">
+                    <source src="../videos/Tokyo Underground. _ 4K.mp4" type="video/mp4" />
+                    Your browser does not support the video element.
+                </video>
+            </div>
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-4">
+
+            </div>
+        </div>
+        <div class="row gx-5">
+            <div class="col-md-4">
+                <video width="560" height="315" autoplay loop muted style="margin-left: 10%;">
+                    <source src="../videos/ENEMY.mp4" type="video/mp4" />
+                    Your browser does not support the video element.
+                </video>
+            </div>
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-4">
+
+            </div>
+        </div>
+    </div>
 
     <!-- Add Modal HTML -->
     <div id="addEmployeeModal" class="modal fade">
@@ -143,7 +260,8 @@ include '../backend/database.php';
                         </div>
                         <div class="form-group">
                             <label>PHONE NUMBER</label>
-                            <input type="phone" id="phoneNumber" name="phoneNumber" class="form-control" maxlength="11" required>
+                            <input type="phone" id="phoneNumber" name="phoneNumber" class="form-control" maxlength="11"
+                                required>
                         </div>
                         <div class="form-group">
                             <label>DATE</label>
@@ -162,13 +280,15 @@ include '../backend/database.php';
                         <div class="form-group">
                             <label>SERVICES</label>
                             <select name="services" id="services" class="form-control">
-                                <option value="" selected="selected" disabled style="text-align: center;">-Select service-</option>
+                                <option value="" selected="selected" disabled style="text-align: center;">-Select
+                                    service-</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label>TIME SLOTS</label>
                             <select name="time" id="time" class="form-control">
-                                <option value="" selected="selected" disabled style="text-align: center;">Please select service first</option>
+                                <option value="" selected="selected" disabled style="text-align: center;">Please select
+                                    service first</option>
                             </select>
                         </div>
                     </div>
@@ -199,7 +319,8 @@ include '../backend/database.php';
                         </div>
                         <div class="form-group">
                             <label>Phone Number</label>
-                            <input type="phone" id="phoneNumber_u" name="phoneNumber" class="form-control" maxlength="11" required>
+                            <input type="phone" id="phoneNumber_u" name="phoneNumber" class="form-control"
+                                maxlength="11" required>
                         </div>
                         <div class="form-group">
                             <label>Services</label>
@@ -245,13 +366,13 @@ include '../backend/database.php';
 
     <script>
         // DISABLE ADD BUTTON
-        $("#firstName").keyup(function(event) {
+        $("#firstName").keyup(function (event) {
             validateInputs();
         });
-        $("#lastName").keyup(function(event) {
+        $("#lastName").keyup(function (event) {
             validateInputs();
         });
-        $("#phoneNumber").keyup(function(event) {
+        $("#phoneNumber").keyup(function (event) {
             validateInputs();
         });
         // $("#date").keyup(function(event) {
@@ -288,13 +409,13 @@ include '../backend/database.php';
         }
 
         // DISABLE UPDATE BUTTON
-        $("#firstName_u").keyup(function(event) {
+        $("#firstName_u").keyup(function (event) {
             updateValidateInputs();
         });
-        $("#lastName_u").keyup(function(event) {
+        $("#lastName_u").keyup(function (event) {
             updateValidateInputs();
         });
-        $("#phoneNumber_u").keyup(function(event) {
+        $("#phoneNumber_u").keyup(function (event) {
             updateValidateInputs();
         });
         // $("#date_u").keyup(function(event) {
