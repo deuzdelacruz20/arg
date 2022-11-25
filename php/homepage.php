@@ -28,6 +28,10 @@ include '../backend/database.php';
             background-attachment: fixed; */
 
             background-image: url(../image/bg.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100%;
+            background-size: cover;
 
         }
     </style>
