@@ -188,14 +188,14 @@ include '../backend/database.php';
     </div>
 <br>
 <br>
-    <div class="container" style="border-radius: 25px; background-color:#fff;">
+    <div class="container" style=" width:100%;">
         <h1 style="text-align:center;color:green;">
             ARG AUTOSIGN SHOP
         </h1>
         <h3>
             Information about the website
         </h3>
-        <div class="container horizontal-scrollable" style="width: 100%;">
+        <div class="container horizontal-scrollable" style="width: 100%; background-color:#fff;">
             <div class="row text-center">
                 <div class="col-xs-4"><img src="../image/1.jpg" width="300px" height="200px"></div>
                 <div class="col-xs-4"><img src="../image/2.jpg" width="300px" height="200px"></div>
