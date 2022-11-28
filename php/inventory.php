@@ -54,10 +54,6 @@ include '../backend/database.php';
 									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
 									<p>AVAILABLE STOCKS: <?php echo $row["itemStocks"]; ?></p>
 									<p>CATEGORY: <?php echo $row["itemCategory"]; ?></p>
-									<p style="text-align: center;">
-										<!-- <a href="#" class="btn btn-success" style="width: 100%;">Buy and Schedule now</a> -->
-										<a href="#buyModal" class="btn btn-success" data-toggle="modal" style="width: 100%;"><span>Buy and Schedule now</span></a>
-									</p>
 									<div class="row">
 										<div class="col-xs-6">
 											<a href="#editEmployeeModal" class="edit" data-toggle="modal">
