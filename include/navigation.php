@@ -81,7 +81,7 @@
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Logout</a></li>
+          <li><a href="../php/logout.php">Logout</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
