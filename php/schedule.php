@@ -27,6 +27,17 @@ include '../backend/database.php';
             background: linear-gradient(120deg, #71b7e6, #9b59b6);
             background-attachment: fixed;
         }
+
+        table {
+            display: block;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        table tbody {
+            display: table;
+            width: 100%;
+        }
     </style>
 
 </head>
@@ -46,7 +57,7 @@ include '../backend/database.php';
                     </div>
                 </div>
             </div>
-            <table class="table table-striped table-hover">
+            <table class="table table-striped table-hover" style="display: block; overflow-x:auto;">
                 <thead>
                     <tr>
                         <th>
@@ -120,7 +131,7 @@ include '../backend/database.php';
                         </div>
                         <div class="form-group">
                             <label>PHONE NUMBER</label>
-                            <input type="phone" id="phoneNumber" name="phoneNumber" class="form-control" maxlength = "11" required>
+                            <input type="phone" id="phoneNumber" name="phoneNumber" class="form-control" maxlength="11" required>
                         </div>
                         <div class="form-group">
                             <label>DATE</label>
@@ -180,7 +191,7 @@ include '../backend/database.php';
                         </div>
                         <div class="form-group">
                             <label>PHONE NUMBER</label>
-                            <input type="phone" id="phoneNumber_u" name="phoneNumber" class="form-control" maxlength = "11" required>
+                            <input type="phone" id="phoneNumber_u" name="phoneNumber" class="form-control" maxlength="11" required>
                         </div>
                         <div class="form-group">
                             <label>DATE</label>
