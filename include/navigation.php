@@ -37,6 +37,7 @@
           <li class="nav-link"><a href="../../arg/php/inventory.php">Inventory</a></li>
           <li class="nav-link"><a href="../../arg/php/transactionHistory.php">Transaction History</a></li>
           <li class="nav-link"><a href="../../arg/php/payment.php">Payment</a></li>
+          <li class="nav-link"><a href="../../arg/php/earningsAndExpenses.php">Earnings and Expenses</a></li>
 
           <!-- <li class="nav-link"><a href="../../arg/php/homepage.php">Home</a></li>
           <li class="nav-link"><a href="../../arg/php/designTemplates.php">Design Templates</a></li>
