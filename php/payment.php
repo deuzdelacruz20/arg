@@ -31,8 +31,7 @@ include '../backend/database.php';
     <div class="container">
         <!-- <img src="../image/qrcode.jpg" style="border-radius: 5px;"> -->
         <div class="row">
-            <div class="col-md-6
-            " style="background-color:white; border-radius: 5px;">
+            <div class="col-md-6" style="background-color:white; border-radius: 5px;">
                 <img src="../image/qrcode.jpg" style="max-width: 75%; display: block; margin-left: auto;margin-right: auto; width: 50%;">
                 <h3 style="text-align:center; background-color:#d5d5d5">SCAN THE QR CODE TO PAY</h3>
             </div>
@@ -40,6 +39,17 @@ include '../backend/database.php';
                 <h1 style="text-align: center; color:black;">GCASH PAYMENT</h1>
             </div>
         </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-6" style="background-color:white; border-radius: 5px;">
+                <a href="https://www.gcash.com/"><img src="../image/gcash.png" style="width: 100%; display: block; margin-left: auto;margin-right: auto; width: 50%; margin-top:5%; margin-bottom:5%;"></img></a>
+                <h3 style="text-align:center; background-color:#d5d5d5">Or proceed to Gcash official website for payment</h3>
+            </div>
+            <div class="col-md-3">
+
+            </div>
+        </div>
+        <br>
     </div>
 </body>
 
