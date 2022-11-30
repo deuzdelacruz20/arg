@@ -34,7 +34,7 @@ include '../backend/database.php';
             white-space: nowrap;
         }
 
-        table tbody {
+        table thead, tbody {
             display: table;
             width: 100%;
         }
@@ -43,7 +43,7 @@ include '../backend/database.php';
 </head>
 
 <body>
-    <div class="container" style="width: 100%; height: 100%; overflow: auto;">
+    <div class="container" style="width: 100%;">
         <p id="success"></p>
         <div class="table-wrapper">
             <div class="table-title">
@@ -57,7 +57,7 @@ include '../backend/database.php';
                     </div>
                 </div>
             </div>
-            <table class="table table-striped table-hover" style="display: block; overflow-x:auto;">
+            <table class="table table-striped table-hover">
                 <thead>
                     <tr>
                         <th>
@@ -98,7 +98,15 @@ include '../backend/database.php';
                             <td><?php echo $row["time"]; ?></td>
                             <td>
                                 <a href="#editEmployeeModal" class="edit" data-toggle="modal">
-                                    <i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-firstName="<?php echo $row["firstName"]; ?>" data-lastName="<?php echo $row["lastName"]; ?>" data-phoneNumber="<?php echo $row["phoneNumber"]; ?>" data-date="<?php echo $row["date"]; ?>" data-services="<?php echo $row["services"]; ?>" data-time="<?php echo $row["time"]; ?>" title="Edit">&#xE254;</i>
+                                    <i class="material-icons update" data-toggle="tooltip" 
+                                    data-id="<?php echo $row["id"]; ?>" 
+                                    data-firstName="<?php echo $row["firstName"]; ?>" 
+                                    data-lastName="<?php echo $row["lastName"]; ?>" 
+                                    data-phoneNumber="<?php echo $row["phoneNumber"]; ?>" 
+                                    data-date="<?php echo $row["date"]; ?>" 
+                                    data-services="<?php echo $row["services"]; ?>" 
+                                    data-time="<?php echo $row["time"]; ?>" 
+                                    title="Edit">&#xE254;</i>
                                 </a>
                                 <a href="#deleteEmployeeModal" class="delete" data-id="<?php echo $row["id"]; ?>" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                             </td>
