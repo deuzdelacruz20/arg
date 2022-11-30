@@ -149,16 +149,46 @@ include '../backend/database.php';
                         </script>
                         <div class="form-group">
                             <label>SERVICES</label>
-                            <select name="services" id="services" class="form-control">
-                                <option value="" selected="selected" disabled style="text-align: center;">-Select service-</option>
+                            <select class="form-control" name="services" id="services">
+                                <option value="0" selected disabled style="text-align: center;">-Select a Service-</option>
+                                <option value="1">Full Wrap</option>
+                                <option value="2">Hood Wrap</option>
+                                <option value="2">HeadLight Film</option>
+                                <option value="2">Customized Plate</option>
+                                <option value="2">Signage</option>
                             </select>
+                            <input type="text" name="inputServices" id="inputServices"></input>
                         </div>
                         <div class="form-group">
                             <label>TIME SLOTS</label>
-                            <select name="time" id="time" class="form-control">
-                                <option value="" selected="selected" disabled style="text-align: center;">Please select service first</option>
+                            <select class="form-control" name="time" id="time">
+                                <option value="0" selected disabled style="text-align: center;">-Select Service First-</option>
+                                <option value="1">7:00 AM - 9:00 AM</option>
+                                <option value="1">9:00 AM - 11:00 AM</option>
+                                <option value="1">1:00 PM - 3:00 PM</option>
+                                <option value="1">3:00 PM - 5:00 PM</option>
+
+                                <option value="2">7:00 AM - 8:00 AM</option>
+                                <option value="2">8:00 AM - 9:00 AM</option>
+                                <option value="2">9:00 AM - 10:00 AM</option>
+                                <option value="2">10:00 AM - 11:00 AM</option>
+                                <option value="2">1:00 PM - 2:00 PM</option>
+                                <option value="2">2:00 PM - 3:00 PM</option>
+                                <option value="2">3:00 PM - 4:00 PM</option>
+                                <option value="2">4:00 PM - 5:00 PM</option>
+                                <option value="2">5:00 PM - 6:00 PM</option>
                             </select>
+                            <input type="text" name="inputTime" id="inputTime" hidden></input>
                         </div>
+                        <script>
+                            var $services = $('#services'),
+                                $time = $('#time'),
+                                $options = $time.find('option');
+
+                            $services.on('change', function() {
+                                $time.html($options.filter('[value="' + this.value + '"]'));
+                            }).trigger('change');
+                        </script>
                     </div>
                     <div class="modal-footer">
                         <input type="hidden" value="1" name="type">
@@ -209,16 +239,39 @@ include '../backend/database.php';
                         </script>
                         <div class="form-group">
                             <label>SERVICES</label>
-                            <select name="services" id="services_u" class="form-control">
-                                <option value="" selected="selected" disabled style="text-align: center;">-Select service-</option>
+                            <select class="form-control" name="services" id="services_u">
+                                <option value="0" selected disabled style="text-align: center;">-Select a Service-</option>
+                                <option value="1">Full Wrap</option>
+                                <option value="2">Hood Wrap</option>
+                                <option value="2">HeadLight Film</option>
+                                <option value="2">Customized Plate</option>
+                                <option value="2">Signage</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label>TIME SLOTS</label>
-                            <select name="time" id="time_u" class="form-control">
-                                <option value="" selected="selected" disabled style="text-align: center;">Please select service first</option>
+                            <select class="form-control" name="time" id="time_u">
+                                <option value="0" selected disabled style="text-align: center;">-Select Service First-</option>
+                                <option value="1">7:00 AM - 9:00 AM</option>
+                                <option value="1">9:00 AM - 11:00 AM</option>
+                                <option value="1">1:00 PM - 3:00 PM</option>
+                                <option value="1">3:00 PM - 5:00 PM</option>
+
+                                <option value="2">7:00 AM - 8:00 AM</option>
+                                <option value="2">8:00 AM - 9:00 AM</option>
+                                <option value="2">9:00 AM - 10:00 AM</option>
+                                <option value="2">10:00 AM - 11:00 AM</option>
+                                <option value="2">1:00 PM - 2:00 PM</option>
+                                <option value="2">2:00 PM - 3:00 PM</option>
+                                <option value="2">3:00 PM - 4:00 PM</option>
+                                <option value="2">4:00 PM - 5:00 PM</option>
+                                <option value="2">5:00 PM - 6:00 PM</option>
                             </select>
                         </div>
+                        <script>
+                            $("#services_u :selected").text();
+                            $("#time_u :selected").text();
+                        </script>
                     </div>
                     <div class="modal-footer">
                         <input type="hidden" value="2" name="type">
@@ -344,77 +397,18 @@ include '../backend/database.php';
 
     <!-- ADD MODAL CASCADING DROPDOWN SCRIPT -->
     <script>
-        var services = {
-            "Full Wrap": {
-                "7:00 AM - 9:00 AM": [],
-                "9:00 AM - 11:00 AM": [],
-                "1:00 PM - 3:00 PM": [],
-                "3:00 PM - 5:00 PM": []
-            },
-            "Hood Wrap": {
-                "7:00 AM - 8:00 AM": [],
-                "8:00 AM - 9:00 AM": [],
-                "9:00 AM - 10:00 AM": [],
-                "10:00 AM - 11:00 AM": [],
-                "1:00 PM - 2:00 PM": [],
-                "2:00 PM - 3:00 PM": [],
-                "3:00 PM - 4:00 PM": [],
-                "4:00 PM - 5:00 PM": [],
-                "5:00 PM - 6:00 PM": []
-            },
-            "HeadLight Film": {
-                "7:00 AM - 8:00 AM": [],
-                "8:00 AM - 9:00 AM": [],
-                "9:00 AM - 10:00 AM": [],
-                "10:00 AM - 11:00 AM": [],
-                "1:00 PM - 2:00 PM": [],
-                "2:00 PM - 3:00 PM": [],
-                "3:00 PM - 4:00 PM": [],
-                "4:00 PM - 5:00 PM": [],
-                "5:00 PM - 6:00 PM": []
-            },
-            "Customized Plate": {
-                "7:00 AM - 8:00 AM": [],
-                "8:00 AM - 9:00 AM": [],
-                "9:00 AM - 10:00 AM": [],
-                "10:00 AM - 11:00 AM": [],
-                "1:00 PM - 2:00 PM": [],
-                "2:00 PM - 3:00 PM": [],
-                "3:00 PM - 4:00 PM": [],
-                "4:00 PM - 5:00 PM": [],
-                "5:00 PM - 6:00 PM": []
-            },
-            "Signage": {
-                "7:00 AM - 8:00 AM": [],
-                "8:00 AM - 9:00 AM": [],
-                "9:00 AM - 10:00 AM": [],
-                "10:00 AM - 11:00 AM": [],
-                "1:00 PM - 2:00 PM": [],
-                "2:00 PM - 3:00 PM": [],
-                "3:00 PM - 4:00 PM": [],
-                "4:00 PM - 5:00 PM": [],
-                "5:00 PM - 6:00 PM": []
-            }
-        }
         window.onload = function() {
+
             var servicesSel = document.getElementById("services");
             var timeSel = document.getElementById("time");
-            for (var x in services) {
-                servicesSel.options[servicesSel.options.length] = new Option(x, x);
-            }
+
             servicesSel.onchange = function() {
-                timeSel.length = 1;
                 //display correct values
-                for (var y in services[this.value]) {
-                    timeSel.options[timeSel.options.length] = new Option(y, y);
-                }
+                $("#inputServices").val($(this).find("option:selected").text());
             }
             timeSel.onchange = function() {
                 //display correct values
-                var z = services[servicesSel.value][this.value];
-                for (var i = 0; i < z.length; i++) {
-                    chapterSel.options[chapterSel.options.length] = new Option(z[i], z[i]);
-                }
+                $("#inputTime").val($(this).find("option:selected").text());
             }
         }
     </script>

@@ -7,8 +7,8 @@ if (count($_POST) > 0) {
 		$lastName = $_POST['lastName'];
 		$phoneNumber = $_POST['phoneNumber'];
 		$date = $_POST['date'];
-		$services = $_POST['services'];
-		$time = $_POST['time'];
+		$services = $_POST['inputServices'];
+		$time = $_POST['inputTime'];
 		$sql = "INSERT INTO `customer_request`(`firstName`,`lastName`,`phoneNumber`,`date`,`services`,`time`, `timestamp`) 
 		VALUES ('$firstName','$lastName','$phoneNumber','$date','$services','$time',current_timestamp())";
 		if (mysqli_query($conn, $sql)) {
