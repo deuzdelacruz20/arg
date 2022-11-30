@@ -26,8 +26,8 @@ if (count($_POST) > 0) {
 		$lastName = $_POST['lastName'];
 		$phoneNumber = $_POST['phoneNumber'];
 		$date = $_POST['date'];
-		$services = $_POST['services'];
-		$time = $_POST['time'];
+		$services = $_POST['inputServices_u'];
+		$time = $_POST['inputTime_u'];
 		$sql = "UPDATE `customer_request` SET 
 		`firstName`='$firstName',
 		`lastName`='$lastName',

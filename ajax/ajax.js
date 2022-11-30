@@ -31,8 +31,36 @@ $(document).on('click', '.update', function (e) {
 	$('#lastName_u').val(lastName);
 	$('#phoneNumber_u').val(phoneNumber);
 	$('#date_u').val(date);
-	$('#services_u').val(services);
-	$('#time_u').val(time);
+
+	var services_u = $('#services_u'),
+	$time_u = $('#time_u'),
+	$options = $time_u.find('option');
+
+	$('#services_u option').each(function() {
+		if($(this).text() == services) {
+			$(this).prop("selected", true).trigger('change');
+		}
+	});
+
+
+	
+
+	
+
+	$('#time_u option').each(function() {
+		if($(this).text() == time) {
+			$(this).prop("selected", true);
+		}
+	});
+
+	$('#inputTime_u').val(time);
+	$('#inputServices_u').val(services);
+	
+
+	
+
+	
+	
 });
 // <!-- Update -->
 $(document).on('click', '#update', function (e) {

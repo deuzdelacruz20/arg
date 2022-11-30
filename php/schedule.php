@@ -157,7 +157,7 @@ include '../backend/database.php';
                                 <option value="2">Customized Plate</option>
                                 <option value="2">Signage</option>
                             </select>
-                            <input type="text" name="inputServices" id="inputServices"></input>
+                            <input type="text" name="inputServices" id="inputServices" hidden></input>
                         </div>
                         <div class="form-group">
                             <label>TIME SLOTS</label>
@@ -247,6 +247,7 @@ include '../backend/database.php';
                                 <option value="2">Customized Plate</option>
                                 <option value="2">Signage</option>
                             </select>
+                            <input type="text" name="inputServices_u" id="inputServices_u" hidden></input>
                         </div>
                         <div class="form-group">
                             <label>TIME SLOTS</label>
@@ -267,10 +268,17 @@ include '../backend/database.php';
                                 <option value="2">4:00 PM - 5:00 PM</option>
                                 <option value="2">5:00 PM - 6:00 PM</option>
                             </select>
+                            <input type="text" name="inputTime_u" id="inputTime_u" hidden></input>
                         </div>
+
                         <script>
-                            $("#services_u :selected").text();
-                            $("#time_u :selected").text();
+                            var $services_u = $('#services_u'),
+                                $time_u = $('#time_u'),
+                                $options = $time_u.find('option');
+
+                            $services_u.on('change', function() {
+                                $time_u.html($options.filter('[value="' + this.value + '"]'));
+                            }).trigger('change');
                         </script>
                     </div>
                     <div class="modal-footer">
@@ -410,85 +418,20 @@ include '../backend/database.php';
                 //display correct values
                 $("#inputTime").val($(this).find("option:selected").text());
             }
+
+            var servicesSel1 = document.getElementById("services_u");
+            var timeSel1 = document.getElementById("time_u");
+
+            servicesSel1.onchange = function() {
+                //display correct values
+                $("#inputServices_u").val($(this).find("option:selected").text());
+            }
+            timeSel1.onchange = function() {
+                //display correct values
+                $("#inputTime_u").val($(this).find("option:selected").text());
+            }
         }
     </script>
-
-    <!-- EDIT MODAL CASCADING DROPDOWN SCRIPT -->
-    <!-- <script>
-        var services_u = {
-            "Full Wrap": {
-                "7:00 AM - 9:00 AM": [],
-                "9:00 AM - 11:00 AM": [],
-                "1:00 PM - 3:00 PM": [],
-                "3:00 PM - 5:00 PM": []
-            },
-            "Hood Wrap": {
-                "7:00 AM - 8:00 AM": [],
-                "8:00 AM - 9:00 AM": [],
-                "9:00 AM - 10:00 AM": [],
-                "10:00 AM - 11:00 AM": [],
-                "1:00 PM - 2:00 PM": [],
-                "2:00 PM - 3:00 PM": [],
-                "3:00 PM - 4:00 PM": [],
-                "4:00 PM - 5:00 PM": [],
-                "5:00 PM - 6:00 PM": []
-            },
-            "HeadLight Film": {
-                "7:00 AM - 8:00 AM": [],
-                "8:00 AM - 9:00 AM": [],
-                "9:00 AM - 10:00 AM": [],
-                "10:00 AM - 11:00 AM": [],
-                "1:00 PM - 2:00 PM": [],
-                "2:00 PM - 3:00 PM": [],
-                "3:00 PM - 4:00 PM": [],
-                "4:00 PM - 5:00 PM": [],
-                "5:00 PM - 6:00 PM": []
-            },
-            "Customized Plate": {
-                "7:00 AM - 8:00 AM": [],
-                "8:00 AM - 9:00 AM": [],
-                "9:00 AM - 10:00 AM": [],
-                "10:00 AM - 11:00 AM": [],
-                "1:00 PM - 2:00 PM": [],
-                "2:00 PM - 3:00 PM": [],
-                "3:00 PM - 4:00 PM": [],
-                "4:00 PM - 5:00 PM": [],
-                "5:00 PM - 6:00 PM": []
-            },
-            "Signage": {
-                "7:00 AM - 8:00 AM": [],
-                "8:00 AM - 9:00 AM": [],
-                "9:00 AM - 10:00 AM": [],
-                "10:00 AM - 11:00 AM": [],
-                "1:00 PM - 2:00 PM": [],
-                "2:00 PM - 3:00 PM": [],
-                "3:00 PM - 4:00 PM": [],
-                "4:00 PM - 5:00 PM": [],
-                "5:00 PM - 6:00 PM": []
-            }
-        }
-        window.onload = function() {
-            var servicesSel = document.getElementById("services_u");
-            var timeSel = document.getElementById("time_u");
-            for (var x in services) {
-                servicesSel.options[servicesSel.options.length] = new Option(x, x);
-            }
-            servicesSel.onchange = function() {
-                timeSel.length = 1;
-                //display correct values
-                for (var y in services[this.value]) {
-                    timeSel.options[timeSel.options.length] = new Option(y, y);
-                }
-            }
-            timeSel.onchange = function() {
-                //display correct values
-                var z = services[servicesSel.value][this.value];
-                for (var i = 0; i < z.length; i++) {
-                    chapterSel.options[chapterSel.options.length] = new Option(z[i], z[i]);
-                }
-            }
-        }
-    </script> -->
 </body>
 
 </html>
