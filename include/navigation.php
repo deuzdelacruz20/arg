@@ -93,12 +93,21 @@
 
 
   <script>
-    var selector = '.nav li';
 
-    $(selector).on('click', function() {
-      $(selector).removeClass('active');
-      $(this).addClass('active');
-    });
+const menuItem = document.querySelectorAll('.nav-link a');
+
+menuItem.forEach(el => {
+  // current
+  
+  if (el.getAttribute('href').substr(5, el.getAttribute('href').length) === window.location.pathname) {
+    
+    el.closest("li").classList.add("active")
+  }
+
+  
+})
+    
+
   </script>
 </body>
 
