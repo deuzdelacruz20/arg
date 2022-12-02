@@ -405,7 +405,16 @@ include '../backend/database.php';
                                         <td><?php echo $row["user_status"]; ?></td>
                                         <td>
                                             <a href="#editEmployeeModal" class="edit" data-toggle="modal">
-                                                <i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-firstName="<?php echo $row["firstName"]; ?>" data-lastName="<?php echo $row["lastName"]; ?>" data-phoneNumber="<?php echo $row["phoneNumber"]; ?>" data-date="<?php echo $row["date"]; ?>" data-services="<?php echo $row["services"]; ?>" data-time="<?php echo $row["time"]; ?>" title="Edit">&#xE254;</i>
+                                                <i class="material-icons update" data-toggle="tooltip" 
+                                                data-id="<?php echo $row["id"]; ?>" 
+                                                data-firstName="<?php echo $row["firstName"]; ?>" 
+                                                data-lastName="<?php echo $row["lastName"]; ?>" 
+                                                data-phoneNumber="<?php echo $row["phoneNumber"]; ?>" 
+                                                data-date="<?php echo $row["date"]; ?>" 
+                                                data-services="<?php echo $row["services"]; ?>" 
+                                                data-time="<?php echo $row["time"]; ?>" 
+                                                data-user_status="<?php echo $row["user_status"]; ?>" 
+                                                title="Edit">&#xE254;</i>
                                             </a>
                                             <a href="#deleteEmployeeModal" class="delete" data-id="<?php echo $row["id"]; ?>" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                                         </td>
@@ -609,6 +618,14 @@ include '../backend/database.php';
                     </div>
                     <div class="modal-body">
                         <input type="hidden" id="id_u" name="id" class="form-control" required>
+                        <div class="form-group">
+                            <label>STATUS</label>
+                            <select class="form-control" name="user_status" id="user_status">
+                                <option value="Pending" selected>Pending</option>
+                                <option value="Active">Active</option>
+                                <option value="Reject">Reject</option>
+                            </select>
+                        </div>
                         <div class="form-group">
                             <label>FIRST NAME</label>
                             <input type="text" id="firstName_u" name="firstName" class="form-control" required>

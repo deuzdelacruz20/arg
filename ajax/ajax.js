@@ -36,11 +36,17 @@ $(document).on('click', '.update', function (e) {
 	var date = $(this).attr("data-date");
 	var services = $(this).attr("data-services");
 	var time = $(this).attr("data-time");
+	var user_status = $(this).attr("data-user_status");
+
 	$('#id_u').val(id);
 	$('#firstName_u').val(firstName);
 	$('#lastName_u').val(lastName);
 	$('#phoneNumber_u').val(phoneNumber);
 	$('#date_u').val(date);
+	$('#inputTime_u').val(time);
+	$('#inputServices_u').val(services);
+	
+	$('#user_status').val(user_status);
 
 	var services_u = $('#services_u'),
 		$time_u = $('#time_u'),
@@ -52,19 +58,13 @@ $(document).on('click', '.update', function (e) {
 		}
 	});
 
-
-
-
-
-
 	$('#time_u option').each(function () {
 		if ($(this).text() == time) {
 			$(this).prop("selected", true);
 		}
 	});
 
-	$('#inputTime_u').val(time);
-	$('#inputServices_u').val(services);
+
 
 
 

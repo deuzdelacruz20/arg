@@ -28,13 +28,16 @@ if (count($_POST) > 0) {
 		$date = $_POST['date'];
 		$services = $_POST['inputServices_u'];
 		$time = $_POST['inputTime_u'];
+		$user_status = $_POST['user_status'];
+
 		$sql = "UPDATE `customer_request` SET 
 		`firstName`='$firstName',
 		`lastName`='$lastName',
 		`phoneNumber`='$phoneNumber',
 		`date`='$date',
 		`services`='$services',
-		`time`='$time'
+		`time`='$time',
+		`user_status`='$user_status'
 		WHERE id=$id";
 
 		if (mysqli_query($conn, $sql)) {
