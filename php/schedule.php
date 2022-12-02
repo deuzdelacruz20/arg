@@ -36,7 +36,8 @@ include '../backend/database.php';
             white-space: nowrap;
         }
 
-        table thead, tbody {
+        table thead,
+        tbody {
             display: table;
             width: 100%;
         }
@@ -45,7 +46,7 @@ include '../backend/database.php';
 </head>
 
 <body>
-    <div class="container" style="width: 100%;">
+    <!-- <div class="container" style="width: 100%;">
         <p id="success"></p>
         <div class="table-wrapper">
             <div class="table-title">
@@ -98,17 +99,10 @@ include '../backend/database.php';
                             <td><?php echo $row["date"]; ?></td>
                             <td><?php echo $row["services"]; ?></td>
                             <td><?php echo $row["time"]; ?></td>
+                            <td><?php echo $row["user_status"]; ?></td>
                             <td>
                                 <a href="#editEmployeeModal" class="edit" data-toggle="modal">
-                                    <i class="material-icons update" data-toggle="tooltip" 
-                                    data-id="<?php echo $row["id"]; ?>" 
-                                    data-firstName="<?php echo $row["firstName"]; ?>" 
-                                    data-lastName="<?php echo $row["lastName"]; ?>" 
-                                    data-phoneNumber="<?php echo $row["phoneNumber"]; ?>" 
-                                    data-date="<?php echo $row["date"]; ?>" 
-                                    data-services="<?php echo $row["services"]; ?>" 
-                                    data-time="<?php echo $row["time"]; ?>" 
-                                    title="Edit">&#xE254;</i>
+                                    <i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-firstName="<?php echo $row["firstName"]; ?>" data-lastName="<?php echo $row["lastName"]; ?>" data-phoneNumber="<?php echo $row["phoneNumber"]; ?>" data-date="<?php echo $row["date"]; ?>" data-services="<?php echo $row["services"]; ?>" data-time="<?php echo $row["time"]; ?>" title="Edit">&#xE254;</i>
                                 </a>
                                 <a href="#deleteEmployeeModal" class="delete" data-id="<?php echo $row["id"]; ?>" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                             </td>
@@ -121,6 +115,400 @@ include '../backend/database.php';
 
         </div>
     </div>
+
+    <div class="container" style="width: 100%;">
+        <p id="success"></p>
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h2><b>SCHEDULES</b></h2>
+                    </div>
+                    <div class="col-sm-6">
+                        <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
+                        <a href="JavaScript:void(0);" class="btn btn-danger" id="delete_multiple"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            <span class="custom-checkbox">
+                                <input type="checkbox" id="selectAll">
+                                <label for="selectAll"></label>
+                            </span>
+                        </th>
+                        <th>ID</th>
+                        <th>FIRST NAME</th>
+                        <th>LAST NAME</th>
+                        <th>PHONE NUMBER</th>
+                        <th>DATE</th>
+                        <th>SERVICES</th>
+                        <th>TIMESLOT</th>
+                        <th>ACTION</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <?php
+                    $result = mysqli_query($conn, "SELECT * FROM customer_request WHERE user_status = 'Pending'");
+                    while ($row = mysqli_fetch_array($result)) {
+                    ?>
+                        <tr id="<?php echo $row["id"]; ?>">
+                            <td>
+                                <span class="custom-checkbox">
+                                    <input type="checkbox" class="user_checkbox" data-user-id="<?php echo $row["id"]; ?>">
+                                    <label for="checkbox2"></label>
+                                </span>
+                            </td>
+                            <td><?php echo $row["id"]; ?></td>
+                            <td><?php echo $row["firstName"]; ?></td>
+                            <td><?php echo $row["lastName"]; ?></td>
+                            <td><?php echo $row["phoneNumber"]; ?></td>
+                            <td><?php echo $row["date"]; ?></td>
+                            <td><?php echo $row["services"]; ?></td>
+                            <td><?php echo $row["time"]; ?></td>
+                            <td><?php echo $row["user_status"]; ?></td>
+                            <td>
+                                <a href="#editEmployeeModal" class="edit" data-toggle="modal">
+                                    <i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-firstName="<?php echo $row["firstName"]; ?>" data-lastName="<?php echo $row["lastName"]; ?>" data-phoneNumber="<?php echo $row["phoneNumber"]; ?>" data-date="<?php echo $row["date"]; ?>" data-services="<?php echo $row["services"]; ?>" data-time="<?php echo $row["time"]; ?>" title="Edit">&#xE254;</i>
+                                </a>
+                                <a href="#deleteEmployeeModal" class="delete" data-id="<?php echo $row["id"]; ?>" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                            </td>
+                        </tr>
+                    <?php
+                    }
+                    ?>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+    <div class="container" style="width: 100%;">
+        <p id="success"></p>
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h2><b>SCHEDULES</b></h2>
+                    </div>
+                    <div class="col-sm-6">
+                        <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
+                        <a href="JavaScript:void(0);" class="btn btn-danger" id="delete_multiple"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            <span class="custom-checkbox">
+                                <input type="checkbox" id="selectAll">
+                                <label for="selectAll"></label>
+                            </span>
+                        </th>
+                        <th>ID</th>
+                        <th>FIRST NAME</th>
+                        <th>LAST NAME</th>
+                        <th>PHONE NUMBER</th>
+                        <th>DATE</th>
+                        <th>SERVICES</th>
+                        <th>TIMESLOT</th>
+                        <th>ACTION</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <?php
+                    $result = mysqli_query($conn, "SELECT * FROM customer_request WHERE user_status = 'Active'");
+                    while ($row = mysqli_fetch_array($result)) {
+                    ?>
+                        <tr id="<?php echo $row["id"]; ?>">
+                            <td>
+                                <span class="custom-checkbox">
+                                    <input type="checkbox" class="user_checkbox" data-user-id="<?php echo $row["id"]; ?>">
+                                    <label for="checkbox2"></label>
+                                </span>
+                            </td>
+                            <td><?php echo $row["id"]; ?></td>
+                            <td><?php echo $row["firstName"]; ?></td>
+                            <td><?php echo $row["lastName"]; ?></td>
+                            <td><?php echo $row["phoneNumber"]; ?></td>
+                            <td><?php echo $row["date"]; ?></td>
+                            <td><?php echo $row["services"]; ?></td>
+                            <td><?php echo $row["time"]; ?></td>
+                            <td><?php echo $row["user_status"]; ?></td>
+                            <td>
+                                <a href="#editEmployeeModal" class="edit" data-toggle="modal">
+                                    <i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-firstName="<?php echo $row["firstName"]; ?>" data-lastName="<?php echo $row["lastName"]; ?>" data-phoneNumber="<?php echo $row["phoneNumber"]; ?>" data-date="<?php echo $row["date"]; ?>" data-services="<?php echo $row["services"]; ?>" data-time="<?php echo $row["time"]; ?>" title="Edit">&#xE254;</i>
+                                </a>
+                                <a href="#deleteEmployeeModal" class="delete" data-id="<?php echo $row["id"]; ?>" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                            </td>
+                        </tr>
+                    <?php
+                    }
+                    ?>
+                </tbody>
+            </table>
+
+        </div>
+    </div> -->
+
+    <div class="container" style="background-color: white; border-radius:10px; width: 97%; height: 97%; overflow: auto;">
+        <!-- width: 98%; height: 750px; -->
+        <ul class="nav nav-tabs">
+            <li><a href="#home">All</a></li>
+            <li><a href="#template1">Pending</a></li>
+            <li><a href="#template2">Active</a></li>
+
+        </ul>
+
+        <div class="tab-content">
+            <div id="home" class="tab-pane fade in active">
+                <h3> </h3>
+                <?php
+                $result = mysqli_query($conn, "SELECT * FROM customer_request");
+                while ($row = mysqli_fetch_array($result)) {
+                ?>
+                    <div class="container" style="width: 100%;">
+                        <p id="success"></p>
+                        <div class="table-wrapper">
+                            <div class="table-title">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <h2><b>SCHEDULES</b></h2>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
+                                        <a href="JavaScript:void(0);" class="btn btn-danger" id="delete_multiple"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <table class="table table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <span class="custom-checkbox">
+                                                <input type="checkbox" id="selectAll">
+                                                <label for="selectAll"></label>
+                                            </span>
+                                        </th>
+                                        <th>ID</th>
+                                        <th>FIRST NAME</th>
+                                        <th>LAST NAME</th>
+                                        <th>PHONE NUMBER</th>
+                                        <th>DATE</th>
+                                        <th>SERVICES</th>
+                                        <th>TIMESLOT</th>
+                                        <th>STATUS</th>
+                                        <th>ACTION</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <?php
+                                    $result = mysqli_query($conn, "SELECT * FROM customer_request");
+                                    while ($row = mysqli_fetch_array($result)) {
+                                    ?>
+                                        <tr id="<?php echo $row["id"]; ?>">
+                                            <td>
+                                                <span class="custom-checkbox">
+                                                    <input type="checkbox" class="user_checkbox" data-user-id="<?php echo $row["id"]; ?>">
+                                                    <label for="checkbox2"></label>
+                                                </span>
+                                            </td>
+                                            <td><?php echo $row["id"]; ?></td>
+                                            <td><?php echo $row["firstName"]; ?></td>
+                                            <td><?php echo $row["lastName"]; ?></td>
+                                            <td><?php echo $row["phoneNumber"]; ?></td>
+                                            <td><?php echo $row["date"]; ?></td>
+                                            <td><?php echo $row["services"]; ?></td>
+                                            <td><?php echo $row["time"]; ?></td>
+                                            <td><?php echo $row["user_status"]; ?></td>
+                                            <td>
+                                                <a href="#editEmployeeModal" class="edit" data-toggle="modal">
+                                                    <i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-firstName="<?php echo $row["firstName"]; ?>" data-lastName="<?php echo $row["lastName"]; ?>" data-phoneNumber="<?php echo $row["phoneNumber"]; ?>" data-date="<?php echo $row["date"]; ?>" data-services="<?php echo $row["services"]; ?>" data-time="<?php echo $row["time"]; ?>" title="Edit">&#xE254;</i>
+                                                </a>
+                                                <a href="#deleteEmployeeModal" class="delete" data-id="<?php echo $row["id"]; ?>" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                            </td>
+                                        </tr>
+                                    <?php
+                                    }
+                                    ?>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                <?php
+                }
+                ?>
+            </div>
+            <div id="template1" class="tab-pane fade">
+                <h3> </h3>
+                <div class="container" style="width: 100%;">
+                    <p id="success"></p>
+                    <div class="table-wrapper">
+                        <div class="table-title">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <h2><b>SCHEDULES</b></h2>
+                                </div>
+                                <div class="col-sm-6">
+                                    <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
+                                    <a href="JavaScript:void(0);" class="btn btn-danger" id="delete_multiple"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <table class="table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <span class="custom-checkbox">
+                                            <input type="checkbox" id="selectAll">
+                                            <label for="selectAll"></label>
+                                        </span>
+                                    </th>
+                                    <th>ID</th>
+                                    <th>FIRST NAME</th>
+                                    <th>LAST NAME</th>
+                                    <th>PHONE NUMBER</th>
+                                    <th>DATE</th>
+                                    <th>SERVICES</th>
+                                    <th>TIMESLOT</th>
+                                    <th>STATUS</th>
+                                    <th>ACTION</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <?php
+                                $result = mysqli_query($conn, "SELECT * FROM customer_request WHERE user_status = 'Pending'");
+                                while ($row = mysqli_fetch_array($result)) {
+                                ?>
+                                    <tr id="<?php echo $row["id"]; ?>">
+                                        <td>
+                                            <span class="custom-checkbox">
+                                                <input type="checkbox" class="user_checkbox" data-user-id="<?php echo $row["id"]; ?>">
+                                                <label for="checkbox2"></label>
+                                            </span>
+                                        </td>
+                                        <td><?php echo $row["id"]; ?></td>
+                                        <td><?php echo $row["firstName"]; ?></td>
+                                        <td><?php echo $row["lastName"]; ?></td>
+                                        <td><?php echo $row["phoneNumber"]; ?></td>
+                                        <td><?php echo $row["date"]; ?></td>
+                                        <td><?php echo $row["services"]; ?></td>
+                                        <td><?php echo $row["time"]; ?></td>
+                                        <td><?php echo $row["user_status"]; ?></td>
+                                        <td>
+                                            <a href="#editEmployeeModal" class="edit" data-toggle="modal">
+                                                <i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-firstName="<?php echo $row["firstName"]; ?>" data-lastName="<?php echo $row["lastName"]; ?>" data-phoneNumber="<?php echo $row["phoneNumber"]; ?>" data-date="<?php echo $row["date"]; ?>" data-services="<?php echo $row["services"]; ?>" data-time="<?php echo $row["time"]; ?>" title="Edit">&#xE254;</i>
+                                            </a>
+                                            <a href="#deleteEmployeeModal" class="delete" data-id="<?php echo $row["id"]; ?>" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                        </td>
+                                    </tr>
+                                <?php
+                                }
+                                ?>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+            <div id="template2" class="tab-pane fade">
+                <div class="container" style="width: 100%;">
+                    <p id="success"></p>
+                    <div class="table-wrapper">
+                        <div class="table-title">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <h2><b>SCHEDULES</b></h2>
+                                </div>
+                                <div class="col-sm-6">
+                                    <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
+                                    <a href="JavaScript:void(0);" class="btn btn-danger" id="delete_multiple"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <table class="table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <span class="custom-checkbox">
+                                            <input type="checkbox" id="selectAll">
+                                            <label for="selectAll"></label>
+                                        </span>
+                                    </th>
+                                    <th>ID</th>
+                                    <th>FIRST NAME</th>
+                                    <th>LAST NAME</th>
+                                    <th>PHONE NUMBER</th>
+                                    <th>DATE</th>
+                                    <th>SERVICES</th>
+                                    <th>TIMESLOT</th>
+                                    <th>STATUS</th>
+                                    <th>ACTION</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <?php
+                                $result = mysqli_query($conn, "SELECT * FROM customer_request WHERE user_status = 'Active'");
+                                while ($row = mysqli_fetch_array($result)) {
+                                ?>
+                                    <tr id="<?php echo $row["id"]; ?>">
+                                        <td>
+                                            <span class="custom-checkbox">
+                                                <input type="checkbox" class="user_checkbox" data-user-id="<?php echo $row["id"]; ?>">
+                                                <label for="checkbox2"></label>
+                                            </span>
+                                        </td>
+                                        <td><?php echo $row["id"]; ?></td>
+                                        <td><?php echo $row["firstName"]; ?></td>
+                                        <td><?php echo $row["lastName"]; ?></td>
+                                        <td><?php echo $row["phoneNumber"]; ?></td>
+                                        <td><?php echo $row["date"]; ?></td>
+                                        <td><?php echo $row["services"]; ?></td>
+                                        <td><?php echo $row["time"]; ?></td>
+                                        <td><?php echo $row["user_status"]; ?></td>
+                                        <td>
+                                            <a href="#editEmployeeModal" class="edit" data-toggle="modal">
+                                                <i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-firstName="<?php echo $row["firstName"]; ?>" data-lastName="<?php echo $row["lastName"]; ?>" data-phoneNumber="<?php echo $row["phoneNumber"]; ?>" data-date="<?php echo $row["date"]; ?>" data-services="<?php echo $row["services"]; ?>" data-time="<?php echo $row["time"]; ?>" title="Edit">&#xE254;</i>
+                                            </a>
+                                            <a href="#deleteEmployeeModal" class="delete" data-id="<?php echo $row["id"]; ?>" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                        </td>
+                                    </tr>
+                                <?php
+                                }
+                                ?>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <hr>
+    </div>
+    <!-- TAB SCRIPT -->
+    <script>
+        $(document).ready(function() {
+            $(".nav-tabs a").click(function() {
+                $(this).tab('show');
+            });
+            // $('.nav-tabs a').on('shown.bs.tab', function(event) {
+            //   var x = $(event.target).text(); // active tab
+            //   var y = $(event.relatedTarget).text(); // previous tab
+            //   $(".act span").text(x);
+            //   $(".prev span").text(y);
+            // });
+        });
+    </script>
     <!-- Add Modal HTML -->
     <div id="addEmployeeModal" class="modal fade">
         <div class="modal-dialog">

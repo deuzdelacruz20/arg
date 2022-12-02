@@ -11,14 +11,15 @@ $(document).on('click', '#btn-add', function (e) {
 				$('#addEmployeeModal').modal('hide');
 				// alert('Data added successfully !');
 				Swal.fire(
-					'Data added successfully!',
+					'Good job!',
+					'You clicked the button!',
 					'success'
 				).then((result) => {
 					/* Read more about isConfirmed, isDenied below */
 					if (result.isConfirmed) {
 						location.reload();
 					}
-				  })
+				})
 				// 
 			}
 			else if (dataResult.statusCode == 201) {
