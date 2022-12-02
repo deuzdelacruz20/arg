@@ -259,14 +259,14 @@ include '../backend/database.php';
     <div class="container" style="background-color: white; border-radius:10px; width: 97%; height: 97%; overflow: auto;">
         <!-- width: 98%; height: 750px; -->
         <ul class="nav nav-tabs">
-            <li><a href="#home">All</a></li>
-            <li><a href="#template1">Pending</a></li>
-            <li><a href="#template2">Active</a></li>
+            <li><a href="#all">All</a></li>
+            <li><a href="#pending">Pending</a></li>
+            <li><a href="#active">Active</a></li>
 
         </ul>
 
         <div class="tab-content">
-            <div id="home" class="tab-pane fade in active">
+            <div id="all" class="tab-pane fade in active">
                 <h3> </h3>
                 <?php
                 $result = mysqli_query($conn, "SELECT * FROM customer_request");
@@ -346,7 +346,7 @@ include '../backend/database.php';
                 }
                 ?>
             </div>
-            <div id="template1" class="tab-pane fade">
+            <div id="pending" class="tab-pane fade">
                 <h3> </h3>
                 <div class="container" style="width: 100%;">
                     <p id="success"></p>
@@ -419,7 +419,7 @@ include '../backend/database.php';
                     </div>
                 </div>
             </div>
-            <div id="template2" class="tab-pane fade">
+            <div id="active" class="tab-pane fade">
                 <div class="container" style="width: 100%;">
                     <p id="success"></p>
                     <div class="table-wrapper">
