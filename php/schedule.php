@@ -261,7 +261,7 @@ include '../backend/database.php';
         <ul class="nav nav-tabs">
             <li><a href="#all">All</a></li>
             <li><a href="#pending">Pending</a></li>
-            <li><a href="#active">Active</a></li>
+            <li><a href="#accepted">Accepted</a></li>
 
         </ul>
 
@@ -428,7 +428,7 @@ include '../backend/database.php';
                     </div>
                 </div>
             </div>
-            <div id="active" class="tab-pane fade">
+            <div id="accepted" class="tab-pane fade">
                 <div class="container" style="width: 100%;">
                     <p id="success"></p>
                     <div class="table-wrapper">
@@ -466,7 +466,7 @@ include '../backend/database.php';
                             <tbody>
 
                                 <?php
-                                $result = mysqli_query($conn, "SELECT * FROM customer_request WHERE user_status = 'Active'");
+                                $result = mysqli_query($conn, "SELECT * FROM customer_request WHERE user_status = 'Accepted'");
                                 while ($row = mysqli_fetch_array($result)) {
                                 ?>
                                     <tr id="<?php echo $row["id"]; ?>">
@@ -511,7 +511,7 @@ include '../backend/database.php';
                 $(this).tab('show');
             });
             // $('.nav-tabs a').on('shown.bs.tab', function(event) {
-            //   var x = $(event.target).text(); // active tab
+            //   var x = $(event.target).text(); // accepted tab
             //   var y = $(event.relatedTarget).text(); // previous tab
             //   $(".act span").text(x);
             //   $(".prev span").text(y);
@@ -622,7 +622,7 @@ include '../backend/database.php';
                             <label>STATUS</label>
                             <select class="form-control" name="user_status" id="user_status">
                                 <option value="Pending" selected>Pending</option>
-                                <option value="Active">Active</option>
+                                <option value="Accepted">Accepted</option>
                                 <option value="Reject">Reject</option>
                             </select>
                         </div>
