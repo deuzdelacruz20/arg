@@ -9,7 +9,12 @@ $(document).on('click', '#btn-add', function (e) {
 	fd.append("itemStocks", $('#itemStocks').val());
 	fd.append("itemCategory", $('#itemCategory').val());
 
+	var itemName = $(this).attr("data-itemName");
 
+	$('#itemName_u').val(itemName);
+
+
+	
 	$.ajax({
 		data: fd,
 		type: "POST",

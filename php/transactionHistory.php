@@ -69,7 +69,7 @@ include '../backend/database.php';
                 <tbody>
 
                     <?php
-                    $result = mysqli_query($conn, "SELECT * FROM customer_request");
+                    $result = mysqli_query($conn, "SELECT * FROM customer_request ORDER BY date ASC");
                     while ($row = mysqli_fetch_array($result)) {
                     ?>
                         <tr id="<?php echo $row["id"]; ?>">

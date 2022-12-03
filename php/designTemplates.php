@@ -54,7 +54,7 @@ include '../backend/database.php';
 									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
 									<p>AVAILABLE STOCKS: <?php echo $row["itemStocks"]; ?></p>
 									<p>CATEGORY: <?php echo $row["itemCategory"]; ?></p>
-									<a href="#buyModal" data-id="<?php echo $row["id"]; ?>" data-toggle="modal">
+									<a href="#buyModal" data-id="<?php echo $row["id"]; ?>" data-itemName="<?php echo $row["itemName"]; ?>" data-toggle="modal">
 										<button class="btn btn-success" style="width: 100%; margin-bottom:10px;">Buy and Schedule Now</button>
 									</a>
 									<div class="row">
@@ -391,6 +391,10 @@ include '../backend/database.php';
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					</div>
 					<div class="modal-body">
+						<div class="form-group">
+							<label>ITEM NAME</label>
+							<input type="text" id="itemName" name="itemName" class="form-control" required>
+						</div>
 						<div class="form-group">
 							<label>FIRST NAME</label>
 							<input type="text" id="firstName" name="firstName" class="form-control" required>
