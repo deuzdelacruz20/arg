@@ -17,7 +17,7 @@ include '../backend/database.php';
 	<link rel="stylesheet" href="../css/style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="../ajax/ajaxDesign.js"></script>
+	<script src="../ajax/ajaxInventory.js"></script>
 
 	<style>
 		body {
@@ -29,14 +29,13 @@ include '../backend/database.php';
 
 <body>
 	<div class="container" style="background-color: white; border-radius:10px; width: 97%; height: 97%; overflow: auto;">
-		<!-- width: 98%; height: 750px; -->
 		<ul class="nav nav-tabs">
-			<li><a href="#home">All Templates</a></li>
+			<li><a href="#home">All Items</a></li>
 			<li><a href="#template1">Motorcycles</a></li>
 			<li><a href="#template2">Cars</a></li>
 			<li><a href="#template3">SUVs</a></li>
 			<li><a href="#template4">Vans</a></li>
-			<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal" style="float: right; margin-top:3px;"><span>Add New Design Template</span></a>
+			<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal" style="float: right; margin-top:3px;"><span>Add New Item</span></a>
 		</ul>
 
 		<div class="tab-content">
@@ -44,26 +43,25 @@ include '../backend/database.php';
 				<h3> </h3>
 				<div class="row">
 					<?php
-					$result = mysqli_query($conn, "SELECT * FROM design_templates");
+					$result = mysqli_query($conn, "SELECT * FROM inventory");
 					while ($row = mysqli_fetch_array($result)) {
 					?>
 						<div class="col-sm-6 col-md-4">
 							<div class="thumbnail" style="background-color:#E8E8E8;">
-								<img src="<?php echo '../image/' .  $row["designImage"] ?>" alt="..." style="height: 200px; width: 200px;">
+								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 242px; height:200px;">
 								<div class="caption">
-									<h3><?php echo $row["designName"]; ?></h3>
-									<p>PRICE: <?php echo $row["designPrice"]; ?></p>
-									<p>AVAILABLE STOCKS: <?php echo $row["designStocks"]; ?></p>
-									<p>CATEGORY: <?php echo $row["designCategory"]; ?></p>
-									<p style="text-align: center;">
-										<!-- <a href="#" class="btn btn-success" style="width: 100%;">Buy and Schedule now</a> -->
-										<a href="#buyModal" class="btn btn-success" data-toggle="modal" style="width: 100%;"><span>Buy and Schedule now</span></a>
-									</p>
+									<h3><?php echo $row["itemName"]; ?></h3>
+									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
+									<p>AVAILABLE STOCKS: <?php echo $row["itemStocks"]; ?></p>
+									<p>CATEGORY: <?php echo $row["itemCategory"]; ?></p>
+									<a href="#buyModal" data-id="<?php echo $row["id"]; ?>" data-toggle="modal">
+										<button class="btn btn-success" style="width: 100%; margin-bottom:10px;">Buy and Schedule Now</button>
+									</a>
 									<div class="row">
 										<div class="col-xs-6">
 											<a href="#editEmployeeModal" class="edit" data-toggle="modal">
 												<button class="btn btn-primary" style="width: 100%;">
-													<i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-designName="<?php echo $row["designName"]; ?>" data-designPrice="<?php echo $row["designPrice"]; ?>" data-designStocks="<?php echo $row["designStocks"]; ?>" data-designCategory="<?php echo $row["designCategory"]; ?>" title="Edit">&#xE254;</i>
+													<i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-itemName="<?php echo $row["itemName"]; ?>" data-itemPrice="<?php echo $row["itemPrice"]; ?>" data-itemStocks="<?php echo $row["itemStocks"]; ?>" data-itemCategory="<?php echo $row["itemCategory"]; ?>" title="Edit">&#xE254;</i>
 												</button>
 											</a>
 										</div>
@@ -88,17 +86,17 @@ include '../backend/database.php';
 				<h3> </h3>
 				<div class="row">
 					<?php
-					$result = mysqli_query($conn, "SELECT * FROM design_templates WHERE designCategory = 'Motorcycles';");
+					$result = mysqli_query($conn, "SELECT * FROM inventory WHERE itemCategory = 'Motorcycles';");
 					while ($row = mysqli_fetch_array($result)) {
 					?>
 						<div class="col-sm-6 col-md-4">
 							<div class="thumbnail" style="background-color:#E8E8E8;">
-								<img src="<?php echo '../image/' .  $row["designImage"] ?>" alt="..." style="max-width: 242px; max-height:200px;">
+								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 242px; height:200px;">
 								<div class="caption">
-									<h3><?php echo $row["designName"]; ?></h3>
-									<p>PRICE: <?php echo $row["designPrice"]; ?></p>
-									<p>AVAILABLE STOCKS: <?php echo $row["designStocks"]; ?></p>
-									<p>CATEGORY: <?php echo $row["designCategory"]; ?></p>
+									<h3><?php echo $row["itemName"]; ?></h3>
+									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
+									<p>AVAILABLE STOCKS: <?php echo $row["itemStocks"]; ?></p>
+									<p>CATEGORY: <?php echo $row["itemCategory"]; ?></p>
 									<p style="text-align: center;">
 										<a href="#" class="btn btn-success" style="width: 100%;">Buy and Schedule now</a>
 									</p>
@@ -106,7 +104,7 @@ include '../backend/database.php';
 										<div class="col-xs-6">
 											<a href="#editEmployeeModal" class="edit" data-toggle="modal">
 												<button class="btn btn-primary" style="width: 100%;">
-													<i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-designName="<?php echo $row["designName"]; ?>" data-designPrice="<?php echo $row["designPrice"]; ?>" data-designStocks="<?php echo $row["designStocks"]; ?>" data-designCategory="<?php echo $row["designCategory"]; ?>" title="Edit">&#xE254;</i>
+													<i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-itemName="<?php echo $row["itemName"]; ?>" data-itemPrice="<?php echo $row["itemPrice"]; ?>" data-itemStocks="<?php echo $row["itemStocks"]; ?>" data-itemCategory="<?php echo $row["itemCategory"]; ?>" title="Edit">&#xE254;</i>
 												</button>
 											</a>
 										</div>
@@ -130,17 +128,17 @@ include '../backend/database.php';
 			<div id="template2" class="tab-pane fade">
 				<div class="row">
 					<?php
-					$result = mysqli_query($conn, "SELECT * FROM design_templates WHERE designCategory = 'Cars';");
+					$result = mysqli_query($conn, "SELECT * FROM inventory WHERE itemCategory = 'Cars';");
 					while ($row = mysqli_fetch_array($result)) {
 					?>
 						<div class="col-sm-6 col-md-4">
 							<div class="thumbnail" style="background-color:#E8E8E8;">
-								<img src="<?php echo '../image/' .  $row["designImage"] ?>" alt="..." style="max-width: 242px; max-height:200px;">
+								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 242px; height:200px;">
 								<div class="caption">
-									<h3><?php echo $row["designName"]; ?></h3>
-									<p>PRICE: <?php echo $row["designPrice"]; ?></p>
-									<p>AVAILABLE STOCKS: <?php echo $row["designStocks"]; ?></p>
-									<p>CATEGORY: <?php echo $row["designCategory"]; ?></p>
+									<h3><?php echo $row["itemName"]; ?></h3>
+									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
+									<p>AVAILABLE STOCKS: <?php echo $row["itemStocks"]; ?></p>
+									<p>CATEGORY: <?php echo $row["itemCategory"]; ?></p>
 									<p style="text-align: center;">
 										<a href="#" class="btn btn-success" style="width: 100%;">Buy and Schedule now</a>
 									</p>
@@ -148,7 +146,7 @@ include '../backend/database.php';
 										<div class="col-xs-6">
 											<a href="#editEmployeeModal" class="edit" data-toggle="modal">
 												<button class="btn btn-primary" style="width: 100%;">
-													<i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-designName="<?php echo $row["designName"]; ?>" data-designPrice="<?php echo $row["designPrice"]; ?>" data-designStocks="<?php echo $row["designStocks"]; ?>" data-designCategory="<?php echo $row["designCategory"]; ?>" title="Edit">&#xE254;</i>
+													<i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-itemName="<?php echo $row["itemName"]; ?>" data-itemPrice="<?php echo $row["itemPrice"]; ?>" data-itemStocks="<?php echo $row["itemStocks"]; ?>" data-itemCategory="<?php echo $row["itemCategory"]; ?>" title="Edit">&#xE254;</i>
 												</button>
 											</a>
 										</div>
@@ -172,17 +170,17 @@ include '../backend/database.php';
 			<div id="template3" class="tab-pane fade">
 				<div class="row">
 					<?php
-					$result = mysqli_query($conn, "SELECT * FROM design_templates WHERE designCategory = 'SUVs';");
+					$result = mysqli_query($conn, "SELECT * FROM inventory WHERE itemCategory = 'SUVs';");
 					while ($row = mysqli_fetch_array($result)) {
 					?>
 						<div class="col-sm-6 col-md-4">
 							<div class="thumbnail" style="background-color:#E8E8E8;">
-								<img src="<?php echo '../image/' .  $row["designImage"] ?>" alt="..." style="max-width: 242px; max-height:200px;">
+								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 242px; height:200px;">
 								<div class="caption">
-									<h3><?php echo $row["designName"]; ?></h3>
-									<p>PRICE: <?php echo $row["designPrice"]; ?></p>
-									<p>AVAILABLE STOCKS: <?php echo $row["designStocks"]; ?></p>
-									<p>CATEGORY: <?php echo $row["designCategory"]; ?></p>
+									<h3><?php echo $row["itemName"]; ?></h3>
+									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
+									<p>AVAILABLE STOCKS: <?php echo $row["itemStocks"]; ?></p>
+									<p>CATEGORY: <?php echo $row["itemCategory"]; ?></p>
 									<p style="text-align: center;">
 										<a href="#" class="btn btn-success" style="width: 100%;">Buy and Schedule now</a>
 									</p>
@@ -190,7 +188,7 @@ include '../backend/database.php';
 										<div class="col-xs-6">
 											<a href="#editEmployeeModal" class="edit" data-toggle="modal">
 												<button class="btn btn-primary" style="width: 100%;">
-													<i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-designName="<?php echo $row["designName"]; ?>" data-designPrice="<?php echo $row["designPrice"]; ?>" data-designStocks="<?php echo $row["designStocks"]; ?>" data-designCategory="<?php echo $row["designCategory"]; ?>" title="Edit">&#xE254;</i>
+													<i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-itemName="<?php echo $row["itemName"]; ?>" data-itemPrice="<?php echo $row["itemPrice"]; ?>" data-itemStocks="<?php echo $row["itemStocks"]; ?>" data-itemCategory="<?php echo $row["itemCategory"]; ?>" title="Edit">&#xE254;</i>
 												</button>
 											</a>
 										</div>
@@ -214,17 +212,17 @@ include '../backend/database.php';
 			<div id="template4" class="tab-pane fade">
 				<div class="row">
 					<?php
-					$result = mysqli_query($conn, "SELECT * FROM design_templates WHERE designCategory = 'Vans';");
+					$result = mysqli_query($conn, "SELECT * FROM inventory WHERE itemCategory = 'Vans';");
 					while ($row = mysqli_fetch_array($result)) {
 					?>
 						<div class="col-sm-6 col-md-4">
 							<div class="thumbnail" style="background-color:#E8E8E8;">
-								<img src="<?php echo '../image/' .  $row["designImage"] ?>" alt="..." style="max-width: 242px; max-height:200px;">
+								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 242px; height:200px;">
 								<div class="caption">
-									<h3><?php echo $row["designName"]; ?></h3>
-									<p>PRICE: <?php echo $row["designPrice"]; ?></p>
-									<p>AVAILABLE STOCKS: <?php echo $row["designStocks"]; ?></p>
-									<p>CATEGORY: <?php echo $row["designCategory"]; ?></p>
+									<h3><?php echo $row["itemName"]; ?></h3>
+									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
+									<p>AVAILABLE STOCKS: <?php echo $row["itemStocks"]; ?></p>
+									<p>CATEGORY: <?php echo $row["itemCategory"]; ?></p>
 									<p style="text-align: center;">
 										<a href="#" class="btn btn-success" style="width: 100%;">Buy and Schedule now</a>
 									</p>
@@ -232,7 +230,7 @@ include '../backend/database.php';
 										<div class="col-xs-6">
 											<a href="#editEmployeeModal" class="edit" data-toggle="modal">
 												<button class="btn btn-primary" style="width: 100%;">
-													<i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-designName="<?php echo $row["designName"]; ?>" data-designPrice="<?php echo $row["designPrice"]; ?>" data-designStocks="<?php echo $row["designStocks"]; ?>" data-designCategory="<?php echo $row["designCategory"]; ?>" title="Edit">&#xE254;</i>
+													<i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-itemName="<?php echo $row["itemName"]; ?>" data-itemPrice="<?php echo $row["itemPrice"]; ?>" data-itemStocks="<?php echo $row["itemStocks"]; ?>" data-itemCategory="<?php echo $row["itemCategory"]; ?>" title="Edit">&#xE254;</i>
 												</button>
 											</a>
 										</div>
@@ -277,29 +275,29 @@ include '../backend/database.php';
 			<div class="modal-content">
 				<form id="user_form">
 					<div class="modal-header">
-						<h4 class="modal-title">Add New Design Template</h4>
+						<h4 class="modal-title">Add New Item Template</h4>
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					</div>
 					<div class="modal-body">
 						<div class="form-group">
-							<label for="designImage" class="form-label">UPLOAD IMAGE</label>
-							<input class="form-control" type="file" id="designImage" name="designImage" />
+							<label for="inventoryImage" class="form-label">UPLOAD IMAGE</label>
+							<input class="form-control" type="file" id="inventoryImage" name="inventoryImage" />
 						</div>
 						<div class="form-group">
-							<label>DESIGN NAME</label>
-							<input type="text" id="designName" name="designName" class="form-control" required>
+							<label>ITEM NAME</label>
+							<input type="text" id="itemName" name="itemName" class="form-control" required>
 						</div>
 						<div class="form-group">
 							<label>PRICE</label>
-							<input type="number" id="designPrice" name="designPrice" class="form-control" required>
+							<input type="number" id="itemPrice" name="itemPrice" class="form-control" required>
 						</div>
 						<div class="form-group">
 							<label>STOCKS</label>
-							<input type="number" id="designStocks" name="designStocks" class="form-control" required>
+							<input type="number" id="itemStocks" name="itemStocks" class="form-control" required>
 						</div>
 						<div class="form-group">
 							<label>CATEGORY</label>
-							<select name="designCategory" id="designCategory" class="form-control">
+							<select name="itemCategory" id="itemCategory" class="form-control">
 								<option value="" selected="selected" disabled style="text-align: center;">-SELECT CATEGORY-</option>
 								<option value="Motorcycles">Motorcycles</option>
 								<option value="Cars">Cars</option>
@@ -323,26 +321,26 @@ include '../backend/database.php';
 			<div class="modal-content">
 				<form id="update_form">
 					<div class="modal-header">
-						<h4 class="modal-title">Edit Design Template</h4>
+						<h4 class="modal-title">Edit Item</h4>
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					</div>
 					<div class="modal-body">
 						<input type="hidden" id="id_u" name="id" class="form-control" required>
 						<div class="form-group">
-							<label>DESIGN NAME</label>
-							<input type="text" id="designName_u" name="designName" class="form-control" required>
+							<label>ITEM NAME</label>
+							<input type="text" id="itemName_u" name="itemName" class="form-control" required>
 						</div>
 						<div class="form-group">
 							<label>PRICE</label>
-							<input type="number" id="designPrice_u" name="designPrice" class="form-control" required>
+							<input type="number" id="itemPrice_u" name="itemPrice" class="form-control" required>
 						</div>
 						<div class="form-group">
 							<label>STOCKS</label>
-							<input type="number" id="designStocks_u" name="designStocks" class="form-control" required>
+							<input type="number" id="itemStocks_u" name="itemStocks" class="form-control" required>
 						</div>
 						<div class="form-group">
 							<label>CATEGORY</label>
-							<select name="designCategory" id="designCategory_u" class="form-control">
+							<select name="itemCategory" id="itemCategory_u" class="form-control">
 								<option value="" selected="selected" disabled style="text-align: center;">-SELECT CATEGORY-</option>
 								<option value="Motorcycles">Motorcycles</option>
 								<option value="Cars">Cars</option>
@@ -383,7 +381,7 @@ include '../backend/database.php';
 			</div>
 		</div>
 	</div>
-	<!-- Buy Modal HTML -->
+	<!-- BUY MODAL -->
 	<div id="buyModal" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
