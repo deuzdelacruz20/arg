@@ -723,8 +723,8 @@ include '../backend/database.php';
                             <label>STATUS</label>
                             <select class="form-control" name="user_status" id="user_status">
                                 <option value="Pending" selected>Pending</option>
-                                <option value="Accepted">Accepted</option>
-                                <option value="Rejected">Rejected</option>
+                                <option value="Accepted">Accept</option>
+                                <option value="Rejected">Reject</option>
                             </select>
                         </div>
                         <div class="form-group">

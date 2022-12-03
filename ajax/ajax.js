@@ -11,8 +11,8 @@ $(document).on('click', '#btn-add', function (e) {
 				$('#addEmployeeModal').modal('hide');
 				// alert('Data added successfully !');
 				Swal.fire(
-					'Good job!',
-					'You clicked the button!',
+					'Success!',
+					'Data added succesfully!',
 					'success'
 				).then((result) => {
 					/* Read more about isConfirmed, isDenied below */
@@ -20,7 +20,6 @@ $(document).on('click', '#btn-add', function (e) {
 						location.reload();
 					}
 				})
-				// 
 			}
 			else if (dataResult.statusCode == 201) {
 				alert(dataResult);
@@ -45,7 +44,7 @@ $(document).on('click', '.update', function (e) {
 	$('#date_u').val(date);
 	$('#inputTime_u').val(time);
 	$('#inputServices_u').val(services);
-	
+
 	$('#user_status').val(user_status);
 
 	var services_u = $('#services_u'),
@@ -63,13 +62,6 @@ $(document).on('click', '.update', function (e) {
 			$(this).prop("selected", true);
 		}
 	});
-
-
-
-
-
-
-
 
 });
 // <!-- Update -->
