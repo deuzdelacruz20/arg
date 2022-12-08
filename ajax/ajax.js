@@ -75,8 +75,17 @@ $(document).on('click', '#update', function (e) {
 			var dataResult = JSON.parse(dataResult);
 			if (dataResult.statusCode == 200) {
 				$('#editEmployeeModal').modal('hide');
-				alert('Data updated successfully !');
-				location.reload();
+				// alert('Data added successfully !');
+				Swal.fire(
+					'Updated!',
+					'Data updated succesfully!',
+					'success'
+				).then((result) => {
+					/* Read more about isConfirmed, isDenied below */
+					if (result.isConfirmed) {
+						location.reload();
+					}
+				})
 			}
 			else if (dataResult.statusCode == 201) {
 				alert(dataResult);
