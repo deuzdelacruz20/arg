@@ -269,10 +269,6 @@ include '../backend/database.php';
         <div class="tab-content">
             <div id="all" class="tab-pane fade in active">
                 <h3> </h3>
-                <?php
-                $result = mysqli_query($conn, "SELECT * FROM customer_request");
-                while ($row = mysqli_fetch_array($result)) {
-                ?>
                     <div class="container" style="width: 100%;">
                         <p id="success"></p>
                         <div class="table-wrapper">
@@ -310,7 +306,7 @@ include '../backend/database.php';
                                 <tbody>
 
                                     <?php
-                                    $result = mysqli_query($conn, "SELECT * FROM customer_request ORDER BY date ASC");
+                                    $result = mysqli_query($conn, "SELECT * FROM customer_request ORDER BY timestamp DESC");
                                     while ($row = mysqli_fetch_array($result)) {
                                     ?>
                                         <tr id="<?php echo $row["id"]; ?>">
@@ -330,16 +326,7 @@ include '../backend/database.php';
                                             <td><?php echo $row["user_status"]; ?></td>
                                             <td>
                                                 <a href="#editEmployeeModal" class="edit" data-toggle="modal">
-                                                    <i class="material-icons update" data-toggle="tooltip" 
-                                                    data-id="<?php echo $row["id"]; ?>" 
-                                                    data-firstName="<?php echo $row["firstName"]; ?>" 
-                                                    data-lastName="<?php echo $row["lastName"]; ?>" 
-                                                    data-phoneNumber="<?php echo $row["phoneNumber"]; ?>" 
-                                                    data-date="<?php echo $row["date"]; ?>" 
-                                                    data-services="<?php echo $row["services"]; ?>" 
-                                                    data-time="<?php echo $row["time"]; ?>" 
-                                                    data-user_status="<?php echo $row["user_status"]; ?>" 
-                                                    title="Edit">&#xE254;</i>
+                                                    <i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-firstName="<?php echo $row["firstName"]; ?>" data-lastName="<?php echo $row["lastName"]; ?>" data-phoneNumber="<?php echo $row["phoneNumber"]; ?>" data-date="<?php echo $row["date"]; ?>" data-services="<?php echo $row["services"]; ?>" data-time="<?php echo $row["time"]; ?>" data-user_status="<?php echo $row["user_status"]; ?>" title="Edit">&#xE254;</i>
                                                 </a>
                                                 <a href="#deleteEmployeeModal" class="delete" data-id="<?php echo $row["id"]; ?>" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                                             </td>
@@ -352,9 +339,6 @@ include '../backend/database.php';
 
                         </div>
                     </div>
-                <?php
-                }
-                ?>
             </div>
             <div id="pending" class="tab-pane fade">
                 <h3> </h3>
@@ -395,7 +379,7 @@ include '../backend/database.php';
                             <tbody>
 
                                 <?php
-                                $result = mysqli_query($conn, "SELECT * FROM customer_request WHERE user_status = 'Pending'");
+                                $result = mysqli_query($conn, "SELECT * FROM customer_request WHERE user_status = 'Pending' ORDER BY timestamp DESC");
                                 while ($row = mysqli_fetch_array($result)) {
                                 ?>
                                     <tr id="<?php echo $row["id"]; ?>">
@@ -415,16 +399,7 @@ include '../backend/database.php';
                                         <td><?php echo $row["user_status"]; ?></td>
                                         <td>
                                             <a href="#editEmployeeModal" class="edit" data-toggle="modal">
-                                                <i class="material-icons update" data-toggle="tooltip" 
-                                                data-id="<?php echo $row["id"]; ?>" 
-                                                data-firstName="<?php echo $row["firstName"]; ?>" 
-                                                data-lastName="<?php echo $row["lastName"]; ?>" 
-                                                data-phoneNumber="<?php echo $row["phoneNumber"]; ?>" 
-                                                data-date="<?php echo $row["date"]; ?>" 
-                                                data-services="<?php echo $row["services"]; ?>" 
-                                                data-time="<?php echo $row["time"]; ?>" 
-                                                data-user_status="<?php echo $row["user_status"]; ?>" 
-                                                title="Edit">&#xE254;</i>
+                                                <i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-firstName="<?php echo $row["firstName"]; ?>" data-lastName="<?php echo $row["lastName"]; ?>" data-phoneNumber="<?php echo $row["phoneNumber"]; ?>" data-date="<?php echo $row["date"]; ?>" data-services="<?php echo $row["services"]; ?>" data-time="<?php echo $row["time"]; ?>" data-user_status="<?php echo $row["user_status"]; ?>" title="Edit">&#xE254;</i>
                                             </a>
                                             <a href="#deleteEmployeeModal" class="delete" data-id="<?php echo $row["id"]; ?>" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                                         </td>
@@ -476,7 +451,7 @@ include '../backend/database.php';
                             <tbody>
 
                                 <?php
-                                $result = mysqli_query($conn, "SELECT * FROM customer_request WHERE user_status = 'Accepted'");
+                                $result = mysqli_query($conn, "SELECT * FROM customer_request WHERE user_status = 'Accepted' ORDER BY timestamp DESC");
                                 while ($row = mysqli_fetch_array($result)) {
                                 ?>
                                     <tr id="<?php echo $row["id"]; ?>">
@@ -496,16 +471,7 @@ include '../backend/database.php';
                                         <td><?php echo $row["user_status"]; ?></td>
                                         <td>
                                             <a href="#editEmployeeModal" class="edit" data-toggle="modal">
-                                                <i class="material-icons update" data-toggle="tooltip" 
-                                                data-id="<?php echo $row["id"]; ?>" 
-                                                data-firstName="<?php echo $row["firstName"]; ?>" 
-                                                data-lastName="<?php echo $row["lastName"]; ?>" 
-                                                data-phoneNumber="<?php echo $row["phoneNumber"]; ?>" 
-                                                data-date="<?php echo $row["date"]; ?>" 
-                                                data-services="<?php echo $row["services"]; ?>" 
-                                                data-time="<?php echo $row["time"]; ?>" 
-                                                data-user_status="<?php echo $row["user_status"]; ?>" 
-                                                title="Edit">&#xE254;</i>
+                                                <i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-firstName="<?php echo $row["firstName"]; ?>" data-lastName="<?php echo $row["lastName"]; ?>" data-phoneNumber="<?php echo $row["phoneNumber"]; ?>" data-date="<?php echo $row["date"]; ?>" data-services="<?php echo $row["services"]; ?>" data-time="<?php echo $row["time"]; ?>" data-user_status="<?php echo $row["user_status"]; ?>" title="Edit">&#xE254;</i>
                                             </a>
                                             <a href="#deleteEmployeeModal" class="delete" data-id="<?php echo $row["id"]; ?>" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                                         </td>
@@ -558,7 +524,7 @@ include '../backend/database.php';
                             <tbody>
 
                                 <?php
-                                $result = mysqli_query($conn, "SELECT * FROM customer_request WHERE user_status = 'Rejected'");
+                                $result = mysqli_query($conn, "SELECT * FROM customer_request WHERE user_status = 'Rejected' ORDER BY timestamp DESC");
                                 while ($row = mysqli_fetch_array($result)) {
                                 ?>
                                     <tr id="<?php echo $row["id"]; ?>">
@@ -578,16 +544,7 @@ include '../backend/database.php';
                                         <td><?php echo $row["user_status"]; ?></td>
                                         <td>
                                             <a href="#editEmployeeModal" class="edit" data-toggle="modal">
-                                                <i class="material-icons update" data-toggle="tooltip" 
-                                                data-id="<?php echo $row["id"]; ?>" 
-                                                data-firstName="<?php echo $row["firstName"]; ?>" 
-                                                data-lastName="<?php echo $row["lastName"]; ?>"
-                                                data-phoneNumber="<?php echo $row["phoneNumber"]; ?>"
-                                                data-date="<?php echo $row["date"]; ?>" 
-                                                data-services="<?php echo $row["services"]; ?>" 
-                                                data-time="<?php echo $row["time"]; ?>"
-                                                data-user_status="<?php echo $row["user_status"]; ?>" 
-                                                title="Edit">&#xE254;</i>
+                                                <i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-firstName="<?php echo $row["firstName"]; ?>" data-lastName="<?php echo $row["lastName"]; ?>" data-phoneNumber="<?php echo $row["phoneNumber"]; ?>" data-date="<?php echo $row["date"]; ?>" data-services="<?php echo $row["services"]; ?>" data-time="<?php echo $row["time"]; ?>" data-user_status="<?php echo $row["user_status"]; ?>" title="Edit">&#xE254;</i>
                                             </a>
                                             <a href="#deleteEmployeeModal" class="delete" data-id="<?php echo $row["id"]; ?>" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                                         </td>
@@ -696,6 +653,9 @@ include '../backend/database.php';
                             $services.on('change', function() {
                                 $time.html($options.filter('[value="' + this.value + '"]'));
                             }).trigger('change');
+                        </script>
+                        <script>
+                            $("#time option[value='jquery']").attr("disabled", "disabled");
                         </script>
                     </div>
                     <div class="modal-footer">
