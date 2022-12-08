@@ -19,6 +19,7 @@ include '../backend/database.php';
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="../ajax/ajaxInventory.js"></script>
 
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<style>
 		body {
 			background: linear-gradient(120deg, #71b7e6, #9b59b6);

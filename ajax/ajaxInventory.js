@@ -14,7 +14,7 @@ $(document).on('click', '#btn-add', function (e) {
 	$('#itemName_u').val(itemName);
 
 
-	
+
 	$.ajax({
 		data: fd,
 		type: "POST",
@@ -27,8 +27,16 @@ $(document).on('click', '#btn-add', function (e) {
 			console.log(dataResult);
 			if (dataResult.statusCode == 200) {
 				$('#addEmployeeModal').modal('hide');
-				alert(dataResult.message);
-				location.reload();
+				Swal.fire(
+					'Success!',
+					'Data added succesfully!',
+					'success'
+				).then((result) => {
+					/* Read more about isConfirmed, isDenied below */
+					if (result.isConfirmed) {
+						location.reload();
+					}
+				})
 			}
 			else if (dataResult.statusCode == 201) {
 				alert(dataResult);
@@ -62,8 +70,16 @@ $(document).on('click', '#update', function (e) {
 			var dataResult = JSON.parse(dataResult);
 			if (dataResult.statusCode == 200) {
 				$('#editEmployeeModal').modal('hide');
-				alert('Data updated successfully !');
-				location.reload();
+				Swal.fire(
+					'Updated!',
+					'Data updated succesfully!',
+					'success'
+				).then((result) => {
+					/* Read more about isConfirmed, isDenied below */
+					if (result.isConfirmed) {
+						location.reload();
+					}
+				})
 			}
 			else if (dataResult.statusCode == 201) {
 				alert(dataResult);
