@@ -358,7 +358,7 @@ include '../backend/database.php';
 					<div class="modal-footer">
 						<input type="hidden" value="2" name="type">
 						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-						<button type="button" class="btn btn-info" id="update" disabled>Update</button>
+						<button type="button" class="btn btn-info" id="update">Update</button>
 					</div>
 				</form>
 			</div>
