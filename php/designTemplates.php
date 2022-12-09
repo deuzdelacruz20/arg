@@ -55,8 +55,13 @@ include '../backend/database.php';
 									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
 									<p>AVAILABLE STOCKS: <?php echo $row["itemStocks"]; ?></p>
 									<p>CATEGORY: <?php echo $row["itemCategory"]; ?></p>
-									<a href="#buyModal" data-id="<?php echo $row["id"]; ?>" data-itemName="<?php echo $row["itemName"]; ?>" data-toggle="modal">
+									<!-- <a href="#buyModal" data-toggle="modal">
 										<button class="btn btn-success" style="width: 100%; margin-bottom:10px;">Buy and Schedule Now</button>
+									</a> -->
+									<a href="#buyModal" class="edit" data-toggle="modal">
+										<button class="btn btn-success" style="width: 100%; margin-bottom:10px;">
+											<i class="material-icons buy" data-toggle="tooltip" data-id_b="<?php echo $row["id"]; ?>" data-itemName_b="<?php echo $row["itemName"]; ?>" data-itemPrice_b="<?php echo $row["itemPrice"]; ?>" data-itemStocks_b="<?php echo $row["itemStocks"]; ?>" data-itemCategory_b="<?php echo $row["itemCategory"]; ?>" title="Buy and Schedule Now">&#xe8cc;</i>
+										</button>
 									</a>
 									<div class="row">
 										<div class="col-xs-6">
@@ -386,64 +391,139 @@ include '../backend/database.php';
 	<div id="buyModal" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form id="user_form">
+				<form id="buy_form">
 					<div class="modal-header">
-						<h4 class="modal-title">Schedule An Appointment</h4>
+						<h4 class="modal-title">Buy Item</h4>
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					</div>
 					<div class="modal-body">
-						<div class="form-group">
-							<label>ITEM NAME</label>
-							<input type="text" id="itemName" name="itemName" class="form-control" required>
-						</div>
-						<div class="form-group">
-							<label>FIRST NAME</label>
-							<input type="text" id="firstName" name="firstName" class="form-control" required>
-						</div>
-						<div class="form-group">
-							<label>LAST NAME</label>
-							<input type="text" id="lastName" name="lastName" class="form-control" required>
-						</div>
-						<div class="form-group">
-							<label>PHONE NUMBER</label>
-							<input type="phone" id="phoneNumber" name="phoneNumber" class="form-control" maxlength="11" required>
-						</div>
-						<div class="form-group">
-							<label>DATE</label>
-							<input type="date" id="date" name="date" class="form-control" required>
-						</div>
-						<script language="javascript">
-							// DISABLE PAST DATES
-							var today = new Date();
-							var dd = String(today.getDate()).padStart(2, '0');
-							var mm = String(today.getMonth() + 1).padStart(2, '0');
-							var yyyy = today.getFullYear();
+						<input type="hidden" id="id_b" name="id" class="form-control" required>
+						<div class="row">
+							<div class="col-sm-6">
+								<div class="form-group">
+									<label>ITEM NAME</label>
+									<input type="text" id="itemName_b" name="itemName_b" class="form-control" required disabled>
+								</div>
+								<div class="form-group">
+									<label>PRICE</label>
+									<input type="number" id="itemPrice_b" name="itemPrice_b" class="form-control" required disabled>
+								</div>
+								<div class="form-group">
+									<label>STOCKS</label>
+									<input type="number" id="itemStocks_b" name="itemStocks_b" class="form-control" required disabled>
+								</div>
+								<div class="form-group">
+									<label>CATEGORY</label>
+									<select name="itemCategory_b" id="itemCategory_b" class="form-control" disabled>
+										<option value="" selected="selected" disabled style="text-align: center;">-SELECT CATEGORY-</option>
+										<option value="Motorcycles">Motorcycles</option>
+										<option value="Cars">Cars</option>
+										<option value="SUVs">SUVs</option>
+										<option value="Vans">Vans</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="form-group">
+									<label>FIRST NAME</label>
+									<input type="text" id="firstName" name="firstName" class="form-control" required>
+								</div>
+								<div class="form-group">
+									<label>LAST NAME</label>
+									<input type="text" id="lastName" name="lastName" class="form-control" required>
+								</div>
+								<div class="form-group">
+									<label>PHONE NUMBER</label>
+									<input type="phone" id="phoneNumber" name="phoneNumber" class="form-control" maxlength="11" required>
+								</div>
+								<div class="form-group">
+									<label>DATE</label>
+									<input type="date" id="date" name="date" class="form-control" required>
+								</div>
+								<script language="javascript">
+									// DISABLE PAST DATES
+									var today = new Date();
+									var dd = String(today.getDate()).padStart(2, '0');
+									var mm = String(today.getMonth() + 1).padStart(2, '0');
+									var yyyy = today.getFullYear();
 
-							today = yyyy + '-' + mm + '-' + dd;
-							$('#date').attr('min', today);
+									today = yyyy + '-' + mm + '-' + dd;
+									$('#date').attr('min', today);
+								</script>
+								<div class="form-group">
+									<label>SERVICES</label>
+									<select class="form-control" name="services" id="services">
+										<option value="0" selected disabled style="text-align: center;">-Select a Service-</option>
+										<option value="1">Full Wrap</option>
+										<option value="2">Hood Wrap</option>
+										<option value="2">HeadLight Film</option>
+										<option value="2">Customized Plate</option>
+										<option value="2">Signage</option>
+									</select>
+									<input type="text" name="inputServices" id="inputServices" hidden></input>
+								</div>
+								<div class="form-group">
+									<label>TIME SLOTS</label>
+									<select class="form-control" name="time" id="time">
+										<option value="0" selected disabled style="text-align: center;">-Select Service First-</option>
+										<option value="1">7:00 AM - 9:00 AM</option>
+										<option value="1">9:00 AM - 11:00 AM</option>
+										<option value="1">1:00 PM - 3:00 PM</option>
+										<option value="1">3:00 PM - 5:00 PM</option>
+
+										<option value="2">7:00 AM - 8:00 AM</option>
+										<option value="2">8:00 AM - 9:00 AM</option>
+										<option value="2">9:00 AM - 10:00 AM</option>
+										<option value="2">10:00 AM - 11:00 AM</option>
+										<option value="2">1:00 PM - 2:00 PM</option>
+										<option value="2">2:00 PM - 3:00 PM</option>
+										<option value="2">3:00 PM - 4:00 PM</option>
+										<option value="2">4:00 PM - 5:00 PM</option>
+										<option value="2">5:00 PM - 6:00 PM</option>
+									</select>
+									<input type="text" name="inputTime" id="inputTime" hidden></input>
+								</div>
+							</div>
+						</div>
+
+
+						<script>
+							var $services = $('#services'),
+								$time = $('#time'),
+								$options = $time.find('option');
+
+							$services.on('change', function() {
+								$time.html($options.filter('[value="' + this.value + '"]'));
+							}).trigger('change');
 						</script>
-						<div class="form-group">
-							<label>SERVICES</label>
-							<select name="services" id="services" class="form-control">
-								<option value="" selected="selected" disabled style="text-align: center;">-Select service-</option>
-							</select>
-						</div>
-						<div class="form-group">
-							<label>TIME SLOTS</label>
-							<select name="time" id="time" class="form-control">
-								<option value="" selected="selected" disabled style="text-align: center;">Please select service first</option>
-							</select>
-						</div>
 					</div>
 					<div class="modal-footer">
-						<input type="hidden" value="1" name="type">
+						<input type="hidden" value="5" name="type">
 						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-						<button type="button" class="btn btn-success" id="btn-add" disabled>Submit</button>
+						<button type="button" class="btn btn-success" id="buy">Buy</button>
 					</div>
 				</form>
 			</div>
 		</div>
 	</div>
+
+	<!-- ADD MODAL CASCADING DROPDOWN SCRIPT -->
+	<script>
+		window.onload = function() {
+
+			var servicesSel = document.getElementById("services");
+			var timeSel = document.getElementById("time");
+
+			servicesSel.onchange = function() {
+				//display correct values
+				$("#inputServices").val($(this).find("option:selected").text());
+			}
+			timeSel.onchange = function() {
+				//display correct values
+				$("#inputTime").val($(this).find("option:selected").text());
+			}
+		}
+	</script>
 </body>
 
 </html>

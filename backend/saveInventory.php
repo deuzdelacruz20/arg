@@ -87,3 +87,29 @@ if (count($_POST) > 0) {
 		mysqli_close($conn);
 	}
 }
+if (count($_POST) > 0) {
+	if ($_POST['type'] == 5) {
+
+		// $id = $_POST['id'];
+		// $itemName = $_POST['itemName_b'];
+		$firstName = $_POST['firstName'];
+		$lastName = $_POST['lastName'];
+		$phoneNumber = $_POST['phoneNumber'];
+		$date = $_POST['date'];
+		$services = $_POST['inputServices'];
+		$time = $_POST['inputTime'];
+
+		// $sql = "INSERT INTO `customer_request`(`itemName`,`itemPrice`) 
+		// 	VALUES ('$itemName','$itemPrice')";
+
+		$sql = "INSERT INTO `customer_request` (`firstName`, `lastName`, `phoneNumber`, `date`, `services`, `time`, `timestamp`, `user_status`) 
+		VALUES ('$firstName', '$lastName', '$phoneNumber', '$date', '$services', '$time', current_timestamp(), 'Pending')";
+
+		if (mysqli_query($conn, $sql)) {
+			echo json_encode(array("statusCode" => 200, "message" => "Successfully added to the database"));
+		} else {
+			echo json_encode(array("statusCode" => 200, "message" => $inventoryImage));
+		}
+		mysqli_close($conn);
+	}
+}

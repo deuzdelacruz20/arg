@@ -164,3 +164,48 @@ $(document).ready(function () {
 		}
 	});
 });
+
+// BUY
+$(document).on('click', '.buy', function (e) {
+	var id_b = $(this).attr("data-id_b");
+	var itemName_b = $(this).attr("data-itemName_b");
+	var itemPrice_b = $(this).attr("data-itemPrice_b");
+	var itemStocks_b = $(this).attr("data-itemStocks_b");
+	var itemCategory_b = $(this).attr("data-itemCategory_b");
+
+	$('#id_b').val(id_b);
+	$('#itemName_b').val(itemName_b);
+	$('#itemPrice_b').val(itemPrice_b);
+	$('#itemStocks_b').val(itemStocks_b);
+	$('#itemCategory_b').val(itemCategory_b);
+
+	
+});
+
+$(document).on('click', '#buy', function (e) {
+	var data = $("#buy_form").serialize();
+	$.ajax({
+		data: data,
+		type: "post",
+		url: "../backend/saveInventory.php",
+		success: function (dataResult) {
+			var dataResult = JSON.parse(dataResult);
+			if (dataResult.statusCode == 200) {
+				$('#buyModal').modal('hide');
+				Swal.fire(
+					'Success!',
+					'Data added succesfully!',
+					'success'
+				).then((result) => {
+					/* Read more about isConfirmed, isDenied below */
+					if (result.isConfirmed) {
+						location.reload();
+					}
+				})
+			}
+			else if (dataResult.statusCode == 201) {
+				alert(dataResult);
+			}
+		}
+	});
+});
