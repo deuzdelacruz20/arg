@@ -315,7 +315,7 @@ include '../backend/database.php';
 					<div class="modal-footer">
 						<input type="hidden" value="1" name="type" id="save_id">
 						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-						<button type="button" class="btn btn-success" id="btn-add">Add</button>
+						<button type="button" class="btn btn-success" id="btn-add" disabled>Add</button>
 					</div>
 				</form>
 			</div>
@@ -358,7 +358,7 @@ include '../backend/database.php';
 					<div class="modal-footer">
 						<input type="hidden" value="2" name="type">
 						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-						<button type="button" class="btn btn-info" id="update">Update</button>
+						<button type="button" class="btn btn-info" id="update" disabled>Update</button>
 					</div>
 				</form>
 			</div>
@@ -522,6 +522,65 @@ include '../backend/database.php';
 				//display correct values
 				$("#inputTime").val($(this).find("option:selected").text());
 			}
+		}
+	</script>
+
+	<!-- DISABLE THE SUBMIT BUTON -->
+	<script>
+		// FOR ADDING
+		$("#inventoryImage").keyup(function(event) {
+			validateInputs();
+		});
+		$("#itemName").keyup(function(event) {
+			validateInputs();
+		});
+		$("#itemPrice").keyup(function(event) {
+			validateInputs();
+		});
+		$("#itemStocks").keyup(function(event) {
+			validateInputs();
+		});
+		$("#itemCategory").keyup(function(event) {
+			validateInputs();
+		});
+
+		// FOR UPDATING
+		// $("#inventoryImage").keyup(function(event) {
+		// 	validateInputs();
+		// });
+		$("#itemName_u").keyup(function(event) {
+			validateInputs();
+		});
+		$("#itemPrice_u").keyup(function(event) {
+			validateInputs();
+		});
+		$("#itemStocks_u").keyup(function(event) {
+			validateInputs();
+		});
+		$("#itemCategory_u").keyup(function(event) {
+			validateInputs();
+		});
+
+		function validateInputs() {
+			var disableButton = false;
+
+			// var inventoryImage = $("#inventoryImage").val();
+			var itemName_u = $("#itemName_u").val();
+			var itemPrice_u = $("#itemPrice_u").val();
+			var itemStocks_u = $("#itemStocks_u").val();
+			var itemCategory_u = $("#itemCategory_u").val();
+
+			if (
+				
+				itemName_u.length == 0 ||
+				itemPrice_u.length == 0 ||
+				itemStocks_u.length == 0 ||
+				itemCategory_u.length == 0 
+
+			)
+				disableButton = true;
+
+			$('#update').attr('disabled', disableButton);
 		}
 	</script>
 </body>
