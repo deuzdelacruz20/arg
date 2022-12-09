@@ -21,6 +21,7 @@ include '../backend/database.php';
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="../ajax/ajax.js"></script>
     <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <style>
         body {
@@ -62,6 +63,10 @@ include '../backend/database.php';
 
         .col-xs-4:nth-child(2n+2) {
             background: white;
+        }
+
+        .swal2-popup {
+            font-size: 1.6rem !important;
         }
     </style>
 
@@ -118,20 +123,20 @@ include '../backend/database.php';
                 "5:00 PM - 6:00 PM": []
             }
         }
-        window.onload = function () {
+        window.onload = function() {
             var servicesSel = document.getElementById("services");
             var timeSel = document.getElementById("time");
             for (var x in services) {
                 servicesSel.options[servicesSel.options.length] = new Option(x, x);
             }
-            servicesSel.onchange = function () {
+            servicesSel.onchange = function() {
                 timeSel.length = 1;
                 //display correct values
                 for (var y in services[this.value]) {
                     timeSel.options[timeSel.options.length] = new Option(y, y);
                 }
             }
-            timeSel.onchange = function () {
+            timeSel.onchange = function() {
                 //display correct values
                 var z = services[servicesSel.value][this.value];
                 for (var i = 0; i < z.length; i++) {
@@ -143,15 +148,6 @@ include '../backend/database.php';
 </head>
 
 <body>
-
-    <!-- <video width="560" height="315" autoplay loop muted style="margin-left: 10%;">
-        <source src="../videos/AFTER DARK 🌑- Valorant Edit.mp4" type="video/mp4" />
-        Your browser does not support the video element.
-    </video>
-
-
-    <a href="#addEmployeeModal" class="btn btn-primary" data-toggle="modal" style="font-size: 26px; float: right; margin-right: 200px; margin-top: 350px; "> <span>Schedule An Appointment</span></a> -->
-
     <div class="container overflow-hidden">
         <!-- <img src="../image/qrcode.jpg" style="border-radius: 5px;"> -->
         <div class="row gx-5">
@@ -165,8 +161,7 @@ include '../backend/database.php';
 
             </div>
             <div class="col-md-4">
-                <a href="#addEmployeeModal" class="btn btn-primary" data-toggle="modal"
-                    style="font-size: 26px; float: right; margin-right: 5%; margin-top: 300px; "> <span>Schedule An
+                <a href="#addEmployeeModal" class="btn btn-primary" data-toggle="modal" style="font-size: 26px; float: right; margin-right: 5%; margin-top: 300px; "> <span>Schedule An
                         Appointment</span></a>
 
             </div>
@@ -186,8 +181,8 @@ include '../backend/database.php';
             </div>
         </div>
     </div>
-<br>
-<br>
+    <br>
+    <br>
     <div class="container" style=" width:100%;">
         <h1 style="text-align:center;color:green;">
             ARG AUTOSIGN SHOP
@@ -260,8 +255,7 @@ include '../backend/database.php';
                         </div>
                         <div class="form-group">
                             <label>PHONE NUMBER</label>
-                            <input type="phone" id="phoneNumber" name="phoneNumber" class="form-control" maxlength="11"
-                                required>
+                            <input type="phone" id="phoneNumber" name="phoneNumber" class="form-control" maxlength="11" required>
                         </div>
                         <div class="form-group">
                             <label>DATE</label>
@@ -319,8 +313,7 @@ include '../backend/database.php';
                         </div>
                         <div class="form-group">
                             <label>Phone Number</label>
-                            <input type="phone" id="phoneNumber_u" name="phoneNumber" class="form-control"
-                                maxlength="11" required>
+                            <input type="phone" id="phoneNumber_u" name="phoneNumber" class="form-control" maxlength="11" required>
                         </div>
                         <div class="form-group">
                             <label>Services</label>
@@ -364,15 +357,16 @@ include '../backend/database.php';
         </div>
     </div>
 
+    <!-- DISABLE ADD BUTTON IF EMPTY -->
     <script>
         // DISABLE ADD BUTTON
-        $("#firstName").keyup(function (event) {
+        $("#firstName").keyup(function(event) {
             validateInputs();
         });
-        $("#lastName").keyup(function (event) {
+        $("#lastName").keyup(function(event) {
             validateInputs();
         });
-        $("#phoneNumber").keyup(function (event) {
+        $("#phoneNumber").keyup(function(event) {
             validateInputs();
         });
         // $("#date").keyup(function(event) {
@@ -409,13 +403,13 @@ include '../backend/database.php';
         }
 
         // DISABLE UPDATE BUTTON
-        $("#firstName_u").keyup(function (event) {
+        $("#firstName_u").keyup(function(event) {
             updateValidateInputs();
         });
-        $("#lastName_u").keyup(function (event) {
+        $("#lastName_u").keyup(function(event) {
             updateValidateInputs();
         });
-        $("#phoneNumber_u").keyup(function (event) {
+        $("#phoneNumber_u").keyup(function(event) {
             updateValidateInputs();
         });
         // $("#date_u").keyup(function(event) {
@@ -450,6 +444,23 @@ include '../backend/database.php';
 
             $('#update').attr('disabled', disableButton);
         }
+    </script>
+
+    <!-- DISABLE SUNDAY -->
+    <script>
+        const picker = document.getElementById('date');
+        picker.addEventListener('input', function(e) {
+            var day = new Date(this.value).getUTCDay();
+            if ([5, 0].includes(day)) {
+                e.preventDefault();
+                this.value = '';
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Sunday is outside our business hours!',
+                })
+            }
+        });
     </script>
 </body>
 

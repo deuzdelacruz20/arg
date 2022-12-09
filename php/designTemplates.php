@@ -25,6 +25,10 @@ include '../backend/database.php';
 			background: linear-gradient(120deg, #71b7e6, #9b59b6);
 			background-attachment: fixed;
 		}
+
+		.swal2-popup {
+			font-size: 1.6rem !important;
+		}
 	</style>
 </head>
 
@@ -583,7 +587,7 @@ include '../backend/database.php';
 			)
 				disableButton = true;
 			$('#btn-add').attr('disabled', disableButton);
-			
+
 			var disableButton = false;
 			if (
 				itemName_u.length == 0 ||
@@ -594,6 +598,23 @@ include '../backend/database.php';
 				disableButton = true;
 			$('#update').attr('disabled', disableButton);
 		}
+	</script>
+
+	<!-- DISABLE SUNDAY -->
+	<script>
+		const picker = document.getElementById('date');
+		picker.addEventListener('input', function(e) {
+			var day = new Date(this.value).getUTCDay();
+			if ([5, 0].includes(day)) {
+				e.preventDefault();
+				this.value = '';
+				Swal.fire({
+					icon: 'error',
+					title: 'Oops...',
+					text: 'Sunday is outside our business hours!',
+				})
+			}
+		});
 	</script>
 </body>
 
