@@ -564,22 +564,34 @@ include '../backend/database.php';
 		function validateInputs() {
 			var disableButton = false;
 
-			// var inventoryImage = $("#inventoryImage").val();
+			var inventoryImage = $("#inventoryImage").val();
+			var itemName = $("#itemName").val();
+			var itemPrice = $("#itemPrice").val();
+			var itemStocks = $("#itemStocks").val();
+			var itemCategory = $("#itemCategory").val();
+
 			var itemName_u = $("#itemName_u").val();
 			var itemPrice_u = $("#itemPrice_u").val();
 			var itemStocks_u = $("#itemStocks_u").val();
 			var itemCategory_u = $("#itemCategory_u").val();
 
 			if (
-				
-				itemName_u.length == 0 ||
-				itemPrice_u.length == 0 ||
-				itemStocks_u.length == 0 ||
-				itemCategory_u.length == 0 
+				itemName.length == 0 ||
+				itemPrice.length == 0 ||
+				itemStocks.length == 0
 
 			)
 				disableButton = true;
-
+			$('#btn-add').attr('disabled', disableButton);
+			
+			var disableButton = false;
+			if (
+				itemName_u.length == 0 ||
+				itemPrice_u.length == 0 ||
+				itemStocks_u.length == 0 ||
+				itemCategory_u.length == 0
+			)
+				disableButton = true;
 			$('#update').attr('disabled', disableButton);
 		}
 	</script>
