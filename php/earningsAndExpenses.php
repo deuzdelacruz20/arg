@@ -29,7 +29,9 @@ include '../backend/database.php';
         }
 
         .row {
-            margin: 10%;
+            margin-top: 5%;
+            margin-left: 10%;
+            margin-right: 10%;
             text-align: center;
         }
     </style>
@@ -43,9 +45,9 @@ include '../backend/database.php';
         while ($row = mysqli_fetch_array($result)) {
         ?>
             <div class="col-md-3">
-                <div class="col-md-12" style="background-color: aliceblue; height:150px">
-                    <h4>TOTAL NUMBER OF PENDING REQUEST</h4>
-                    <h3><?php echo $row["totalPendingRequest"] ?></h3>
+                <div class="col-md-12" style="background-color: rgb(53, 207, 32); height:150px; border-radius:10px;">
+                    <h4 style="color: white;">TOTAL NUMBER OF PENDING REQUEST</h4>
+                    <h1 style="color: white;"><?php echo $row["totalPendingRequest"] ?></h1>
                 </div>
             </div>
         <?php
@@ -56,9 +58,9 @@ include '../backend/database.php';
         while ($row = mysqli_fetch_array($result)) {
         ?>
             <div class="col-md-3">
-                <div class="col-md-12" style="background-color: aliceblue; height:150px">
-                    <h4>TOTAL NUMBER OF ACCEPTED REQUESTS</h4>
-                    <h3><?php echo $row["TotalAcceptedRequest"] ?></h3>
+                <div class="col-md-12" style="background-color: rgb(33, 49, 199); height:150px; border-radius:10px;">
+                    <h4 style="color: white;">TOTAL NUMBER OF ACCEPTED REQUESTS</h4>
+                    <h1 style="color: white;"><?php echo $row["TotalAcceptedRequest"] ?></h1>
                 </div>
             </div>
         <?php
@@ -69,9 +71,9 @@ include '../backend/database.php';
         while ($row = mysqli_fetch_array($result)) {
         ?>
             <div class="col-md-3">
-                <div class="col-md-12" style="background-color: aliceblue; height:150px">
-                    <h4>TOTAL NUMBER OF REJECTED REQUEST</h4>
-                    <h3><?php echo $row["totalRejectedRequest"] ?></h3>
+                <div class="col-md-12" style="background-color: rgb(202, 34, 34); height:150px; border-radius:10px;">
+                    <h4 style="color: white;">TOTAL NUMBER OF REJECTED REQUEST</h4>
+                    <h1 style="color: white;"><?php echo $row["totalRejectedRequest"] ?></h1>
                 </div>
             </div>
         <?php
@@ -82,9 +84,9 @@ include '../backend/database.php';
         while ($row = mysqli_fetch_array($result)) {
         ?>
             <div class="col-md-3">
-                <div class="col-md-12" style="background-color: aliceblue; height:150px">
+                <div class="col-md-12" style="background-color: aliceblue; height:150px; border-radius:10px;">
                     <h4>TOTAL NUMBER OF SUCCESSFULLY SERVED CUSTOMERS</h4>
-                    <h3><?php echo $row["done"] ?></h3>
+                    <h1><?php echo $row["done"] ?></h1>
                 </div>
             </div>
         <?php
