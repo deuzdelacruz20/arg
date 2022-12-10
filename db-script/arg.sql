@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 01, 2022 at 06:00 AM
+-- Generation Time: Dec 10, 2022 at 11:10 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -53,20 +53,22 @@ CREATE TABLE `customer_request` (
   `date` date NOT NULL,
   `services` varchar(50) NOT NULL,
   `time` varchar(255) NOT NULL,
-  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp(),
+  `user_status` varchar(255) NOT NULL DEFAULT 'Pending'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `customer_request`
 --
 
-INSERT INTO `customer_request` (`id`, `firstName`, `lastName`, `phoneNumber`, `date`, `services`, `time`, `timestamp`) VALUES
-(144, 'Deuz', 'De la Cruz', '09123456789', '2022-11-09', 'Hood Wrap', '8:00 AM - 9:00 AM', '2022-11-30 11:47:40'),
-(146, 'Vince', 'Mendoza', '09789123456', '2022-11-11', 'HeadLight Film', '9:00 AM - 10:00 AM', '2022-11-09 11:57:10'),
-(147, 'Ronald', 'Parcarey', '09456789123', '2022-11-10', 'Hood Wrap', '8:00 AM - 9:00 AM', '2022-11-09 11:57:58'),
-(148, 'Leigh', 'Ayuma', '09456789123', '2022-11-12', 'Customized Plate', '7:00 AM - 8:00 AM', '2022-11-30 11:10:10'),
-(166, 'Ronel', 'Tagala', '09423113654', '2022-11-30', 'Signage', '8:00 AM - 9:00 AM', '2022-11-30 11:07:52'),
-(171, 'sdfsdfsf', 'asfdfsfd', '09424512132', '2022-12-01', 'Hood Wrap', '7:00 AM - 8:00 AM', '2022-12-01 03:12:32');
+INSERT INTO `customer_request` (`id`, `firstName`, `lastName`, `phoneNumber`, `date`, `services`, `time`, `timestamp`, `user_status`) VALUES
+(144, 'Deuz', 'De la Cruz', '09123456789', '2022-11-09', 'Hood Wrap', '8:00 AM - 9:00 AM', '2022-11-30 11:47:40', 'Rejected'),
+(146, 'Vince', 'Mendoza', '09789123456', '2022-11-11', 'HeadLight Film', '9:00 AM - 10:00 AM', '2022-11-09 11:57:10', 'Pending'),
+(147, 'Ronald', 'Parcarey', '09456789123', '2022-11-10', 'Hood Wrap', '8:00 AM - 9:00 AM', '2022-11-09 11:57:58', 'Pending'),
+(148, 'Leigh', 'Ayuma', '09456789123', '2022-11-12', 'Customized Plate', '7:00 AM - 8:00 AM', '2022-11-30 11:10:10', 'Pending'),
+(166, 'Ronel', 'Tagala', '09423113654', '2022-11-30', 'Signage', '8:00 AM - 9:00 AM', '2022-11-30 11:07:52', 'Pending'),
+(175, 'Aldous', 'Turgo', '09123456789', '2022-12-10', 'HeadLight Film', '7:00 AM - 8:00 AM', '2022-12-10 10:02:07', 'Accepted'),
+(176, 'Steven', 'Quinto', '09456789123', '2022-12-12', 'HeadLight Film', '7:00 AM - 8:00 AM', '2022-12-10 10:03:41', 'Done');
 
 -- --------------------------------------------------------
 
@@ -156,7 +158,7 @@ ALTER TABLE `inventory`
 -- AUTO_INCREMENT for table `customer_request`
 --
 ALTER TABLE `customer_request`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=175;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=177;
 
 --
 -- AUTO_INCREMENT for table `design_templates`
