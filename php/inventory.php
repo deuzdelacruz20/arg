@@ -24,6 +24,22 @@ include '../backend/database.php';
 			background: linear-gradient(120deg, #71b7e6, #9b59b6);
 			background-attachment: fixed;
 		}
+
+		::-webkit-input-placeholder {
+			font-style: italic;
+		}
+
+		:-moz-placeholder {
+			font-style: italic;
+		}
+
+		::-moz-placeholder {
+			font-style: italic;
+		}
+
+		:-ms-input-placeholder {
+			font-style: italic;
+		}
 	</style>
 </head>
 
@@ -282,15 +298,15 @@ include '../backend/database.php';
 						</div>
 						<div class="form-group">
 							<label>ITEM NAME</label>
-							<input type="text" id="itemName" name="itemName" class="form-control" required>
+							<input type="text" id="itemName" name="itemName" class="form-control" placeholder="Enter the Item Name" required>
 						</div>
 						<div class="form-group">
 							<label>PRICE</label>
-							<input type="number" id="itemPrice" name="itemPrice" class="form-control" required>
+							<input type="number" id="itemPrice" name="itemPrice" class="form-control" placeholder="Enter the Item Price" required>
 						</div>
 						<div class="form-group">
 							<label>STOCKS</label>
-							<input type="number" id="itemStocks" name="itemStocks" class="form-control" required>
+							<input type="number" id="itemStocks" name="itemStocks" class="form-control" placeholder="Enter the Number of Stocks" required>
 						</div>
 						<div class="form-group">
 							<label>CATEGORY</label>

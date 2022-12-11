@@ -45,6 +45,22 @@ include '../backend/database.php';
         .swal2-popup {
             font-size: 1.6rem !important;
         }
+        
+        ::-webkit-input-placeholder {
+            font-style: italic;
+        }
+
+        :-moz-placeholder {
+            font-style: italic;
+        }
+
+        ::-moz-placeholder {
+            font-style: italic;
+        }
+
+        :-ms-input-placeholder {
+            font-style: italic;
+        }
     </style>
 
 </head>
@@ -455,15 +471,15 @@ include '../backend/database.php';
                     <div class="modal-body">
                         <div class="form-group">
                             <label>FIRST NAME</label>
-                            <input type="text" id="firstName" name="firstName" class="form-control" required>
+                            <input type="text" id="firstName" name="firstName" class="form-control" placeholder="Enter Your First Name" required>
                         </div>
                         <div class="form-group">
                             <label>LAST NAME</label>
-                            <input type="text" id="lastName" name="lastName" class="form-control" required>
+                            <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Enter Your Last Name" required>
                         </div>
                         <div class="form-group">
                             <label>PHONE NUMBER</label>
-                            <input type="phone" id="phoneNumber" name="phoneNumber" class="form-control" maxlength="11" required>
+                            <input type="phone" id="phoneNumber" name="phoneNumber" class="form-control" maxlength="11" placeholder="Enter Your Phone Number" required>
                         </div>
                         <div class="form-group">
                             <label>DATE</label>
