@@ -150,20 +150,20 @@ include '../backend/database.php';
                 "5:00 PM - 6:00 PM": []
             }
         }
-        window.onload = function() {
+        window.onload = function () {
             var servicesSel = document.getElementById("services");
             var timeSel = document.getElementById("time");
             for (var x in services) {
                 servicesSel.options[servicesSel.options.length] = new Option(x, x);
             }
-            servicesSel.onchange = function() {
+            servicesSel.onchange = function () {
                 timeSel.length = 1;
                 //display correct values
                 for (var y in services[this.value]) {
                     timeSel.options[timeSel.options.length] = new Option(y, y);
                 }
             }
-            timeSel.onchange = function() {
+            timeSel.onchange = function () {
                 //display correct values
                 var z = services[servicesSel.value][this.value];
                 for (var i = 0; i < z.length; i++) {
@@ -175,18 +175,17 @@ include '../backend/database.php';
 </head>
 
 <body>
-    <div class="row" style="text-align: center; margin-bottom: 10%;">
+    <div class="row" style="text-align: center; margin-bottom: 10%; width: 100%;">
         <div class="col-md-6">
             <div class="container" style="height: 300px; width: 90%; margin-top: 50px; margin-bottom: 50px;">
                 <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                    <!-- Indicators -->
+
                     <ol class="carousel-indicators">
                         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                         <li data-target="#myCarousel" data-slide-to="1"></li>
                         <li data-target="#myCarousel" data-slide-to="2"></li>
                     </ol>
 
-                    <!-- Wrapper for slides -->
                     <div class="carousel-inner">
                         <div class="item active">
                             <img src="../image/a.jpg" style="width:800px; max-height:500px">
@@ -201,7 +200,6 @@ include '../backend/database.php';
                         </div>
                     </div>
 
-                    <!-- Left and right controls -->
                     <a class="left carousel-control" href="#myCarousel" data-slide="prev">
                         <span class="glyphicon glyphicon-chevron-left"></span>
                         <span class="sr-only">Previous</span>
@@ -214,8 +212,10 @@ include '../backend/database.php';
             </div>
         </div>
         <div class="col-md-6">
-            <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal" style="padding: 50px; margin-top: 225px;">
+            <a href="#addEmployeeModal" class="btn btn-primary" data-toggle="modal"
+                style="padding: 50px; margin-top: 225px;">
                 <h1>Schedule Now!</h1>
+                <h5>Reserve your timeslot now!</h5>
             </a>
         </div>
     </div>
@@ -295,13 +295,60 @@ include '../backend/database.php';
             </div>
         </div>
     </div>
-    <div class="iframe-container" style="margin: 5%;">
-        <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2FARGAutosignShop%2Fvideos%2F600802391554257%2F&show_text=false&width=268&t=0" width="268" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true">
-        </iframe>
+
+    <!-- SERVICES -->
+    <div class="container" style="background-color: white; width: 100%;">
+        <h1 style="text-align: center;">Our Services</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="iframe-container" style="margin: 5%;">
+                    <iframe
+                        src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2FARGAutosignShop%2Fvideos%2F600802391554257%2F&show_text=false&width=268&t=0"
+                        width="268" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                        allowfullscreen="true"
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                        allowFullScreen="true">
+                        <style>
+                            iframe {
+                                display: block;
+                                border-style: none;
+                                margin: auto;
+                            }
+                        </style>
+                    </iframe>
+                </div>
+            </div>
+            <div class="col-md-6">
+
+            </div>
+        </div>
+    </div>
+
+    <!-- BUSINESS HOURS -->
+    <div class="container" style="background-color: rgb(255, 137, 137); width: 100%;">
+        <div class="row"
+            style="text-align:center; margin: 5% 25% 5% 25%; background-color: white ; border-radius: 10px;">
+            <h1>BUSINESS HOURS</h1>
+            <div class="col-xs-6" style="padding: 0% 5% 5% 5%;">
+                <h3>Morning</h3>
+                <br>
+                <h4>7:00 AM - 8:00 AM</h4>
+                <h4>8:00 AM - 9:00 AM</h4>
+                <h4>9:00 AM - 10:00 AM</h4>
+                <h4>10:00 AM - 11:00 AM</h4>
+            </div>
+            <div class="col-xs-6" style="padding: 0% 5% 5% 5%;">
+                <h3>Afternoon</h3>
+                <br>
+                <h4>12:00 PM - 1:00 PM</h4>
+                <h4>1:00 PM - 2:00 PM</h4>
+                <h4>2:00 PM - 3:00 PM</h4>
+                <h4>3:00 PM - 4:00 PM</h4>
+            </div>
+        </div>
     </div>
 
 
-    
 
     <!-- Add Modal HTML -->
     <div id="addEmployeeModal" class="modal fade">
@@ -315,15 +362,18 @@ include '../backend/database.php';
                     <div class="modal-body">
                         <div class="form-group">
                             <label>FIRST NAME</label>
-                            <input type="text" id="firstName" name="firstName" class="form-control" placeholder="Enter Your First Name" autocapitalize="word" required>
+                            <input type="text" id="firstName" name="firstName" class="form-control"
+                                placeholder="Enter Your First Name" autocapitalize="word" required>
                         </div>
                         <div class="form-group">
                             <label>LAST NAME</label>
-                            <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Enter Your Last Name" required>
+                            <input type="text" id="lastName" name="lastName" class="form-control"
+                                placeholder="Enter Your Last Name" required>
                         </div>
                         <div class="form-group">
                             <label>PHONE NUMBER</label>
-                            <input type="phone" id="phoneNumber" name="phoneNumber" class="form-control" maxlength="11" placeholder="Enter Your Phone Number" required>
+                            <input type="phone" id="phoneNumber" name="phoneNumber" class="form-control" maxlength="11"
+                                placeholder="Enter Your Phone Number" required>
                         </div>
                         <div class="form-group">
                             <label>DATE</label>
@@ -368,13 +418,13 @@ include '../backend/database.php';
     <!-- DISABLE ADD BUTTON IF EMPTY -->
     <script>
         // DISABLE ADD BUTTON
-        $("#firstName").keyup(function(event) {
+        $("#firstName").keyup(function (event) {
             validateInputs();
         });
-        $("#lastName").keyup(function(event) {
+        $("#lastName").keyup(function (event) {
             validateInputs();
         });
-        $("#phoneNumber").keyup(function(event) {
+        $("#phoneNumber").keyup(function (event) {
             validateInputs();
         });
         // $("#date").keyup(function(event) {
@@ -411,13 +461,13 @@ include '../backend/database.php';
         }
 
         // DISABLE UPDATE BUTTON
-        $("#firstName_u").keyup(function(event) {
+        $("#firstName_u").keyup(function (event) {
             updateValidateInputs();
         });
-        $("#lastName_u").keyup(function(event) {
+        $("#lastName_u").keyup(function (event) {
             updateValidateInputs();
         });
-        $("#phoneNumber_u").keyup(function(event) {
+        $("#phoneNumber_u").keyup(function (event) {
             updateValidateInputs();
         });
         // $("#date_u").keyup(function(event) {
@@ -457,7 +507,7 @@ include '../backend/database.php';
     <!-- DISABLE SUNDAY -->
     <script>
         const picker = document.getElementById('date');
-        picker.addEventListener('input', function(e) {
+        picker.addEventListener('input', function (e) {
             var day = new Date(this.value).getUTCDay();
             if ([5, 0].includes(day)) {
                 e.preventDefault();
