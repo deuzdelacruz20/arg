@@ -212,12 +212,18 @@ include '../backend/database.php';
             </div>
         </div>
         <div class="col-md-6">
-            <a href="#addEmployeeModal" class="btn btn-primary" data-toggle="modal"
-                style="padding: 50px; margin-top: 225px;">
+            <a href="#addEmployeeModal" class="btn btn-info" data-toggle="modal"
+                style="padding: 50px; margin-top: 75px; margin-bottom: 25px;">
                 <h1>Schedule Now!</h1>
                 <h5>Reserve your timeslot now!</h5>
             </a>
         </div>
+        <br>
+        <h1 style="color:aliceblue;">or</h1>
+        <a href="designTemplates.php" class="btn btn-primary" style="padding: 10px; margin-top: 25px;">
+            <h1>Choose a sticker!</h1>
+            <h5>and Reserve your timeslot now!</h5>
+        </a>
     </div>
     <div class="container" style="width: 100%; background-color:white">
         <div class="row" style="margin-top: 50px; margin-bottom: 50px;">
@@ -298,52 +304,72 @@ include '../backend/database.php';
 
     <!-- SERVICES -->
     <div class="container" style="background-color: white; width: 100%;">
-        <h1 style="text-align: center;">Our Services</h1>
+        <h1 style="text-align: center; font-size: 60px">TIME OPEN</h1>
         <div class="row">
             <div class="col-md-6">
-                <div class="iframe-container" style="margin: 5%;">
-                    <iframe
-                        src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2FARGAutosignShop%2Fvideos%2F600802391554257%2F&show_text=false&width=268&t=0"
-                        width="268" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
-                        allowfullscreen="true"
-                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                        allowFullScreen="true">
+                <!-- <div class="iframe-container" style="margin: 5%; display: block; margin-left: 25%; margin-right: auto;">
+                    <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2FARGAutosignShop%2Fvideos%2F600802391554257%2F&show_text=false&width=268&t=0" width="268" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true">
                         <style>
                             iframe {
                                 display: block;
                                 border-style: none;
-                                margin: auto;
+                                margin-left: 30%;
                             }
                         </style>
                     </iframe>
-                </div>
+                </div> -->
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <h1 style="font-size: 50px; text-align:center">BUSINESS DAYS</h1>
+                <h1 style="font-size: 50px; text-align:center">We are open from <b>Monday</b> to <b>Saturday</b></h1>
+                <h1 style="font-size: 50px; text-align:center"><b>7:00AM</b> to <b>6:00PM</b></h1>
             </div>
-            <div class="col-md-6">
-
+            <div class="col-md-6" style="text-align: center; margin: 10px 0px 50px 0px;">
+                <!-- BUSINESS HOURS -->
+                <div class="container" style="background-color: rgb(255, 137, 137); width: 100%;">
+                    <div class="row"
+                        style="text-align:center; margin: 5% 5% 5% 5%; background-color: white ; border-radius: 10px;">
+                        <h1>BUSINESS HOURS</h1>
+                        <div class="col-xs-6" style="padding: 0% 5% 5% 5%; ">
+                            <h2><b>Morning</b></h2>
+                            <br>
+                            <h3>7:00 AM - 8:00 AM</h3>
+                            <h3>8:00 AM - 9:00 AM</h3>
+                            <h3>9:00 AM - 10:00 AM</h3>
+                            <h3>10:00 AM - 11:00 AM</h3>
+                        </div>
+                        <div class="col-xs-6" style="padding: 0% 5% 5% 5%;">
+                            <h3><b>Afternoon</b></h3>
+                            <br>
+                            <h3>12:00 PM - 1:00 PM</h3>
+                            <h3>1:00 PM - 2:00 PM</h3>
+                            <h3>2:00 PM - 3:00 PM</h3>
+                            <h3>3:00 PM - 4:00 PM</h3>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- BUSINESS HOURS -->
-    <div class="container" style="background-color: rgb(255, 137, 137); width: 100%;">
-        <div class="row"
-            style="text-align:center; margin: 5% 25% 5% 25%; background-color: white ; border-radius: 10px;">
-            <h1>BUSINESS HOURS</h1>
-            <div class="col-xs-6" style="padding: 0% 5% 5% 5%;">
-                <h3>Morning</h3>
-                <br>
-                <h4>7:00 AM - 8:00 AM</h4>
-                <h4>8:00 AM - 9:00 AM</h4>
-                <h4>9:00 AM - 10:00 AM</h4>
-                <h4>10:00 AM - 11:00 AM</h4>
+    <div class="container" style="background-color: white; width:100%; ">
+        <h1 style="text-align: center; font-size: 60px">OUR SERVICES</h1>
+        <div class="row" style="margin-bottom:10%;">
+            <div class="col-xs-6" style="text-align: center;">
+                <h1 style="margin-top:15%;">*Full Wrap*</h1>
+                <h1>*Hood Wrap*</h1>
+                <h1>*Headlight Film*</h1>
+                <h1>*Customize Plate*</h1>
+                <h1>*Signage*</h1>
             </div>
-            <div class="col-xs-6" style="padding: 0% 5% 5% 5%;">
-                <h3>Afternoon</h3>
+            <div class="col-xs-6">
                 <br>
-                <h4>12:00 PM - 1:00 PM</h4>
-                <h4>1:00 PM - 2:00 PM</h4>
-                <h4>2:00 PM - 3:00 PM</h4>
-                <h4>3:00 PM - 4:00 PM</h4>
+                <br>
+                <img src="../image/arg.jpg" alt="" style="width: 100%; height:100%;">
             </div>
         </div>
     </div>
@@ -520,6 +546,10 @@ include '../backend/database.php';
             }
         });
     </script>
+
+    <?php 
+    include_once '../include/footer.php';
+    ?>
 </body>
 
 </html>

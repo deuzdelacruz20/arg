@@ -56,7 +56,7 @@ include '../backend/database.php';
 			<li><a href="#template2">Cars</a></li>
 			<li><a href="#template3">SUVs</a></li>
 			<li><a href="#template4">Vans</a></li>
-			<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal" style="float: right; margin-top:3px;"><span>Add New Item</span></a>
+			<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal" style="float: right; margin-top:3px;"><span>Add New Template</span></a>
 		</ul>
 
 		<div class="tab-content">
@@ -69,15 +69,12 @@ include '../backend/database.php';
 					?>
 						<div class="col-sm-6 col-md-4">
 							<div class="thumbnail" style="background-color:#E8E8E8;">
-								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 242px; height:200px;">
+								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 450px; height:200px;">
 								<div class="caption">
 									<h3><?php echo $row["itemName"]; ?></h3>
 									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
 									<p>AVAILABLE STOCKS: <?php echo $row["itemStocks"]; ?></p>
 									<p>CATEGORY: <?php echo $row["itemCategory"]; ?></p>
-									<!-- <a href="#buyModal" data-toggle="modal">
-										<button class="btn btn-success" style="width: 100%; margin-bottom:10px;">Buy and Schedule Now</button>
-									</a> -->
 									<a href="#buyModal" class="edit" data-toggle="modal">
 										<button class="btn btn-success" style="width: 100%; margin-bottom:10px;">
 											<i class="material-icons buy" data-toggle="tooltip" data-id_b="<?php echo $row["id"]; ?>" data-itemName_b="<?php echo $row["itemName"]; ?>" data-itemPrice_b="<?php echo $row["itemPrice"]; ?>" data-itemStocks_b="<?php echo $row["itemStocks"]; ?>" data-itemCategory_b="<?php echo $row["itemCategory"]; ?>" title="Buy and Schedule Now">&#xe8cc;</i>
@@ -117,15 +114,17 @@ include '../backend/database.php';
 					?>
 						<div class="col-sm-6 col-md-4">
 							<div class="thumbnail" style="background-color:#E8E8E8;">
-								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 242px; height:200px;">
+								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 450px; height:200px;">
 								<div class="caption">
 									<h3><?php echo $row["itemName"]; ?></h3>
 									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
 									<p>AVAILABLE STOCKS: <?php echo $row["itemStocks"]; ?></p>
 									<p>CATEGORY: <?php echo $row["itemCategory"]; ?></p>
-									<p style="text-align: center;">
-										<a href="#" class="btn btn-success" style="width: 100%;">Buy and Schedule now</a>
-									</p>
+									<a href="#buyModal" class="edit" data-toggle="modal">
+										<button class="btn btn-success" style="width: 100%; margin-bottom:10px;">
+											<i class="material-icons buy" data-toggle="tooltip" data-id_b="<?php echo $row["id"]; ?>" data-itemName_b="<?php echo $row["itemName"]; ?>" data-itemPrice_b="<?php echo $row["itemPrice"]; ?>" data-itemStocks_b="<?php echo $row["itemStocks"]; ?>" data-itemCategory_b="<?php echo $row["itemCategory"]; ?>" title="Buy and Schedule Now">&#xe8cc;</i>
+										</button>
+									</a>
 									<div class="row">
 										<div class="col-xs-6">
 											<a href="#editEmployeeModal" class="edit" data-toggle="modal">
@@ -159,15 +158,17 @@ include '../backend/database.php';
 					?>
 						<div class="col-sm-6 col-md-4">
 							<div class="thumbnail" style="background-color:#E8E8E8;">
-								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 242px; height:200px;">
+								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 450px; height:200px;">
 								<div class="caption">
 									<h3><?php echo $row["itemName"]; ?></h3>
 									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
 									<p>AVAILABLE STOCKS: <?php echo $row["itemStocks"]; ?></p>
 									<p>CATEGORY: <?php echo $row["itemCategory"]; ?></p>
-									<p style="text-align: center;">
-										<a href="#" class="btn btn-success" style="width: 100%;">Buy and Schedule now</a>
-									</p>
+									<a href="#buyModal" class="edit" data-toggle="modal">
+										<button class="btn btn-success" style="width: 100%; margin-bottom:10px;">
+											<i class="material-icons buy" data-toggle="tooltip" data-id_b="<?php echo $row["id"]; ?>" data-itemName_b="<?php echo $row["itemName"]; ?>" data-itemPrice_b="<?php echo $row["itemPrice"]; ?>" data-itemStocks_b="<?php echo $row["itemStocks"]; ?>" data-itemCategory_b="<?php echo $row["itemCategory"]; ?>" title="Buy and Schedule Now">&#xe8cc;</i>
+										</button>
+									</a>
 									<div class="row">
 										<div class="col-xs-6">
 											<a href="#editEmployeeModal" class="edit" data-toggle="modal">
@@ -201,15 +202,17 @@ include '../backend/database.php';
 					?>
 						<div class="col-sm-6 col-md-4">
 							<div class="thumbnail" style="background-color:#E8E8E8;">
-								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 242px; height:200px;">
+								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 450px; height:200px;">
 								<div class="caption">
 									<h3><?php echo $row["itemName"]; ?></h3>
 									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
 									<p>AVAILABLE STOCKS: <?php echo $row["itemStocks"]; ?></p>
 									<p>CATEGORY: <?php echo $row["itemCategory"]; ?></p>
-									<p style="text-align: center;">
-										<a href="#" class="btn btn-success" style="width: 100%;">Buy and Schedule now</a>
-									</p>
+									<a href="#buyModal" class="edit" data-toggle="modal">
+										<button class="btn btn-success" style="width: 100%; margin-bottom:10px;">
+											<i class="material-icons buy" data-toggle="tooltip" data-id_b="<?php echo $row["id"]; ?>" data-itemName_b="<?php echo $row["itemName"]; ?>" data-itemPrice_b="<?php echo $row["itemPrice"]; ?>" data-itemStocks_b="<?php echo $row["itemStocks"]; ?>" data-itemCategory_b="<?php echo $row["itemCategory"]; ?>" title="Buy and Schedule Now">&#xe8cc;</i>
+										</button>
+									</a>
 									<div class="row">
 										<div class="col-xs-6">
 											<a href="#editEmployeeModal" class="edit" data-toggle="modal">
@@ -243,15 +246,17 @@ include '../backend/database.php';
 					?>
 						<div class="col-sm-6 col-md-4">
 							<div class="thumbnail" style="background-color:#E8E8E8;">
-								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 242px; height:200px;">
+								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 450px; height:200px;">
 								<div class="caption">
 									<h3><?php echo $row["itemName"]; ?></h3>
 									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
 									<p>AVAILABLE STOCKS: <?php echo $row["itemStocks"]; ?></p>
 									<p>CATEGORY: <?php echo $row["itemCategory"]; ?></p>
-									<p style="text-align: center;">
-										<a href="#" class="btn btn-success" style="width: 100%;">Buy and Schedule now</a>
-									</p>
+									<a href="#buyModal" class="edit" data-toggle="modal">
+										<button class="btn btn-success" style="width: 100%; margin-bottom:10px;">
+											<i class="material-icons buy" data-toggle="tooltip" data-id_b="<?php echo $row["id"]; ?>" data-itemName_b="<?php echo $row["itemName"]; ?>" data-itemPrice_b="<?php echo $row["itemPrice"]; ?>" data-itemStocks_b="<?php echo $row["itemStocks"]; ?>" data-itemCategory_b="<?php echo $row["itemCategory"]; ?>" title="Buy and Schedule Now">&#xe8cc;</i>
+										</button>
+									</a>
 									<div class="row">
 										<div class="col-xs-6">
 											<a href="#editEmployeeModal" class="edit" data-toggle="modal">
@@ -295,7 +300,7 @@ include '../backend/database.php';
 			// });
 		});
 	</script>
-	<!-- Add ITEM Modal HTML -->
+	<!-- Add Modal HTML -->
 	<div id="addEmployeeModal" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -307,7 +312,7 @@ include '../backend/database.php';
 					<div class="modal-body">
 						<div class="form-group">
 							<label for="inventoryImage" class="form-label">UPLOAD IMAGE</label>
-							<input class="form-control" type="file" id="inventoryImage" name="inventoryImage" />
+							<input class="form-control" type="file" id="inventoryImage" name="inventoryImage" required />
 						</div>
 						<div class="form-group">
 							<label>ITEM NAME</label>
@@ -323,7 +328,7 @@ include '../backend/database.php';
 						</div>
 						<div class="form-group">
 							<label>CATEGORY</label>
-							<select name="itemCategory" id="itemCategory" class="form-control">
+							<select name="itemCategory" id="itemCategory" class="form-control" required>
 								<option value="" selected="selected" disabled style="text-align: center;">-SELECT CATEGORY-</option>
 								<option value="Motorcycles">Motorcycles</option>
 								<option value="Cars">Cars</option>

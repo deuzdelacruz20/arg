@@ -110,9 +110,6 @@ include '../backend/database.php';
 									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
 									<p>AVAILABLE STOCKS: <?php echo $row["itemStocks"]; ?></p>
 									<p>CATEGORY: <?php echo $row["itemCategory"]; ?></p>
-									<p style="text-align: center;">
-										<a href="#" class="btn btn-success" style="width: 100%;">Buy and Schedule now</a>
-									</p>
 									<div class="row">
 										<div class="col-xs-6">
 											<a href="#editEmployeeModal" class="edit" data-toggle="modal">
@@ -152,9 +149,6 @@ include '../backend/database.php';
 									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
 									<p>AVAILABLE STOCKS: <?php echo $row["itemStocks"]; ?></p>
 									<p>CATEGORY: <?php echo $row["itemCategory"]; ?></p>
-									<p style="text-align: center;">
-										<a href="#" class="btn btn-success" style="width: 100%;">Buy and Schedule now</a>
-									</p>
 									<div class="row">
 										<div class="col-xs-6">
 											<a href="#editEmployeeModal" class="edit" data-toggle="modal">
@@ -194,9 +188,6 @@ include '../backend/database.php';
 									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
 									<p>AVAILABLE STOCKS: <?php echo $row["itemStocks"]; ?></p>
 									<p>CATEGORY: <?php echo $row["itemCategory"]; ?></p>
-									<p style="text-align: center;">
-										<a href="#" class="btn btn-success" style="width: 100%;">Buy and Schedule now</a>
-									</p>
 									<div class="row">
 										<div class="col-xs-6">
 											<a href="#editEmployeeModal" class="edit" data-toggle="modal">
@@ -236,9 +227,6 @@ include '../backend/database.php';
 									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
 									<p>AVAILABLE STOCKS: <?php echo $row["itemStocks"]; ?></p>
 									<p>CATEGORY: <?php echo $row["itemCategory"]; ?></p>
-									<p style="text-align: center;">
-										<a href="#" class="btn btn-success" style="width: 100%;">Buy and Schedule now</a>
-									</p>
 									<div class="row">
 										<div class="col-xs-6">
 											<a href="#editEmployeeModal" class="edit" data-toggle="modal">

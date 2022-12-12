@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 10, 2022 at 11:10 AM
+-- Generation Time: Dec 12, 2022 at 03:46 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -68,7 +68,9 @@ INSERT INTO `customer_request` (`id`, `firstName`, `lastName`, `phoneNumber`, `d
 (148, 'Leigh', 'Ayuma', '09456789123', '2022-11-12', 'Customized Plate', '7:00 AM - 8:00 AM', '2022-11-30 11:10:10', 'Pending'),
 (166, 'Ronel', 'Tagala', '09423113654', '2022-11-30', 'Signage', '8:00 AM - 9:00 AM', '2022-11-30 11:07:52', 'Pending'),
 (175, 'Aldous', 'Turgo', '09123456789', '2022-12-10', 'HeadLight Film', '7:00 AM - 8:00 AM', '2022-12-10 10:02:07', 'Accepted'),
-(176, 'Steven', 'Quinto', '09456789123', '2022-12-12', 'HeadLight Film', '7:00 AM - 8:00 AM', '2022-12-10 10:03:41', 'Done');
+(176, 'Steven', 'Quinto', '09456789123', '2022-12-12', 'HeadLight Film', '7:00 AM - 8:00 AM', '2022-12-10 10:03:41', 'Done'),
+(177, 'Joshua', 'Garcia', '09456789123', '2022-12-12', 'Hood Wrap', '7:00 AM - 8:00 AM', '2022-12-11 18:38:41', 'Pending'),
+(178, 'Piolo', 'Pagana', '0945678123', '2022-12-12', 'HeadLight Film', '7:00 AM - 8:00 AM', '2022-12-12 08:00:14', 'Pending');
 
 -- --------------------------------------------------------
 
@@ -119,14 +121,26 @@ CREATE TABLE `inventory` (
 --
 
 INSERT INTO `inventory` (`id`, `inventoryImage`, `itemName`, `itemPrice`, `itemStocks`, `itemCategory`) VALUES
-(7, 'template_1.png', 'ITEM 1', 20, 10, 'Motorcycles'),
-(8, 'template_2.png', 'ITEM 2', 20, 10, 'Cars'),
-(9, 'template_3.png', 'ITEM 3', 20, 10, 'SUVs'),
-(10, 'template_4.png', 'ITEM 4', 30, 10, 'Vans'),
-(11, 'template_5.png', 'ITEM 5', 10, 20, 'Motorcycles'),
-(12, 'template_6.png', 'ITEM 6', 20, 10, 'Cars'),
-(13, 'template_7.png', 'ITEM 7', 20, 10, 'SUVs'),
-(14, 'template_8.png', 'ITEM 8', 20, 31, 'Vans');
+(15, 'car.png', 'TRANSFORMERS', 20, 10, 'Cars'),
+(16, 'car2.png', 'DYNOMAX', 20, 10, 'Cars'),
+(17, 'car3.png', 'RS AKIMOTO', 20, 10, 'Cars'),
+(18, 'car4.png', 'TRANSFORMERS 2', 20, 10, 'Cars'),
+(19, 'car5.png', 'FW 808', 20, 10, 'Cars'),
+(20, 'car6.png', 'RUROUNI KENSHIN', 20, 10, 'Cars'),
+(21, 'car7.png', 'TURBO', 20, 10, 'Cars'),
+(22, 'car8.png', 'RS AKIMOTO RED', 20, 10, 'Cars'),
+(23, 'car9.png', 'RS AKIMOTO ANIME', 20, 10, 'Cars'),
+(24, 'car10.png', 'NITRO SPORT', 20, 10, 'Cars'),
+(25, 'car11.png', 'TURBO - the spirit of competition', 20, 10, 'Cars'),
+(26, 'car12.png', 'AMERICAN RACING', 20, 10, 'Cars'),
+(27, 'motorcycle1.png', 'SPORTY NMAX', 20, 10, 'Motorcycles'),
+(28, 'suv1.png', 'DRAGON BALL SUPER', 20, 10, 'SUVs'),
+(29, 'suv2.png', 'DRAGON BALL SUPER 2', 20, 10, 'SUVs'),
+(30, 'suv3.png', 'SUV The Spirit of Competition', 20, 10, 'SUVs'),
+(31, 'suv4.png', 'RED AND GRAY', 20, 10, 'SUVs'),
+(32, 'van1.png', 'VAN Spirit of Competition', 20, 10, 'Vans'),
+(34, 'van2.png', 'ONE PIECE', 20, 10, 'Vans'),
+(35, 'van3.png', 'TOYOTA RACING DEVELOPMENT', 20, 10, 'Vans');
 
 --
 -- Indexes for dumped tables
@@ -158,7 +172,7 @@ ALTER TABLE `inventory`
 -- AUTO_INCREMENT for table `customer_request`
 --
 ALTER TABLE `customer_request`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=177;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=179;
 
 --
 -- AUTO_INCREMENT for table `design_templates`
@@ -170,7 +184,7 @@ ALTER TABLE `design_templates`
 -- AUTO_INCREMENT for table `inventory`
 --
 ALTER TABLE `inventory`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
