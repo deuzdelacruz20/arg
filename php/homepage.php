@@ -84,6 +84,17 @@ include '../backend/database.php';
         :-ms-input-placeholder {
             font-style: italic;
         }
+
+        /* .carousel .item {
+            height: 500px;
+        }
+
+        .item img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            min-height: 500px;
+        } */
     </style>
 
     <script>
@@ -164,92 +175,133 @@ include '../backend/database.php';
 </head>
 
 <body>
-    <div class="container overflow-hidden">
-        <!-- <img src="../image/qrcode.jpg" style="border-radius: 5px;"> -->
-        <div class="row gx-5">
-            <div class="col-md-4">
-                <video width="560" height="315" autoplay loop muted style="margin-left: 10%;">
-                    <source src="../videos/Midnight Run. (R34 GTR, FD RX7, Evo and more) _ Zhiyun Crane 3 Lab _ 4K.mp4" type="video/mp4" />
-                    Your browser does not support the video element.
-                </video>
-            </div>
-            <div class="col-md-4">
+    <div class="row" style="text-align: center; margin-bottom: 10%;">
+        <div class="col-md-6">
+            <div class="container" style="height: 300px; width: 90%; margin-top: 50px; margin-bottom: 50px;">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                    </ol>
 
-            </div>
-            <div class="col-md-4">
-                <a href="#addEmployeeModal" class="btn btn-primary" data-toggle="modal" style="font-size: 26px; float: right; margin-right: 5%; margin-top: 300px; "> <span>Schedule An
-                        Appointment</span></a>
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img src="../image/a.jpg" style="width:800px; max-height:500px">
+                        </div>
 
+                        <div class="item">
+                            <img src="../image/b.jpg" style="width:800px; max-height:500px">
+                        </div>
+
+                        <div class="item">
+                            <img src="../image/c.jpg" style="width:800px; max-height:500px">
+                        </div>
+                    </div>
+
+                    <!-- Left and right controls -->
+                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
             </div>
         </div>
-        <div class="row gx-5">
-            <div class="col-md-4">
-                <video width="560" height="315" autoplay loop muted style="margin-left: 10%;">
-                    <source src="../videos/Motorcycle Montage _ Yamaha Aerox 155 _ USING YOUR PHONE.mp4" type="video/mp4" />
-                    Your browser does not support the video element.
-                </video>
+        <div class="col-md-6">
+            <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal" style="padding: 50px; margin-top: 225px;">
+                <h1>Schedule Now!</h1>
+            </a>
+        </div>
+    </div>
+    <div class="container" style="width: 100%; background-color:white">
+        <div class="row" style="margin-top: 50px; margin-bottom: 50px;">
+            <div class="col-xs-6 col-md-3">
+                <div class="thumbnail">
+                    <img src="../image/d.jpg" alt="Boats at Phi Phi, Thailand">
+                    <div class="caption">
+                        <p>Etizzle shiznit fo shizzle sizzle augue hendrerizzle accumsizzle. Gizzle izzle est.
+                            Vivamizzle
+                            hizzle dolor, sure vitae, yippiyo id, ultrices izzle, sheezy.</p>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-4">
-
+            <div class="col-xs-6 col-md-3">
+                <div class="thumbnail">
+                    <img src="../image/e.jpg" alt="Boats at Phi Phi, Thailand">
+                    <div class="caption">
+                        <p>Etizzle shiznit fo shizzle sizzle augue hendrerizzle accumsizzle. Gizzle izzle est.
+                            Vivamizzle
+                            hizzle dolor, sure vitae, yippiyo id, ultrices izzle, sheezy.</p>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-4">
-
+            <div class="col-xs-6 col-md-3">
+                <div class="thumbnail">
+                    <img src="../image/i.jpg" alt="Boats at Phi Phi, Thailand">
+                    <div class="caption">
+                        <p>Etizzle shiznit fo shizzle sizzle augue hendrerizzle accumsizzle. Gizzle izzle est.
+                            Vivamizzle
+                            hizzle dolor, sure vitae, yippiyo id, ultrices izzle, sheezy.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-md-3">
+                <div class="thumbnail">
+                    <img src="../image/g.jpg" alt="Boats at Phi Phi, Thailand">
+                    <div class="caption">
+                        <p>Etizzle shiznit fo shizzle sizzle augue hendrerizzle accumsizzle. Gizzle izzle est.
+                            Vivamizzle
+                            hizzle dolor, sure vitae, yippiyo id, ultrices izzle, sheezy.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 50px; margin-bottom: 50px;">
+            <div class="col-xs-6 col-md-3">
+                <div class="thumbnail">
+                    <img src="../image/f.jpg" alt="Boats at Phi Phi, Thailand">
+                    <div class="caption">
+                        <p>Etizzle shiznit fo shizzle sizzle augue hendrerizzle accumsizzle. Gizzle izzle est.
+                            Vivamizzle
+                            hizzle dolor, sure vitae, yippiyo id, ultrices izzle, sheezy.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-md-3">
+                <div class="thumbnail">
+                    <img src="../image/h.jpg" alt="Boats at Phi Phi, Thailand">
+                    <div class="caption">
+                        <p>Etizzle shiznit fo shizzle sizzle augue hendrerizzle accumsizzle. Gizzle izzle est.
+                            Vivamizzle
+                            hizzle dolor, sure vitae, yippiyo id, ultrices izzle, sheezy.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-md-3">
+                <div class="thumbnail">
+                    <img src="../image/j.jpg" alt="Boats at Phi Phi, Thailand">
+                    <div class="caption">
+                        <p>Etizzle shiznit fo shizzle sizzle augue hendrerizzle accumsizzle. Gizzle izzle est.
+                            Vivamizzle
+                            hizzle dolor, sure vitae, yippiyo id, ultrices izzle, sheezy.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <br>
-    <br>
-    <div class="container" style=" width:100%;">
-        <h1 style="text-align:center;color:green;">
-            ARG AUTOSIGN SHOP
-        </h1>
-        <h3>
-            Information about the website
-        </h3>
-        <div class="container horizontal-scrollable" style="width: 100%; background-color:#fff;">
-            <div class="row text-center">
-                <div class="col-xs-4"><img src="../image/1.jpg" width="300px" height="200px"></div>
-                <div class="col-xs-4"><img src="../image/2.jpg" width="300px" height="200px"></div>
-                <div class="col-xs-4"><img src="../image/3.jpg" width="300px" height="200px"></div>
-                <div class="col-xs-4"><img src="../image/4.jpg" width="300px" height="200px"></div>
-                <div class="col-xs-4"><img src="../image/5.jpg" width="300px" height="200px"></div>
-                <div class="col-xs-4"><img src="../image/6.jpg" width="300px" height="200px"></div>
-                <div class="col-xs-4"><img src="../image/7.jpg" width="300px" height="200px"></div>
-            </div>
-        </div>
+    <div class="iframe-container" style="margin: 5%;">
+        <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2FARGAutosignShop%2Fvideos%2F600802391554257%2F&show_text=false&width=268&t=0" width="268" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true">
+        </iframe>
     </div>
 
-    <div class="container overflow-hidden">
-        <!-- <img src="../image/qrcode.jpg" style="border-radius: 5px;"> -->
-        <div class="row gx-5">
-            <div class="col-md-4">
-                <video width="560" height="315" autoplay loop muted style="margin-left: 10%;">
-                    <source src="../videos/Tokyo Underground. _ 4K.mp4" type="video/mp4" />
-                    Your browser does not support the video element.
-                </video>
-            </div>
-            <div class="col-md-4">
 
-            </div>
-            <div class="col-md-4">
-
-            </div>
-        </div>
-        <div class="row gx-5">
-            <div class="col-md-4">
-                <video width="560" height="315" autoplay loop muted style="margin-left: 10%;">
-                    <source src="../videos/ENEMY.mp4" type="video/mp4" />
-                    Your browser does not support the video element.
-                </video>
-            </div>
-            <div class="col-md-4">
-
-            </div>
-            <div class="col-md-4">
-
-            </div>
-        </div>
-    </div>
+    
 
     <!-- Add Modal HTML -->
     <div id="addEmployeeModal" class="modal fade">
@@ -297,7 +349,8 @@ include '../backend/database.php';
                         <div class="form-group">
                             <label>TIME SLOTS</label>
                             <select name="time" id="time" class="form-control">
-                                <option value="" selected="selected" disabled style="text-align: center;">Please select
+                                <option value="" selected="selected" disabled style="text-align: center;">Please
+                                    select
                                     service first</option>
                             </select>
                         </div>
@@ -306,67 +359,6 @@ include '../backend/database.php';
                         <input type="hidden" value="1" name="type">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
                         <button type="button" class="btn btn-success" id="btn-add" disabled>Submit</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- Edit Modal HTML -->
-    <div id="editEmployeeModal" class="modal fade">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form id="update_form">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Edit User</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                        <input type="hidden" id="id_u" name="id" class="form-control" required>
-                        <div class="form-group">
-                            <label>Name</label>
-                            <input type="text" id="fullName_u" name="fullName" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Phone Number</label>
-                            <input type="phone" id="phoneNumber_u" name="phoneNumber" class="form-control" maxlength="11" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Services</label>
-                            <input type="text" id="services_u" name="services" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Time</label>
-                            <input type="text" id="time_u" name="time" class="form-control" required>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <input type="hidden" value="2" name="type">
-                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                        <button type="button" class="btn btn-info" id="update">Update</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- Delete Modal HTML -->
-    <div id="deleteEmployeeModal" class="modal fade">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form>
-                    <div class="modal-header">
-                        <h4 class="modal-title">Delete</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                        <input type="hidden" id="id_d" name="id" class="form-control">
-                        <p>Are you sure you want to delete these Records?</p>
-                        <p class="text-warning"><small>This action cannot be undone.</small></p>
-                    </div>
-                    <div class="modal-footer">
-                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                        <button type="button" class="btn btn-danger" id="delete">Delete</button>
                     </div>
                 </form>
             </div>
