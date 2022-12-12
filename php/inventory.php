@@ -51,6 +51,8 @@ include '../backend/database.php';
 			<li><a href="#template2">Cars</a></li>
 			<li><a href="#template3">SUVs</a></li>
 			<li><a href="#template4">Vans</a></li>
+			<li><a href="#template5">Stickers</a></li>
+			<li><a href="#template6">Materials</a></li>
 			<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal" style="float: right; margin-top:3px;"><span>Add New Item</span></a>
 		</ul>
 
@@ -64,7 +66,7 @@ include '../backend/database.php';
 					?>
 						<div class="col-sm-6 col-md-4">
 							<div class="thumbnail" style="background-color:#E8E8E8;">
-								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 242px; height:200px;">
+								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 450px; height:200px;">
 								<div class="caption">
 									<h3><?php echo $row["itemName"]; ?></h3>
 									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
@@ -104,7 +106,7 @@ include '../backend/database.php';
 					?>
 						<div class="col-sm-6 col-md-4">
 							<div class="thumbnail" style="background-color:#E8E8E8;">
-								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 242px; height:200px;">
+								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 450px; height:200px;">
 								<div class="caption">
 									<h3><?php echo $row["itemName"]; ?></h3>
 									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
@@ -143,7 +145,7 @@ include '../backend/database.php';
 					?>
 						<div class="col-sm-6 col-md-4">
 							<div class="thumbnail" style="background-color:#E8E8E8;">
-								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 242px; height:200px;">
+								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 450px; height:200px;">
 								<div class="caption">
 									<h3><?php echo $row["itemName"]; ?></h3>
 									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
@@ -182,7 +184,7 @@ include '../backend/database.php';
 					?>
 						<div class="col-sm-6 col-md-4">
 							<div class="thumbnail" style="background-color:#E8E8E8;">
-								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 242px; height:200px;">
+								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 450px; height:200px;">
 								<div class="caption">
 									<h3><?php echo $row["itemName"]; ?></h3>
 									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
@@ -221,7 +223,85 @@ include '../backend/database.php';
 					?>
 						<div class="col-sm-6 col-md-4">
 							<div class="thumbnail" style="background-color:#E8E8E8;">
-								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 242px; height:200px;">
+								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 450px; height:200px;">
+								<div class="caption">
+									<h3><?php echo $row["itemName"]; ?></h3>
+									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
+									<p>AVAILABLE STOCKS: <?php echo $row["itemStocks"]; ?></p>
+									<p>CATEGORY: <?php echo $row["itemCategory"]; ?></p>
+									<div class="row">
+										<div class="col-xs-6">
+											<a href="#editEmployeeModal" class="edit" data-toggle="modal">
+												<button class="btn btn-primary" style="width: 100%;">
+													<i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-itemName="<?php echo $row["itemName"]; ?>" data-itemPrice="<?php echo $row["itemPrice"]; ?>" data-itemStocks="<?php echo $row["itemStocks"]; ?>" data-itemCategory="<?php echo $row["itemCategory"]; ?>" title="Edit">&#xE254;</i>
+												</button>
+											</a>
+										</div>
+										<div class="col-xs-6">
+											<a href="#deleteEmployeeModal" class="delete" data-id="<?php echo $row["id"]; ?>" data-toggle="modal">
+												<button class="btn btn-danger" style="width: 100%;">
+													<i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>
+												</button>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					<?php
+					}
+					?>
+
+				</div>
+			</div>
+			<div id="template5" class="tab-pane fade">
+				<div class="row">
+					<?php
+					$result = mysqli_query($conn, "SELECT * FROM inventory WHERE itemCategory = 'Stickers';");
+					while ($row = mysqli_fetch_array($result)) {
+					?>
+						<div class="col-sm-6 col-md-4">
+							<div class="thumbnail" style="background-color:#E8E8E8;">
+								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 450px; height:200px;">
+								<div class="caption">
+									<h3><?php echo $row["itemName"]; ?></h3>
+									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
+									<p>AVAILABLE STOCKS: <?php echo $row["itemStocks"]; ?></p>
+									<p>CATEGORY: <?php echo $row["itemCategory"]; ?></p>
+									<div class="row">
+										<div class="col-xs-6">
+											<a href="#editEmployeeModal" class="edit" data-toggle="modal">
+												<button class="btn btn-primary" style="width: 100%;">
+													<i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-itemName="<?php echo $row["itemName"]; ?>" data-itemPrice="<?php echo $row["itemPrice"]; ?>" data-itemStocks="<?php echo $row["itemStocks"]; ?>" data-itemCategory="<?php echo $row["itemCategory"]; ?>" title="Edit">&#xE254;</i>
+												</button>
+											</a>
+										</div>
+										<div class="col-xs-6">
+											<a href="#deleteEmployeeModal" class="delete" data-id="<?php echo $row["id"]; ?>" data-toggle="modal">
+												<button class="btn btn-danger" style="width: 100%;">
+													<i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>
+												</button>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					<?php
+					}
+					?>
+
+				</div>
+			</div>
+			<div id="template6" class="tab-pane fade">
+				<div class="row">
+					<?php
+					$result = mysqli_query($conn, "SELECT * FROM inventory WHERE itemCategory = 'MAterials';");
+					while ($row = mysqli_fetch_array($result)) {
+					?>
+						<div class="col-sm-6 col-md-4">
+							<div class="thumbnail" style="background-color:#E8E8E8;">
+								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 450px; height:200px;">
 								<div class="caption">
 									<h3><?php echo $row["itemName"]; ?></h3>
 									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
@@ -382,6 +462,76 @@ include '../backend/database.php';
 			</div>
 		</div>
 	</div>
+	<!-- DISABLE THE SUBMIT BUTON -->
+	<script>
+		// FOR ADDING
+		$("#inventoryImage").keyup(function(event) {
+			validateInputs();
+		});
+		$("#itemName").keyup(function(event) {
+			validateInputs();
+		});
+		$("#itemPrice").keyup(function(event) {
+			validateInputs();
+		});
+		$("#itemStocks").keyup(function(event) {
+			validateInputs();
+		});
+		$("#itemCategory").keyup(function(event) {
+			validateInputs();
+		});
+
+		// FOR UPDATING
+		// $("#inventoryImage").keyup(function(event) {
+		// 	validateInputs();
+		// });
+		$("#itemName_u").keyup(function(event) {
+			validateInputs();
+		});
+		$("#itemPrice_u").keyup(function(event) {
+			validateInputs();
+		});
+		$("#itemStocks_u").keyup(function(event) {
+			validateInputs();
+		});
+		$("#itemCategory_u").keyup(function(event) {
+			validateInputs();
+		});
+
+		function validateInputs() {
+			var disableButton = false;
+
+			var inventoryImage = $("#inventoryImage").val();
+			var itemName = $("#itemName").val();
+			var itemPrice = $("#itemPrice").val();
+			var itemStocks = $("#itemStocks").val();
+			var itemCategory = $("#itemCategory").val();
+
+			var itemName_u = $("#itemName_u").val();
+			var itemPrice_u = $("#itemPrice_u").val();
+			var itemStocks_u = $("#itemStocks_u").val();
+			var itemCategory_u = $("#itemCategory_u").val();
+
+			if (
+				itemName.length == 0 ||
+				itemPrice.length == 0 ||
+				itemStocks.length == 0
+
+			)
+				disableButton = true;
+			$('#btn-add').attr('disabled', disableButton);
+
+			var disableButton = false;
+			if (
+				itemName_u.length == 0 ||
+				itemPrice_u.length == 0 ||
+				itemStocks_u.length == 0 ||
+				itemCategory_u.length == 0
+			)
+				disableButton = true;
+			$('#update').attr('disabled', disableButton);
+		}
+	</script>
 </body>
 
 </html>

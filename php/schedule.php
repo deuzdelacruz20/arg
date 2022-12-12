@@ -45,7 +45,7 @@ include '../backend/database.php';
         .swal2-popup {
             font-size: 1.6rem !important;
         }
-        
+
         ::-webkit-input-placeholder {
             font-style: italic;
         }
@@ -808,6 +808,8 @@ include '../backend/database.php';
             }
         });
     </script>
+
+    <script src="../js/refresh.js"></script>
 </body>
 
 </html>

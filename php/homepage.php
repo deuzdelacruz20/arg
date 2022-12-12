@@ -150,20 +150,20 @@ include '../backend/database.php';
                 "5:00 PM - 6:00 PM": []
             }
         }
-        window.onload = function () {
+        window.onload = function() {
             var servicesSel = document.getElementById("services");
             var timeSel = document.getElementById("time");
             for (var x in services) {
                 servicesSel.options[servicesSel.options.length] = new Option(x, x);
             }
-            servicesSel.onchange = function () {
+            servicesSel.onchange = function() {
                 timeSel.length = 1;
                 //display correct values
                 for (var y in services[this.value]) {
                     timeSel.options[timeSel.options.length] = new Option(y, y);
                 }
             }
-            timeSel.onchange = function () {
+            timeSel.onchange = function() {
                 //display correct values
                 var z = services[servicesSel.value][this.value];
                 for (var i = 0; i < z.length; i++) {
@@ -212,8 +212,7 @@ include '../backend/database.php';
             </div>
         </div>
         <div class="col-md-6">
-            <a href="#addEmployeeModal" class="btn btn-info" data-toggle="modal"
-                style="padding: 50px; margin-top: 75px; margin-bottom: 25px;">
+            <a href="#addEmployeeModal" class="btn btn-info" data-toggle="modal" style="padding: 50px; margin-top: 75px; margin-bottom: 25px;">
                 <h1>Schedule Now!</h1>
                 <h5>Reserve your timeslot now!</h5>
             </a>
@@ -331,8 +330,7 @@ include '../backend/database.php';
             <div class="col-md-6" style="text-align: center; margin: 10px 0px 50px 0px;">
                 <!-- BUSINESS HOURS -->
                 <div class="container" style="background-color: rgb(255, 137, 137); width: 100%;">
-                    <div class="row"
-                        style="text-align:center; margin: 5% 5% 5% 5%; background-color: white ; border-radius: 10px;">
+                    <div class="row" style="text-align:center; margin: 5% 5% 5% 5%; background-color: white ; border-radius: 10px;">
                         <h1>BUSINESS HOURS</h1>
                         <div class="col-xs-6" style="padding: 0% 5% 5% 5%; ">
                             <h2><b>Morning</b></h2>
@@ -388,18 +386,15 @@ include '../backend/database.php';
                     <div class="modal-body">
                         <div class="form-group">
                             <label>FIRST NAME</label>
-                            <input type="text" id="firstName" name="firstName" class="form-control"
-                                placeholder="Enter Your First Name" autocapitalize="word" required>
+                            <input type="text" id="firstName" name="firstName" class="form-control" placeholder="Enter Your First Name" autocapitalize="word" required>
                         </div>
                         <div class="form-group">
                             <label>LAST NAME</label>
-                            <input type="text" id="lastName" name="lastName" class="form-control"
-                                placeholder="Enter Your Last Name" required>
+                            <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Enter Your Last Name" required>
                         </div>
                         <div class="form-group">
                             <label>PHONE NUMBER</label>
-                            <input type="phone" id="phoneNumber" name="phoneNumber" class="form-control" maxlength="11"
-                                placeholder="Enter Your Phone Number" required>
+                            <input type="phone" id="phoneNumber" name="phoneNumber" class="form-control" maxlength="11" placeholder="Enter Your Phone Number" required>
                         </div>
                         <div class="form-group">
                             <label>DATE</label>
@@ -444,13 +439,13 @@ include '../backend/database.php';
     <!-- DISABLE ADD BUTTON IF EMPTY -->
     <script>
         // DISABLE ADD BUTTON
-        $("#firstName").keyup(function (event) {
+        $("#firstName").keyup(function(event) {
             validateInputs();
         });
-        $("#lastName").keyup(function (event) {
+        $("#lastName").keyup(function(event) {
             validateInputs();
         });
-        $("#phoneNumber").keyup(function (event) {
+        $("#phoneNumber").keyup(function(event) {
             validateInputs();
         });
         // $("#date").keyup(function(event) {
@@ -487,13 +482,13 @@ include '../backend/database.php';
         }
 
         // DISABLE UPDATE BUTTON
-        $("#firstName_u").keyup(function (event) {
+        $("#firstName_u").keyup(function(event) {
             updateValidateInputs();
         });
-        $("#lastName_u").keyup(function (event) {
+        $("#lastName_u").keyup(function(event) {
             updateValidateInputs();
         });
-        $("#phoneNumber_u").keyup(function (event) {
+        $("#phoneNumber_u").keyup(function(event) {
             updateValidateInputs();
         });
         // $("#date_u").keyup(function(event) {
@@ -533,7 +528,7 @@ include '../backend/database.php';
     <!-- DISABLE SUNDAY -->
     <script>
         const picker = document.getElementById('date');
-        picker.addEventListener('input', function (e) {
+        picker.addEventListener('input', function(e) {
             var day = new Date(this.value).getUTCDay();
             if ([5, 0].includes(day)) {
                 e.preventDefault();
@@ -547,7 +542,7 @@ include '../backend/database.php';
         });
     </script>
 
-    <?php 
+    <?php
     include_once '../include/footer.php';
     ?>
 </body>
