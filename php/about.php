@@ -35,7 +35,6 @@
    <div id="about-2">
     <div class="content-box-lg">
       <div class="container">
-        <div class="row">
           <div class="col-md-4">
             <div class="about-item text-center" style="margin-bottom: 20px; margin-bottom: 20px; padding: 80px,30px; box-shadow: 0 0 9px rgba(0,0,0 .6);">
               <i class="fa fa-book"></i>
@@ -55,10 +54,12 @@
           <div class="col-md-4">
             <div class="about-item text-center">
               <i class="fa fa-pencil"></i>
-              <h3>Our Purpose</h3>
-              <hr>
-              <p>.....................................................</p>
-            </div>
+              <h3>Location</h3>
+              <p>Barangay Isabang Tayabas City.</p>
+              <h3>Contact</h3>
+              <p>09215954498</p>
+
+            
           </div>
         </div>
       </div>
