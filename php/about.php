@@ -30,48 +30,37 @@
 </head>
 
 <body>
-  <selection id="about">
-    <div id="about-1">
-      <h1>About</h1>
-    </div>
-    <div id="about-2">
-      <div class="content-box-lg">
-        <div class="container">
-          <div class="col-md-4">
-            <div class="about-item text-center" style="margin-bottom: 20px; margin-bottom: 20px; padding: 80px,30px; box-shadow: 0 0 9px rgba(0,0,0 .6);">
-              <i class="fa fa-book"></i>
-              <h3>Mission</h3>
-              <hr>
-              <p>We deliver creative Print & Marketing Solutions that make our clients successful. We keep our promises, provide creative solutions, and achieve our client’s goals. </p>
-              </p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="about-item text-center">
-              <i class="fa fa-globe"></i>
-              <h3>VISSION</h3>
-              <hr>
-              <p>"To be the world's most premier printing solution company delivering premium quality product to our customers."</p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="about-item text-center">
-              <i class="fa fa-pencil"></i>
-              <h3>Location</h3>
-              <p>Barangay Isabang Tayabas City.</p>
-              <h3>Contact</h3>
-              <p>09215954498</p>
-
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </selection>
-  <footer class="text-center">
-    <p>&copy; 2022, ARG Authosign Shop.</p>
-  </footer>
+<div class="section">
+		<div class="container">
+			<div class="content-section">
+				<div class="title">
+					<h1>About Us</h1>
+				</div>
+				<div class="content">
+					<h3>Mission</h3>
+					<p>We deliver creative Print & Marketing Solutions that make our clients successful. We keep our promises, provide creative solutions, and achieve our client’s goals.</p>
+         			<h3>Vission</h3>
+          			<p>To be the world's most premier printing solution company delivering premium quality product to our customers.</p>
+					<div class="button">
+						<a href="">Read More</a>
+					</div>
+				</div>
+				<div class="social">
+					<a href="https://www.facebook.com/ARGAutosignShop"><i class="fab fa-facebook-f"></i></a>
+				</div>
+			</div>
+			<div class="image-section">
+				<img src="../image/arg logo.png">
+			</div>
+		</div>
+	</div>
+<footer class="text-center">
+		<h4><i class="fa fa-phone"></i></i> Contact</h4>
+		<p>099999999</p>
+		<h4><i class='fas fa-map-marker-alt'></i>Location</h4>
+		<p>Barangay Isabang Tayabas City.</p>
+		<p>&copy; 2022, ARG Authosign Shop.</p>
+	</footer>
 </body>
 
 </html>
