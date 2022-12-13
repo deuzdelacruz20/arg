@@ -369,8 +369,12 @@ include '../backend/database.php';
 							<input type="text" id="itemName" name="itemName" class="form-control" placeholder="Enter the Item Name" required>
 						</div>
 						<div class="form-group">
-							<label>PRICE</label>
-							<input type="number" id="itemPrice" name="itemPrice" class="form-control" placeholder="Enter the Item Price" required>
+							<label>PRICE BOUGHT</label>
+							<input type="number" id="itemPrice" name="itemPrice" class="form-control" placeholder="Enter the Item Price bought" required>
+						</div>
+						<div class="form-group">
+							<label>SELLING PRICE</label>
+							<input type="number" id="itemPriceSell" name="itemPriceSell" class="form-control" placeholder="Enter the Item Price to sell" required>
 						</div>
 						<div class="form-group">
 							<label>STOCKS</label>
