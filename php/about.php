@@ -46,7 +46,7 @@
 					</div>
 				</div>
 				<div class="social">
-					<a href="https://www.facebook.com/ARGAutosignShop"><i class="fab fa-facebook-f"></i></a>
+					<a href="https://www.facebook.com/ARGAutosignShop" target="_blank"><img src="../image/Fbicon.png" width="40" height="40/"></a>
 				</div>
 			</div>
 			<div class="image-section">
@@ -56,9 +56,9 @@
 	</div>
 <footer class="text-center">
 		<h4><i class="fa fa-phone"></i></i> Contact</h4>
-		<p>099999999</p>
-		<h4><i class='fas fa-map-marker-alt'></i>Location</h4>
-		<p>Barangay Isabang Tayabas City.</p>
+		<h4> 099999999</h4>
+		<h4><i class="fa fa-map-marker"></i> Location</h4>
+		<h4>Barangay Isabang Tayabas City.</h4>
 		<p>&copy; 2022, ARG Authosign Shop.</p>
 	</footer>
 </body>

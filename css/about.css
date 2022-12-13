@@ -7,7 +7,7 @@
 }
 .section{
 	width: 100%;
-	min-height: 50vh;
+	min-height: 75vh;
 	background-color: #ddd;
 }
 .container{
@@ -89,7 +89,7 @@
 }
 .image-section img{
 	width: 100%;
-	height: auto;
+	height: 100px;
 	display: block;
 	margin:auto;
 }
