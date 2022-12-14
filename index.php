@@ -1,5 +1,5 @@
 <?php
-header("Location: http://localhost/arg/php/homepage.php");
+header("Location: http://localhost/arg/user/homepage.php");
 ?>
 
 <!DOCTYPE html>

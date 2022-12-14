@@ -1,5 +1,5 @@
 <?php
-include '../include/navigation.php';
+include '../include_u/navigation.php';
 include '../backend/database.php';
 ?>
 <!DOCTYPE html>
@@ -299,7 +299,7 @@ include '../backend/database.php';
 
 
     <!-- Add Modal HTML -->
-    <div id="addEmployeeModal" class="modal fade">
+    <div id="addEmployeeModal" class="modal fade" style="margin-left:20px; margin-right:20px;">
         <div class="modal-dialog">
             <div class="modal-content">
                 <form id="user_form">
