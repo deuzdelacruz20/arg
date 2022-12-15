@@ -3,7 +3,11 @@ $(document).on('click', '#btn-add', function (e) {
 
 	var fd = new FormData();
 	fd.append("type", $("#save_id").val());
-	fd.append("inventoryImage", $("#inventoryImage")[0].files[0]); // image
+	if($("#inventoryImage")[0].files[0] != null)
+	{
+		fd.append("inventoryImage", $("#inventoryImage")[0].files[0]); // image
+	}
+	
 	fd.append("itemName", $('#itemName').val());
 	fd.append("itemPrice", $('#itemPrice').val());
 	fd.append("itemStocks", $('#itemStocks').val());

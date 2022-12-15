@@ -1,12 +1,11 @@
 <?php
 include 'database.php';
 
-if (count($_GET) > 0) {
-	if ($_GET['type'] == "ADD") {
-		$services = $_GET['services'];
-		$date = $_GET['date'];
+if (count($_POST) > 0) {
+	if ($_POST['type'] == "ADD") {
+		$date = $_POST['date'];
 		
-		$rows = mysqli_query($conn, "SELECT * FROM customer_request WHERE date = '".$date."' and services = '".strtoupper($services)."' ORDER BY timestamp DESC"); 
+		$rows = mysqli_query($conn, "SELECT * FROM customer_request WHERE date = '".$date."' ORDER BY timestamp DESC"); 
 		if(!isset($rows)){
   			 echo json_encode(array("statusCode" => 99));
 		}
@@ -20,13 +19,12 @@ if (count($_GET) > 0) {
 		mysqli_close($conn);
 	}
 }
-if (count($_GET) > 0) {
-	if ($_GET['type'] == "UPDATE") {
-		$services = $_GET['services'];
-		$date = $_GET['date'];
-		$id = $_GET['id'];
+if (count($_POST) > 0) {
+	if ($_POST['type'] == "UPDATE") {
+		$date = $_POST['date'];
+		$id = $_POST['id'];
 		
-		$rows = mysqli_query($conn, "SELECT * FROM customer_request WHERE date = '".$date."' and services = '".strtoupper($services)."' and id <>".$id." ORDER BY timestamp DESC"); 
+		$rows = mysqli_query($conn, "SELECT * FROM customer_request WHERE date = '".$date."' and id <>".$id." ORDER BY timestamp DESC"); 
 		if(!isset($rows)){
   			 echo json_encode(array("statusCode" => 99));
 		}

@@ -279,11 +279,6 @@ include '../backend/database.php';
                                         <td><?php echo $row["services"]; ?></td>
                                         <td><?php echo $row["time"]; ?></td>
                                         <td><?php echo $row["user_status"]; ?></td>
-                                        <script>
-                                            if ($row < 1) {
-                                                "echo <p>No description</p>;"
-                                            }
-                                        </script>
                                         <td>
                                             <a href="#editEmployeeModal" class="edit" data-toggle="modal">
                                                 <i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-firstName="<?php echo $row["firstName"]; ?>" data-lastName="<?php echo $row["lastName"]; ?>" data-phoneNumber="<?php echo $row["phoneNumber"]; ?>" data-date="<?php echo $row["date"]; ?>" data-services="<?php echo $row["services"]; ?>" data-time="<?php echo $row["time"]; ?>" data-user_status="<?php echo $row["user_status"]; ?>" title="Edit">&#xE254;</i>
@@ -463,55 +458,57 @@ include '../backend/database.php';
             //   $(".prev span").text(y);
             // });
             //START ADDED BY SHEPO
-            $('#addEmployeeModal').on('hidden.bs.modal', function(e) {
-                $("#time option").each(function() {
-                    $(this).prop("disabled", false);
+
+            $('#addEmployeeModal').on('hidden.bs.modal', function (e) {
+                $("#time option").each(function(){
+                    $(this).prop("disabled",false);
                 });
                 $('#services option').prop('selected', function() {
                     return this.defaultSelected;
                 });
                 $("#time").empty();
-                $('#time').append('<option selected>-Select Service First-</option>');
+                $('#time').append('<option selected>-Select Service First-</option>' );
                 $("#date").val("");
-                createCookie("date", "", "-1");
-                createCookie("services", "", "-1");
+                $("#firstName").val("");
+                $("#lastName").val("");
+                $("#phoneNumber").val("");
             });
 
-            $("#date").change(function() {
-                loadscheduletime();
+            $("#date").change(function(){
+               loadscheduletime();
             });
 
-            $("#services").change(function() {
-                loadscheduletime();
+            $("#services").change(function(){
+               loadscheduletime();
             });
 
-            function loadscheduletime() {
-                $("#time option").each(function() {
-                    $(this).prop("disabled", false);
+            function loadscheduletime(){
+                $("#time option").each(function(){
+                    $(this).prop("disabled",false);
                 });
-                if (($("#services").val() == "" || $("#services").val() == null || $("#services").val() == undefined || $("#services").val() == "-Select a Service-") || ($("#date").val() == "" || $("#date").val() == null || $("#date").val() == undefined)) {
+                if(($("#date").val()=="" || $("#date").val()==null || $("#date").val()==undefined)){
                     console.log("nothing to do...");
                     return;
-                } else {
-                    $.ajax({
+                }else{
+                     $.ajax({
                         data: {
-                            "type": "ADD",
-                            "services": $("#services option:selected").text(),
-                            "date": $("#date").val()
+                            "type":"ADD",
+                            "date":$("#date").val()
                         },
-                        type: "get",
+                        type: "post",
                         url: "../backend/validateSchedule.php",
-                        success: function(dataResult) {
+                        success: function (dataResult) {
                             var dataResult1 = JSON.parse(dataResult);
-                            if (dataResult1.statusCode == 200 && dataResult1.data.length > 0) {
-                                for (var keys in dataResult1.data) {
-                                    $("#time option").each(function() {
-                                        if (dataResult1.data[keys] == $(this).text()) {
-                                            $(this).prop("disabled", true);
-                                        }
-                                    });
+                            if (dataResult1.statusCode == 200 && dataResult1.data.length>0) {
+                                for(var keys in  dataResult1.data){
+                                $("#time option").each(function(){
+                                     if(dataResult1.data[keys] == $(this).text()){
+                                        $(this).prop("disabled",true);
+                                     }
+                                });
                                 }
-                            } else if (dataResult1.statusCode == 99) {
+                            }
+                            else if (dataResult1.statusCode == 99) {
                                 console.log(dataResult);
                             }
                         }
@@ -520,51 +517,50 @@ include '../backend/database.php';
             }
 
 
-            $('#editEmployeeModal').on('hidden.bs.modal', function(e) {
-                $("#time_u option").each(function() {
-                    $(this).prop("disabled", false);
+            $('#editEmployeeModal').on('hidden.bs.modal', function (e) {
+                $("#time_u option").each(function(){
+                    $(this).prop("disabled",false);
                 });
             });
 
-            $("#date_u").change(function() {
+             $("#date_u").change(function(){
+               loadscheduletime_u();
+            });
+             $("#services_u").change(function(){
+               loadscheduletime_u();
+            });
+
+            $('#editEmployeeModal').on('show.bs.modal', function (e) {
                 loadscheduletime_u();
             });
 
-            $("#services_u").change(function() {
-                loadscheduletime_u();
-            });
-
-            $('#editEmployeeModal').on('show.bs.modal', function(e) {
-                loadscheduletime_u();
-            });
-
-            function loadscheduletime_u() {
-                $("#time_u option").each(function() {
-                    $(this).prop("disabled", false);
+            function loadscheduletime_u(){
+                 $("#time_u option").each(function(){
+                    $(this).prop("disabled",false);
                 });
-                if (($("#services_u").val() == "" || $("#services_u").val() == null || $("#services_u").val() == undefined || $("#services_u").val() == "-Select a Service-") || ($("#date_u").val() == "" || $("#date_u").val() == null || $("#date_u").val() == undefined)) {
+                 if(($("#date_u").val()=="" || $("#date_u").val()==null || $("#date_u").val()==undefined)){
                     console.log("nothing to do...");
-                } else {
-                    $.ajax({
+                }else{
+                     $.ajax({
                         data: {
-                            "type": "UPDATE",
-                            "services": $("#services_u option:selected").text(),
-                            "date": $("#date_u").val(),
-                            "id": $("#id_u").val()
+                            "type":"UPDATE",
+                            "date":$("#date_u").val(),
+                            "id":$("#id_u").val()
                         },
-                        type: "get",
+                        type: "post",
                         url: "../backend/validateSchedule.php",
-                        success: function(dataResult) {
+                        success: function (dataResult) {
                             var dataResult1 = JSON.parse(dataResult);
-                            if (dataResult1.statusCode == 200 && dataResult1.data.length > 0) {
-                                for (var keys in dataResult1.data) {
-                                    $("#time_u option").each(function() {
-                                        if (dataResult1.data[keys] == $(this).text()) {
-                                            $(this).prop("disabled", true);
-                                        }
-                                    });
+                            if (dataResult1.statusCode == 200 && dataResult1.data.length>0) {
+                                for(var keys in  dataResult1.data){
+                                $("#time_u option").each(function(){
+                                     if(dataResult1.data[keys] == $(this).text()){
+                                        $(this).prop("disabled",true);
+                                     }
+                                });
                                 }
-                            } else if (dataResult1.statusCode == 99) {
+                            }
+                            else if (dataResult1.statusCode == 99) {
                                 console.log(dataResult);
                             }
                         }
@@ -586,19 +582,19 @@ include '../backend/database.php';
                     <div class="modal-body">
                         <div class="form-group">
                             <label>FIRST NAME</label>
-                            <input type="text" id="firstName" name="firstName" class="form-control" placeholder="Enter Your First Name" required style="color:black;">
+                            <input type="text" id="firstName" name="firstName" class="form-control" placeholder="Enter Your First Name" required>
                         </div>
                         <div class="form-group">
                             <label>LAST NAME</label>
-                            <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Enter Your Last Name" required style="color:black;">
+                            <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Enter Your Last Name" required>
                         </div>
                         <div class="form-group">
                             <label>PHONE NUMBER</label>
-                            <input type="phone" id="phoneNumber" name="phoneNumber" class="form-control" maxlength="11" placeholder="Enter Your Phone Number" required style="color:black;">
+                            <input type="phone" id="phoneNumber" name="phoneNumber" class="form-control" maxlength="11" placeholder="Enter Your Phone Number" required>
                         </div>
                         <div class="form-group">
                             <label>DATE</label>
-                            <input type="date" id="date" name="date" class="form-control" required style="color:black;">
+                            <input type="date" id="date" name="date" class="form-control" required>
                         </div>
                         <script language="javascript">
                             // DISABLE PAST DATES
@@ -612,7 +608,7 @@ include '../backend/database.php';
                         </script>
                         <div class="form-group">
                             <label>SERVICES</label>
-                            <select class="form-control" name="services" id="services" style="color:black;">
+                            <select class="form-control" name="services" id="services">
                                 <option value="0" selected disabled style="text-align: center;">-Select a Service-</option>
                                 <option value="1">Full Wrap</option>
                                 <option value="2">Hood Wrap</option>
@@ -624,7 +620,7 @@ include '../backend/database.php';
                         </div>
                         <div class="form-group">
                             <label>TIME SLOTS</label>
-                            <select class="form-control" name="time" id="time" style="color:black;">
+                            <select class="form-control" name="time" id="time">
                                 <option value="0" selected disabled style="text-align: center;">-Select Service First-</option>
                                 <option value="1">7:00 AM - 9:00 AM</option>
                                 <option value="1">9:00 AM - 11:00 AM</option>
@@ -912,7 +908,7 @@ include '../backend/database.php';
         const picker = document.getElementById('date');
         picker.addEventListener('input', function(e) {
             var day = new Date(this.value).getUTCDay();
-            if ([0].includes(day)) {
+            if ([5, 0].includes(day)) {
                 e.preventDefault();
                 this.value = '';
                 Swal.fire({
@@ -924,7 +920,7 @@ include '../backend/database.php';
         });
     </script>
 
-    <!-- <script src="../js/refresh.js"></script> -->
+    <script src="../js/refresh.js"></script>
 </body>
 
 </html>

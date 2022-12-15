@@ -374,7 +374,7 @@ include '../backend/database.php';
 						</div>
 						<div class="form-group">
 							<label>SELLING PRICE</label>
-							<input type="number" id="itemPriceSell" name="itemPriceSell" class="form-control" placeholder="Enter the Item Price to sell" required>
+							<input type="number" id="sellingPrice" name="sellingPrice" class="form-control" placeholder="Enter the Item Price to sell" required>
 						</div>
 						<div class="form-group">
 							<label>STOCKS</label>
