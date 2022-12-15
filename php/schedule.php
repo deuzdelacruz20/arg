@@ -1,6 +1,7 @@
 <?php
 include '../include/navigation.php';
 include '../backend/database.php';
+include '../include/disableTimeScript.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -459,119 +460,119 @@ include '../backend/database.php';
             // });
             //START ADDED BY SHEPO
 
-            $('#addEmployeeModal').on('hidden.bs.modal', function (e) {
-                $("#time option").each(function(){
-                    $(this).prop("disabled",false);
-                });
-                $('#services option').prop('selected', function() {
-                    return this.defaultSelected;
-                });
-                $("#time").empty();
-                $('#time').append('<option selected>-Select Service First-</option>' );
-                $("#date").val("");
-                $("#firstName").val("");
-                $("#lastName").val("");
-                $("#phoneNumber").val("");
-            });
+            // $('#addEmployeeModal').on('hidden.bs.modal', function (e) {
+            //     $("#time option").each(function(){
+            //         $(this).prop("disabled",false);
+            //     });
+            //     $('#services option').prop('selected', function() {
+            //         return this.defaultSelected;
+            //     });
+            //     $("#time").empty();
+            //     $('#time').append('<option selected>-Select Service First-</option>' );
+            //     $("#date").val("");
+            //     $("#firstName").val("");
+            //     $("#lastName").val("");
+            //     $("#phoneNumber").val("");
+            // });
 
-            $("#date").change(function(){
-               loadscheduletime();
-            });
+            // $("#date").change(function(){
+            //    loadscheduletime();
+            // });
 
-            $("#services").change(function(){
-               loadscheduletime();
-            });
+            // $("#services").change(function(){
+            //    loadscheduletime();
+            // });
 
-            function loadscheduletime(){
-                $("#time option").each(function(){
-                    $(this).prop("disabled",false);
-                });
-                if(($("#date").val()=="" || $("#date").val()==null || $("#date").val()==undefined)){
-                    console.log("nothing to do...");
-                    return;
-                }else{
-                     $.ajax({
-                        data: {
-                            "type":"ADD",
-                            "date":$("#date").val()
-                        },
-                        type: "post",
-                        url: "../backend/validateSchedule.php",
-                        success: function (dataResult) {
-                            var dataResult1 = JSON.parse(dataResult);
-                            if (dataResult1.statusCode == 200 && dataResult1.data.length>0) {
-                                for(var keys in  dataResult1.data){
-                                $("#time option").each(function(){
-                                     if(dataResult1.data[keys] == $(this).text()){
-                                        $(this).prop("disabled",true);
-                                     }
-                                });
-                                }
-                            }
-                            else if (dataResult1.statusCode == 99) {
-                                console.log(dataResult);
-                            }
-                        }
-                    });
-                }
-            }
+            // function loadscheduletime(){
+            //     $("#time option").each(function(){
+            //         $(this).prop("disabled",false);
+            //     });
+            //     if(($("#date").val()=="" || $("#date").val()==null || $("#date").val()==undefined)){
+            //         console.log("nothing to do...");
+            //         return;
+            //     }else{
+            //          $.ajax({
+            //             data: {
+            //                 "type":"ADD",
+            //                 "date":$("#date").val()
+            //             },
+            //             type: "post",
+            //             url: "../backend/validateSchedule.php",
+            //             success: function (dataResult) {
+            //                 var dataResult1 = JSON.parse(dataResult);
+            //                 if (dataResult1.statusCode == 200 && dataResult1.data.length>0) {
+            //                     for(var keys in  dataResult1.data){
+            //                     $("#time option").each(function(){
+            //                          if(dataResult1.data[keys] == $(this).text()){
+            //                             $(this).prop("disabled",true);
+            //                          }
+            //                     });
+            //                     }
+            //                 }
+            //                 else if (dataResult1.statusCode == 99) {
+            //                     console.log(dataResult);
+            //                 }
+            //             }
+            //         });
+            //     }
+            // }
 
 
-            $('#editEmployeeModal').on('hidden.bs.modal', function (e) {
-                $("#time_u option").each(function(){
-                    $(this).prop("disabled",false);
-                });
-            });
+            // $('#editEmployeeModal').on('hidden.bs.modal', function (e) {
+            //     $("#time_u option").each(function(){
+            //         $(this).prop("disabled",false);
+            //     });
+            // });
 
-             $("#date_u").change(function(){
-               loadscheduletime_u();
-            });
-             $("#services_u").change(function(){
-               loadscheduletime_u();
-            });
+            //  $("#date_u").change(function(){
+            //    loadscheduletime_u();
+            // });
+            //  $("#services_u").change(function(){
+            //    loadscheduletime_u();
+            // });
 
-            $('#editEmployeeModal').on('show.bs.modal', function (e) {
-                loadscheduletime_u();
-            });
+            // $('#editEmployeeModal').on('show.bs.modal', function (e) {
+            //     loadscheduletime_u();
+            // });
 
-            function loadscheduletime_u(){
-                 $("#time_u option").each(function(){
-                    $(this).prop("disabled",false);
-                });
-                 if(($("#date_u").val()=="" || $("#date_u").val()==null || $("#date_u").val()==undefined)){
-                    console.log("nothing to do...");
-                }else{
-                     $.ajax({
-                        data: {
-                            "type":"UPDATE",
-                            "date":$("#date_u").val(),
-                            "id":$("#id_u").val()
-                        },
-                        type: "post",
-                        url: "../backend/validateSchedule.php",
-                        success: function (dataResult) {
-                            var dataResult1 = JSON.parse(dataResult);
-                            if (dataResult1.statusCode == 200 && dataResult1.data.length>0) {
-                                for(var keys in  dataResult1.data){
-                                $("#time_u option").each(function(){
-                                     if(dataResult1.data[keys] == $(this).text()){
-                                        $(this).prop("disabled",true);
-                                     }
-                                });
-                                }
-                            }
-                            else if (dataResult1.statusCode == 99) {
-                                console.log(dataResult);
-                            }
-                        }
-                    });
-                }
-            }
+            // function loadscheduletime_u(){
+            //      $("#time_u option").each(function(){
+            //         $(this).prop("disabled",false);
+            //     });
+            //      if(($("#date_u").val()=="" || $("#date_u").val()==null || $("#date_u").val()==undefined)){
+            //         console.log("nothing to do...");
+            //     }else{
+            //          $.ajax({
+            //             data: {
+            //                 "type":"UPDATE",
+            //                 "date":$("#date_u").val(),
+            //                 "id":$("#id_u").val()
+            //             },
+            //             type: "post",
+            //             url: "../backend/validateSchedule.php",
+            //             success: function (dataResult) {
+            //                 var dataResult1 = JSON.parse(dataResult);
+            //                 if (dataResult1.statusCode == 200 && dataResult1.data.length>0) {
+            //                     for(var keys in  dataResult1.data){
+            //                     $("#time_u option").each(function(){
+            //                          if(dataResult1.data[keys] == $(this).text()){
+            //                             $(this).prop("disabled",true);
+            //                          }
+            //                     });
+            //                     }
+            //                 }
+            //                 else if (dataResult1.statusCode == 99) {
+            //                     console.log(dataResult);
+            //                 }
+            //             }
+            //         });
+            //     }
+            // }
             //END ADDED BY SHEPO
         });
     </script>
     <!-- Add Modal HTML -->
-    <div id="addEmployeeModal" class="modal fade">
+    <!-- <div id="addEmployeeModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
                 <form id="user_form" method="POST">
@@ -660,7 +661,7 @@ include '../backend/database.php';
                 </form>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- Edit Modal HTML -->
     <div id="editEmployeeModal" class="modal fade">
@@ -712,7 +713,7 @@ include '../backend/database.php';
                             <label>SERVICES</label>
                             <select class="form-control" name="services" id="services_u">
                                 <option value="0" selected disabled style="text-align: center;">-Select a Service-</option>
-                                <option value="1">Full Wrap</option>
+                                <option value="2">Full Wrap</option>
                                 <option value="2">Hood Wrap</option>
                                 <option value="2">HeadLight Film</option>
                                 <option value="2">Customized Plate</option>
@@ -908,7 +909,7 @@ include '../backend/database.php';
         const picker = document.getElementById('date');
         picker.addEventListener('input', function(e) {
             var day = new Date(this.value).getUTCDay();
-            if ([5, 0].includes(day)) {
+            if ([0].includes(day)) {
                 e.preventDefault();
                 this.value = '';
                 Swal.fire({
@@ -920,7 +921,7 @@ include '../backend/database.php';
         });
     </script>
 
-    <script src="../js/refresh.js"></script>
+    <!-- <script src="../js/refresh.js"></script> -->
 </body>
 
 </html>

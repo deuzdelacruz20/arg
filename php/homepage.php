@@ -1,6 +1,7 @@
 <?php
 include '../include/navigation.php';
 include '../backend/database.php';
+include '../include/disableTimeScript.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -299,7 +300,7 @@ include '../backend/database.php';
 
 
     <!-- Add Modal HTML -->
-    <div id="addEmployeeModal" class="modal fade">
+    <!-- <div id="addEmployeeModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
                 <form id="user_form">
@@ -388,7 +389,7 @@ include '../backend/database.php';
                 </form>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- DISABLE ADD BUTTON IF EMPTY -->
     <script>
