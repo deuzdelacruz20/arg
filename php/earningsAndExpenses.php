@@ -87,20 +87,20 @@ include '../backend/database.php';
             </div>
         </div>
     </div>
-    
+
     <div class="row" style="height:500px;">
         <div class="col-md-12"><br>
-            <div class="col-md-6" style="background-color: aliceblue; height:150px; border-radius:10px;">
-                <h1>TOTAL OVERALL EARNINGS</h1>
+            <div class="col-md-5" style="background-color: aliceblue; height:200px; border-radius:10px;">
+                <h1 style="background-color:#71b7e6;">TOTAL EARNINGS</h1>
                 <h1 id="earnings">
-                </h1>
-                <br>
+                </h1>   
             </div>
-            <div class="col-md-6" style="background-color: aliceblue; height:150px; border-radius:10px;">
-                <h1>TOTAL OVERALL EXPENSES</h1>
+            <div class="col-md-2" style=" height:150px; border-radius:10px;">   
+            </div>
+            <div class="col-md-5" style="background-color: aliceblue; height:200px; border-radius:10px;">
+                <h1  style="background-color:#71b7e6;">TOTAL EXPENSES</h1>
                 <h1 style="text-align: center" id="expenses">
-                </h1>
-                <br>
+                </h1>   
             </div>
         </div>
     </div>
