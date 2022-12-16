@@ -8,7 +8,7 @@
                 return this.defaultSelected;
             });
             $("#time").empty();
-            $('#time').append('<option selected>-Select Service First-</option>');
+            $('#time').append('<option selected style="text-align: center;">-Select Service First-</option>');
             $("#date").val("");
             $("#firstName").val("");
             $("#lastName").val("");

@@ -192,10 +192,11 @@ include '../include/disableTimeScript.php';
                         <div class="col-xs-6" style="padding: 0% 5% 5% 5%;">
                             <h3><b>Afternoon</b></h3>
                             <br>
-                            <h3>12:00 PM - 1:00 PM</h3>
                             <h3>1:00 PM - 2:00 PM</h3>
                             <h3>2:00 PM - 3:00 PM</h3>
                             <h3>3:00 PM - 4:00 PM</h3>
+                            <h3>4:00 PM - 5:00 PM</h3>
+                            <h3>5:00 PM - 6:00 PM</h3>
                         </div>
                     </div>
                 </div>
