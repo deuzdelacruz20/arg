@@ -129,9 +129,12 @@ if (count($_GET) > 0) {
 		$dateto = $_GET['dateto'];
 		$query = "";
 		if(($datefrom=="" || $datefrom==null) || ($dateto=="" || $dateto==null)){
-			$query = "SELECT sum(sellingPrice) - sum(itemPrice) earning FROM `inventory` ";
+			// $query = "SELECT sum(sellingPrice) - sum(itemPrice) earning FROM `inventory` ";
+			$query = "SELECT sum(earnings) earning FROM `customer_request` WHERE user_status = 'Done' ";
 		}else{
-			$query = "SELECT sum(sellingPrice) - sum(itemPrice) earning FROM `inventory` WHERE DATE_FORMAT(timestamp,'%Y-%m-%d') BETWEEN '".$datefrom."' AND '".$dateto."'";
+			// $query = "SELECT sum(sellingPrice) - sum(itemPrice) earning FROM `inventory` WHERE DATE_FORMAT(timestamp,'%Y-%m-%d') BETWEEN '".$datefrom."' AND '".$dateto."'";
+			// $query = "SELECT sum(earnings) earning FROM `customer_request` WHERE DATE_FORMAT(timestamp,'%Y-%m-%d') BETWEEN '".$datefrom."' AND '".$dateto."' AND user_status = 'Done'";
+			$query = "SELECT sum(earnings) earning FROM `customer_request` WHERE DATE_FORMAT(timestamp,'%Y-%m-%d') BETWEEN '".$datefrom."' AND '".$dateto."' AND user_status = 'Done'";
 		}
 		$rows = mysqli_query($conn, $query); 
 		if(!isset($rows)){
