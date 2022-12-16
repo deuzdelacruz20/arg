@@ -145,8 +145,8 @@ include '../include/disableTimeScript.php';
         <br>
         <h1 style="color:aliceblue;">or</h1>
         <a href="designTemplates.php" class="btn btn-primary" style="padding: 10px; margin-top: 25px;">
-            <h1>Choose a sticker!</h1>
-            <h5>and Reserve your timeslot now!</h5>
+            <h1>Browse Designs</h1>
+            <h5>and look for your design preferences!</h5>
         </a>
     </div>
 
