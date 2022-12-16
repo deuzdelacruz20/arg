@@ -72,7 +72,7 @@ include '../include/disableTimeScript.php';
         <ul class="nav nav-tabs">
             <!-- <li><a href="#all">All</a></li> -->
             <!-- <li><a href="#pending">Schedules</a></li> -->
-            <li><a href="#accepted">Accepted</a></li>
+            <li><a href="#accepted">Schedules</a></li>
             <!-- <li><a href="#rejected">Rejected</a></li>
             <li><a href="#done">Done</a></li> -->
         </ul>

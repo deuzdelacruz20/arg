@@ -5,7 +5,7 @@ if (count($_POST) > 0) {
 	if ($_POST['type'] == "ADD") {
 		$date = $_POST['date'];
 		
-		$rows = mysqli_query($conn, "SELECT * FROM customer_request WHERE date = '".$date."' ORDER BY timestamp DESC"); 
+		$rows = mysqli_query($conn, "SELECT * FROM customer_request WHERE date = '".$date."' AND user_status = 'Accepted' ORDER BY timestamp DESC"); 
 		if(!isset($rows)){
   			 echo json_encode(array("statusCode" => 99));
 		}
