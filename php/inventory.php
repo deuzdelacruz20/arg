@@ -18,11 +18,16 @@ include '../backend/database.php';
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="../ajax/ajaxInventory.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 	<style>
 		body {
 			background: linear-gradient(120deg, #71b7e6, #9b59b6);
 			background-attachment: fixed;
+		}
+
+		.swal2-popup {
+			font-size: 1.6rem !important;
 		}
 
 		::-webkit-input-placeholder {
@@ -390,19 +395,15 @@ include '../backend/database.php';
 					<div class="modal-body">
 						<div class="form-group">
 							<label for="inventoryImage" class="form-label">UPLOAD IMAGE</label>
-							<input class="form-control" type="file" id="inventoryImage" name="inventoryImage" />
+							<input class="form-control" type="file" id="inventoryImage" name="inventoryImage" required />
 						</div>
 						<div class="form-group">
 							<label>ITEM NAME</label>
 							<input type="text" id="itemName" name="itemName" class="form-control" placeholder="Enter the Item Name" required>
 						</div>
 						<div class="form-group">
-							<label>PRICE BOUGHT</label>
-							<input type="number" id="itemPrice" name="itemPrice" class="form-control" placeholder="Enter the Item Price bought" required>
-						</div>
-						<div class="form-group">
-							<label>SELLING PRICE</label>
-							<input type="number" id="itemPriceSell" name="itemPriceSell" class="form-control" placeholder="Enter the Item Price to sell" required>
+							<label>PRICE</label>
+							<input type="number" id="itemPrice" name="itemPrice" class="form-control" placeholder="Enter the Item Price" required>
 						</div>
 						<div class="form-group">
 							<label>STOCKS</label>
@@ -410,7 +411,7 @@ include '../backend/database.php';
 						</div>
 						<div class="form-group">
 							<label>CATEGORY</label>
-							<select name="itemCategory" id="itemCategory" class="form-control">
+							<select name="itemCategory" id="itemCategory" class="form-control" required>
 								<option value="" selected="selected" disabled style="text-align: center;">-SELECT CATEGORY-</option>
 								<option value="Motorcycles">Motorcycles</option>
 								<option value="Cars">Cars</option>
@@ -422,7 +423,7 @@ include '../backend/database.php';
 					<div class="modal-footer">
 						<input type="hidden" value="1" name="type" id="save_id">
 						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-						<button type="button" class="btn btn-success" id="btn-add">Add</button>
+						<button type="button" class="btn btn-success" id="btn-add" disabled>Add</button>
 					</div>
 				</form>
 			</div>

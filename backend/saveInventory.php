@@ -8,7 +8,7 @@ if (count($_POST) > 0) {
 
 		$itemName = $_POST['itemName'];
 		$itemPrice = $_POST['itemPrice'];
-		$sellingPrice = $_POST['sellingPrice'];
+		// $sellingPrice = $_POST['sellingPrice'];
 		$itemStocks = $_POST['itemStocks'];
 		$itemCategory = $_POST['itemCategory'];
 		$uploadOk = 1;
@@ -35,8 +35,8 @@ if (count($_POST) > 0) {
 
 		
 		if ($uploadOk) {
-			$sql = "INSERT INTO `inventory`(`itemName`,`itemPrice`,`sellingPrice`,`itemStocks`,`itemCategory`, `inventoryImage`) 
-			VALUES ('$itemName','$itemPrice','$sellingPrice','$itemStocks','$itemCategory', '$inventoryImageName')";
+			$sql = "INSERT INTO `inventory`(`itemName`,`itemPrice`,`itemStocks`,`itemCategory`, `inventoryImage`) 
+			VALUES ('$itemName','$itemPrice','$itemStocks','$itemCategory', '$inventoryImageName')";
 			if (mysqli_query($conn, $sql)) {
 				echo json_encode(array("statusCode" => 200, "message" => "Successfully added to the database"));
 			} else {
