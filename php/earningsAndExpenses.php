@@ -39,7 +39,24 @@ include '../backend/database.php';
 </head>
 
 <body>
-    <div class="container">
+<div class="container" style="width:75%;">
+    <div class="row " style="height:100px;">
+        <div style="float:right; background-color:aliceblue; border-radius:10px; padding:5px; width:100%;">
+            <div class="form-group col-sm-4">
+                <label class="control-label">Date From</label>
+                <input type="date" id="datefrom" name="datefrom" class="" required style="width: 100%;">
+            </div>
+            <div class="form-group col-sm-4">
+                <label class="control-label">Date To</label>
+                <input type="date" id="dateto" name="dateto" class="" required style="width: 100%;">
+            </div>
+            <div class="col-sm-2">
+                <label class="control-label"></label>
+                <input type="submit" id="btnsearch" value="search" class="btn btn-success" style="width: 100%;">
+            </div>
+        </div>
+    </div>
+
         <div class="col-md-3">
             <div class="col-md-12" style="background-color: rgb(53, 207, 32); height:150px; border-radius:10px;">
                 <h4 style="color: white;">TOTAL NUMBER OF PENDING REQUEST</h4>
@@ -71,36 +88,19 @@ include '../backend/database.php';
         </div>
     </div>
 
-    <div class="row " style="height:100px;">
-        <div style="float:right;">
-            <div class="form-group col-sm-3" style="float:left;">
-                <label class="control-label">Date From</label>
-                <input type="date" id="datefrom" name="datefrom" class="" required>
-            </div>
-            <div class="form-group col-sm-3" style="float:center;">
-                <label class="control-label">Date To</label>
-                <input type="date" id="dateto" name="dateto" class="" required>
-            </div>
-            <div class="col-sm-2" style="float:center;">
-                <label class="control-label"></label>
-                <input type="submit" id="btnsearch" value="search" class="btn btn-success">
-            </div>
-        </div>
-    </div>
-
     <div class="row" style="height:500px;">
         <div class="col-md-12"><br>
             <div class="col-md-5" style="background-color: aliceblue; height:200px; border-radius:10px;">
                 <h1 style="background-color:#71b7e6;">TOTAL EARNINGS</h1>
                 <h1 id="earnings">
-                </h1>   
+                </h1>
             </div>
-            <div class="col-md-2" style=" height:150px; border-radius:10px;">   
+            <div class="col-md-2" style=" height:150px; border-radius:10px;">
             </div>
             <div class="col-md-5" style="background-color: aliceblue; height:200px; border-radius:10px;">
-                <h1  style="background-color:#71b7e6;">TOTAL EXPENSES</h1>
+                <h1 style="background-color:#71b7e6;">TOTAL EXPENSES</h1>
                 <h1 style="text-align: center" id="expenses">
-                </h1>   
+                </h1>
             </div>
         </div>
     </div>

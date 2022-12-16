@@ -53,12 +53,14 @@ $(document).on('click', '#btn-add', function (e) {
 $(document).on('click', '.update', function (e) {
 	var id = $(this).attr("data-id");
 	var itemName = $(this).attr("data-itemName");
+	var availability = $(this).attr("data-availability");
 	var itemPrice = $(this).attr("data-itemPrice");
 	var itemStocks = $(this).attr("data-itemStocks");
 	var itemCategory = $(this).attr("data-itemCategory");
 
 	$('#id_u').val(id);
 	$('#itemName_u').val(itemName);
+	$('#availability_u').val(availability);
 	$('#itemPrice_u').val(itemPrice);
 	$('#itemStocks_u').val(itemStocks);
 	$('#itemCategory_u').val(itemCategory);

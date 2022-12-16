@@ -50,6 +50,7 @@ if (count($_POST) > 0) {
 	if ($_POST['type'] == 2) {
 		$id = $_POST['id'];
 		$itemName = $_POST['itemName'];
+		$availability = $_POST['availability'];
 		$itemPrice = $_POST['itemPrice'];
 		$itemStocks = $_POST['itemStocks'];
 		$itemCategory = $_POST['itemCategory'];
@@ -57,6 +58,7 @@ if (count($_POST) > 0) {
 		$sql = "UPDATE `inventory` SET 
 		`itemName`='$itemName',
 		`itemPrice`='$itemPrice',
+		`availability`='$availability',
 		`itemStocks`='$itemStocks',
 		`itemCategory`='$itemCategory'
 		WHERE id=$id";
