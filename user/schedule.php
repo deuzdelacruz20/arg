@@ -1,6 +1,7 @@
 <?php
 include '../include_u/navigation.php';
 include '../backend/database.php';
+include '../include/disableTimeScript.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,17 +31,17 @@ include '../backend/database.php';
             background-attachment: fixed;
         }
 
-        table {
+        /* table {
             display: block;
             overflow-x: auto;
             white-space: nowrap;
-        }
+        } */
 
-        table thead,
+        /* table thead,
         tbody {
             display: table;
             width: 100%;
-        }
+        } */
 
         .swal2-popup {
             font-size: 1.6rem !important;
@@ -69,15 +70,15 @@ include '../backend/database.php';
     <div class="container" style="background-color: white; border-radius:10px; width: 97%; height: 97%; overflow: auto;">
         <!-- width: 98%; height: 750px; -->
         <ul class="nav nav-tabs">
-            <li><a href="#all">All</a></li>
-            <li><a href="#pending">Pending</a></li>
+            <!-- <li><a href="#all">All</a></li> -->
+            <!-- <li><a href="#pending">Schedules</a></li> -->
             <li><a href="#accepted">Accepted</a></li>
-            <li><a href="#rejected">Rejected</a></li>
-            <li><a href="#done">Done</a></li>
+            <!-- <li><a href="#rejected">Rejected</a></li>
+            <li><a href="#done">Done</a></li> -->
         </ul>
 
         <div class="tab-content">
-            <div id="all" class="tab-pane fade in active">
+            <div id="all" class="tab-pane fade ">
                 <h3> </h3>
                 <div class="container" style="width: 100%;">
                     <p id="success"></p>
@@ -103,13 +104,10 @@ include '../backend/database.php';
                                         </span>
                                     </th>
                                     <th>ID</th>
-                                    <th>FIRST NAME</th>
-                                    <th>LAST NAME</th>
-                                    <th>PHONE NUMBER</th>
                                     <th>DATE</th>
                                     <th>SERVICES</th>
                                     <th>TIMESLOT</th>
-                                    <th>STATUS</th>
+
                                 </tr>
                             </thead>
                             <tbody>
@@ -126,14 +124,15 @@ include '../backend/database.php';
                                             </span>
                                         </td>
                                         <td><?php echo $row["id"]; ?></td>
-                                        <td><?php echo $row["firstName"]; ?></td>
-                                        <td><?php echo $row["lastName"]; ?></td>
-                                        <td><?php echo $row["phoneNumber"]; ?></td>
                                         <td><?php echo $row["date"]; ?></td>
                                         <td><?php echo $row["services"]; ?></td>
                                         <td><?php echo $row["time"]; ?></td>
-                                        <td><?php echo $row["user_status"]; ?></td>
-                                        <td>
+                                        <!-- <td>
+                                            <a href="#editEmployeeModal" class="edit" data-toggle="modal">
+                                                <i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-firstName="<?php echo $row["firstName"]; ?>" data-lastName="<?php echo $row["lastName"]; ?>" data-phoneNumber="<?php echo $row["phoneNumber"]; ?>" data-date="<?php echo $row["date"]; ?>" data-services="<?php echo $row["services"]; ?>" data-time="<?php echo $row["time"]; ?>" data-user_status="<?php echo $row["user_status"]; ?>" title="Edit">&#xE254;</i>
+                                            </a>
+                                            <a href="#deleteEmployeeModal" class="delete" data-id="<?php echo $row["id"]; ?>" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                        </td> -->
                                     </tr>
                                 <?php
                                 }
@@ -144,7 +143,7 @@ include '../backend/database.php';
                     </div>
                 </div>
             </div>
-            <div id="pending" class="tab-pane fade">
+            <div id="pending" class="tab-pane fade ">
                 <h3> </h3>
                 <div class="container" style="width: 100%;">
                     <p id="success"></p>
@@ -152,11 +151,11 @@ include '../backend/database.php';
                         <div class="table-title">
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <h2>PENDING <b>SCHEDULES</b></h2>
+                                    <h2><b>SCHEDULES</b></h2>
                                 </div>
                                 <div class="col-sm-6">
-                                    <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
-                                    <a href="JavaScript:void(0);" class="btn btn-danger" id="delete_multiple"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>
+                                    <!-- <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
+                                    <a href="JavaScript:void(0);" class="btn btn-danger" id="delete_multiple"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a> -->
                                 </div>
                             </div>
                         </div>
@@ -170,14 +169,14 @@ include '../backend/database.php';
                                         </span>
                                     </th>
                                     <th>ID</th>
-                                    <th>FIRST NAME</th>
-                                    <th>LAST NAME</th>
-                                    <th>PHONE NUMBER</th>
+                                    <!-- <th>FIRST NAME</th> -->
+                                    <!-- <th>LAST NAME</th> -->
+                                    <!-- <th>PHONE NUMBER</th> -->
                                     <th>DATE</th>
                                     <th>SERVICES</th>
                                     <th>TIMESLOT</th>
-                                    <th>STATUS</th>
-                                    <th>ACTION</th>
+                                    <!-- <th>STATUS</th>
+                                    <th>ACTION</th> -->
                                 </tr>
                             </thead>
                             <tbody>
@@ -194,19 +193,9 @@ include '../backend/database.php';
                                             </span>
                                         </td>
                                         <td><?php echo $row["id"]; ?></td>
-                                        <td><?php echo $row["firstName"]; ?></td>
-                                        <td><?php echo $row["lastName"]; ?></td>
-                                        <td><?php echo $row["phoneNumber"]; ?></td>
                                         <td><?php echo $row["date"]; ?></td>
                                         <td><?php echo $row["services"]; ?></td>
                                         <td><?php echo $row["time"]; ?></td>
-                                        <td><?php echo $row["user_status"]; ?></td>
-                                        <td>
-                                            <a href="#editEmployeeModal" class="edit" data-toggle="modal">
-                                                <i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-firstName="<?php echo $row["firstName"]; ?>" data-lastName="<?php echo $row["lastName"]; ?>" data-phoneNumber="<?php echo $row["phoneNumber"]; ?>" data-date="<?php echo $row["date"]; ?>" data-services="<?php echo $row["services"]; ?>" data-time="<?php echo $row["time"]; ?>" data-user_status="<?php echo $row["user_status"]; ?>" title="Edit">&#xE254;</i>
-                                            </a>
-                                            <a href="#deleteEmployeeModal" class="delete" data-id="<?php echo $row["id"]; ?>" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-                                        </td>
                                     </tr>
                                 <?php
                                 }
@@ -217,7 +206,7 @@ include '../backend/database.php';
                     </div>
                 </div>
             </div>
-            <div id="accepted" class="tab-pane fade">
+            <div id="accepted" class="tab-pane fade in active">
                 <div class="container" style="width: 100%;">
                     <p id="success"></p>
                     <div class="table-wrapper">
@@ -227,8 +216,8 @@ include '../backend/database.php';
                                     <h2>ACCEPTED <b>SCHEDULES</b></h2>
                                 </div>
                                 <div class="col-sm-6">
-                                    <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
-                                    <a href="JavaScript:void(0);" class="btn btn-danger" id="delete_multiple"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>
+                                    <!-- <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
+                                    <a href="JavaScript:void(0);" class="btn btn-danger" id="delete_multiple"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a> -->
                                 </div>
                             </div>
                         </div>
@@ -242,14 +231,14 @@ include '../backend/database.php';
                                         </span>
                                     </th>
                                     <th>ID</th>
-                                    <th>FIRST NAME</th>
-                                    <th>LAST NAME</th>
-                                    <th>PHONE NUMBER</th>
+                                    <!-- <th>FIRST NAME</th> -->
+                                    <!-- <th>LAST NAME</th> -->
+                                    <!-- <th>PHONE NUMBER</th> -->
                                     <th>DATE</th>
                                     <th>SERVICES</th>
                                     <th>TIMESLOT</th>
-                                    <th>STATUS</th>
-                                    <th>ACTION</th>
+                                    <!-- <th>STATUS</th> -->
+                                    <!-- <th>ACTION</th> -->
                                 </tr>
                             </thead>
                             <tbody>
@@ -266,24 +255,15 @@ include '../backend/database.php';
                                             </span>
                                         </td>
                                         <td><?php echo $row["id"]; ?></td>
-                                        <td><?php echo $row["firstName"]; ?></td>
-                                        <td><?php echo $row["lastName"]; ?></td>
-                                        <td><?php echo $row["phoneNumber"]; ?></td>
                                         <td><?php echo $row["date"]; ?></td>
                                         <td><?php echo $row["services"]; ?></td>
                                         <td><?php echo $row["time"]; ?></td>
-                                        <td><?php echo $row["user_status"]; ?></td>
-                                        <script>
-                                            if ($row < 1) {
-                                                "echo <p>No description</p>;"
-                                            }
-                                        </script>
-                                        <td>
+                                        <!-- <td>
                                             <a href="#editEmployeeModal" class="edit" data-toggle="modal">
                                                 <i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-firstName="<?php echo $row["firstName"]; ?>" data-lastName="<?php echo $row["lastName"]; ?>" data-phoneNumber="<?php echo $row["phoneNumber"]; ?>" data-date="<?php echo $row["date"]; ?>" data-services="<?php echo $row["services"]; ?>" data-time="<?php echo $row["time"]; ?>" data-user_status="<?php echo $row["user_status"]; ?>" title="Edit">&#xE254;</i>
                                             </a>
                                             <a href="#deleteEmployeeModal" class="delete" data-id="<?php echo $row["id"]; ?>" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-                                        </td>
+                                        </td> -->
                                     </tr>
                                 <?php
                                 }
@@ -457,119 +437,120 @@ include '../backend/database.php';
             //   $(".prev span").text(y);
             // });
             //START ADDED BY SHEPO
-            $('#addEmployeeModal').on('hidden.bs.modal', function(e) {
-                $("#time option").each(function() {
-                    $(this).prop("disabled", false);
-                });
-                $('#services option').prop('selected', function() {
-                    return this.defaultSelected;
-                });
-                $("#time").empty();
-                $('#time').append('<option selected>-Select Service First-</option>');
-                $("#date").val("");
-                createCookie("date", "", "-1");
-                createCookie("services", "", "-1");
-            });
 
-            $("#date").change(function() {
-                loadscheduletime();
-            });
+            // $('#addEmployeeModal').on('hidden.bs.modal', function (e) {
+            //     $("#time option").each(function(){
+            //         $(this).prop("disabled",false);
+            //     });
+            //     $('#services option').prop('selected', function() {
+            //         return this.defaultSelected;
+            //     });
+            //     $("#time").empty();
+            //     $('#time').append('<option selected>-Select Service First-</option>' );
+            //     $("#date").val("");
+            //     $("#firstName").val("");
+            //     $("#lastName").val("");
+            //     $("#phoneNumber").val("");
+            // });
 
-            $("#services").change(function() {
-                loadscheduletime();
-            });
+            // $("#date").change(function(){
+            //    loadscheduletime();
+            // });
 
-            function loadscheduletime() {
-                $("#time option").each(function() {
-                    $(this).prop("disabled", false);
-                });
-                if (($("#services").val() == "" || $("#services").val() == null || $("#services").val() == undefined || $("#services").val() == "-Select a Service-") || ($("#date").val() == "" || $("#date").val() == null || $("#date").val() == undefined)) {
-                    console.log("nothing to do...");
-                    return;
-                } else {
-                    $.ajax({
-                        data: {
-                            "type": "ADD",
-                            "services": $("#services option:selected").text(),
-                            "date": $("#date").val()
-                        },
-                        type: "get",
-                        url: "../backend/validateSchedule.php",
-                        success: function(dataResult) {
-                            var dataResult1 = JSON.parse(dataResult);
-                            if (dataResult1.statusCode == 200 && dataResult1.data.length > 0) {
-                                for (var keys in dataResult1.data) {
-                                    $("#time option").each(function() {
-                                        if (dataResult1.data[keys] == $(this).text()) {
-                                            $(this).prop("disabled", true);
-                                        }
-                                    });
-                                }
-                            } else if (dataResult1.statusCode == 99) {
-                                console.log(dataResult);
-                            }
-                        }
-                    });
-                }
-            }
+            // $("#services").change(function(){
+            //    loadscheduletime();
+            // });
+
+            // function loadscheduletime(){
+            //     $("#time option").each(function(){
+            //         $(this).prop("disabled",false);
+            //     });
+            //     if(($("#date").val()=="" || $("#date").val()==null || $("#date").val()==undefined)){
+            //         console.log("nothing to do...");
+            //         return;
+            //     }else{
+            //          $.ajax({
+            //             data: {
+            //                 "type":"ADD",
+            //                 "date":$("#date").val()
+            //             },
+            //             type: "post",
+            //             url: "../backend/validateSchedule.php",
+            //             success: function (dataResult) {
+            //                 var dataResult1 = JSON.parse(dataResult);
+            //                 if (dataResult1.statusCode == 200 && dataResult1.data.length>0) {
+            //                     for(var keys in  dataResult1.data){
+            //                     $("#time option").each(function(){
+            //                          if(dataResult1.data[keys] == $(this).text()){
+            //                             $(this).prop("disabled",true);
+            //                          }
+            //                     });
+            //                     }
+            //                 }
+            //                 else if (dataResult1.statusCode == 99) {
+            //                     console.log(dataResult);
+            //                 }
+            //             }
+            //         });
+            //     }
+            // }
 
 
-            $('#editEmployeeModal').on('hidden.bs.modal', function(e) {
-                $("#time_u option").each(function() {
-                    $(this).prop("disabled", false);
-                });
-            });
+            // $('#editEmployeeModal').on('hidden.bs.modal', function (e) {
+            //     $("#time_u option").each(function(){
+            //         $(this).prop("disabled",false);
+            //     });
+            // });
 
-            $("#date_u").change(function() {
-                loadscheduletime_u();
-            });
+            //  $("#date_u").change(function(){
+            //    loadscheduletime_u();
+            // });
+            //  $("#services_u").change(function(){
+            //    loadscheduletime_u();
+            // });
 
-            $("#services_u").change(function() {
-                loadscheduletime_u();
-            });
+            // $('#editEmployeeModal').on('show.bs.modal', function (e) {
+            //     loadscheduletime_u();
+            // });
 
-            $('#editEmployeeModal').on('show.bs.modal', function(e) {
-                loadscheduletime_u();
-            });
-
-            function loadscheduletime_u() {
-                $("#time_u option").each(function() {
-                    $(this).prop("disabled", false);
-                });
-                if (($("#services_u").val() == "" || $("#services_u").val() == null || $("#services_u").val() == undefined || $("#services_u").val() == "-Select a Service-") || ($("#date_u").val() == "" || $("#date_u").val() == null || $("#date_u").val() == undefined)) {
-                    console.log("nothing to do...");
-                } else {
-                    $.ajax({
-                        data: {
-                            "type": "UPDATE",
-                            "services": $("#services_u option:selected").text(),
-                            "date": $("#date_u").val(),
-                            "id": $("#id_u").val()
-                        },
-                        type: "get",
-                        url: "../backend/validateSchedule.php",
-                        success: function(dataResult) {
-                            var dataResult1 = JSON.parse(dataResult);
-                            if (dataResult1.statusCode == 200 && dataResult1.data.length > 0) {
-                                for (var keys in dataResult1.data) {
-                                    $("#time_u option").each(function() {
-                                        if (dataResult1.data[keys] == $(this).text()) {
-                                            $(this).prop("disabled", true);
-                                        }
-                                    });
-                                }
-                            } else if (dataResult1.statusCode == 99) {
-                                console.log(dataResult);
-                            }
-                        }
-                    });
-                }
-            }
+            // function loadscheduletime_u(){
+            //      $("#time_u option").each(function(){
+            //         $(this).prop("disabled",false);
+            //     });
+            //      if(($("#date_u").val()=="" || $("#date_u").val()==null || $("#date_u").val()==undefined)){
+            //         console.log("nothing to do...");
+            //     }else{
+            //          $.ajax({
+            //             data: {
+            //                 "type":"UPDATE",
+            //                 "date":$("#date_u").val(),
+            //                 "id":$("#id_u").val()
+            //             },
+            //             type: "post",
+            //             url: "../backend/validateSchedule.php",
+            //             success: function (dataResult) {
+            //                 var dataResult1 = JSON.parse(dataResult);
+            //                 if (dataResult1.statusCode == 200 && dataResult1.data.length>0) {
+            //                     for(var keys in  dataResult1.data){
+            //                     $("#time_u option").each(function(){
+            //                          if(dataResult1.data[keys] == $(this).text()){
+            //                             $(this).prop("disabled",true);
+            //                          }
+            //                     });
+            //                     }
+            //                 }
+            //                 else if (dataResult1.statusCode == 99) {
+            //                     console.log(dataResult);
+            //                 }
+            //             }
+            //         });
+            //     }
+            // }
             //END ADDED BY SHEPO
         });
     </script>
     <!-- Add Modal HTML -->
-    <div id="addEmployeeModal" class="modal fade">
+    <!-- <div id="addEmployeeModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
                 <form id="user_form" method="POST">
@@ -580,19 +561,19 @@ include '../backend/database.php';
                     <div class="modal-body">
                         <div class="form-group">
                             <label>FIRST NAME</label>
-                            <input type="text" id="firstName" name="firstName" class="form-control" placeholder="Enter Your First Name" required style="color:black;">
+                            <input type="text" id="firstName" name="firstName" class="form-control" placeholder="Enter Your First Name" required>
                         </div>
                         <div class="form-group">
                             <label>LAST NAME</label>
-                            <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Enter Your Last Name" required style="color:black;">
+                            <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Enter Your Last Name" required>
                         </div>
                         <div class="form-group">
                             <label>PHONE NUMBER</label>
-                            <input type="phone" id="phoneNumber" name="phoneNumber" class="form-control" maxlength="11" placeholder="Enter Your Phone Number" required style="color:black;">
+                            <input type="phone" id="phoneNumber" name="phoneNumber" class="form-control" maxlength="11" placeholder="Enter Your Phone Number" required>
                         </div>
                         <div class="form-group">
                             <label>DATE</label>
-                            <input type="date" id="date" name="date" class="form-control" required style="color:black;">
+                            <input type="date" id="date" name="date" class="form-control" required>
                         </div>
                         <script language="javascript">
                             // DISABLE PAST DATES
@@ -606,7 +587,7 @@ include '../backend/database.php';
                         </script>
                         <div class="form-group">
                             <label>SERVICES</label>
-                            <select class="form-control" name="services" id="services" style="color:black;">
+                            <select class="form-control" name="services" id="services">
                                 <option value="0" selected disabled style="text-align: center;">-Select a Service-</option>
                                 <option value="1">Full Wrap</option>
                                 <option value="2">Hood Wrap</option>
@@ -618,7 +599,7 @@ include '../backend/database.php';
                         </div>
                         <div class="form-group">
                             <label>TIME SLOTS</label>
-                            <select class="form-control" name="time" id="time" style="color:black;">
+                            <select class="form-control" name="time" id="time">
                                 <option value="0" selected disabled style="text-align: center;">-Select Service First-</option>
                                 <option value="1">7:00 AM - 9:00 AM</option>
                                 <option value="1">9:00 AM - 11:00 AM</option>
@@ -658,7 +639,7 @@ include '../backend/database.php';
                 </form>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- Edit Modal HTML -->
     <div id="editEmployeeModal" class="modal fade">
@@ -710,7 +691,7 @@ include '../backend/database.php';
                             <label>SERVICES</label>
                             <select class="form-control" name="services" id="services_u">
                                 <option value="0" selected disabled style="text-align: center;">-Select a Service-</option>
-                                <option value="1">Full Wrap</option>
+                                <option value="2">Full Wrap</option>
                                 <option value="2">Hood Wrap</option>
                                 <option value="2">HeadLight Film</option>
                                 <option value="2">Customized Plate</option>

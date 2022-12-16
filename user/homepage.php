@@ -1,6 +1,7 @@
 <?php
 include '../include_u/navigation.php';
 include '../backend/database.php';
+include '../include/disableTimeScript.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +21,7 @@ include '../backend/database.php';
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="../ajax/ajax.js"></script>
- 
+    <link rel="stylesheet" href="../css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <style>
@@ -299,7 +300,7 @@ include '../backend/database.php';
 
 
     <!-- Add Modal HTML -->
-    <div id="addEmployeeModal" class="modal fade" >
+    <!-- <div id="addEmployeeModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
                 <form id="user_form">
@@ -388,7 +389,7 @@ include '../backend/database.php';
                 </form>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- DISABLE ADD BUTTON IF EMPTY -->
     <script>

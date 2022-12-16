@@ -31,7 +31,7 @@ include '../include/disableTimeScript.php';
             background-attachment: fixed;
         }
 
-        table {
+        /* table {
             display: block;
             overflow-x: auto;
             white-space: nowrap;
@@ -41,7 +41,7 @@ include '../include/disableTimeScript.php';
         tbody {
             display: table;
             width: 100%;
-        }
+        } */
 
         .swal2-popup {
             font-size: 1.6rem !important;

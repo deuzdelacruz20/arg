@@ -69,7 +69,7 @@ include '../backend/database.php';
                 <tbody>
 
                     <?php
-                    $result = mysqli_query($conn, "SELECT * FROM customer_request ORDER BY timestamp DESC");
+                    $result = mysqli_query($conn, "SELECT * FROM customer_request WHERE user_status = 'Done' ORDER BY timestamp DESC");
                     while ($row = mysqli_fetch_array($result)) {
                     ?>
                         <tr id="<?php echo $row["id"]; ?>">

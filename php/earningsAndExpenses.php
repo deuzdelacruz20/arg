@@ -39,7 +39,38 @@ include '../backend/database.php';
 </head>
 
 <body>
-    <!-- shepo changes/added start -->
+    <div class="container">
+        <div class="col-md-3">
+            <div class="col-md-12" style="background-color: rgb(53, 207, 32); height:150px; border-radius:10px;">
+                <h4 style="color: white;">TOTAL NUMBER OF PENDING REQUEST</h4>
+                <h1 style="color: white; text-align: center;" id="pending">
+                </h1>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="col-md-12" style="background-color: rgb(33, 49, 199); height:150px; border-radius:10px;">
+                <h4 style="color: white;">TOTAL NUMBER OF ACCEPTED REQUESTS</h4>
+                <h1 style="color: white; text-align: center" id="accepted">
+                </h1>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="col-md-12" style="background-color: rgb(202, 34, 34); height:150px; border-radius:10px;">
+                <h4 style="color: white;">TOTAL NUMBER OF REJECTED REQUEST</h4>
+                <h1 style="color: white; text-align: center" id="rejected">
+                </h1>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="col-md-12" style="background-color: aliceblue; height:150px; border-radius:10px;">
+                <h4>TOTAL NUMBER OF SUCCESSFULLY SERVED CUSTOMERS</h4>
+                <h1 style="text-align: center" id="done">
+                </h1>
+            </div>
+        </div>
+    </div>
+
     <div class="row " style="height:100px;">
         <div style="float:right;">
             <div class="form-group col-sm-3" style="float:left;">
@@ -55,51 +86,27 @@ include '../backend/database.php';
                 <input type="submit" id="btnsearch" value="search" class="btn btn-success">
             </div>
         </div>
-
     </div>
-    <div class="col-md-3">
-        <div class="col-md-12" style="background-color: rgb(53, 207, 32); height:150px; border-radius:10px;">
-            <h4 style="color: white;">TOTAL NUMBER OF PENDING REQUEST</h4>
-            <h1 style="color: white; text-align: center;" id="pending">
-            </h1>
-        </div>
-    </div>
-
-    <div class="col-md-3">
-        <div class="col-md-12" style="background-color: rgb(33, 49, 199); height:150px; border-radius:10px;">
-            <h4 style="color: white;">TOTAL NUMBER OF ACCEPTED REQUESTS</h4>
-            <h1 style="color: white; text-align: center" id="accepted">
-            </h1>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="col-md-12" style="background-color: rgb(202, 34, 34); height:150px; border-radius:10px;">
-            <h4 style="color: white;">TOTAL NUMBER OF REJECTED REQUEST</h4>
-            <h1 style="color: white; text-align: center" id="rejected">
-            </h1>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="col-md-12" style="background-color: aliceblue; height:150px; border-radius:10px;">
-            <h4>TOTAL NUMBER OF SUCCESSFULLY SERVED CUSTOMERS</h4>
-            <h1 style="text-align: center" id="done">
-            </h1>
-        </div>
-    </div>
-    </div>
-
-    <div class="row" style="height:100px;">
+    
+    <div class="row" style="height:500px;">
         <div class="col-md-12"><br>
-            <div class="col-md-12" style="background-color: aliceblue; height:150px; border-radius:10px;">
+            <div class="col-md-6" style="background-color: aliceblue; height:150px; border-radius:10px;">
+                <h1>TOTAL OVERALL EARNINGS</h1>
+                <h1 id="earnings">
+                </h1>
+                <br>
+            </div>
+            <div class="col-md-6" style="background-color: aliceblue; height:150px; border-radius:10px;">
                 <h1>TOTAL OVERALL EXPENSES</h1>
                 <h1 style="text-align: center" id="expenses">
                 </h1>
+                <br>
             </div>
         </div>
     </div>
 
 
-    <div class="row" style="height:100px;">
+    <!-- <div class="row" style="height:100px;">
         <div class="col-md-12"> <br>
             <div class="col-md-12" style="background-color: aliceblue; height:150px; border-radius:10px;">
                 <h1>TOTAL OVERALL EARNINGS</h1>
@@ -107,7 +114,7 @@ include '../backend/database.php';
                 </h1>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <script>
         $(document).ready(function() {
@@ -274,7 +281,6 @@ include '../backend/database.php';
             }
         });
     </script>
-    <!-- shepo changes/added end -->
 </body>
 
 </html>

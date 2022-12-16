@@ -23,7 +23,7 @@ include '../backend/database.php';
         body {
             background: linear-gradient(120deg, #71b7e6, #9b59b6);
             background-attachment: fixed;
-            
+
         }
     </style>
 </head>
@@ -38,16 +38,17 @@ include '../backend/database.php';
             </div>
             <div class="col-md-6">
                 <h1 style="text-align: center; color:black;">GCASH PAYMENT</h1>
+                <h2 style="text-align: center; color:black;">To settle the payment, you can scan the QR code and pay the required amount</h2>
             </div>
         </div>
-        <hr>
+        <br>
         <div class="row">
             <div class="col-md-6" style="background-color:white; border-radius: 5px;">
                 <a href="https://www.gcash.com/" target="_blank"><img src="../image/gcash.png" style="width: 100%; display: block; margin-left: auto;margin-right: auto; width: 50%; margin-top:5%; margin-bottom:5%;"></img></a>
                 <h3 style="text-align:center; background-color:#d5d5d5">OR PROCEED TO GCASH OFFICIAL WEBSITE FOR PAYMENT</h3>
             </div>
-            <div class="col-md-3">
-
+            <div class="col-md-6">
+                <h2 style="text-align: center; color:black;">You can also pay by going to the GCash official website</h2>
             </div>
         </div>
         <br>

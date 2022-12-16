@@ -75,16 +75,20 @@ include '../backend/database.php';
 									<div class="row">
 										<div class="col-xs-6">
 											<a href="#editEmployeeModal" class="edit" data-toggle="modal">
-												<button class="btn btn-primary" style="width: 100%;">
-													<i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-itemName="<?php echo $row["itemName"]; ?>" data-itemPrice="<?php echo $row["itemPrice"]; ?>" data-itemStocks="<?php echo $row["itemStocks"]; ?>" data-itemCategory="<?php echo $row["itemCategory"]; ?>" title="Edit">&#xE254;</i>
-												</button>
+												<i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-itemName="<?php echo $row["itemName"]; ?>" data-itemPrice="<?php echo $row["itemPrice"]; ?>" data-itemStocks="<?php echo $row["itemStocks"]; ?>" data-itemCategory="<?php echo $row["itemCategory"]; ?>" title="Edit" style="width: 100%;">
+													<button class="btn btn-primary" style="width: 100%;">
+														&#xE254;
+													</button>
+												</i>
 											</a>
 										</div>
 										<div class="col-xs-6">
 											<a href="#deleteEmployeeModal" class="delete" data-id="<?php echo $row["id"]; ?>" data-toggle="modal">
-												<button class="btn btn-danger" style="width: 100%;">
-													<i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>
-												</button>
+												<i class="material-icons" data-toggle="tooltip" title="Delete" style="width: 100%;">
+													<button class="btn btn-danger" style="width: 100%;">
+														&#xE872;
+													</button>
+												</i>
 											</a>
 										</div>
 									</div>
@@ -115,16 +119,20 @@ include '../backend/database.php';
 									<div class="row">
 										<div class="col-xs-6">
 											<a href="#editEmployeeModal" class="edit" data-toggle="modal">
-												<button class="btn btn-primary" style="width: 100%;">
-													<i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-itemName="<?php echo $row["itemName"]; ?>" data-itemPrice="<?php echo $row["itemPrice"]; ?>" data-itemStocks="<?php echo $row["itemStocks"]; ?>" data-itemCategory="<?php echo $row["itemCategory"]; ?>" title="Edit">&#xE254;</i>
-												</button>
+												<i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-itemName="<?php echo $row["itemName"]; ?>" data-itemPrice="<?php echo $row["itemPrice"]; ?>" data-itemStocks="<?php echo $row["itemStocks"]; ?>" data-itemCategory="<?php echo $row["itemCategory"]; ?>" title="Edit" style="width: 100%;">
+													<button class="btn btn-primary" style="width: 100%;">
+														&#xE254;
+													</button>
+												</i>
 											</a>
 										</div>
 										<div class="col-xs-6">
 											<a href="#deleteEmployeeModal" class="delete" data-id="<?php echo $row["id"]; ?>" data-toggle="modal">
-												<button class="btn btn-danger" style="width: 100%;">
-													<i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>
-												</button>
+												<i class="material-icons" data-toggle="tooltip" title="Delete" style="width: 100%;">
+													<button class="btn btn-danger" style="width: 100%;">
+														&#xE872;
+													</button>
+												</i>
 											</a>
 										</div>
 									</div>
@@ -154,16 +162,20 @@ include '../backend/database.php';
 									<div class="row">
 										<div class="col-xs-6">
 											<a href="#editEmployeeModal" class="edit" data-toggle="modal">
-												<button class="btn btn-primary" style="width: 100%;">
-													<i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-itemName="<?php echo $row["itemName"]; ?>" data-itemPrice="<?php echo $row["itemPrice"]; ?>" data-itemStocks="<?php echo $row["itemStocks"]; ?>" data-itemCategory="<?php echo $row["itemCategory"]; ?>" title="Edit">&#xE254;</i>
-												</button>
+												<i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-itemName="<?php echo $row["itemName"]; ?>" data-itemPrice="<?php echo $row["itemPrice"]; ?>" data-itemStocks="<?php echo $row["itemStocks"]; ?>" data-itemCategory="<?php echo $row["itemCategory"]; ?>" title="Edit" style="width: 100%;">
+													<button class="btn btn-primary" style="width: 100%;">
+														&#xE254;
+													</button>
+												</i>
 											</a>
 										</div>
 										<div class="col-xs-6">
 											<a href="#deleteEmployeeModal" class="delete" data-id="<?php echo $row["id"]; ?>" data-toggle="modal">
-												<button class="btn btn-danger" style="width: 100%;">
-													<i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>
-												</button>
+												<i class="material-icons" data-toggle="tooltip" title="Delete" style="width: 100%;">
+													<button class="btn btn-danger" style="width: 100%;">
+														&#xE872;
+													</button>
+												</i>
 											</a>
 										</div>
 									</div>
@@ -193,16 +205,20 @@ include '../backend/database.php';
 									<div class="row">
 										<div class="col-xs-6">
 											<a href="#editEmployeeModal" class="edit" data-toggle="modal">
-												<button class="btn btn-primary" style="width: 100%;">
-													<i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-itemName="<?php echo $row["itemName"]; ?>" data-itemPrice="<?php echo $row["itemPrice"]; ?>" data-itemStocks="<?php echo $row["itemStocks"]; ?>" data-itemCategory="<?php echo $row["itemCategory"]; ?>" title="Edit">&#xE254;</i>
-												</button>
+												<i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-itemName="<?php echo $row["itemName"]; ?>" data-itemPrice="<?php echo $row["itemPrice"]; ?>" data-itemStocks="<?php echo $row["itemStocks"]; ?>" data-itemCategory="<?php echo $row["itemCategory"]; ?>" title="Edit" style="width: 100%;">
+													<button class="btn btn-primary" style="width: 100%;">
+														&#xE254;
+													</button>
+												</i>
 											</a>
 										</div>
 										<div class="col-xs-6">
 											<a href="#deleteEmployeeModal" class="delete" data-id="<?php echo $row["id"]; ?>" data-toggle="modal">
-												<button class="btn btn-danger" style="width: 100%;">
-													<i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>
-												</button>
+												<i class="material-icons" data-toggle="tooltip" title="Delete" style="width: 100%;">
+													<button class="btn btn-danger" style="width: 100%;">
+														&#xE872;
+													</button>
+												</i>
 											</a>
 										</div>
 									</div>
@@ -232,16 +248,20 @@ include '../backend/database.php';
 									<div class="row">
 										<div class="col-xs-6">
 											<a href="#editEmployeeModal" class="edit" data-toggle="modal">
-												<button class="btn btn-primary" style="width: 100%;">
-													<i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-itemName="<?php echo $row["itemName"]; ?>" data-itemPrice="<?php echo $row["itemPrice"]; ?>" data-itemStocks="<?php echo $row["itemStocks"]; ?>" data-itemCategory="<?php echo $row["itemCategory"]; ?>" title="Edit">&#xE254;</i>
-												</button>
+												<i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-itemName="<?php echo $row["itemName"]; ?>" data-itemPrice="<?php echo $row["itemPrice"]; ?>" data-itemStocks="<?php echo $row["itemStocks"]; ?>" data-itemCategory="<?php echo $row["itemCategory"]; ?>" title="Edit" style="width: 100%;">
+													<button class="btn btn-primary" style="width: 100%;">
+														&#xE254;
+													</button>
+												</i>
 											</a>
 										</div>
 										<div class="col-xs-6">
 											<a href="#deleteEmployeeModal" class="delete" data-id="<?php echo $row["id"]; ?>" data-toggle="modal">
-												<button class="btn btn-danger" style="width: 100%;">
-													<i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>
-												</button>
+												<i class="material-icons" data-toggle="tooltip" title="Delete" style="width: 100%;">
+													<button class="btn btn-danger" style="width: 100%;">
+														&#xE872;
+													</button>
+												</i>
 											</a>
 										</div>
 									</div>
@@ -271,16 +291,20 @@ include '../backend/database.php';
 									<div class="row">
 										<div class="col-xs-6">
 											<a href="#editEmployeeModal" class="edit" data-toggle="modal">
-												<button class="btn btn-primary" style="width: 100%;">
-													<i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-itemName="<?php echo $row["itemName"]; ?>" data-itemPrice="<?php echo $row["itemPrice"]; ?>" data-itemStocks="<?php echo $row["itemStocks"]; ?>" data-itemCategory="<?php echo $row["itemCategory"]; ?>" title="Edit">&#xE254;</i>
-												</button>
+												<i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-itemName="<?php echo $row["itemName"]; ?>" data-itemPrice="<?php echo $row["itemPrice"]; ?>" data-itemStocks="<?php echo $row["itemStocks"]; ?>" data-itemCategory="<?php echo $row["itemCategory"]; ?>" title="Edit" style="width: 100%;">
+													<button class="btn btn-primary" style="width: 100%;">
+														&#xE254;
+													</button>
+												</i>
 											</a>
 										</div>
 										<div class="col-xs-6">
 											<a href="#deleteEmployeeModal" class="delete" data-id="<?php echo $row["id"]; ?>" data-toggle="modal">
-												<button class="btn btn-danger" style="width: 100%;">
-													<i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>
-												</button>
+												<i class="material-icons" data-toggle="tooltip" title="Delete" style="width: 100%;">
+													<button class="btn btn-danger" style="width: 100%;">
+														&#xE872;
+													</button>
+												</i>
 											</a>
 										</div>
 									</div>
@@ -310,16 +334,20 @@ include '../backend/database.php';
 									<div class="row">
 										<div class="col-xs-6">
 											<a href="#editEmployeeModal" class="edit" data-toggle="modal">
-												<button class="btn btn-primary" style="width: 100%;">
-													<i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-itemName="<?php echo $row["itemName"]; ?>" data-itemPrice="<?php echo $row["itemPrice"]; ?>" data-itemStocks="<?php echo $row["itemStocks"]; ?>" data-itemCategory="<?php echo $row["itemCategory"]; ?>" title="Edit">&#xE254;</i>
-												</button>
+												<i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-itemName="<?php echo $row["itemName"]; ?>" data-itemPrice="<?php echo $row["itemPrice"]; ?>" data-itemStocks="<?php echo $row["itemStocks"]; ?>" data-itemCategory="<?php echo $row["itemCategory"]; ?>" title="Edit" style="width: 100%;">
+													<button class="btn btn-primary" style="width: 100%;">
+														&#xE254;
+													</button>
+												</i>
 											</a>
 										</div>
 										<div class="col-xs-6">
 											<a href="#deleteEmployeeModal" class="delete" data-id="<?php echo $row["id"]; ?>" data-toggle="modal">
-												<button class="btn btn-danger" style="width: 100%;">
-													<i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>
-												</button>
+												<i class="material-icons" data-toggle="tooltip" title="Delete" style="width: 100%;">
+													<button class="btn btn-danger" style="width: 100%;">
+														&#xE872;
+													</button>
+												</i>
 											</a>
 										</div>
 									</div>
@@ -374,7 +402,7 @@ include '../backend/database.php';
 						</div>
 						<div class="form-group">
 							<label>SELLING PRICE</label>
-							<input type="number" id="sellingPrice" name="sellingPrice" class="form-control" placeholder="Enter the Item Price to sell" required>
+							<input type="number" id="itemPriceSell" name="itemPriceSell" class="form-control" placeholder="Enter the Item Price to sell" required>
 						</div>
 						<div class="form-group">
 							<label>STOCKS</label>
