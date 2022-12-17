@@ -38,7 +38,7 @@ include '../backend/database.php';
             </div>
             <div class="col-md-6">
                 <h1 style="text-align: center; color:black;">GCASH PAYMENT</h1>
-                <h2 style="text-align: center; color:black;">To settle the payment, you can scan the QR code and pay the required amount</h2>
+                <h2 style="text-align: center; color:black;">To settle the payment, you can scan the QR code and pay <b>₱200</b> for your schedule request</h2>
             </div>
         </div>
         <br>

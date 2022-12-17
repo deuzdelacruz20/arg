@@ -189,6 +189,9 @@
                             </select>
                             <input type="text" name="inputTime" id="inputTime" hidden></input>
                         </div>
+                        <div class="form-group">
+                            <label><b>note: </b>Your schedule request will only be accepted after you pay ₱200 for your reservation.</label>
+                        </div>
                         <script>
                             var $services = $('#services'),
                                 $time = $('#time'),
@@ -202,6 +205,7 @@
                             $("#time option[value='jquery']").attr("disabled", "disabled");
                         </script>
                     </div>
+                    <!-- <h4><b>note: </b>your schedule request will only be accepted after you pay ₱200 for your reservation.</h4> -->
                     <div class="modal-footer">
                         <input type="hidden" value="1" name="type">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
