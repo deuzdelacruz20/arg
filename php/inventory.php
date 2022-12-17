@@ -75,7 +75,8 @@ include '../backend/database.php';
 								<div class="caption">
 									<h3><?php echo $row["itemName"]; ?></h3>
 									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
-									<p><?php echo $row["availability"]; ?></p>
+									<p>AVAILABLE STOCKS: <?php echo $row["itemStocks"]; ?></p>
+									<p>STATUS: <?php echo $row["availability"]; ?></p>
 									<p>CATEGORY: <?php echo $row["itemCategory"]; ?></p>
 									<div class="row">
 										<div class="col-xs-6">
@@ -119,7 +120,7 @@ include '../backend/database.php';
 								<div class="caption">
 									<h3><?php echo $row["itemName"]; ?></h3>
 									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
-									<p><?php echo $row["availability"]; ?></p>
+									<p>STATUS: <?php echo $row["availability"]; ?></p>
 									<p>CATEGORY: <?php echo $row["itemCategory"]; ?></p>
 									<div class="row">
 										<div class="col-xs-6">
@@ -162,7 +163,7 @@ include '../backend/database.php';
 								<div class="caption">
 									<h3><?php echo $row["itemName"]; ?></h3>
 									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
-									<p><?php echo $row["availability"]; ?></p>
+									<p>STATUS: <?php echo $row["availability"]; ?></p>
 									<p>CATEGORY: <?php echo $row["itemCategory"]; ?></p>
 									<div class="row">
 										<div class="col-xs-6">
@@ -205,7 +206,7 @@ include '../backend/database.php';
 								<div class="caption">
 									<h3><?php echo $row["itemName"]; ?></h3>
 									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
-									<p><?php echo $row["availability"]; ?></p>
+									<p>STATUS: <?php echo $row["availability"]; ?></p>
 									<p>CATEGORY: <?php echo $row["itemCategory"]; ?></p>
 									<div class="row">
 										<div class="col-xs-6">
@@ -248,7 +249,7 @@ include '../backend/database.php';
 								<div class="caption">
 									<h3><?php echo $row["itemName"]; ?></h3>
 									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
-									<p><?php echo $row["availability"]; ?></p>
+									<p>STATUS: <?php echo $row["availability"]; ?></p>
 									<p>CATEGORY: <?php echo $row["itemCategory"]; ?></p>
 									<div class="row">
 										<div class="col-xs-6">
@@ -292,6 +293,7 @@ include '../backend/database.php';
 									<h3><?php echo $row["itemName"]; ?></h3>
 									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
 									<p>AVAILABLE STOCKS: <?php echo $row["itemStocks"]; ?></p>
+									<p>STATUS: <?php echo $row["availability"]; ?></p>
 									<p>CATEGORY: <?php echo $row["itemCategory"]; ?></p>
 									<div class="row">
 										<div class="col-xs-6">
@@ -335,6 +337,7 @@ include '../backend/database.php';
 									<h3><?php echo $row["itemName"]; ?></h3>
 									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
 									<p>AVAILABLE STOCKS: <?php echo $row["itemStocks"]; ?></p>
+									<p>STATUS: <?php echo $row["availability"]; ?></p>
 									<p>CATEGORY: <?php echo $row["itemCategory"]; ?></p>
 									<div class="row">
 										<div class="col-xs-6">
