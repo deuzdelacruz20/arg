@@ -36,14 +36,11 @@
           <h1 style="font-size: 50px; font-weight: bold;">About us</h1>
           <h1 style="font-weight: bold;">Mission</h1>
           <p>
-            We deliver creative Print & Marketing Solutions that make our
-            clients successful. We keep our promises, provide creative
-            solutions, and achieve our client's goals.
+          To povide efficient and effective services delivery to all vehicle owners by customizing any vehicle with safe economical full and hood wrap, headlight film, customize plates and signages. Through this mission, ARG AuthoSign Shop provides cost-effective, faster and more durable products.
           </p>
           <h1 style="font-weight: bold;">Vision</h1>
           <p>
-            To be the Quezon Province's most premier printing solution business
-            delivering premium quality product to our customers.
+          ARG AuthoSign Shop will employ the best service-giving practices and will provide cost-effective and timely Services to all customers to meet their needs and expectation to the services by our shop.
           </p>
         </div>
       </div>
