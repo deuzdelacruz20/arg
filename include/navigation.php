@@ -93,21 +93,18 @@
 
 
   <script>
+    const menuItem = document.querySelectorAll('.nav-link a');
 
-const menuItem = document.querySelectorAll('.nav-link a');
+    menuItem.forEach(el => {
+      // current
 
-menuItem.forEach(el => {
-  // current
-  
-  if (el.getAttribute('href').substr(5, el.getAttribute('href').length) === window.location.pathname) {
-    
-    el.closest("li").classList.add("active")
-  }
+      if (el.getAttribute('href').substr(5, el.getAttribute('href').length) === window.location.pathname) {
 
-  
-})
-    
+        el.closest("li").classList.add("active")
+      }
 
+
+    })
   </script>
 </body>
 

@@ -39,23 +39,23 @@ include '../backend/database.php';
 </head>
 
 <body>
-<div class="container" style="width:75%;">
-    <div class="row " style="height:100px;">
-        <div style="float:right; background-color:aliceblue; border-radius:10px; padding:5px; width:100%;">
-            <div class="form-group col-sm-4">
-                <label class="control-label">Date From</label>
-                <input type="date" id="datefrom" name="datefrom" class="" required style="width: 100%;">
-            </div>
-            <div class="form-group col-sm-4">
-                <label class="control-label">Date To</label>
-                <input type="date" id="dateto" name="dateto" class="" required style="width: 100%;">
-            </div>
-            <div class="col-sm-2">
-                <label class="control-label"></label>
-                <input type="submit" id="btnsearch" value="search" class="btn btn-success" style="width: 100%;">
+    <div class="container" style="width:75%; ">
+        <div class="row " style="height:100px; margin-bottom:100px;">
+            <div style="float:right; background-color:aliceblue; border-radius:10px; padding:5px; width:100%;">
+                <div class="form-group col-sm-4">
+                    <label class="control-label">Date From</label>
+                    <input type="date" id="datefrom" name="datefrom" class="" required style="width: 100%;">
+                </div>
+                <div class="form-group col-sm-4">
+                    <label class="control-label">Date To</label>
+                    <input type="date" id="dateto" name="dateto" class="" required style="width: 100%;">
+                </div>
+                <div class="col-sm-2">
+                    <label class="control-label"></label>
+                    <input type="submit" id="btnsearch" value="search" class="btn btn-success" style="width: 100%;">
+                </div>
             </div>
         </div>
-    </div>
 
         <div class="col-md-3">
             <div class="col-md-12" style="background-color: rgb(53, 207, 32); height:150px; border-radius:10px;">

@@ -52,6 +52,7 @@ include '../backend/database.php';
 	<div class="container" style="background-color: white; border-radius:10px; width: 97%; height: 97%; overflow: auto;">
 		<ul class="nav nav-tabs">
 			<li><a href="#home">All Items</a></li>
+			<li><a href="#template5">Stickers</a></li>
 			<li><a href="#template1">Motorcycles</a></li>
 			<li><a href="#template2">Cars</a></li>
 			<li><a href="#template3">SUVs</a></li>
@@ -64,7 +65,7 @@ include '../backend/database.php';
 				<h3> </h3>
 				<div class="row">
 					<?php
-					$result = mysqli_query($conn, "SELECT * FROM inventory");
+					$result = mysqli_query($conn, "SELECT * FROM inventory ORDER BY itemName ASC");
 					while ($row = mysqli_fetch_array($result)) {
 					?>
 						<div class="col-sm-6 col-md-4">
@@ -108,7 +109,7 @@ include '../backend/database.php';
 				<h3> </h3>
 				<div class="row">
 					<?php
-					$result = mysqli_query($conn, "SELECT * FROM inventory WHERE itemCategory = 'Motorcycles';");
+					$result = mysqli_query($conn, "SELECT * FROM inventory WHERE itemCategory = 'Motorcycles' ORDER BY itemName ASC;");
 					while ($row = mysqli_fetch_array($result)) {
 					?>
 						<div class="col-sm-6 col-md-4">
@@ -158,7 +159,7 @@ include '../backend/database.php';
 			<div id="template2" class="tab-pane fade">
 				<div class="row">
 					<?php
-					$result = mysqli_query($conn, "SELECT * FROM inventory WHERE itemCategory = 'Cars';");
+					$result = mysqli_query($conn, "SELECT * FROM inventory WHERE itemCategory = 'Cars' ORDER BY itemName ASC;");
 					while ($row = mysqli_fetch_array($result)) {
 					?>
 						<div class="col-sm-6 col-md-4">
@@ -208,7 +209,7 @@ include '../backend/database.php';
 			<div id="template3" class="tab-pane fade">
 				<div class="row">
 					<?php
-					$result = mysqli_query($conn, "SELECT * FROM inventory WHERE itemCategory = 'SUVs';");
+					$result = mysqli_query($conn, "SELECT * FROM inventory WHERE itemCategory = 'SUVs' ORDER BY itemName ASC;");
 					while ($row = mysqli_fetch_array($result)) {
 					?>
 						<div class="col-sm-6 col-md-4">
@@ -258,7 +259,7 @@ include '../backend/database.php';
 			<div id="template4" class="tab-pane fade">
 				<div class="row">
 					<?php
-					$result = mysqli_query($conn, "SELECT * FROM inventory WHERE itemCategory = 'Vans';");
+					$result = mysqli_query($conn, "SELECT * FROM inventory WHERE itemCategory = 'Vans' ORDER BY itemName ASC;");
 					while ($row = mysqli_fetch_array($result)) {
 					?>
 						<div class="col-sm-6 col-md-4">
@@ -276,6 +277,49 @@ include '../backend/database.php';
 											</button>
 										</i>
 									</a> -->
+									<div class="row">
+										<div class="col-xs-6">
+											<a href="#editEmployeeModal" class="edit" data-toggle="modal">
+												<i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-itemName="<?php echo $row["itemName"]; ?>" data-availability="<?php echo $row["availability"]; ?>" data-itemPrice="<?php echo $row["itemPrice"]; ?>" data-itemStocks="<?php echo $row["itemStocks"]; ?>" data-itemCategory="<?php echo $row["itemCategory"]; ?>" title="Edit" style="width: 100%;">
+													<button class="btn btn-primary" style="width: 100%;">
+														&#xE254;
+													</button>
+												</i>
+											</a>
+										</div>
+										<div class="col-xs-6">
+											<a href="#deleteEmployeeModal" class="delete" data-id="<?php echo $row["id"]; ?>" data-toggle="modal">
+												<i class="material-icons" data-toggle="tooltip" title="Delete" style="width: 100%;">
+													<button class="btn btn-danger" style="width: 100%;">
+														&#xE872;
+													</button>
+												</i>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					<?php
+					}
+					?>
+
+				</div>
+			</div>
+			<div id="template5" class="tab-pane fade">
+				<div class="row">
+					<?php
+					$result = mysqli_query($conn, "SELECT * FROM inventory WHERE itemCategory = 'Stickers' ORDER BY itemName ASC;");
+					while ($row = mysqli_fetch_array($result)) {
+					?>
+						<div class="col-sm-6 col-md-4">
+							<div class="thumbnail" style="background-color:#E8E8E8;">
+								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 450px; height:200px;">
+								<div class="caption">
+									<h3><?php echo $row["itemName"]; ?></h3>
+									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
+									<p>AVAILABLE STOCKS: <?php echo $row["itemStocks"]; ?></p>
+									<p>CATEGORY: <?php echo $row["itemCategory"]; ?></p>
 									<div class="row">
 										<div class="col-xs-6">
 											<a href="#editEmployeeModal" class="edit" data-toggle="modal">
@@ -346,10 +390,6 @@ include '../backend/database.php';
 							<input type="number" id="itemPrice" name="itemPrice" class="form-control" placeholder="Enter the Item Price" required>
 						</div>
 						<div class="form-group">
-							<label>STOCKS</label>
-							<input type="number" id="itemStocks" name="itemStocks" class="form-control" placeholder="Enter the Number of Stocks" required>
-						</div>
-						<div class="form-group">
 							<label>CATEGORY</label>
 							<select name="itemCategory" id="itemCategory" class="form-control" required>
 								<option value="" selected="selected" disabled style="text-align: center;">-SELECT CATEGORY-</option>
@@ -396,10 +436,6 @@ include '../backend/database.php';
 						<div class="form-group">
 							<label>PRICE</label>
 							<input type="number" id="itemPrice_u" name="itemPrice" class="form-control" required>
-						</div>
-						<div class="form-group">
-							<label>STOCKS</label>
-							<input type="number" id="itemStocks_u" name="itemStocks" class="form-control" required>
 						</div>
 						<div class="form-group">
 							<label>CATEGORY</label>
@@ -606,9 +642,9 @@ include '../backend/database.php';
 		$("#itemPrice").keyup(function(event) {
 			validateInputs();
 		});
-		$("#itemStocks").keyup(function(event) {
-			validateInputs();
-		});
+		// $("#itemStocks").keyup(function(event) {
+		// 	validateInputs();
+		// });
 		$("#itemCategory").keyup(function(event) {
 			validateInputs();
 		});
@@ -623,9 +659,9 @@ include '../backend/database.php';
 		$("#itemPrice_u").keyup(function(event) {
 			validateInputs();
 		});
-		$("#itemStocks_u").keyup(function(event) {
-			validateInputs();
-		});
+		// $("#itemStocks_u").keyup(function(event) {
+		// 	validateInputs();
+		// });
 		$("#itemCategory_u").keyup(function(event) {
 			validateInputs();
 		});
@@ -636,18 +672,18 @@ include '../backend/database.php';
 			var inventoryImage = $("#inventoryImage").val();
 			var itemName = $("#itemName").val();
 			var itemPrice = $("#itemPrice").val();
-			var itemStocks = $("#itemStocks").val();
+			// var itemStocks = $("#itemStocks").val();
 			var itemCategory = $("#itemCategory").val();
 
 			var itemName_u = $("#itemName_u").val();
 			var itemPrice_u = $("#itemPrice_u").val();
-			var itemStocks_u = $("#itemStocks_u").val();
+			// var itemStocks_u = $("#itemStocks_u").val();
 			var itemCategory_u = $("#itemCategory_u").val();
 
 			if (
 				itemName.length == 0 ||
-				itemPrice.length == 0 ||
-				itemStocks.length == 0
+				itemPrice.length == 0
+				// itemStocks.length == 0
 
 			)
 				disableButton = true;
@@ -657,7 +693,6 @@ include '../backend/database.php';
 			if (
 				itemName_u.length == 0 ||
 				itemPrice_u.length == 0 ||
-				itemStocks_u.length == 0 ||
 				itemCategory_u.length == 0
 			)
 				disableButton = true;

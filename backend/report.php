@@ -104,9 +104,9 @@ if (count($_GET) > 0) {
 		$dateto = $_GET['dateto'];
 		$query = "";
 		if(($datefrom=="" || $datefrom==null) || ($dateto=="" || $dateto==null)){
-			$query = "SELECT sum(itemPrice) expenses FROM `inventory` WHERE itemCategory = 'Materials' ";
+			$query = "SELECT sum(itemPrice) * itemStocks expenses FROM `inventory` WHERE itemCategory = 'Materials' OR itemCategory = 'Stickers' ";
 		}else{
-			$query = "SELECT sum(itemPrice) expenses FROM `inventory` WHERE DATE_FORMAT(timestamp,'%Y-%m-%d') BETWEEN '".$datefrom."' AND '".$dateto."'";
+			$query = "SELECT sum(itemPrice) expenses FROM `inventory` WHERE DATE_FORMAT(timestamp,'%Y-%m-%d') BETWEEN '".$datefrom."' AND '".$dateto."' AND itemCategory = 'Materials' OR itemCategory = 'Stickers'";
 		}
 		$rows = mysqli_query($conn, $query); 
 		if(!isset($rows)){
