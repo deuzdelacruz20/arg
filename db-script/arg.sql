@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 12, 2022 at 03:46 PM
+-- Generation Time: Dec 17, 2022 at 12:02 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -54,52 +54,23 @@ CREATE TABLE `customer_request` (
   `services` varchar(50) NOT NULL,
   `time` varchar(255) NOT NULL,
   `timestamp` timestamp NOT NULL DEFAULT current_timestamp(),
-  `user_status` varchar(255) NOT NULL DEFAULT 'Pending'
+  `user_status` varchar(255) NOT NULL DEFAULT 'Pending',
+  `earnings` int(11) NOT NULL DEFAULT 200
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `customer_request`
 --
 
-INSERT INTO `customer_request` (`id`, `firstName`, `lastName`, `phoneNumber`, `date`, `services`, `time`, `timestamp`, `user_status`) VALUES
-(144, 'Deuz', 'De la Cruz', '09123456789', '2022-11-09', 'Hood Wrap', '8:00 AM - 9:00 AM', '2022-11-30 11:47:40', 'Rejected'),
-(146, 'Vince', 'Mendoza', '09789123456', '2022-11-11', 'HeadLight Film', '9:00 AM - 10:00 AM', '2022-11-09 11:57:10', 'Pending'),
-(147, 'Ronald', 'Parcarey', '09456789123', '2022-11-10', 'Hood Wrap', '8:00 AM - 9:00 AM', '2022-11-09 11:57:58', 'Pending'),
-(148, 'Leigh', 'Ayuma', '09456789123', '2022-11-12', 'Customized Plate', '7:00 AM - 8:00 AM', '2022-11-30 11:10:10', 'Pending'),
-(166, 'Ronel', 'Tagala', '09423113654', '2022-11-30', 'Signage', '8:00 AM - 9:00 AM', '2022-11-30 11:07:52', 'Pending'),
-(175, 'Aldous', 'Turgo', '09123456789', '2022-12-10', 'HeadLight Film', '7:00 AM - 8:00 AM', '2022-12-10 10:02:07', 'Accepted'),
-(176, 'Steven', 'Quinto', '09456789123', '2022-12-12', 'HeadLight Film', '7:00 AM - 8:00 AM', '2022-12-10 10:03:41', 'Done'),
-(177, 'Joshua', 'Garcia', '09456789123', '2022-12-12', 'Hood Wrap', '7:00 AM - 8:00 AM', '2022-12-11 18:38:41', 'Pending'),
-(178, 'Piolo', 'Pagana', '0945678123', '2022-12-12', 'HeadLight Film', '7:00 AM - 8:00 AM', '2022-12-12 08:00:14', 'Pending');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `design_templates`
---
-
-CREATE TABLE `design_templates` (
-  `id` int(11) NOT NULL,
-  `designName` varchar(255) CHARACTER SET latin1 NOT NULL,
-  `designPrice` int(11) NOT NULL,
-  `designStocks` int(11) NOT NULL,
-  `designCategory` varchar(255) CHARACTER SET latin1 NOT NULL,
-  `designImage` varchar(256) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `design_templates`
---
-
-INSERT INTO `design_templates` (`id`, `designName`, `designPrice`, `designStocks`, `designCategory`, `designImage`) VALUES
-(13, 'TEMPLATE 1', 20, 10, 'Motorcycles', 'template_1.png'),
-(14, 'TEMPLATE 2', 20, 10, 'Cars', 'template_2.png'),
-(15, 'TEMPLATE 3', 20, 10, 'SUVs', 'template_3.png'),
-(16, 'TEMPLATE 4', 10, 20, 'Vans', 'template_4.png'),
-(17, 'TEMPLATE 5', 10, 20, 'Motorcycles', 'template_5.png'),
-(18, 'TEMPLATE 6', 20, 10, 'Cars', 'template_6.png'),
-(19, 'TEMPLATE 7', 20, 10, 'SUVs', 'template_7.png'),
-(20, 'TEMPLATE 8', 20, 10, 'Vans', 'template_8.png');
+INSERT INTO `customer_request` (`id`, `firstName`, `lastName`, `phoneNumber`, `date`, `services`, `time`, `timestamp`, `user_status`, `earnings`) VALUES
+(219, 'Deuz', 'De la Cruz', '09456781231', '2022-12-16', 'Hood Wrap', '7:00 AM - 8:00 AM', '2022-12-15 05:43:10', 'Pending', 200),
+(220, 'Ronel', 'Tagala', '09456456466', '2022-12-16', 'Full Wrap', '8:00 AM - 9:00 AM', '2022-12-15 05:54:26', 'Pending', 200),
+(221, 'Rodin', 'Brago', '09787979789', '2022-12-16', 'HeadLight Film', '9:00 AM - 10:00 AM', '2022-12-15 05:54:58', 'Pending', 200),
+(222, 'Eubie', 'Clemente', '09456123123', '2022-12-16', 'Signage', '7:00 AM - 8:00 AM', '2022-12-15 14:38:49', 'Accepted', 200),
+(223, 'Rodin', 'Brago', '09456123789', '2022-12-16', 'Hood Wrap', '7:00 AM - 8:00 AM', '2022-12-15 14:48:31', 'Accepted', 200),
+(226, 'ronel', 'tagala', '09480638811', '2022-12-17', 'Hood Wrap', '1:00 PM - 2:00 PM', '2022-12-15 18:59:28', 'Accepted', 200),
+(227, 'qwe', 'qwe', '12312113123', '2022-12-23', 'Hood Wrap', '10:00 AM - 11:00 AM', '2022-12-16 02:05:55', 'Done', 200),
+(229, 'Arnold', 'Turgo', '09456789123', '2022-12-16', 'Hood Wrap', '1:00 PM - 2:00 PM', '2022-12-16 03:07:28', 'Accepted', 200);
 
 -- --------------------------------------------------------
 
@@ -112,35 +83,37 @@ CREATE TABLE `inventory` (
   `inventoryImage` varchar(255) NOT NULL,
   `itemName` varchar(255) NOT NULL,
   `itemPrice` int(11) NOT NULL,
-  `itemStocks` int(11) NOT NULL,
-  `itemCategory` varchar(255) NOT NULL
+  `itemStocks` int(11) NOT NULL DEFAULT 0,
+  `itemCategory` varchar(255) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp(),
+  `availability` varchar(255) NOT NULL DEFAULT 'Available'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `inventory`
 --
 
-INSERT INTO `inventory` (`id`, `inventoryImage`, `itemName`, `itemPrice`, `itemStocks`, `itemCategory`) VALUES
-(15, 'car.png', 'TRANSFORMERS', 20, 10, 'Cars'),
-(16, 'car2.png', 'DYNOMAX', 20, 10, 'Cars'),
-(17, 'car3.png', 'RS AKIMOTO', 20, 10, 'Cars'),
-(18, 'car4.png', 'TRANSFORMERS 2', 20, 10, 'Cars'),
-(19, 'car5.png', 'FW 808', 20, 10, 'Cars'),
-(20, 'car6.png', 'RUROUNI KENSHIN', 20, 10, 'Cars'),
-(21, 'car7.png', 'TURBO', 20, 10, 'Cars'),
-(22, 'car8.png', 'RS AKIMOTO RED', 20, 10, 'Cars'),
-(23, 'car9.png', 'RS AKIMOTO ANIME', 20, 10, 'Cars'),
-(24, 'car10.png', 'NITRO SPORT', 20, 10, 'Cars'),
-(25, 'car11.png', 'TURBO - the spirit of competition', 20, 10, 'Cars'),
-(26, 'car12.png', 'AMERICAN RACING', 20, 10, 'Cars'),
-(27, 'motorcycle1.png', 'SPORTY NMAX', 20, 10, 'Motorcycles'),
-(28, 'suv1.png', 'DRAGON BALL SUPER', 20, 10, 'SUVs'),
-(29, 'suv2.png', 'DRAGON BALL SUPER 2', 20, 10, 'SUVs'),
-(30, 'suv3.png', 'SUV The Spirit of Competition', 20, 10, 'SUVs'),
-(31, 'suv4.png', 'RED AND GRAY', 20, 10, 'SUVs'),
-(32, 'van1.png', 'VAN Spirit of Competition', 20, 10, 'Vans'),
-(34, 'van2.png', 'ONE PIECE', 20, 10, 'Vans'),
-(35, 'van3.png', 'TOYOTA RACING DEVELOPMENT', 20, 10, 'Vans');
+INSERT INTO `inventory` (`id`, `inventoryImage`, `itemName`, `itemPrice`, `itemStocks`, `itemCategory`, `timestamp`, `availability`) VALUES
+(15, 'car.png', 'TRANSFORMERS', 2000, 0, 'Cars', '2022-12-15 02:02:34', 'Available'),
+(16, 'car2.png', 'DYNOMAX', 2000, 0, 'Cars', '2022-12-15 02:02:34', 'Available'),
+(17, 'car3.png', 'RS AKIMOTO', 2000, 0, 'Cars', '2022-12-15 02:02:34', 'Available'),
+(18, 'car4.png', 'TRANSFORMERS 2', 2000, 0, 'Cars', '2022-12-15 02:02:34', 'Available'),
+(19, 'car5.png', 'FW 808', 2000, 0, 'Cars', '2022-12-15 02:02:34', 'Available'),
+(20, 'car6.png', 'RUROUNI KENSHIN', 2000, 0, 'Cars', '2022-12-15 02:02:34', 'Available'),
+(21, 'car7.png', 'TURBO', 2000, 0, 'Cars', '2022-12-15 02:02:34', 'Available'),
+(22, 'car8.png', 'RS AKIMOTO RED', 2000, 0, 'Cars', '2022-12-15 02:02:34', 'Available'),
+(23, 'car9.png', 'RS AKIMOTO ANIME', 2000, 0, 'Cars', '2022-12-15 02:02:34', 'Available'),
+(24, 'car10.png', 'NITRO SPORT', 2000, 0, 'Cars', '2022-12-15 02:02:34', 'Available'),
+(25, 'car11.png', 'TURBO 2', 2000, 0, 'Cars', '2022-12-15 02:02:34', 'Available'),
+(26, 'car12.png', 'AMERICAN RACING', 2000, 0, 'Cars', '2022-12-15 02:02:34', 'Available'),
+(27, 'motorcycle1.png', 'SPORTY NMAX', 2000, 0, 'Motorcycles', '2022-12-15 02:02:34', 'Available'),
+(28, 'suv1.png', 'DRAGON BALL SUPER', 2000, 0, 'SUVs', '2022-12-15 02:02:34', 'Available'),
+(29, 'suv2.png', 'DRAGON BALL SUPER 2', 2000, 0, 'SUVs', '2022-12-15 02:02:34', 'Available'),
+(30, 'suv3.png', 'SUV The Spirit of Competition', 2000, 0, 'SUVs', '2022-12-15 02:02:34', 'Available'),
+(31, 'suv4.png', 'RED AND GRAY', 2000, 0, 'SUVs', '2022-12-15 02:02:34', 'Available'),
+(32, 'van1.png', 'VAN Spirit of Competition', 2000, 0, 'Vans', '2022-12-15 02:02:34', 'Available'),
+(34, 'van2.png', 'ONE PIECE', 2000, 0, 'Vans', '2022-12-15 02:02:34', 'Available'),
+(35, 'van3.png', 'TRD', 2000, 10, 'Materials', '2022-12-15 02:02:34', '');
 
 --
 -- Indexes for dumped tables
@@ -150,12 +123,6 @@ INSERT INTO `inventory` (`id`, `inventoryImage`, `itemName`, `itemPrice`, `itemS
 -- Indexes for table `customer_request`
 --
 ALTER TABLE `customer_request`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `design_templates`
---
-ALTER TABLE `design_templates`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -172,19 +139,13 @@ ALTER TABLE `inventory`
 -- AUTO_INCREMENT for table `customer_request`
 --
 ALTER TABLE `customer_request`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=179;
-
---
--- AUTO_INCREMENT for table `design_templates`
---
-ALTER TABLE `design_templates`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=232;
 
 --
 -- AUTO_INCREMENT for table `inventory`
 --
 ALTER TABLE `inventory`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
