@@ -118,6 +118,7 @@ include '../backend/database.php';
 								<div class="caption">
 									<h3><?php echo $row["itemName"]; ?></h3>
 									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
+									<p>AVAILABLE STOCKS: <?php echo $row["itemStocks"]; ?></p>
 									<p><?php echo $row["availability"]; ?></p>
 									<p>CATEGORY: <?php echo $row["itemCategory"]; ?></p>
 									<!-- <a href="#buyModal" class="edit" data-toggle="modal">
@@ -436,6 +437,10 @@ include '../backend/database.php';
 						<div class="form-group">
 							<label>PRICE</label>
 							<input type="number" id="itemPrice_u" name="itemPrice" class="form-control" required>
+						</div>
+						<div class="form-group">
+							<label>STOCKS</label>
+							<input type="number" id="itemStocks_u" name="itemStocks" class="form-control" required>
 						</div>
 						<div class="form-group">
 							<label>CATEGORY</label>
