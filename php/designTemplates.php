@@ -52,6 +52,7 @@ include '../backend/database.php';
 	<div class="container" style="background-color: white; border-radius:10px; width: 97%; height: 97%; overflow: auto;">
 		<ul class="nav nav-tabs">
 			<li><a href="#home">All Items</a></li>
+			<li><a href="#template5">Stickers</a></li>
 			<li><a href="#template1">Motorcycles</a></li>
 			<li><a href="#template2">Cars</a></li>
 			<li><a href="#template3">SUVs</a></li>
@@ -276,6 +277,49 @@ include '../backend/database.php';
 											</button>
 										</i>
 									</a> -->
+									<div class="row">
+										<div class="col-xs-6">
+											<a href="#editEmployeeModal" class="edit" data-toggle="modal">
+												<i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-itemName="<?php echo $row["itemName"]; ?>" data-availability="<?php echo $row["availability"]; ?>" data-itemPrice="<?php echo $row["itemPrice"]; ?>" data-itemStocks="<?php echo $row["itemStocks"]; ?>" data-itemCategory="<?php echo $row["itemCategory"]; ?>" title="Edit" style="width: 100%;">
+													<button class="btn btn-primary" style="width: 100%;">
+														&#xE254;
+													</button>
+												</i>
+											</a>
+										</div>
+										<div class="col-xs-6">
+											<a href="#deleteEmployeeModal" class="delete" data-id="<?php echo $row["id"]; ?>" data-toggle="modal">
+												<i class="material-icons" data-toggle="tooltip" title="Delete" style="width: 100%;">
+													<button class="btn btn-danger" style="width: 100%;">
+														&#xE872;
+													</button>
+												</i>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					<?php
+					}
+					?>
+
+				</div>
+			</div>
+			<div id="template5" class="tab-pane fade">
+				<div class="row">
+					<?php
+					$result = mysqli_query($conn, "SELECT * FROM inventory WHERE itemCategory = 'Stickers' ORDER BY itemName ASC;");
+					while ($row = mysqli_fetch_array($result)) {
+					?>
+						<div class="col-sm-6 col-md-4">
+							<div class="thumbnail" style="background-color:#E8E8E8;">
+								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 450px; height:200px;">
+								<div class="caption">
+									<h3><?php echo $row["itemName"]; ?></h3>
+									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
+									<p>AVAILABLE STOCKS: <?php echo $row["itemStocks"]; ?></p>
+									<p>CATEGORY: <?php echo $row["itemCategory"]; ?></p>
 									<div class="row">
 										<div class="col-xs-6">
 											<a href="#editEmployeeModal" class="edit" data-toggle="modal">
