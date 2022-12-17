@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -77,14 +82,24 @@
           <li class="nav-link"><a href="../../arg/php/designTemplates.php">Design Templates</a></li>
           <li class="nav-link"><a href="../../arg/php/schedule.php">Schedules</a></li>
           <li class="nav-link"><a href="../../arg/php/about.php">About</a></li>
-          <li class="nav-link"><a href="../../arg/php/inventory.php">Inventory</a></li>
-          <li class="nav-link"><a href="../../arg/php/transactionHistory.php">Transaction History</a></li>
           <li class="nav-link"><a href="../../arg/php/payment.php">Payment</a></li>
+          <?php
+          if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == true && $_SESSION['isLoggedIn']) { ?>
+            <li class="nav-link"><a href="../../arg/php/inventory.php">Inventory</a></li>
+          <li class="nav-link"><a href="../../arg/php/transactionHistory.php">Transaction History</a></li>
+          
           <li class="nav-link"><a href="../../arg/php/earningsAndExpenses.php">Earnings and Expenses</a></li>
+          <?php
+          }
+          ?>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="../php/logout.php">Logout</a></li>
+          <?php
+          if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == true && $_SESSION['isLoggedIn']) {
+            echo '<li><a href="../php/logout.php">Logout</a></li>';
+          }
+          ?>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
