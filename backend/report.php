@@ -105,19 +105,21 @@ if (count($_GET) > 0) {
 		$query = "";
 		if(($datefrom=="" || $datefrom==null) || ($dateto=="" || $dateto==null)){
 			// $query = "SELECT sum(itemPrice) * itemStocks expenses FROM `inventory` WHERE itemCategory = 'Materials' OR itemCategory = 'Stickers' ";
-			$query = "SELECT sum(itemPrice) expenses FROM `inventory` WHERE itemCategory = 'Materials' OR itemCategory = 'Stickers' ";
+		 $query = "SELECT itemPrice, itemStocks FROM `inventory` WHERE itemCategory = 'Materials' OR itemCategory = 'Stickers' ";
 		}else{
-			$query = "SELECT sum(itemPrice) expenses FROM `inventory` WHERE DATE_FORMAT(timestamp,'%Y-%m-%d') BETWEEN '".$datefrom."' AND '".$dateto."' AND itemCategory = 'Materials' OR itemCategory = 'Stickers'";
+			$query = "SELECT itemPrice, itemStocks FROM `inventory` WHERE DATE_FORMAT(timestamp,'%Y-%m-%d') BETWEEN '".$datefrom."' AND '".$dateto."' AND itemCategory = 'Materials' OR itemCategory = 'Stickers'";
 		}
 		$rows = mysqli_query($conn, $query); 
 		if(!isset($rows)){
   			 echo json_encode(array("statusCode" => 99));
 		}
 		else {
-			$count = array ();
+			$count = array ();	
+			$totalExpenses = 0;
 			while($row = mysqli_fetch_array($rows)) {
-        		$count[]= $row['expenses'];
+				$totalExpenses += $row['itemPrice'] * $row['itemStocks'];
     		}
+			$count[] = $totalExpenses;
     		echo json_encode(array("statusCode" => 200, "data"=>($count)));
 		}
 		mysqli_close($conn);
