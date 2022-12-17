@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 17, 2022 at 12:02 AM
+-- Generation Time: Dec 17, 2022 at 07:52 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -70,7 +70,7 @@ INSERT INTO `customer_request` (`id`, `firstName`, `lastName`, `phoneNumber`, `d
 (223, 'Rodin', 'Brago', '09456123789', '2022-12-16', 'Hood Wrap', '7:00 AM - 8:00 AM', '2022-12-15 14:48:31', 'Accepted', 200),
 (226, 'ronel', 'tagala', '09480638811', '2022-12-17', 'Hood Wrap', '1:00 PM - 2:00 PM', '2022-12-15 18:59:28', 'Accepted', 200),
 (227, 'qwe', 'qwe', '12312113123', '2022-12-23', 'Hood Wrap', '10:00 AM - 11:00 AM', '2022-12-16 02:05:55', 'Done', 200),
-(229, 'Arnold', 'Turgo', '09456789123', '2022-12-16', 'Hood Wrap', '1:00 PM - 2:00 PM', '2022-12-16 03:07:28', 'Accepted', 200);
+(229, 'Arnold', 'Turgo', '09456789123', '2022-12-16', 'Hood Wrap', '1:00 PM - 2:00 PM', '2022-12-16 03:07:28', 'Done', 200);
 
 -- --------------------------------------------------------
 
@@ -113,7 +113,27 @@ INSERT INTO `inventory` (`id`, `inventoryImage`, `itemName`, `itemPrice`, `itemS
 (31, 'suv4.png', 'RED AND GRAY', 2000, 0, 'SUVs', '2022-12-15 02:02:34', 'Available'),
 (32, 'van1.png', 'VAN Spirit of Competition', 2000, 0, 'Vans', '2022-12-15 02:02:34', 'Available'),
 (34, 'van2.png', 'ONE PIECE', 2000, 0, 'Vans', '2022-12-15 02:02:34', 'Available'),
-(35, 'van3.png', 'TRD', 2000, 10, 'Materials', '2022-12-15 02:02:34', '');
+(69, '317734510_669839951463950_475695620104786064_n.jpg', 'CARBON WRAP', 200, 10, 'Materials', '2022-12-17 12:57:35', 'Available'),
+(70, '317817104_717800236594624_2481242579988808019_n.jpg', 'SILVER WRAP', 200, 10, 'Materials', '2022-12-17 12:57:56', 'Available'),
+(71, '317622386_697764101750791_6846100689376490875_n.jpg', 'ARROW', 20, 10, 'Stickers', '2022-12-17 12:59:07', 'Available'),
+(72, '317905270_1072044517526434_7613848791914141712_n.jpg', 'PLATE', 200, 10, 'Materials', '2022-12-17 12:59:59', 'Available'),
+(73, '318081917_1175765639986200_8393670962064059493_n.jpg', 'TAPE', 20, 5, 'Materials', '2022-12-17 13:00:21', 'Available'),
+(74, '318174872_6132620153424128_7851483035883338160_n.jpg', 'GREEN WRAP', 200, 5, 'Materials', '2022-12-17 13:00:42', 'Available'),
+(75, '318285541_868564634145940_547498653271519090_n.jpg', 'BLUE WRAP', 200, 5, 'Materials', '2022-12-17 13:01:05', 'Available'),
+(76, '318291870_1319403255561088_4332972954647928162_n.jpg', 'DARK GREEN WRAP', 200, 5, 'Materials', '2022-12-17 13:01:26', 'Available'),
+(77, '318359347_654214449739943_6992151778393281906_n.jpg', 'SILVER WRAP 2', 200, 5, 'Materials', '2022-12-17 13:02:28', 'Available'),
+(78, '318361297_522563273224074_5462613241574461822_n.jpg', 'LIGHT BLUE', 200, 10, 'Materials', '2022-12-17 13:02:56', 'Available'),
+(79, '318373143_541720000880009_3606032189556751043_n.jpg', 'CHROME COLOR', 200, 5, 'Materials', '2022-12-17 13:03:53', 'Available'),
+(80, '318421392_683567330092264_2693911548530780301_n.jpg', 'WHITE', 200, 5, 'Materials', '2022-12-17 13:04:12', 'Available'),
+(81, '317709498_5472159252892489_7891741831715654_n.jpg', 'HEAD', 20, 10, 'Stickers', '2022-12-17 13:05:26', 'Available'),
+(82, '317718793_1292824878166953_1288866209078409162_n.jpg', 'DIARY NI PAPS', 20, 10, 'Stickers', '2022-12-17 13:25:05', 'Available'),
+(83, '317741456_483057977265464_3928132800673153281_n.jpg', 'JRP', 20, 10, 'Stickers', '2022-12-17 13:25:25', 'Available'),
+(84, '317814568_388524233463834_3465495384634534929_n.jpg', 'DK RACING', 20, 10, 'Stickers', '2022-12-17 13:25:50', 'Available'),
+(85, '317831915_1265055284067137_5828192010331717587_n.jpg', 'SKULL', 20, 10, 'Stickers', '2022-12-17 13:26:08', 'Available'),
+(86, '317854264_632703588647242_4024855050316725167_n.jpg', 'BOYZA THAILAND', 20, 10, 'Stickers', '2022-12-17 13:26:58', 'Available'),
+(87, '317903354_2472732579547230_4305194785556985933_n.jpg', 'HELLO KITTY', 20, 10, 'Stickers', '2022-12-17 13:27:34', 'Available'),
+(88, '317907573_1275326113322830_8785915066048314661_n.jpg', 'KOBE', 20, 10, 'Stickers', '2022-12-17 13:27:56', 'Available'),
+(89, '317911576_682655043417020_6291641607554385403_n.jpg', 'CHACKS TO GO', 20, 10, 'Stickers', '2022-12-17 13:28:43', 'Available');
 
 --
 -- Indexes for dumped tables
@@ -139,13 +159,13 @@ ALTER TABLE `inventory`
 -- AUTO_INCREMENT for table `customer_request`
 --
 ALTER TABLE `customer_request`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=232;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=275;
 
 --
 -- AUTO_INCREMENT for table `inventory`
 --
 ALTER TABLE `inventory`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
