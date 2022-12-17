@@ -69,11 +69,11 @@
     color: #73b0f4;
   }
 
-  .social:hover {
+  /* .social:hover {
     -webkit-transform: scale(1.1);
     -moz-transform: scale(1.1);
     -o-transform: scale(1.1);
-  }
+  } */
 
   .icon-ul {
     list-style-type: none !important;
