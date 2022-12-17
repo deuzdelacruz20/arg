@@ -49,6 +49,7 @@ include '../backend/database.php';
             </div>
             <div class="col-md-6">
                 <h2 style="text-align: center; color:black;">You can also pay by going to the GCash official website</h2>
+                <h2 style="text-align: center; color:black;">GCASH NUMBER: 0912-345-6789</h2>
             </div>
         </div>
         <br>

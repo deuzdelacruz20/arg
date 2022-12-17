@@ -70,87 +70,117 @@ include '../include/disableTimeScript.php';
     <div class="container" style="background-color: white; border-radius:10px; width: 97%; height: 97%; overflow: auto;">
         <!-- width: 98%; height: 750px; -->
         <ul class="nav nav-tabs">
-            <li><a href="#all">All</a></li>
-            <li><a href="#pending">Pending</a></li>
+            <?php
+            if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == true && $_SESSION['isLoggedIn']) {
+            ?>
+                <li><a href="#all">All</a></li>
+                <li><a href="#pending">Pending</a></li>
+            <?php
+            }
+            ?>
             <li><a href="#accepted">Accepted</a></li>
-            <li><a href="#rejected">Rejected</a></li>
-            <li><a href="#done">Done</a></li>
+            <?php
+            if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == true && $_SESSION['isLoggedIn']) {
+            ?>
+                <li><a href="#rejected">Rejected</a></li>
+                <li><a href="#done">Done</a></li>
+            <?php
+            }
+            ?>
         </ul>
 
         <div class="tab-content">
-            <div id="all" class="tab-pane fade in active">
-                <h3> </h3>
-                <div class="container" style="width: 100%;">
-                    <p id="success"></p>
-                    <div class="table-wrapper">
-                        <div class="table-title">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <h2>ALL <b>SCHEDULES</b></h2>
-                                </div>
-                                <div class="col-sm-6">
-                                    <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
-                                    <a href="JavaScript:void(0);" class="btn btn-danger" id="delete_multiple"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>
+            <?php
+            if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == true && $_SESSION['isLoggedIn']) {
+            ?>
+                <div id="all" class="tab-pane fade in active">
+                    <h3> </h3>
+                    <div class="container" style="width: 100%;">
+                        <p id="success"></p>
+                        <div class="table-wrapper">
+                            <div class="table-title">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <h2>ALL <b>SCHEDULES</b></h2>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
+                                        <a href="JavaScript:void(0);" class="btn btn-danger" id="delete_multiple"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <table class="table table-striped table-hover">
-                            <thead>
-                                <tr>
-                                    <th>
-                                        <span class="custom-checkbox">
-                                            <input type="checkbox" id="selectAll">
-                                            <label for="selectAll"></label>
-                                        </span>
-                                    </th>
-                                    <th>ID</th>
-                                    <th>FIRST NAME</th>
-                                    <th>LAST NAME</th>
-                                    <th>PHONE NUMBER</th>
-                                    <th>DATE</th>
-                                    <th>SERVICES</th>
-                                    <th>TIMESLOT</th>
-                                    <th>STATUS</th>
-                                    <th>ACTION</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-
-                                <?php
-                                $result = mysqli_query($conn, "SELECT * FROM customer_request ORDER BY timestamp DESC");
-                                while ($row = mysqli_fetch_array($result)) {
-                                ?>
-                                    <tr id="<?php echo $row["id"]; ?>">
-                                        <td>
+                            <table class="table table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>
                                             <span class="custom-checkbox">
-                                                <input type="checkbox" class="user_checkbox" data-user-id="<?php echo $row["id"]; ?>">
-                                                <label for="checkbox2"></label>
+                                                <input type="checkbox" id="selectAll">
+                                                <label for="selectAll"></label>
                                             </span>
-                                        </td>
-                                        <td><?php echo $row["id"]; ?></td>
-                                        <td><?php echo $row["firstName"]; ?></td>
-                                        <td><?php echo $row["lastName"]; ?></td>
-                                        <td><?php echo $row["phoneNumber"]; ?></td>
-                                        <td><?php echo $row["date"]; ?></td>
-                                        <td><?php echo $row["services"]; ?></td>
-                                        <td><?php echo $row["time"]; ?></td>
-                                        <td><?php echo $row["user_status"]; ?></td>
-                                        <td>
-                                            <a href="#editEmployeeModal" class="edit" data-toggle="modal">
-                                                <i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-firstName="<?php echo $row["firstName"]; ?>" data-lastName="<?php echo $row["lastName"]; ?>" data-phoneNumber="<?php echo $row["phoneNumber"]; ?>" data-date="<?php echo $row["date"]; ?>" data-services="<?php echo $row["services"]; ?>" data-time="<?php echo $row["time"]; ?>" data-user_status="<?php echo $row["user_status"]; ?>" title="Edit">&#xE254;</i>
-                                            </a>
-                                            <a href="#deleteEmployeeModal" class="delete" data-id="<?php echo $row["id"]; ?>" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-                                        </td>
+                                        </th>
+                                        <th>ID</th>
+                                        <?php
+                                        if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == true && $_SESSION['isLoggedIn']) {
+                                        ?>
+                                            <th>FIRST NAME</th>
+                                            <th>LAST NAME</th>
+                                            <th>PHONE NUMBER</th>
+                                        <?php
+                                        }
+                                        ?>
+                                        <th>DATE</th>
+                                        <th>SERVICES</th>
+                                        <th>TIMESLOT</th>
+                                        <?php
+                                        if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == true && $_SESSION['isLoggedIn']) {
+                                        ?>
+                                            <th>STATUS</th>
+                                            <th>ACTION</th>
+                                        <?php
+                                        }
+                                        ?>
                                     </tr>
-                                <?php
-                                }
-                                ?>
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
 
+                                    <?php
+                                    $result = mysqli_query($conn, "SELECT * FROM customer_request ORDER BY timestamp DESC");
+                                    while ($row = mysqli_fetch_array($result)) {
+                                    ?>
+                                        <tr id="<?php echo $row["id"]; ?>">
+                                            <td>
+                                                <span class="custom-checkbox">
+                                                    <input type="checkbox" class="user_checkbox" data-user-id="<?php echo $row["id"]; ?>">
+                                                    <label for="checkbox2"></label>
+                                                </span>
+                                            </td>
+                                            <td><?php echo $row["id"]; ?></td>
+                                            <td><?php echo $row["firstName"]; ?></td>
+                                            <td><?php echo $row["lastName"]; ?></td>
+                                            <td><?php echo $row["phoneNumber"]; ?></td>
+                                            <td><?php echo $row["date"]; ?></td>
+                                            <td><?php echo $row["services"]; ?></td>
+                                            <td><?php echo $row["time"]; ?></td>
+                                            <td><?php echo $row["user_status"]; ?></td>
+                                            <td>
+                                                <a href="#editEmployeeModal" class="edit" data-toggle="modal">
+                                                    <i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-firstName="<?php echo $row["firstName"]; ?>" data-lastName="<?php echo $row["lastName"]; ?>" data-phoneNumber="<?php echo $row["phoneNumber"]; ?>" data-date="<?php echo $row["date"]; ?>" data-services="<?php echo $row["services"]; ?>" data-time="<?php echo $row["time"]; ?>" data-user_status="<?php echo $row["user_status"]; ?>" title="Edit">&#xE254;</i>
+                                                </a>
+                                                <a href="#deleteEmployeeModal" class="delete" data-id="<?php echo $row["id"]; ?>" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                            </td>
+                                        </tr>
+                                    <?php
+                                    }
+                                    ?>
+                                </tbody>
+                            </table>
+
+                        </div>
                     </div>
                 </div>
-            </div>
+            <?php
+            }
+            ?>
             <div id="pending" class="tab-pane fade">
                 <h3> </h3>
                 <div class="container" style="width: 100%;">
@@ -224,7 +254,7 @@ include '../include/disableTimeScript.php';
                     </div>
                 </div>
             </div>
-            <div id="accepted" class="tab-pane fade">
+            <div id="accepted" class="tab-pane fade in active">
                 <div class="container" style="width: 100%;">
                     <p id="success"></p>
                     <div class="table-wrapper">
@@ -234,8 +264,14 @@ include '../include/disableTimeScript.php';
                                     <h2>ACCEPTED <b>SCHEDULES</b></h2>
                                 </div>
                                 <div class="col-sm-6">
-                                    <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
-                                    <a href="JavaScript:void(0);" class="btn btn-danger" id="delete_multiple"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>
+                                    <?php
+                                    if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == true && $_SESSION['isLoggedIn']) {
+                                    ?>
+                                        <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
+                                        <a href="JavaScript:void(0);" class="btn btn-danger" id="delete_multiple"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>
+                                    <?php
+                                    }
+                                    ?>
                                 </div>
                             </div>
                         </div>
@@ -249,14 +285,26 @@ include '../include/disableTimeScript.php';
                                         </span>
                                     </th>
                                     <th>ID</th>
-                                    <th>FIRST NAME</th>
-                                    <th>LAST NAME</th>
-                                    <th>PHONE NUMBER</th>
+                                    <?php
+                                    if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == true && $_SESSION['isLoggedIn']) {
+                                    ?>
+                                        <th>FIRST NAME</th>
+                                        <th>LAST NAME</th>
+                                        <th>PHONE NUMBER</th>
+                                    <?php
+                                    }
+                                    ?>
                                     <th>DATE</th>
                                     <th>SERVICES</th>
                                     <th>TIMESLOT</th>
                                     <th>STATUS</th>
-                                    <th>ACTION</th>
+                                    <?php
+                                    if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == true && $_SESSION['isLoggedIn']) {
+                                    ?>
+                                        <th>ACTION</th>
+                                    <?php
+                                    }
+                                    ?>
                                 </tr>
                             </thead>
                             <tbody>
@@ -273,19 +321,31 @@ include '../include/disableTimeScript.php';
                                             </span>
                                         </td>
                                         <td><?php echo $row["id"]; ?></td>
-                                        <td><?php echo $row["firstName"]; ?></td>
-                                        <td><?php echo $row["lastName"]; ?></td>
-                                        <td><?php echo $row["phoneNumber"]; ?></td>
+                                        <?php
+                                        if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == true && $_SESSION['isLoggedIn']) {
+                                        ?>
+                                            <td><?php echo $row["firstName"]; ?></td>
+                                            <td><?php echo $row["lastName"]; ?></td>
+                                            <td><?php echo $row["phoneNumber"]; ?></td>
+                                        <?php
+                                        }
+                                        ?>
                                         <td><?php echo $row["date"]; ?></td>
                                         <td><?php echo $row["services"]; ?></td>
                                         <td><?php echo $row["time"]; ?></td>
                                         <td><?php echo $row["user_status"]; ?></td>
-                                        <td>
-                                            <a href="#editEmployeeModal" class="edit" data-toggle="modal">
-                                                <i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-firstName="<?php echo $row["firstName"]; ?>" data-lastName="<?php echo $row["lastName"]; ?>" data-phoneNumber="<?php echo $row["phoneNumber"]; ?>" data-date="<?php echo $row["date"]; ?>" data-services="<?php echo $row["services"]; ?>" data-time="<?php echo $row["time"]; ?>" data-user_status="<?php echo $row["user_status"]; ?>" title="Edit">&#xE254;</i>
-                                            </a>
-                                            <a href="#deleteEmployeeModal" class="delete" data-id="<?php echo $row["id"]; ?>" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-                                        </td>
+                                        <?php
+                                        if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == true && $_SESSION['isLoggedIn']) {
+                                        ?>
+                                            <td>
+                                                <a href="#editEmployeeModal" class="edit" data-toggle="modal">
+                                                    <i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-firstName="<?php echo $row["firstName"]; ?>" data-lastName="<?php echo $row["lastName"]; ?>" data-phoneNumber="<?php echo $row["phoneNumber"]; ?>" data-date="<?php echo $row["date"]; ?>" data-services="<?php echo $row["services"]; ?>" data-time="<?php echo $row["time"]; ?>" data-user_status="<?php echo $row["user_status"]; ?>" title="Edit">&#xE254;</i>
+                                                </a>
+                                                <a href="#deleteEmployeeModal" class="delete" data-id="<?php echo $row["id"]; ?>" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                            </td>
+                                        <?php
+                                        }
+                                        ?>
                                     </tr>
                                 <?php
                                 }
