@@ -66,7 +66,7 @@ include '../backend/database.php';
 				<h3> </h3>
 				<div class="row">
 					<?php
-					$result = mysqli_query($conn, "SELECT * FROM inventory");
+					$result = mysqli_query($conn, "SELECT * FROM inventory ORDER BY itemName ASC");
 					while ($row = mysqli_fetch_array($result)) {
 					?>
 						<div class="col-sm-6 col-md-4">
@@ -110,7 +110,7 @@ include '../backend/database.php';
 				<h3> </h3>
 				<div class="row">
 					<?php
-					$result = mysqli_query($conn, "SELECT * FROM inventory WHERE itemCategory = 'Motorcycles';");
+					$result = mysqli_query($conn, "SELECT * FROM inventory WHERE itemCategory = 'Motorcycles' ORDER BY itemName ASC;");
 					while ($row = mysqli_fetch_array($result)) {
 					?>
 						<div class="col-sm-6 col-md-4">
@@ -153,7 +153,7 @@ include '../backend/database.php';
 			<div id="template2" class="tab-pane fade">
 				<div class="row">
 					<?php
-					$result = mysqli_query($conn, "SELECT * FROM inventory WHERE itemCategory = 'Cars';");
+					$result = mysqli_query($conn, "SELECT * FROM inventory WHERE itemCategory = 'Cars' ORDER BY itemName ASC;");
 					while ($row = mysqli_fetch_array($result)) {
 					?>
 						<div class="col-sm-6 col-md-4">
@@ -196,7 +196,7 @@ include '../backend/database.php';
 			<div id="template3" class="tab-pane fade">
 				<div class="row">
 					<?php
-					$result = mysqli_query($conn, "SELECT * FROM inventory WHERE itemCategory = 'SUVs';");
+					$result = mysqli_query($conn, "SELECT * FROM inventory WHERE itemCategory = 'SUVs' ORDER BY itemName ASC;");
 					while ($row = mysqli_fetch_array($result)) {
 					?>
 						<div class="col-sm-6 col-md-4">
@@ -239,7 +239,7 @@ include '../backend/database.php';
 			<div id="template4" class="tab-pane fade">
 				<div class="row">
 					<?php
-					$result = mysqli_query($conn, "SELECT * FROM inventory WHERE itemCategory = 'Vans';");
+					$result = mysqli_query($conn, "SELECT * FROM inventory WHERE itemCategory = 'Vans' ORDER BY itemName ASC;");
 					while ($row = mysqli_fetch_array($result)) {
 					?>
 						<div class="col-sm-6 col-md-4">
@@ -282,7 +282,7 @@ include '../backend/database.php';
 			<div id="template5" class="tab-pane fade">
 				<div class="row">
 					<?php
-					$result = mysqli_query($conn, "SELECT * FROM inventory WHERE itemCategory = 'Stickers';");
+					$result = mysqli_query($conn, "SELECT * FROM inventory WHERE itemCategory = 'Stickers' ORDER BY itemName ASC;");
 					while ($row = mysqli_fetch_array($result)) {
 					?>
 						<div class="col-sm-6 col-md-4">
@@ -325,7 +325,7 @@ include '../backend/database.php';
 			<div id="template6" class="tab-pane fade">
 				<div class="row">
 					<?php
-					$result = mysqli_query($conn, "SELECT * FROM inventory WHERE itemCategory = 'Materials';");
+					$result = mysqli_query($conn, "SELECT * FROM inventory WHERE itemCategory = 'Materials' ORDER BY itemName ASC;");
 					while ($row = mysqli_fetch_array($result)) {
 					?>
 						<div class="col-sm-6 col-md-4">
