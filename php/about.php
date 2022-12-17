@@ -53,13 +53,13 @@
             </p>
             <h1 style="font-weight: bold;">Vision</h1>
             <p>
-              To be the world's most premier printing solution company
+              To be the Quezon Province's most premier printing solution business
               delivering premium quality product to our customers.
             </p>
           </div>
         </div>
         <div class="col-md-6">
-            <img src="../image/arg logo.png" width="600" height="600" style="padding: 30px; align-items: center; margin-bottom: 80px;"/>
+            <img src="../image/arg logo.png" width="500" height="500" style="padding: 30px; align-items: center; margin-bottom: 80px;"/>
         </div>
       </div>
     </div>
@@ -68,7 +68,7 @@
       <div class="row">
         <div class="col-md-4">
           <div class="thumbnail">
-            <a href="../image/car5png" target="_blank">
+            <a href="../image/car5.png" target="_blank">
               <img src="../image/car5.png" alt="Lights" style="width:100%">
               <div class="caption">
                 <p>Full Wrap</p>
@@ -78,8 +78,8 @@
         </div>
         <div class="col-md-4">
           <div class="thumbnail">
-            <a href="../image/car2.png" target="_blank">
-              <img src="../image/car2.png" alt="Nature" style="width:100%">
+            <a href="../../image/hoodwraps.jpg" target="_blank">
+              <img src="../image/hoodwraps.jpg" alt="Nature">
               <div class="caption">
                 <p>Hood Wrap</p>
               </div>
@@ -88,8 +88,8 @@
         </div>
         <div class="col-md-4">
           <div class="thumbnail">
-            <a href="../image/car6.png" target="_blank">
-              <img src="../image/car6.png" alt="Fjords" style="width:100%">
+            <a href="../image/headlightfilm.jpg" target="_blank">
+              <img src="../image/headlightfilm.jpg" alt="Fjords" style="width:100%">
               <div class="caption">
                 <p>Headlight Film</p>
               </div>
@@ -99,8 +99,8 @@
         <div class="row">
           <div class="col-md-6">
             <div class="thumbnail">
-              <a href="../image/car7.png" target="_blank">
-                <img src="../image/car7.png" alt="Lights"style="width:100%" >
+              <a href="../image/plate.jpg" target="_blank">
+                <img src="../image/plate.jpg" alt="Lights"style="width:100%" >
                 <div class="caption">
                   <p>Customize Plate</p>
                 </div>
@@ -109,8 +109,8 @@
           </div>
           <div class="col-md-6">
             <div class="thumbnail">
-              <a href="../image/car9.png" target="_blank">
-                <img src="../image/car9.png" alt="Nature" style="width:100%">
+              <a href="../image/signage.jpg" target="_blank">
+                <img src="../image/car5.png" alt="Nature" style="width:100%">
                 <div class="caption">
                   <p>Signage</p>
                 </div>
