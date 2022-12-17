@@ -65,7 +65,7 @@ include '../backend/database.php';
 				<h3> </h3>
 				<div class="row">
 					<?php
-					$result = mysqli_query($conn, "SELECT * FROM inventory ORDER BY itemName ASC");
+					$result = mysqli_query($conn, "SELECT * FROM inventory WHERE itemCategory = 'Stickers' OR itemCategory = 'Motorcycles' or itemCategory = 'Cars' OR itemCategory = 'SUVs' or itemCategory = 'Vans' ORDER BY itemName ASC");
 					while ($row = mysqli_fetch_array($result)) {
 					?>
 						<div class="col-sm-6 col-md-4">
