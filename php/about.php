@@ -80,7 +80,7 @@
   </div> -->
 
   <!-- SERVICES -->
-  <div class="container" style="background-color: white; width: 100%;">
+  <div class="container" style="width: 100%;">
     <h1 style="text-align: center; font-size: 60px">TIME OPEN</h1>
     <div class="row">
       <div class="col-md-6">
@@ -101,9 +101,14 @@
         <br>
         <br>
         <br>
+        <div class="container" style="background-color: rgb(41, 141, 124); width: 100%;">
+        <div class="row"
+            style="text-align:center; margin: 5% 5% 5% 5%; background-color: white ; border-radius: 10px;">
         <h1 style="font-size: 50px; text-align:center">BUSINESS DAYS</h1>
         <h1 style="font-size: 50px; text-align:center">We are open from <b>Monday</b> to <b>Saturday</b></h1>
         <h1 style="font-size: 50px; text-align:center"><b>7:00AM</b> to <b>6:00PM</b></h1>
+        </div>
+        </div>
       </div>
       <div class="col-md-6" style="text-align: center; margin: 10px 0px 50px 0px;">
         <!-- BUSINESS HOURS -->
