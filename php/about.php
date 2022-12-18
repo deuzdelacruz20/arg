@@ -1,4 +1,6 @@
-<?php include '../include/navigation.php';
+<?php 
+session_start();
+include '../include/navigation.php';
 ?>
 
 <!DOCTYPE html>

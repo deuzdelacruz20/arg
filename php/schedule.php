@@ -2,6 +2,7 @@
 include '../include/navigation.php';
 include '../backend/database.php';
 include '../include/disableTimeScript.php';
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">

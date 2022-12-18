@@ -1,4 +1,5 @@
 <?php
+session_start();
 if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == false || !isset($_SESSION['isLoggedIn'])) {
 	// echo 'window.location.href = "../php/homepage.php";';
 	header("Location: http://localhost/arg/php/homepage.php");

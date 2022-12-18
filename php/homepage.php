@@ -1,4 +1,5 @@
 <?php
+session_start();
 include '../include/navigation.php';
 include '../backend/database.php';
 include '../include/disableTimeScript.php';
