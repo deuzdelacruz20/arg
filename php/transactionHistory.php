@@ -1,11 +1,10 @@
 <?php
+if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == false || !isset($_SESSION['isLoggedIn'])) {
+    // echo 'window.location.href = "../php/homepage.php";';
+    header("Location: http://localhost/arg/php/homepage.php");
+}
 include '../include/navigation.php';
 include '../backend/database.php';
-
-if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == false || !isset($_SESSION['isLoggedIn'])) {
-	// echo 'window.location.href = "../php/homepage.php";';
-	header("Location: http://localhost/arg/php/homepage.php");
-  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -92,7 +91,7 @@ if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == false || !isset($_SES
                             <td><?php echo $row["services"]; ?></td>
                             <td><?php echo $row["time"]; ?></td>
                             <td><?php echo $row["timestamp"]; ?></td>
-                            
+
                             <!-- <td>
                                 <a href="#editEmployeeModal" class="edit" data-toggle="modal">
                                     <i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-firstName="<?php echo $row["firstName"]; ?>" data-lastName="<?php echo $row["lastName"]; ?>" data-phoneNumber="<?php echo $row["phoneNumber"]; ?>" data-date="<?php echo $row["date"]; ?>" data-services="<?php echo $row["services"]; ?>" data-time="<?php echo $row["time"]; ?>" title="Edit">&#xE254;</i>
@@ -128,7 +127,7 @@ if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == false || !isset($_SES
                         </div>
                         <div class="form-group">
                             <label>PHONE NUMBER</label>
-                            <input type="phone" id="phoneNumber" name="phoneNumber" class="form-control" maxlength = "11" required>
+                            <input type="phone" id="phoneNumber" name="phoneNumber" class="form-control" maxlength="11" required>
                         </div>
                         <div class="form-group">
                             <label>DATE</label>
