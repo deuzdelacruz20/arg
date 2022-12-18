@@ -1,7 +1,7 @@
 <?php
+session_start();
 include '../include/navigation.php';
 include '../backend/database.php';
-session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
