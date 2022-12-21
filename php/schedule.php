@@ -26,6 +26,10 @@ include '../include/disableTimeScript.php';
     <script src="../ajax/ajax.js"></script>
     <link rel="stylesheet" href="../css/style.css">
 
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
+
+
     <style>
         body {
             background: linear-gradient(120deg, #71b7e6, #9b59b6);
@@ -94,7 +98,7 @@ include '../include/disableTimeScript.php';
             <?php
             if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == true && $_SESSION['isLoggedIn']) {
             ?>
-                <div id="all" class="tab-pane fade in active">
+                <div id="all" class="tab-pane fade">
                     <h3> </h3>
                     <div class="container" style="width: 100%;">
                         <p id="success"></p>
@@ -110,7 +114,7 @@ include '../include/disableTimeScript.php';
                                     </div>
                                 </div>
                             </div>
-                            <table class="table table-striped table-hover">
+                            <table class="table table-striped table-hover" id="table">
                                 <thead>
                                     <tr>
                                         <th>
@@ -179,82 +183,82 @@ include '../include/disableTimeScript.php';
                         </div>
                     </div>
                 </div>
+                <div id="pending" class="tab-pane fade">
+                    <h3> </h3>
+                    <div class="container" style="width: 100%;">
+                        <p id="success"></p>
+                        <div class="table-wrapper">
+                            <div class="table-title">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <h2>PENDING <b>SCHEDULES</b></h2>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
+                                        <a href="JavaScript:void(0);" class="btn btn-danger" id="delete_multiple"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <table class="table table-striped table-hover" id="tablePending">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <span class="custom-checkbox">
+                                                <input type="checkbox" id="selectAll">
+                                                <label for="selectAll"></label>
+                                            </span>
+                                        </th>
+                                        <th>ID</th>
+                                        <th>FIRST NAME</th>
+                                        <th>LAST NAME</th>
+                                        <th>PHONE NUMBER</th>
+                                        <th>DATE</th>
+                                        <th>SERVICES</th>
+                                        <th>TIMESLOT</th>
+                                        <th>STATUS</th>
+                                        <th>ACTION</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <?php
+                                    $result = mysqli_query($conn, "SELECT * FROM customer_request WHERE user_status = 'Pending' ORDER BY timestamp DESC");
+                                    while ($row = mysqli_fetch_array($result)) {
+                                    ?>
+                                        <tr id="<?php echo $row["id"]; ?>">
+                                            <td>
+                                                <span class="custom-checkbox">
+                                                    <input type="checkbox" class="user_checkbox" data-user-id="<?php echo $row["id"]; ?>">
+                                                    <label for="checkbox2"></label>
+                                                </span>
+                                            </td>
+                                            <td><?php echo $row["id"]; ?></td>
+                                            <td><?php echo $row["firstName"]; ?></td>
+                                            <td><?php echo $row["lastName"]; ?></td>
+                                            <td><?php echo $row["phoneNumber"]; ?></td>
+                                            <td><?php echo $row["date"]; ?></td>
+                                            <td><?php echo $row["services"]; ?></td>
+                                            <td><?php echo $row["time"]; ?></td>
+                                            <td><?php echo $row["user_status"]; ?></td>
+                                            <td>
+                                                <a href="#editEmployeeModal" class="edit" data-toggle="modal">
+                                                    <i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-firstName="<?php echo $row["firstName"]; ?>" data-lastName="<?php echo $row["lastName"]; ?>" data-phoneNumber="<?php echo $row["phoneNumber"]; ?>" data-date="<?php echo $row["date"]; ?>" data-services="<?php echo $row["services"]; ?>" data-time="<?php echo $row["time"]; ?>" data-user_status="<?php echo $row["user_status"]; ?>" title="Edit">&#xE254;</i>
+                                                </a>
+                                                <a href="#deleteEmployeeModal" class="delete" data-id="<?php echo $row["id"]; ?>" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                            </td>
+                                        </tr>
+                                    <?php
+                                    }
+                                    ?>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
             <?php
             }
             ?>
-            <div id="pending" class="tab-pane fade">
-                <h3> </h3>
-                <div class="container" style="width: 100%;">
-                    <p id="success"></p>
-                    <div class="table-wrapper">
-                        <div class="table-title">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <h2>PENDING <b>SCHEDULES</b></h2>
-                                </div>
-                                <div class="col-sm-6">
-                                    <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
-                                    <a href="JavaScript:void(0);" class="btn btn-danger" id="delete_multiple"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>
-                                </div>
-                            </div>
-                        </div>
-                        <table class="table table-striped table-hover">
-                            <thead>
-                                <tr>
-                                    <th>
-                                        <span class="custom-checkbox">
-                                            <input type="checkbox" id="selectAll">
-                                            <label for="selectAll"></label>
-                                        </span>
-                                    </th>
-                                    <th>ID</th>
-                                    <th>FIRST NAME</th>
-                                    <th>LAST NAME</th>
-                                    <th>PHONE NUMBER</th>
-                                    <th>DATE</th>
-                                    <th>SERVICES</th>
-                                    <th>TIMESLOT</th>
-                                    <th>STATUS</th>
-                                    <th>ACTION</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-
-                                <?php
-                                $result = mysqli_query($conn, "SELECT * FROM customer_request WHERE user_status = 'Pending' ORDER BY timestamp DESC");
-                                while ($row = mysqli_fetch_array($result)) {
-                                ?>
-                                    <tr id="<?php echo $row["id"]; ?>">
-                                        <td>
-                                            <span class="custom-checkbox">
-                                                <input type="checkbox" class="user_checkbox" data-user-id="<?php echo $row["id"]; ?>">
-                                                <label for="checkbox2"></label>
-                                            </span>
-                                        </td>
-                                        <td><?php echo $row["id"]; ?></td>
-                                        <td><?php echo $row["firstName"]; ?></td>
-                                        <td><?php echo $row["lastName"]; ?></td>
-                                        <td><?php echo $row["phoneNumber"]; ?></td>
-                                        <td><?php echo $row["date"]; ?></td>
-                                        <td><?php echo $row["services"]; ?></td>
-                                        <td><?php echo $row["time"]; ?></td>
-                                        <td><?php echo $row["user_status"]; ?></td>
-                                        <td>
-                                            <a href="#editEmployeeModal" class="edit" data-toggle="modal">
-                                                <i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-firstName="<?php echo $row["firstName"]; ?>" data-lastName="<?php echo $row["lastName"]; ?>" data-phoneNumber="<?php echo $row["phoneNumber"]; ?>" data-date="<?php echo $row["date"]; ?>" data-services="<?php echo $row["services"]; ?>" data-time="<?php echo $row["time"]; ?>" data-user_status="<?php echo $row["user_status"]; ?>" title="Edit">&#xE254;</i>
-                                            </a>
-                                            <a href="#deleteEmployeeModal" class="delete" data-id="<?php echo $row["id"]; ?>" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-                                        </td>
-                                    </tr>
-                                <?php
-                                }
-                                ?>
-                            </tbody>
-                        </table>
-
-                    </div>
-                </div>
-            </div>
             <div id="accepted" class="tab-pane fade in active">
                 <div class="container" style="width: 100%;">
                     <p id="success"></p>
@@ -276,7 +280,7 @@ include '../include/disableTimeScript.php';
                                 </div>
                             </div>
                         </div>
-                        <table class="table table-striped table-hover">
+                        <table class="table table-striped table-hover" id="tableAccepted">
                             <thead>
                                 <tr>
                                     <th>
@@ -373,7 +377,7 @@ include '../include/disableTimeScript.php';
                                 </div>
                             </div>
                         </div>
-                        <table class="table table-striped table-hover">
+                        <table class="table table-striped table-hover" id="tableRejected">
                             <thead>
                                 <tr>
                                     <th>
@@ -446,7 +450,7 @@ include '../include/disableTimeScript.php';
                                 </div>
                             </div>
                         </div>
-                        <table class="table table-striped table-hover">
+                        <table class="table table-striped table-hover" id="tableDone">
                             <thead>
                                 <tr>
                                     <th>
@@ -979,6 +983,24 @@ include '../include/disableTimeScript.php';
                     text: 'Sunday is outside our business hours!',
                 })
             }
+        });
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $('#table').DataTable();
+        });
+        $(document).ready(function() {
+            $('#tablePending').DataTable();
+        });
+        $(document).ready(function() {
+            $('#tableAccepted').DataTable();
+        });
+        $(document).ready(function() {
+            $('#tableRejected').DataTable();
+        });
+        $(document).ready(function() {
+            $('#tableDone').DataTable();
         });
     </script>
 

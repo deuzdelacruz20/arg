@@ -27,6 +27,9 @@ include '../backend/database.php';
     <script src="../ajax/ajax.js"></script>
     <link rel="stylesheet" href="../css/style.css">
 
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
+
     <style>
         body {
             background: linear-gradient(120deg, #71b7e6, #9b59b6);
@@ -51,7 +54,7 @@ include '../backend/database.php';
                     </div> -->
                 </div>
             </div>
-            <table class="table table-striped table-hover">
+            <table class="table table-striped table-hover" id="transactionHistoryTable">
                 <thead>
                     <tr>
                         <!-- <th>
@@ -337,6 +340,12 @@ include '../backend/database.php';
 
             $('#update').attr('disabled', disableButton);
         }
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $('#transactionHistoryTable').DataTable();
+        });
     </script>
 </body>
 
