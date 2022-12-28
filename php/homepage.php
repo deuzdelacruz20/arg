@@ -429,7 +429,7 @@ include '../include/disableTimeScript.php';
             if (
                 firstName.length == 0 ||
                 lastName.length == 0 ||
-                phoneNumber.length == 0
+                phoneNumber.length != 11
                 // date.value.length == 0 || 
                 // services.empty ||
                 // time.empty
