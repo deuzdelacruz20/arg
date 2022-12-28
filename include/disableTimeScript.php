@@ -189,8 +189,23 @@
                             </select>
                             <input type="text" name="inputTime" id="inputTime" hidden></input>
                         </div>
+                        <br>
                         <div class="form-group">
-                            <label><b>note: </b>Your schedule request will only be accepted after you pay ₱200 for your reservation.</label>
+                            <label>TERMS AND CONDITIONS</label>
+                            <textarea id="textarea" name="textarea" style="width: 100%; resize: none;" rows='8' disabled>
+This appointment and scheduling system allocates slots on a first come, first served basis. Limited slots are available per site and there is no guarantee that a slot will always be available for a user's first choice for an appointment schedule.
+
+Users accept the responsibility for verifying the accuracy and correctness of the information they provide on this system in connection with their application, and consent to the collection and use of their personal information.
+
+All fees are non-refundable. Fees shall be forfeited for the following:
+1. Applicants who failed to show up ther confirmed scheduled appointment;
+2. Applicants whose application was rejected due to inconsistency and/or incorrect details indicated in their appointment application form.
+3. Applicants who present descrepant and/or spurious/fake documentary requirements.
+                            </textarea>
+                            <input id="checkbox" type="checkbox" />
+                            <label for="checkbox" style="display: inline; color:red;">
+                                I have read and understand the instructions and information on this page, and agree to the Terms and Conditions on the use of this online appointment and scheduling system.
+                            </label>
                         </div>
                         <script>
                             var $services = $('#services'),
