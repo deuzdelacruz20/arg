@@ -203,7 +203,7 @@ All fees are non-refundable. Fees shall be forfeited for the following:
 3. Applicants who present descrepant and/or spurious/fake documentary requirements.
                             </textarea>
                             <input id="checkbox" type="checkbox" />
-                            <label for="checkbox" style="display: inline; color:red;">
+                            <label for="checkbox" style="display: inline; color:red; font-style: italic;">
                                 I have read and understand the instructions and information on this page, and agree to the Terms and Conditions on the use of this online appointment and scheduling system.
                             </label>
                         </div>
