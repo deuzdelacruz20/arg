@@ -183,7 +183,7 @@ include '../include/disableTimeScript.php';
                         </div>
                     </div>
                 </div>
-                <div id="pending" class="tab-pane fade">
+                <div id="pending" class="tab-pane fade in active">
                     <h3> </h3>
                     <div class="container" style="width: 100%;">
                         <p id="success"></p>
@@ -259,7 +259,7 @@ include '../include/disableTimeScript.php';
             <?php
             }
             ?>
-            <div id="accepted" class="tab-pane fade in active">
+            <div id="accepted" class="tab-pane fade">
                 <div class="container" style="width: 100%;">
                     <p id="success"></p>
                     <div class="table-wrapper">
