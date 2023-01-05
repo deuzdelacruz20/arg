@@ -10,14 +10,18 @@ $(document).on('click', '#btn-add', function (e) {
 			if (dataResult.statusCode == 200) {
 				$('#addEmployeeModal').modal('hide');
 				// alert('Data added successfully !');
+
+				const el = document.createElement('div')
+				el.innerHTML = "Please proceed to the payment tab to settle your <a href='../php/payment.php'>payment</a> within the given time."
+
 				Swal.fire(
 					'Success!',
-					'Data added succesfully!',
+					el,
 					'success'
 				).then((result) => {
 					/* Read more about isConfirmed, isDenied below */
 					if (result.isConfirmed) {
-						location.reload();
+						window.location.href = "../php/payment.php";
 					}
 				})
 			}
@@ -140,6 +144,7 @@ $(document).on("click", "#delete_multiple", function () {
 					var ids = response.split(",");
 					for (var i = 0; i < ids.length; i++) {
 						$("#" + ids[i]).remove();
+						location.reload();
 					}
 				}
 			});
