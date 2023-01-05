@@ -28,18 +28,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$_SESSION['isAdmin'] = true;
 			$_SESSION['isLoggedIn'] = true;
 		} else {
-			// echo "<script language='javascript'>";
-			// echo "alert('WRONG INFORMATION')";
-			// echo "</script>";
-			// // header("location: index.php");
-			// echo "window.location.href = ../php/adminLogin.php";
-			// die();
-
 			$_SESSION['isAdmin'] = false;
 			$_SESSION['isLoggedIn'] = false;
 
 			echo '<script type="text/javascript">alert ("Invalid Credentials");';
-			echo 'window.location.href = "../php/adminLogin.php";';
+			echo 'window.location.href = "../php/admin.php";';
 			echo '</script>';
 		}
 	}
