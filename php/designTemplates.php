@@ -58,7 +58,7 @@ include '../backend/database.php';
 			<li><a href="#template2">Cars</a></li>
 			<li><a href="#template3">SUVs</a></li>
 			<li><a href="#template4">Vans</a></li>
-			<input type="text" id="myFilter" class="form-control" onkeyup="myFunction()" placeholder="Search for names..">
+
 			<?php
 			if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == true && $_SESSION['isLoggedIn']) {
 			?>
@@ -66,6 +66,7 @@ include '../backend/database.php';
 			<?php
 			}
 			?>
+			<input type="text" id="myFilter" class="form-control" onkeyup="myFunction()" placeholder="Search for names..">
 		</ul>
 
 		<div class="tab-content">
@@ -80,10 +81,10 @@ include '../backend/database.php';
 							<div class="thumbnail" style="background-color:#E8E8E8;">
 								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 450px; height:200px;">
 								<div class="caption">
-									<h3><a href="#"><?php echo $row["itemName"]; ?></a></h3>
-									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
-									<p><?php echo $row["availability"]; ?></p>
-									<p>CATEGORY: <?php echo $row["itemCategory"]; ?></p>
+									<h3><b><a href="#"><?php echo $row["itemName"]; ?></a></b></h3>
+									<p><b>PRICE:</b> <?php echo $row["itemPrice"]; ?></p>
+									<p><b>STATUS:</b><?php echo $row["availability"]; ?></p>
+									<p><b>CATEGORY:</b> <?php echo $row["itemCategory"]; ?></p>
 									<a href="#buyModal" class="edit" data-toggle="modal">
 										<i class="material-icons buy" data-toggle="tooltip" data-id_b="<?php echo $row["id"]; ?>" data-itemName_b="<?php echo $row["itemName"]; ?>" data-itemPrice_b="<?php echo $row["itemPrice"]; ?>" data-itemStocks_b="<?php echo $row["itemStocks"]; ?>" data-itemCategory_b="<?php echo $row["itemCategory"]; ?>" title="Buy and Schedule Now" style="width: 100%;">
 											<button class="btn btn-success" style="width: 100%; margin-bottom:10px;">
@@ -137,10 +138,10 @@ include '../backend/database.php';
 							<div class="thumbnail" style="background-color:#E8E8E8;">
 								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 450px; height:200px;">
 								<div class="caption">
-									<h3><a href="#"><?php echo $row["itemName"]; ?></a></h3>
-									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
-									<p><?php echo $row["availability"]; ?></p>
-									<p>CATEGORY: <?php echo $row["itemCategory"]; ?></p>
+									<h3><b><a href="#"><?php echo $row["itemName"]; ?></a></b></h3>
+									<p><b>PRICE:</b> <?php echo $row["itemPrice"]; ?></p>
+									<p><b>STATUS:</b><?php echo $row["availability"]; ?></p>
+									<p><b>CATEGORY:</b> <?php echo $row["itemCategory"]; ?></p>
 									<a href="#buyModal" class="edit" data-toggle="modal">
 										<i class="material-icons buy" data-toggle="tooltip" data-id_b="<?php echo $row["id"]; ?>" data-itemName_b="<?php echo $row["itemName"]; ?>" data-itemPrice_b="<?php echo $row["itemPrice"]; ?>" data-itemStocks_b="<?php echo $row["itemStocks"]; ?>" data-itemCategory_b="<?php echo $row["itemCategory"]; ?>" title="Buy and Schedule Now" style="width: 100%;">
 											<button class="btn btn-success" style="width: 100%; margin-bottom:10px;">
@@ -193,10 +194,10 @@ include '../backend/database.php';
 							<div class="thumbnail" style="background-color:#E8E8E8;">
 								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 450px; height:200px;">
 								<div class="caption">
-									<h3><a href="#"><?php echo $row["itemName"]; ?></a></h3>
-									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
-									<p><?php echo $row["availability"]; ?></p>
-									<p>CATEGORY: <?php echo $row["itemCategory"]; ?></p>
+									<h3><b><a href="#"><?php echo $row["itemName"]; ?></a></b></h3>
+									<p><b>PRICE:</b> <?php echo $row["itemPrice"]; ?></p>
+									<p><b>STATUS:</b><?php echo $row["availability"]; ?></p>
+									<p><b>CATEGORY:</b> <?php echo $row["itemCategory"]; ?></p>
 									<a href="#buyModal" class="edit" data-toggle="modal">
 										<i class="material-icons buy" data-toggle="tooltip" data-id_b="<?php echo $row["id"]; ?>" data-itemName_b="<?php echo $row["itemName"]; ?>" data-itemPrice_b="<?php echo $row["itemPrice"]; ?>" data-itemStocks_b="<?php echo $row["itemStocks"]; ?>" data-itemCategory_b="<?php echo $row["itemCategory"]; ?>" title="Buy and Schedule Now" style="width: 100%;">
 											<button class="btn btn-success" style="width: 100%; margin-bottom:10px;">
@@ -249,10 +250,10 @@ include '../backend/database.php';
 							<div class="thumbnail" style="background-color:#E8E8E8;">
 								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 450px; height:200px;">
 								<div class="caption">
-									<h3><a href="#"><?php echo $row["itemName"]; ?></a></h3>
-									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
-									<p><?php echo $row["availability"]; ?></p>
-									<p>CATEGORY: <?php echo $row["itemCategory"]; ?></p>
+									<h3><b><a href="#"><?php echo $row["itemName"]; ?></a></b></h3>
+									<p><b>PRICE:</b> <?php echo $row["itemPrice"]; ?></p>
+									<p><b>STATUS:</b><?php echo $row["availability"]; ?></p>
+									<p><b>CATEGORY:</b> <?php echo $row["itemCategory"]; ?></p>
 									<a href="#buyModal" class="edit" data-toggle="modal">
 										<i class="material-icons buy" data-toggle="tooltip" data-id_b="<?php echo $row["id"]; ?>" data-itemName_b="<?php echo $row["itemName"]; ?>" data-itemPrice_b="<?php echo $row["itemPrice"]; ?>" data-itemStocks_b="<?php echo $row["itemStocks"]; ?>" data-itemCategory_b="<?php echo $row["itemCategory"]; ?>" title="Buy and Schedule Now" style="width: 100%;">
 											<button class="btn btn-success" style="width: 100%; margin-bottom:10px;">
@@ -305,10 +306,10 @@ include '../backend/database.php';
 							<div class="thumbnail" style="background-color:#E8E8E8;">
 								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 450px; height:200px;">
 								<div class="caption">
-									<h3><a href="#"><?php echo $row["itemName"]; ?></a></h3>
-									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
-									<p><?php echo $row["availability"]; ?></p>
-									<p>CATEGORY: <?php echo $row["itemCategory"]; ?></p>
+									<h3><b><a href="#"><?php echo $row["itemName"]; ?></a></b></h3>
+									<p><b>PRICE:</b> <?php echo $row["itemPrice"]; ?></p>
+									<p><b>STATUS:</b><?php echo $row["availability"]; ?></p>
+									<p><b>CATEGORY:</b> <?php echo $row["itemCategory"]; ?></p>
 									<a href="#buyModal" class="edit" data-toggle="modal">
 										<i class="material-icons buy" data-toggle="tooltip" data-id_b="<?php echo $row["id"]; ?>" data-itemName_b="<?php echo $row["itemName"]; ?>" data-itemPrice_b="<?php echo $row["itemPrice"]; ?>" data-itemStocks_b="<?php echo $row["itemStocks"]; ?>" data-itemCategory_b="<?php echo $row["itemCategory"]; ?>" title="Buy and Schedule Now" style="width: 100%;">
 											<button class="btn btn-success" style="width: 100%; margin-bottom:10px;">
@@ -361,10 +362,10 @@ include '../backend/database.php';
 							<div class="thumbnail" style="background-color:#E8E8E8;">
 								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 450px; height:200px;">
 								<div class="caption">
-									<h3><a href="#"><?php echo $row["itemName"]; ?></a></h3>
-									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
-									<p>AVAILABLE STOCKS: <?php echo $row["itemStocks"]; ?></p>
-									<p>CATEGORY: <?php echo $row["itemCategory"]; ?></p>
+									<h3><b><a href="#"><?php echo $row["itemName"]; ?></a></b></h3>
+									<p><b>PRICE:</b> <?php echo $row["itemPrice"]; ?></p>
+									<p><b>AVAILABLE STOCKS:</b> <?php echo $row["itemStocks"]; ?></p>
+									<p><b>CATEGORY:</b> <?php echo $row["itemCategory"]; ?></p>
 									<a href="#buyModal" class="edit" data-toggle="modal">
 										<i class="material-icons buy" data-toggle="tooltip" data-id_b="<?php echo $row["id"]; ?>" data-itemName_b="<?php echo $row["itemName"]; ?>" data-itemPrice_b="<?php echo $row["itemPrice"]; ?>" data-itemStocks_b="<?php echo $row["itemStocks"]; ?>" data-itemCategory_b="<?php echo $row["itemCategory"]; ?>" title="Buy and Schedule Now" style="width: 100%;">
 											<button class="btn btn-success" style="width: 100%; margin-bottom:10px;">
@@ -781,12 +782,30 @@ include '../backend/database.php';
 
 	<!-- FILTER DATA -->
 	<script>
+		// function myFunction() {
+		// 	var input, filter, thumbnail, h3, a, i;
+		// 	input = document.getElementById("myFilter");
+		// 	filter = input.value.toUpperCase();
+		// 	thumbnail = document.getElementById("myItems");
+		// 	h3 = thumbnail.getElementsByTagName("h3");
+		// 	for (i = 0; i < h3.length; i++) {
+		// 		a = h3[i].getElementsByTagName("a")[0];
+		// 		if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+		// 			h3[i].parentElement.parentElement.style.display = "";
+		// 		} else {
+		// 			h3[i].parentElement.parentElement.style.display = "none";
+		// 		}
+		// 	}
+		// }
+
 		function myFunction() {
 			var input, filter, thumbnail, h3, a, i;
+
 			input = document.getElementById("myFilter");
 			filter = input.value.toUpperCase();
 			thumbnail = document.getElementById("myItems");
 			h3 = thumbnail.getElementsByTagName("h3");
+			
 			for (i = 0; i < h3.length; i++) {
 				a = h3[i].getElementsByTagName("a")[0];
 				if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
