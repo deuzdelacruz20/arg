@@ -58,6 +58,7 @@ include '../backend/database.php';
 			<li><a href="#template2">Cars</a></li>
 			<li><a href="#template3">SUVs</a></li>
 			<li><a href="#template4">Vans</a></li>
+			<input type="text" id="myFilter" class="form-control" onkeyup="myFunction()" placeholder="Search for names..">
 			<?php
 			if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == true && $_SESSION['isLoggedIn']) {
 			?>
@@ -70,7 +71,7 @@ include '../backend/database.php';
 		<div class="tab-content">
 			<div id="home" class="tab-pane fade in active">
 				<h3> </h3>
-				<div class="row">
+				<div class="row" id="myItems">
 					<?php
 					$result = mysqli_query($conn, "SELECT * FROM inventory WHERE itemCategory = 'Stickers' OR itemCategory = 'Motorcycles' or itemCategory = 'Cars' OR itemCategory = 'SUVs' or itemCategory = 'Vans' ORDER BY itemName ASC");
 					while ($row = mysqli_fetch_array($result)) {
@@ -79,7 +80,7 @@ include '../backend/database.php';
 							<div class="thumbnail" style="background-color:#E8E8E8;">
 								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 450px; height:200px;">
 								<div class="caption">
-									<h3><?php echo $row["itemName"]; ?></h3>
+									<h3><a href="#"><?php echo $row["itemName"]; ?></a></h3>
 									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
 									<p><?php echo $row["availability"]; ?></p>
 									<p>CATEGORY: <?php echo $row["itemCategory"]; ?></p>
@@ -127,7 +128,7 @@ include '../backend/database.php';
 			</div>
 			<div id="template1" class="tab-pane fade">
 				<h3> </h3>
-				<div class="row">
+				<div class="row" id="myItems">
 					<?php
 					$result = mysqli_query($conn, "SELECT * FROM inventory WHERE itemCategory = 'Motorcycles' ORDER BY itemName ASC;");
 					while ($row = mysqli_fetch_array($result)) {
@@ -136,7 +137,7 @@ include '../backend/database.php';
 							<div class="thumbnail" style="background-color:#E8E8E8;">
 								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 450px; height:200px;">
 								<div class="caption">
-									<h3><?php echo $row["itemName"]; ?></h3>
+									<h3><a href="#"><?php echo $row["itemName"]; ?></a></h3>
 									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
 									<p><?php echo $row["availability"]; ?></p>
 									<p>CATEGORY: <?php echo $row["itemCategory"]; ?></p>
@@ -183,7 +184,7 @@ include '../backend/database.php';
 				</div>
 			</div>
 			<div id="template2" class="tab-pane fade">
-				<div class="row">
+				<div class="row" id="myItems">
 					<?php
 					$result = mysqli_query($conn, "SELECT * FROM inventory WHERE itemCategory = 'Cars' ORDER BY itemName ASC;");
 					while ($row = mysqli_fetch_array($result)) {
@@ -192,7 +193,7 @@ include '../backend/database.php';
 							<div class="thumbnail" style="background-color:#E8E8E8;">
 								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 450px; height:200px;">
 								<div class="caption">
-									<h3><?php echo $row["itemName"]; ?></h3>
+									<h3><a href="#"><?php echo $row["itemName"]; ?></a></h3>
 									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
 									<p><?php echo $row["availability"]; ?></p>
 									<p>CATEGORY: <?php echo $row["itemCategory"]; ?></p>
@@ -239,7 +240,7 @@ include '../backend/database.php';
 				</div>
 			</div>
 			<div id="template3" class="tab-pane fade">
-				<div class="row">
+				<div class="row" id="myItems">
 					<?php
 					$result = mysqli_query($conn, "SELECT * FROM inventory WHERE itemCategory = 'SUVs' ORDER BY itemName ASC;");
 					while ($row = mysqli_fetch_array($result)) {
@@ -248,7 +249,7 @@ include '../backend/database.php';
 							<div class="thumbnail" style="background-color:#E8E8E8;">
 								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 450px; height:200px;">
 								<div class="caption">
-									<h3><?php echo $row["itemName"]; ?></h3>
+									<h3><a href="#"><?php echo $row["itemName"]; ?></a></h3>
 									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
 									<p><?php echo $row["availability"]; ?></p>
 									<p>CATEGORY: <?php echo $row["itemCategory"]; ?></p>
@@ -295,7 +296,7 @@ include '../backend/database.php';
 				</div>
 			</div>
 			<div id="template4" class="tab-pane fade">
-				<div class="row">
+				<div class="row" id="myItems">
 					<?php
 					$result = mysqli_query($conn, "SELECT * FROM inventory WHERE itemCategory = 'Vans' ORDER BY itemName ASC;");
 					while ($row = mysqli_fetch_array($result)) {
@@ -304,7 +305,7 @@ include '../backend/database.php';
 							<div class="thumbnail" style="background-color:#E8E8E8;">
 								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 450px; height:200px;">
 								<div class="caption">
-									<h3><?php echo $row["itemName"]; ?></h3>
+									<h3><a href="#"><?php echo $row["itemName"]; ?></a></h3>
 									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
 									<p><?php echo $row["availability"]; ?></p>
 									<p>CATEGORY: <?php echo $row["itemCategory"]; ?></p>
@@ -351,7 +352,7 @@ include '../backend/database.php';
 				</div>
 			</div>
 			<div id="template5" class="tab-pane fade">
-				<div class="row">
+				<div class="row" id="myItems">
 					<?php
 					$result = mysqli_query($conn, "SELECT * FROM inventory WHERE itemCategory = 'Stickers' ORDER BY itemName ASC;");
 					while ($row = mysqli_fetch_array($result)) {
@@ -360,7 +361,7 @@ include '../backend/database.php';
 							<div class="thumbnail" style="background-color:#E8E8E8;">
 								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 450px; height:200px;">
 								<div class="caption">
-									<h3><?php echo $row["itemName"]; ?></h3>
+									<h3><a href="#"><?php echo $row["itemName"]; ?></a></h3>
 									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
 									<p>AVAILABLE STOCKS: <?php echo $row["itemStocks"]; ?></p>
 									<p>CATEGORY: <?php echo $row["itemCategory"]; ?></p>
@@ -776,6 +777,25 @@ include '../backend/database.php';
 				})
 			}
 		});
+	</script>
+
+	<!-- FILTER DATA -->
+	<script>
+		function myFunction() {
+			var input, filter, thumbnail, h3, a, i;
+			input = document.getElementById("myFilter");
+			filter = input.value.toUpperCase();
+			thumbnail = document.getElementById("myItems");
+			h3 = thumbnail.getElementsByTagName("h3");
+			for (i = 0; i < h3.length; i++) {
+				a = h3[i].getElementsByTagName("a")[0];
+				if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+					h3[i].parentElement.parentElement.style.display = "";
+				} else {
+					h3[i].parentElement.parentElement.style.display = "none";
+				}
+			}
+		}
 	</script>
 </body>
 
