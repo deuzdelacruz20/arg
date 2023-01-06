@@ -577,6 +577,7 @@ include '../backend/database.php';
 										<option value="Cars">Cars</option>
 										<option value="SUVs">SUVs</option>
 										<option value="Vans">Vans</option>
+										<option value="Stickers">Stickers</option>
 									</select>
 								</div>
 							</div>
