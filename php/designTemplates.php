@@ -81,7 +81,7 @@ include '../backend/database.php';
 							<div class="thumbnail" style="background-color:#E8E8E8;">
 								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 450px; height:200px;">
 								<div class="caption">
-									<h3><b><a href="#"><?php echo $row["itemName"]; ?></a></b></h3>
+									<h3><a href="#" style="text-decoration: none;"><?php echo $row["itemName"]; ?></a></h3>
 									<p><b>PRICE:</b> <?php echo $row["itemPrice"]; ?></p>
 									<p><b>CATEGORY:</b> <?php echo $row["itemCategory"]; ?></p>
 									<a href="#buyModal" class="edit" data-toggle="modal">
@@ -137,7 +137,7 @@ include '../backend/database.php';
 							<div class="thumbnail" style="background-color:#E8E8E8;">
 								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 450px; height:200px;">
 								<div class="caption">
-									<h3><b><a href="#"><?php echo $row["itemName"]; ?></a></b></h3>
+									<h3><a href="#" style="text-decoration: none;"><?php echo $row["itemName"]; ?></a></h3>
 									<p><b>PRICE:</b> <?php echo $row["itemPrice"]; ?></p>
 									<p><b>CATEGORY:</b> <?php echo $row["itemCategory"]; ?></p>
 									<a href="#buyModal" class="edit" data-toggle="modal">
@@ -192,7 +192,7 @@ include '../backend/database.php';
 							<div class="thumbnail" style="background-color:#E8E8E8;">
 								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 450px; height:200px;">
 								<div class="caption">
-									<h3><b><a href="#"><?php echo $row["itemName"]; ?></a></b></h3>
+									<h3><a href="#" style="text-decoration: none;"><?php echo $row["itemName"]; ?></a></h3>
 									<p><b>PRICE:</b> <?php echo $row["itemPrice"]; ?></p>
 									<p><b>CATEGORY:</b> <?php echo $row["itemCategory"]; ?></p>
 									<a href="#buyModal" class="edit" data-toggle="modal">
@@ -247,7 +247,7 @@ include '../backend/database.php';
 							<div class="thumbnail" style="background-color:#E8E8E8;">
 								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 450px; height:200px;">
 								<div class="caption">
-									<h3><b><a href="#"><?php echo $row["itemName"]; ?></a></b></h3>
+									<h3><a href="#" style="text-decoration: none;"><?php echo $row["itemName"]; ?></a></h3>
 									<p><b>PRICE:</b> <?php echo $row["itemPrice"]; ?></p>
 									<p><b>CATEGORY:</b> <?php echo $row["itemCategory"]; ?></p>
 									<a href="#buyModal" class="edit" data-toggle="modal">
@@ -302,7 +302,7 @@ include '../backend/database.php';
 							<div class="thumbnail" style="background-color:#E8E8E8;">
 								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 450px; height:200px;">
 								<div class="caption">
-									<h3><b><a href="#"><?php echo $row["itemName"]; ?></a></b></h3>
+									<h3><a href="#" style="text-decoration: none;"><?php echo $row["itemName"]; ?></a></h3>
 									<p><b>PRICE:</b> <?php echo $row["itemPrice"]; ?></p>
 									<p><b>CATEGORY:</b> <?php echo $row["itemCategory"]; ?></p>
 									<a href="#buyModal" class="edit" data-toggle="modal">
@@ -357,7 +357,7 @@ include '../backend/database.php';
 							<div class="thumbnail" style="background-color:#E8E8E8;">
 								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 450px; height:200px;">
 								<div class="caption">
-									<h3><b><a href="#"><?php echo $row["itemName"]; ?></a></b></h3>
+									<h3><a href="#" style="text-decoration: none;"><?php echo $row["itemName"]; ?></a></h3>
 									<p><b>PRICE:</b> <?php echo $row["itemPrice"]; ?></p>
 									<p><b>AVAILABLE STOCKS:</b> <?php echo $row["itemStocks"]; ?></p>
 									<p><b>CATEGORY:</b> <?php echo $row["itemCategory"]; ?></p>
