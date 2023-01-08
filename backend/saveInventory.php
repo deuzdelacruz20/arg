@@ -14,11 +14,11 @@ if (count($_POST) > 0) {
 		$uploadOk = 1;
 
 		$target_file = $target_dir . basename($_FILES["inventoryImage"]["name"]);
-		
+
 		$imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 		$inventoryImageName =  $_FILES["inventoryImage"]["name"];
 
-			// Allow certain file formats
+		// Allow certain file formats
 		if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
 			$uploadOk = 0;
 			echo json_encode(array("statusCode" => 200, "message" => "Sorry, only JPG, JPEG, PNG & GIF files are allowed."));
@@ -29,15 +29,19 @@ if (count($_POST) > 0) {
 			echo json_encode(array("statusCode" => 200, "message" => "Error your image did not upload either the image is already existing in the database"));
 		}
 
-		
 
-		
 
-		
+
+
+
 		if ($uploadOk) {
 			$sql = "INSERT INTO `inventory`(`itemName`,`itemPrice`,`itemStocks`,`itemCategory`, `inventoryImage`) 
 			VALUES ('$itemName','$itemPrice','$itemStocks','$itemCategory', '$inventoryImageName')";
-			if (mysqli_query($conn, $sql)) {
+
+			$sql1 = "INSERT INTO `inventory_movement`(`itemName`,`itemPrice`,`itemStocks`,`itemCategory`) 
+			VALUES ('$itemName','$itemPrice','$itemStocks','$itemCategory')";
+
+			if (mysqli_query($conn, $sql) && mysqli_query($conn, $sql1)) {
 				echo json_encode(array("statusCode" => 200, "message" => "Successfully added to the database"));
 			} else {
 				echo json_encode(array("statusCode" => 200, "message" => "An error occured"));

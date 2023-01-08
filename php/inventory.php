@@ -25,6 +25,10 @@ include '../backend/database.php';
 	<script src="../ajax/ajaxInventory.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
+	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
+
+
 	<style>
 		body {
 			background: linear-gradient(120deg, #71b7e6, #9b59b6);
@@ -63,6 +67,7 @@ include '../backend/database.php';
 			<li><a href="#template4">Vans</a></li> -->
 			<li><a href="#template5">Stickers</a></li>
 			<li><a href="#template6">Materials</a></li>
+			<li><a href="#template7">Inventory History</a></li>
 			<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal" style="float: right; margin-top:3px;"><span>Add New Item</span></a>
 		</ul>
 
@@ -366,6 +371,75 @@ include '../backend/database.php';
 
 				</div>
 			</div>
+			<div id="template7" class="tab-pane fade">
+				<div class="container" style="width: 100%; height: 100%; overflow: auto;">
+					<p id="success"></p>
+					<div class="table-wrapper">
+						<div class="table-title">
+							<div class="row">
+								<div class="col-sm-6">
+									<h2>INVENTORY <b>HISTORY</b></h2>
+								</div>
+								<!-- <div class="col-sm-6">
+                        <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
+                        <a href="JavaScript:void(0);" class="btn btn-danger" id="delete_multiple"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>
+                    </div> -->
+							</div>
+						</div>
+						<table class="table table-striped table-hover" id="transactionHistoryTable">
+							<thead>
+								<tr>
+									<th>
+										<span class="custom-checkbox">
+											<input type="checkbox" id="selectAll">
+											<label for="selectAll"></label>
+										</span>
+									</th>
+									<th width="5%">ID</th>
+									<th width="10%">ITEM NAME</th>
+									<th width="10%">PRICE</th>
+									<th width="15%">STOCKS</th>
+									<th width="10%">CATEGORY</th>
+									<th width="40%">DATE</th>
+									<!-- <th>ACTION</th> -->
+								</tr>
+							</thead>
+							<tbody>
+
+								<?php
+								$result = mysqli_query($conn, "SELECT * FROM inventory_movement WHERE itemCategory = 'Materials' OR itemCategory = 'Stickers' ORDER BY timestamp DESC");
+								while ($row = mysqli_fetch_array($result)) {
+								?>
+									<tr id="<?php echo $row["id"]; ?>">
+										<td>
+											<span class="custom-checkbox">
+												<input type="checkbox" class="user_checkbox" data-user-id="<?php echo $row["id"]; ?>">
+												<label for="checkbox2"></label>
+											</span>
+										</td>
+										<td><?php echo $row["id"]; ?></td>
+										<td><?php echo $row["itemName"]; ?></td>
+										<td><?php echo $row["itemPrice"]; ?></td>
+										<td><?php echo $row["itemStocks"]; ?></td>
+										<td><?php echo $row["itemCategory"]; ?></td>
+										<td><?php echo $row["timestamp"]; ?></td>
+
+										<!-- <td>
+                                <a href="#editEmployeeModal" class="edit" data-toggle="modal">
+                                    <i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-firstName="<?php echo $row["firstName"]; ?>" data-lastName="<?php echo $row["lastName"]; ?>" data-phoneNumber="<?php echo $row["phoneNumber"]; ?>" data-date="<?php echo $row["date"]; ?>" data-services="<?php echo $row["services"]; ?>" data-time="<?php echo $row["time"]; ?>" title="Edit">&#xE254;</i>
+                                </a>
+                                <a href="#deleteEmployeeModal" class="delete" data-id="<?php echo $row["id"]; ?>" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                            </td> -->
+									</tr>
+								<?php
+								}
+								?>
+							</tbody>
+						</table>
+
+					</div>
+				</div>
+			</div>
 		</div>
 		<hr>
 	</div>
@@ -569,6 +643,12 @@ include '../backend/database.php';
 				disableButton = true;
 			$('#update').attr('disabled', disableButton);
 		}
+	</script>
+
+	<script>
+		$(document).ready(function() {
+			$('#transactionHistoryTable').DataTable();
+		});
 	</script>
 </body>
 
