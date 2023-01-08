@@ -850,7 +850,8 @@ include '../include/disableTimeScript.php';
             </div>
         </div>
     </div>
-    <!-- DISABLE THE SUBMIT BUTON -->
+
+    <!-- DISABLE ADD BUTTON IF EMPTY -->
     <script>
         // DISABLE ADD BUTTON
         $("#firstName").keyup(function(event) {
@@ -862,15 +863,18 @@ include '../include/disableTimeScript.php';
         $("#phoneNumber").keyup(function(event) {
             validateInputs();
         });
-        // $("#date").keyup(function(event) {
-        // 	validateInputs();
-        // });
-        // $("#services").keyup(function(event) {
-        // 	validateInputs();
-        // });
-        // $("#time").keyup(function(event) {
-        // 	validateInputs();
-        // });
+        $("#date").change(function(event) {
+            validateInputs();
+        });
+        $("#services").change(function(event) {
+            validateInputs();
+        });
+        $("#time").change(function(event) {
+            validateInputs();
+        });
+        $("#checkbox").change(function(event) {
+            validateInputs();
+        });
 
         function validateInputs() {
             var disableButton = false;
@@ -878,17 +882,19 @@ include '../include/disableTimeScript.php';
             var firstName = $("#firstName").val();
             var lastName = $("#lastName").val();
             var phoneNumber = $("#phoneNumber").val();
-            // var date = $("#date").val();
-            // var services = $("#services").val();
-            // var time = $("#time").val();
+            var date = $("#date").val();
+            var services = $("#services").val();
+            var time = $("#time").val();
+            var checkbox = $("#checkbox");
 
             if (
                 firstName.length == 0 ||
                 lastName.length == 0 ||
-                phoneNumber.length == 0
-                // date.value.length == 0 || 
-                // services.empty ||
-                // time.empty
+                phoneNumber.length != 11 ||
+                date.length == 0 ||
+                services.length == 0 ||
+                time.length == 0 ||
+                checkbox.is(":checked") == false
             )
                 disableButton = true;
 
@@ -905,15 +911,15 @@ include '../include/disableTimeScript.php';
         $("#phoneNumber_u").keyup(function(event) {
             updateValidateInputs();
         });
-        // $("#date_u").keyup(function(event) {
-        // 	updateValidateInputs();
-        // });
-        // $("#services_u").keyup(function(event) {
-        // 	updateValidateInputs();
-        // });
-        // $("#time_u").keyup(function(event) {
-        // 	updateValidateInputs();
-        // });
+        $("#date_u").change(function(event) {
+            updateValidateInputs();
+        });
+        $("#services_u").change(function(event) {
+            updateValidateInputs();
+        });
+        $("#time_u").change(function(event) {
+            updateValidateInputs();
+        });
 
         function updateValidateInputs() {
             var disableButton = false;
@@ -921,17 +927,17 @@ include '../include/disableTimeScript.php';
             var firstName_u = $("#firstName_u").val();
             var lastName_u = $("#lastName_u").val();
             var phoneNumber_u = $("#phoneNumber_u").val();
-            // var date_u = $("#date_u").val();
-            // var services_u = $("#services_u").val();
-            // var time_u = $("#time_u").val();
+            var date_u = $("#date_u").val();
+            var services_u = $("#services_u").val();
+            var time_u = $("#time_u").val();
 
             if (
                 firstName_u.length == 0 ||
                 lastName_u.length == 0 ||
-                phoneNumber_u.length == 0
-                // || date_u.empty || 
-                // services_u.empty || 
-                // time_u.empty
+                phoneNumber_u.length == 0 ||
+                date_u.length == 0 ||
+                services_u.length == 0 ||
+                time_u.length == 0
             )
                 disableButton = true;
 

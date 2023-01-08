@@ -719,7 +719,7 @@ include '../backend/database.php';
 		$("#itemStocks_u").keyup(function(event) {
 			validateInputs();
 		});
-		$("#itemCategory_u").keyup(function(event) {
+		$("#itemCategory_u").change(function(event) {
 			validateInputs();
 		});
 
@@ -751,6 +751,7 @@ include '../backend/database.php';
 			if (
 				itemName_u.length == 0 ||
 				itemPrice_u.length == 0 ||
+				itemStocks_u.length == 0 ||
 				itemCategory_u.length == 0
 			)
 				disableButton = true;
