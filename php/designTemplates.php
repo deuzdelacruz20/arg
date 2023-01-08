@@ -444,6 +444,10 @@ include '../backend/database.php';
 							<input type="number" id="itemPrice" name="itemPrice" class="form-control" placeholder="Enter the Item Price" required>
 						</div>
 						<div class="form-group">
+							<label>STOCKS</label>
+							<input type="number" id="itemStocks" name="itemStocks" class="form-control" placeholder="Enter the Item Price" required>
+						</div>
+						<div class="form-group">
 							<label>CATEGORY</label>
 							<select name="itemCategory" id="itemCategory" class="form-control" required>
 								<option value="" selected="selected" disabled style="text-align: center;">-SELECT CATEGORY-</option>
@@ -695,10 +699,10 @@ include '../backend/database.php';
 		$("#itemPrice").keyup(function(event) {
 			validateInputs();
 		});
-		// $("#itemStocks").keyup(function(event) {
-		// 	validateInputs();
-		// });
-		$("#itemCategory").keyup(function(event) {
+		$("#itemStocks").keyup(function(event) {
+			validateInputs();
+		});
+		$("#itemCategory").change(function(event) {
 			validateInputs();
 		});
 
@@ -712,9 +716,9 @@ include '../backend/database.php';
 		$("#itemPrice_u").keyup(function(event) {
 			validateInputs();
 		});
-		// $("#itemStocks_u").keyup(function(event) {
-		// 	validateInputs();
-		// });
+		$("#itemStocks_u").keyup(function(event) {
+			validateInputs();
+		});
 		$("#itemCategory_u").keyup(function(event) {
 			validateInputs();
 		});
@@ -725,18 +729,19 @@ include '../backend/database.php';
 			var inventoryImage = $("#inventoryImage").val();
 			var itemName = $("#itemName").val();
 			var itemPrice = $("#itemPrice").val();
-			// var itemStocks = $("#itemStocks").val();
+			var itemStocks = $("#itemStocks").val();
 			var itemCategory = $("#itemCategory").val();
 
 			var itemName_u = $("#itemName_u").val();
 			var itemPrice_u = $("#itemPrice_u").val();
-			// var itemStocks_u = $("#itemStocks_u").val();
+			var itemStocks_u = $("#itemStocks_u").val();
 			var itemCategory_u = $("#itemCategory_u").val();
 
 			if (
 				itemName.length == 0 ||
-				itemPrice.length == 0
-				// itemStocks.length == 0
+				itemPrice.length == 0 ||
+				itemStocks.length == 0 ||
+				itemCategory.length == 0
 
 			)
 				disableButton = true;
