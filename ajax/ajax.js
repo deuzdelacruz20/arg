@@ -114,7 +114,7 @@ $(document).on("click", "#delete", function () {
 		success: function (dataResult) {
 			$('#deleteEmployeeModal').modal('hide');
 			$("#" + dataResult).remove();
-
+			location.reload();
 		}
 	});
 });

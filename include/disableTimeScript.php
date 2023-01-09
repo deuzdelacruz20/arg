@@ -197,24 +197,26 @@
                             </select>
                             <input type="text" name="inputTime" id="inputTime" hidden></input>
                         </div>
-                        <hr>
-                        <div class="form-group">
-                            <label>SELECTED ITEM</label>
-                            <input type="text" id="selectedItem" name="selectedUItem" class="form-control" disabled>
+                        <div class="designTemplatePage" hidden>
+                            <hr>
+                            <div class="form-group">
+                                <label>SELECTED ITEM</label>
+                                <input type="text" id="selectedItem" name="selectedUItem" class="form-control" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label>PRICE</label>
+                                <input type="text" id="selectedPrice" name="selectedPrice" class="form-control" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label>STOCKS</label>
+                                <input type="text" id="selectedStocks" name="selectedStocks" class="form-control" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label>CATEGORY</label>
+                                <input type="text" id="selectedCategory" name="selectedCategory" class="form-control" disabled>
+                            </div>
+                            <hr>
                         </div>
-                        <div class="form-group">
-                            <label>PRICE</label>
-                            <input type="text" id="selectedPrice" name="selectedPrice" class="form-control" disabled>
-                        </div>
-                        <div class="form-group">
-                            <label>STOCKS</label>
-                            <input type="text" id="selectedStocks" name="selectedStocks" class="form-control" disabled>
-                        </div>
-                        <div class="form-group">
-                            <label>CATEGORY</label>
-                            <input type="text" id="selectedCategory" name="selectedCategory" class="form-control" disabled>
-                        </div>
-                        <hr>
                         <div class="form-group">
                             <label>TERMS AND CONDITIONS</label>
                             <textarea id="textarea" name="textarea" style="width: 100%; resize: none;" rows='8' disabled>
@@ -256,6 +258,19 @@ All fees are non-refundable. Fees shall be forfeited for the following:
             </div>
         </div>
     </div>
+
+    <script>
+        $(function() {
+
+            var currPath = window.location.pathname; // Gets the current pathname ( /_display/ )
+
+            $('.path').text('Current path is : ' + currPath);
+            if (currPath == '/arg/php/designTemplates.php') { // Checks if the pathname equals the webpage you want the sidebar to be displayed on
+                $('.designTemplatePage').toggle(); // Set the sidebar to visibility: visible and display: block
+            } else {}
+
+        })
+    </script>
 </body>
 
 </html>
