@@ -201,7 +201,7 @@
                             <hr>
                             <div class="form-group">
                                 <label>SELECTED ITEM</label>
-                                <input type="text" id="selectedItem" name="selectedUItem" class="form-control" disabled>
+                                <input type="text" id="selectedItem" name="selectedItem" class="form-control" disabled>
                             </div>
                             <div class="form-group">
                                 <label>PRICE</label>
