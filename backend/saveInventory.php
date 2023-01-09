@@ -58,19 +58,34 @@ if (count($_POST) > 0) {
 		$itemStocks = $_POST['itemStocks'];
 		$itemCategory = $_POST['itemCategory'];
 
-		$sql = "UPDATE `inventory` SET 
-		`itemName`='$itemName',
-		`itemPrice`='$itemPrice',
-		`itemStocks`='$itemStocks',
-		`itemCategory`='$itemCategory'
-		WHERE id=$id";
+		$uploadOk = 1;
 
-		if (mysqli_query($conn, $sql)) {
-			echo json_encode(array("statusCode" => 200));
-		} else {
-			echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+		if (empty($itemName)) {
+			$error = 'Enter Item Name!';
 		}
-		mysqli_close($conn);
+		if (empty($itemPrice)) {
+			$error = 'Enter Item Price!';
+		}
+		if (empty($itemStocks)) {
+			$error = 'Enter Item Stocks!';
+		}
+		if (empty($itemCategory)) {
+			$error = 'Enter Item Category!';
+		} else {
+			$sql = "UPDATE `inventory` SET 
+			`itemName`='$itemName',
+			`itemPrice`='$itemPrice',
+			`itemStocks`='$itemStocks',
+			`itemCategory`='$itemCategory'
+			WHERE id=$id";
+
+			if (mysqli_query($conn, $sql)) {
+				echo json_encode(array("statusCode" => 200));
+			} else {
+				echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+			}
+			mysqli_close($conn);
+		}
 	}
 }
 if (count($_POST) > 0) {

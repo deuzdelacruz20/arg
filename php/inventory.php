@@ -68,7 +68,7 @@ include '../backend/database.php';
 			<li><a href="#template5">Stickers</a></li>
 			<li><a href="#template6">Materials</a></li>
 			<li><a href="#template7">Inventory History</a></li>
-			<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal" style="float: right; margin-top:3px;"><span>Add New Item</span></a>
+			<a href="#addItemModal" class="btn btn-success" data-toggle="modal" style="float: right; margin-top:3px;"><span>Add New Item</span></a>
 		</ul>
 
 		<div class="tab-content">
@@ -459,7 +459,7 @@ include '../backend/database.php';
 		});
 	</script>
 	<!-- Add Modal HTML -->
-	<div id="addEmployeeModal" class="modal fade">
+	<div id="addItemModal" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<form id="user_form">
@@ -498,9 +498,9 @@ include '../backend/database.php';
 						</div>
 					</div>
 					<div class="modal-footer">
-						<input type="hidden" value="1" name="type" id="save_id">
+						<input type="hidden" value="6" name="type" id="save_id">
 						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-						<button type="button" class="btn btn-success" id="btn-add" disabled>Add</button>
+						<button type="button" class="btn btn-success" id="btn-addItem">Add</button>
 					</div>
 				</form>
 			</div>
@@ -575,7 +575,7 @@ include '../backend/database.php';
 		</div>
 	</div>
 	<!-- DISABLE THE SUBMIT BUTON -->
-	<script>
+	<!-- <script>
 		// FOR ADDING
 		$("#inventoryImage").keyup(function(event) {
 			validateInputs();
@@ -643,7 +643,7 @@ include '../backend/database.php';
 				disableButton = true;
 			$('#update').attr('disabled', disableButton);
 		}
-	</script>
+	</script> -->
 
 	<script>
 		$(document).ready(function() {

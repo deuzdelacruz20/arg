@@ -21,6 +21,8 @@ include '../include/disableTimeScript.php';
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="../ajax/ajaxInventory.js"></script>
 
+	<script src="../ajax/ajax.js"></script>
+
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<style>
 		body {
@@ -86,7 +88,7 @@ include '../include/disableTimeScript.php';
 									<p><b>PRICE:</b> <?php echo $row["itemPrice"]; ?></p>
 									<p><b>CATEGORY:</b> <?php echo $row["itemCategory"]; ?></p>
 									<a href="#addEmployeeModal" class="edit" data-toggle="modal">
-										<i class="material-icons buy" data-toggle="tooltip" data-id_b="<?php echo $row["id"]; ?>" data-itemName_b="<?php echo $row["itemName"]; ?>" data-itemPrice_b="<?php echo $row["itemPrice"]; ?>" data-itemStocks_b="<?php echo $row["itemStocks"]; ?>" data-itemCategory_b="<?php echo $row["itemCategory"]; ?>" title="Buy and Schedule Now" style="width: 100%;">
+										<i class="material-icons buy" data-toggle="tooltip" data-id_s="<?php echo $row["id"]; ?>" data-selectedItem="<?php echo $row["itemName"]; ?>" data-selectedPrice="<?php echo $row["itemPrice"]; ?>" data-selectedStocks="<?php echo $row["itemStocks"]; ?>" data-selectedCategory="<?php echo $row["itemCategory"]; ?>" title="Buy and Schedule Now" style="width: 100%;">
 											<button class="btn btn-success" style="width: 100%; margin-bottom:10px;">
 												&#xe8cc;
 											</button>
@@ -464,7 +466,7 @@ include '../include/disableTimeScript.php';
 					<div class="modal-footer">
 						<input type="hidden" value="6" name="type" id="save_id">
 						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-						<button type="button" class="btn btn-success" id="btn-addItem" disabled>Add</button>
+						<button type="button" class="btn btn-success" id="btn-addItem">Add</button>
 					</div>
 				</form>
 			</div>
@@ -688,24 +690,24 @@ include '../include/disableTimeScript.php';
 		}
 	</script>
 
-	<!-- DISABLE THE SUBMIT BUTON -->
+	<!-- DISABLE THE SUBMIT BUTON FOR ITEMS-->
 	<script>
 		// FOR ADDING
-		$("#inventoryImage").keyup(function(event) {
-			validateInputs();
-		});
-		$("#itemName").keyup(function(event) {
-			validateInputs();
-		});
-		$("#itemPrice").keyup(function(event) {
-			validateInputs();
-		});
-		$("#itemStocks").keyup(function(event) {
-			validateInputs();
-		});
-		$("#itemCategory").change(function(event) {
-			validateInputs();
-		});
+		// $("#inventoryImage").keyup(function(event) {
+		// 	validateInputs();
+		// });
+		// $("#itemName").keyup(function(event) {
+		// 	validateInputs();
+		// });
+		// $("#itemPrice").keyup(function(event) {
+		// 	validateInputs();
+		// });
+		// $("#itemStocks").keyup(function(event) {
+		// 	validateInputs();
+		// });
+		// $("#itemCategory").change(function(event) {
+		// 	validateInputs();
+		// });
 
 		// FOR UPDATING
 		// $("#inventoryImage").keyup(function(event) {
@@ -760,6 +762,56 @@ include '../include/disableTimeScript.php';
 		}
 	</script>
 
+	<!-- DISABLE SUBMIT BUTTON FORM -->
+	<script>
+		$("#firstName").keyup(function(event) {
+			validateInputs();
+		});
+		$("#lastName").keyup(function(event) {
+			validateInputs();
+		});
+		$("#phoneNumber").keyup(function(event) {
+			validateInputs();
+		});
+		$("#date").change(function(event) {
+			validateInputs();
+		});
+		$("#services").change(function(event) {
+			validateInputs();
+		});
+		$("#time").change(function(event) {
+			validateInputs();
+		});
+		$("#checkbox").change(function(event) {
+			validateInputs();
+		});
+
+		function validateInputs() {
+			var disableButton = false;
+
+			var firstName = $("#firstName").val();
+			var lastName = $("#lastName").val();
+			var phoneNumber = $("#phoneNumber").val();
+			var date = $("#date").val();
+			var services = $("#services").val();
+			var time = $("#time").val();
+			var checkbox = $("#checkbox");
+
+			if (
+				firstName.length == 0 ||
+				lastName.length == 0 ||
+				phoneNumber.length != 11 ||
+				date.length == 0 ||
+				services.length == 0 ||
+				time.length == 0 ||
+				checkbox.is(":checked") == false
+			)
+				disableButton = true;
+
+			$('#btn-add').attr('disabled', disableButton);
+		}
+	</script>
+
 	<!-- DISABLE SUNDAY -->
 	<script>
 		const picker = document.getElementById('date');
@@ -802,7 +854,7 @@ include '../include/disableTimeScript.php';
 			filter = input.value.toUpperCase();
 			thumbnail = document.getElementById("myItems");
 			h3 = thumbnail.getElementsByTagName("h3");
-			
+
 			for (i = 0; i < h3.length; i++) {
 				a = h3[i].getElementsByTagName("a")[0];
 				if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {

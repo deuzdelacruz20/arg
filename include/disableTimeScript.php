@@ -1,10 +1,10 @@
 <script>
-    $(document).ready(function () {
-        $('#addEmployeeModal').on('hidden.bs.modal', function (e) {
-            $("#time option").each(function () {
+    $(document).ready(function() {
+        $('#addEmployeeModal').on('hidden.bs.modal', function(e) {
+            $("#time option").each(function() {
                 $(this).prop("disabled", false);
             });
-            $('#services option').prop('selected', function () {
+            $('#services option').prop('selected', function() {
                 return this.defaultSelected;
             });
             $("#time").empty();
@@ -15,16 +15,16 @@
             $("#phoneNumber").val("");
         });
 
-        $("#date").change(function () {
+        $("#date").change(function() {
             loadscheduletime();
         });
 
-        $("#services").change(function () {
+        $("#services").change(function() {
             loadscheduletime();
         });
 
         function loadscheduletime() {
-            $("#time option").each(function () {
+            $("#time option").each(function() {
                 $(this).prop("disabled", false);
             });
             if (($("#date").val() == "" || $("#date").val() == null || $("#date").val() == undefined)) {
@@ -38,11 +38,11 @@
                     },
                     type: "post",
                     url: "../backend/validateSchedule.php",
-                    success: function (dataResult) {
+                    success: function(dataResult) {
                         var dataResult1 = JSON.parse(dataResult);
                         if (dataResult1.statusCode == 200 && dataResult1.data.length > 0) {
                             for (var keys in dataResult1.data) {
-                                $("#time option").each(function () {
+                                $("#time option").each(function() {
                                     if (dataResult1.data[keys] == $(this).text()) {
                                         $(this).prop("disabled", true);
                                     }
@@ -57,25 +57,25 @@
         }
 
 
-        $('#editEmployeeModal').on('hidden.bs.modal', function (e) {
-            $("#time_u option").each(function () {
+        $('#editEmployeeModal').on('hidden.bs.modal', function(e) {
+            $("#time_u option").each(function() {
                 $(this).prop("disabled", false);
             });
         });
 
-        $("#date_u").change(function () {
+        $("#date_u").change(function() {
             loadscheduletime_u();
         });
-        $("#services_u").change(function () {
+        $("#services_u").change(function() {
             loadscheduletime_u();
         });
 
-        $('#editEmployeeModal').on('show.bs.modal', function (e) {
+        $('#editEmployeeModal').on('show.bs.modal', function(e) {
             loadscheduletime_u();
         });
 
         function loadscheduletime_u() {
-            $("#time_u option").each(function () {
+            $("#time_u option").each(function() {
                 $(this).prop("disabled", false);
             });
             if (($("#date_u").val() == "" || $("#date_u").val() == null || $("#date_u").val() == undefined)) {
@@ -89,11 +89,11 @@
                     },
                     type: "post",
                     url: "../backend/validateSchedule.php",
-                    success: function (dataResult) {
+                    success: function(dataResult) {
                         var dataResult1 = JSON.parse(dataResult);
                         if (dataResult1.statusCode == 200 && dataResult1.data.length > 0) {
                             for (var keys in dataResult1.data) {
-                                $("#time_u option").each(function () {
+                                $("#time_u option").each(function() {
                                     if (dataResult1.data[keys] == $(this).text()) {
                                         $(this).prop("disabled", true);
                                     }
@@ -134,22 +134,19 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label>FIRST NAME</label>
-                                    <input type="text" id="firstName" name="firstName" class="form-control"
-                                        placeholder="Enter Your First Name" required>
+                                    <input type="text" id="firstName" name="firstName" class="form-control" placeholder="Enter Your First Name" required>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label>LAST NAME</label>
-                                    <input type="text" id="lastName" name="lastName" class="form-control"
-                                        placeholder="Enter Your Last Name" required>
+                                    <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Enter Your Last Name" required>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label>PHONE NUMBER</label>
-                            <input type="phone" id="phoneNumber" name="phoneNumber"
-                                class="form-control" maxlength="11" placeholder="Enter Your Phone Number" required>
+                            <input type="phone" id="phoneNumber" name="phoneNumber" class="form-control" maxlength="11" placeholder="Enter Your Phone Number" required>
                         </div>
                         <div class="form-group">
                             <label>DATE</label>
@@ -200,11 +197,27 @@
                             </select>
                             <input type="text" name="inputTime" id="inputTime" hidden></input>
                         </div>
-                        <br>
+                        <hr>
+                        <div class="form-group">
+                            <label>SELECTED ITEM</label>
+                            <input type="text" id="selectedItem" name="selectedUItem" class="form-control" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label>PRICE</label>
+                            <input type="text" id="selectedPrice" name="selectedPrice" class="form-control" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label>STOCKS</label>
+                            <input type="text" id="selectedStocks" name="selectedStocks" class="form-control" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label>CATEGORY</label>
+                            <input type="text" id="selectedCategory" name="selectedCategory" class="form-control" disabled>
+                        </div>
+                        <hr>
                         <div class="form-group">
                             <label>TERMS AND CONDITIONS</label>
-                            <textarea id="textarea" name="textarea" style="width: 100%; resize: none;" rows='8'
-                                disabled>
+                            <textarea id="textarea" name="textarea" style="width: 100%; resize: none;" rows='8' disabled>
 This appointment and scheduling system allocates slots on a first come, first served basis. Limited slots are available per site and there is no guarantee that a slot will always be available for a user's first choice for an appointment schedule.
 
 Users accept the responsibility for verifying the accuracy and correctness of the information they provide on this system in connection with their application, and consent to the collection and use of their personal information.
@@ -225,7 +238,7 @@ All fees are non-refundable. Fees shall be forfeited for the following:
                                 $time = $('#time'),
                                 $options = $time.find('option');
 
-                            $services.on('change', function () {
+                            $services.on('change', function() {
                                 $time.html($options.filter('[value="' + this.value + '"]'));
                             }).trigger('change');
                         </script>

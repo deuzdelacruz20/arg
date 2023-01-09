@@ -142,6 +142,7 @@ $(document).on("click", "#delete_multiple", function () {
 					var ids = response.split(",");
 					for (var i = 0; i < ids.length; i++) {
 						$("#" + ids[i]).remove();
+						location.reload();
 					}
 				}
 			});
@@ -171,17 +172,17 @@ $(document).ready(function () {
 
 // BUY
 $(document).on('click', '.buy', function (e) {
-	var id_b = $(this).attr("data-id_b");
-	var itemName_b = $(this).attr("data-itemName_b");
-	var itemPrice_b = $(this).attr("data-itemPrice_b");
-	var itemStocks_b = $(this).attr("data-itemStocks_b");
-	var itemCategory_b = $(this).attr("data-itemCategory_b");
+	var id_s = $(this).attr("data-id_s");
+	var selectedItem = $(this).attr("data-selectedItem");
+	var selectedPrice = $(this).attr("data-selectedPrice");
+	var selectedStocks = $(this).attr("data-selectedStocks");
+	var selectedCategory = $(this).attr("data-selectedCategory");
 
-	$('#id_b').val(id_b);
-	$('#itemName_b').val(itemName_b);
-	$('#itemPrice_b').val(itemPrice_b);
-	$('#itemStocks_b').val(itemStocks_b);
-	$('#itemCategory_b').val(itemCategory_b);
+	$('#id_s').val(id_s);
+	$('#selectedItem').val(selectedItem);
+	$('#selectedPrice').val(selectedPrice);
+	$('#selectedStocks').val(selectedStocks);
+	$('#selectedCategory').val(selectedCategory);
 
 	
 });
