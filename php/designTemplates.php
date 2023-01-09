@@ -2,6 +2,7 @@
 session_start();
 include '../include/navigation.php';
 include '../backend/database.php';
+include '../include/disableTimeScript.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -62,7 +63,7 @@ include '../backend/database.php';
 			<?php
 			if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == true && $_SESSION['isLoggedIn']) {
 			?>
-				<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal" style="float: right; margin-top:3px;"><span>Add New Template</span></a>
+				<a href="#addItemModal" class="btn btn-success" data-toggle="modal" style="float: right; margin-top:3px;"><span>Add New Template</span></a>
 			<?php
 			}
 			?>
@@ -84,7 +85,7 @@ include '../backend/database.php';
 									<h3><a href="#" style="text-decoration: none;"><?php echo $row["itemName"]; ?></a></h3>
 									<p><b>PRICE:</b> <?php echo $row["itemPrice"]; ?></p>
 									<p><b>CATEGORY:</b> <?php echo $row["itemCategory"]; ?></p>
-									<a href="#buyModal" class="edit" data-toggle="modal">
+									<a href="#addEmployeeModal" class="edit" data-toggle="modal">
 										<i class="material-icons buy" data-toggle="tooltip" data-id_b="<?php echo $row["id"]; ?>" data-itemName_b="<?php echo $row["itemName"]; ?>" data-itemPrice_b="<?php echo $row["itemPrice"]; ?>" data-itemStocks_b="<?php echo $row["itemStocks"]; ?>" data-itemCategory_b="<?php echo $row["itemCategory"]; ?>" title="Buy and Schedule Now" style="width: 100%;">
 											<button class="btn btn-success" style="width: 100%; margin-bottom:10px;">
 												&#xe8cc;
@@ -422,7 +423,7 @@ include '../backend/database.php';
 		});
 	</script>
 	<!-- Add Modal HTML -->
-	<div id="addEmployeeModal" class="modal fade">
+	<div id="addItemModal" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<form id="user_form">
@@ -461,9 +462,9 @@ include '../backend/database.php';
 						</div>
 					</div>
 					<div class="modal-footer">
-						<input type="hidden" value="1" name="type" id="save_id">
+						<input type="hidden" value="6" name="type" id="save_id">
 						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-						<button type="button" class="btn btn-success" id="btn-add" disabled>Add</button>
+						<button type="button" class="btn btn-success" id="btn-addItem" disabled>Add</button>
 					</div>
 				</form>
 			</div>
@@ -537,7 +538,7 @@ include '../backend/database.php';
 		</div>
 	</div>
 	<!-- BUY MODAL -->
-	<div id="buyModal" class="modal fade">
+	<!-- <div id="buyModal" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<form id="buy_form">
@@ -655,7 +656,7 @@ include '../backend/database.php';
 				</form>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 	<!-- ADD MODAL CASCADING DROPDOWN SCRIPT -->
 	<script>
@@ -745,7 +746,7 @@ include '../backend/database.php';
 
 			)
 				disableButton = true;
-			$('#btn-add').attr('disabled', disableButton);
+			$('#btn-addItem').attr('disabled', disableButton);
 
 			var disableButton = false;
 			if (

@@ -4,7 +4,7 @@ include 'database.php';
 $target_dir = "../image/";
 
 if (count($_POST) > 0) {
-	if ($_POST['type'] == 1) {
+	if ($_POST['type'] == 6) {
 
 		$itemName = $_POST['itemName'];
 		$itemPrice = $_POST['itemPrice'];

@@ -1,5 +1,5 @@
 // <!-- Add user -->
-$(document).on('click', '#btn-add', function (e) {
+$(document).on('click', '#btn-addItem', function (e) {
 
 	var fd = new FormData();
 	fd.append("type", $("#save_id").val());
@@ -30,7 +30,7 @@ $(document).on('click', '#btn-add', function (e) {
 			var dataResult = JSON.parse(dataResult);
 			console.log(dataResult);
 			if (dataResult.statusCode == 200) {
-				$('#addEmployeeModal').modal('hide');
+				$('#addItemModal').modal('hide');
 				Swal.fire(
 					'Success!',
 					'Data added succesfully!',
