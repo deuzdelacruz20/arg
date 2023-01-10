@@ -167,13 +167,12 @@
                             <select class="form-control" name="services" id="services">
                                 <option value="0" selected disabled style="text-align: center;">-Select a Service-
                                 </option>
-                                <option value="2">Full Wrap</option>
-                                <option value="2">Hood Wrap</option>
-                                <option value="2">HeadLight Film</option>
-                                <option value="2">Customized Plate</option>
-                                <option value="2">Signage</option>
+                                <option value="2">5,000 - Full Wrap</option>
+                                <option value="2">2,000 - Hood Wrap</option>
+                                <option value="2">1,000 - HeadLight Film</option>
+                                <option value="2">500 - Customized Plate</option>
+                                <option value="2">500 - Signage</option>
                             </select>
-                            <input type="text" name="inputServices" id="inputServices" hidden></input>
                         </div>
                         <div class="form-group">
                             <label>TIME SLOTS</label>
@@ -217,6 +216,24 @@
                             </div>
                             <hr>
                         </div>
+
+                        <hr>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-6" style="text-align: right;">
+                                    <label>RESERVATION FEE:</label><br>
+                                    <label>SERVICE FEE:</label><br>
+                                    <b><label>TOTAL AMOUNT:</label><br></b>
+                                </div>
+                                <div class="col-sm-6" style="text-align: left;">
+                                    ₱ <input type="number" value="200" name="reservationFee" id="reservationFee" disabled><br>
+                                    ₱ <input type="text" name="inputServices" id="inputServices" disabled><br>
+                                    ₱ <b><input type="number" value="3000" name="reservationFee" id="reservationFee" disabled><br><b></b>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+
                         <div class="form-group">
                             <label>TERMS AND CONDITIONS</label>
                             <textarea id="textarea" name="textarea" style="width: 100%; resize: none;" rows='8' disabled>
