@@ -143,8 +143,8 @@ include '../include/disableTimeScript.php';
 									<h3><a href="#" style="text-decoration: none;"><?php echo $row["itemName"]; ?></a></h3>
 									<p><b>PRICE:</b> <?php echo $row["itemPrice"]; ?></p>
 									<p><b>CATEGORY:</b> <?php echo $row["itemCategory"]; ?></p>
-									<a href="#buyModal" class="edit" data-toggle="modal">
-										<i class="material-icons buy" data-toggle="tooltip" data-id_b="<?php echo $row["id"]; ?>" data-itemName_b="<?php echo $row["itemName"]; ?>" data-itemPrice_b="<?php echo $row["itemPrice"]; ?>" data-itemStocks_b="<?php echo $row["itemStocks"]; ?>" data-itemCategory_b="<?php echo $row["itemCategory"]; ?>" title="Buy and Schedule Now" style="width: 100%;">
+									<a href="#addEmployeeModal" class="edit" data-toggle="modal">
+										<i class="material-icons buy" data-toggle="tooltip" data-id_s="<?php echo $row["id"]; ?>" data-selectedItem="<?php echo $row["itemName"]; ?>" data-selectedPrice="<?php echo $row["itemPrice"]; ?>" data-selectedStocks="<?php echo $row["itemStocks"]; ?>" data-selectedCategory="<?php echo $row["itemCategory"]; ?>" title="Buy and Schedule Now" style="width: 100%;">
 											<button class="btn btn-success" style="width: 100%; margin-bottom:10px;">
 												&#xe8cc;
 											</button>
@@ -198,8 +198,8 @@ include '../include/disableTimeScript.php';
 									<h3><a href="#" style="text-decoration: none;"><?php echo $row["itemName"]; ?></a></h3>
 									<p><b>PRICE:</b> <?php echo $row["itemPrice"]; ?></p>
 									<p><b>CATEGORY:</b> <?php echo $row["itemCategory"]; ?></p>
-									<a href="#buyModal" class="edit" data-toggle="modal">
-										<i class="material-icons buy" data-toggle="tooltip" data-id_b="<?php echo $row["id"]; ?>" data-itemName_b="<?php echo $row["itemName"]; ?>" data-itemPrice_b="<?php echo $row["itemPrice"]; ?>" data-itemStocks_b="<?php echo $row["itemStocks"]; ?>" data-itemCategory_b="<?php echo $row["itemCategory"]; ?>" title="Buy and Schedule Now" style="width: 100%;">
+									<a href="#addEmployeeModal" class="edit" data-toggle="modal">
+										<i class="material-icons buy" data-toggle="tooltip" data-id_s="<?php echo $row["id"]; ?>" data-selectedItem="<?php echo $row["itemName"]; ?>" data-selectedPrice="<?php echo $row["itemPrice"]; ?>" data-selectedStocks="<?php echo $row["itemStocks"]; ?>" data-selectedCategory="<?php echo $row["itemCategory"]; ?>" title="Buy and Schedule Now" style="width: 100%;">
 											<button class="btn btn-success" style="width: 100%; margin-bottom:10px;">
 												&#xe8cc;
 											</button>
@@ -253,8 +253,8 @@ include '../include/disableTimeScript.php';
 									<h3><a href="#" style="text-decoration: none;"><?php echo $row["itemName"]; ?></a></h3>
 									<p><b>PRICE:</b> <?php echo $row["itemPrice"]; ?></p>
 									<p><b>CATEGORY:</b> <?php echo $row["itemCategory"]; ?></p>
-									<a href="#buyModal" class="edit" data-toggle="modal">
-										<i class="material-icons buy" data-toggle="tooltip" data-id_b="<?php echo $row["id"]; ?>" data-itemName_b="<?php echo $row["itemName"]; ?>" data-itemPrice_b="<?php echo $row["itemPrice"]; ?>" data-itemStocks_b="<?php echo $row["itemStocks"]; ?>" data-itemCategory_b="<?php echo $row["itemCategory"]; ?>" title="Buy and Schedule Now" style="width: 100%;">
+									<a href="#addEmployeeModal" class="edit" data-toggle="modal">
+										<i class="material-icons buy" data-toggle="tooltip" data-id_s="<?php echo $row["id"]; ?>" data-selectedItem="<?php echo $row["itemName"]; ?>" data-selectedPrice="<?php echo $row["itemPrice"]; ?>" data-selectedStocks="<?php echo $row["itemStocks"]; ?>" data-selectedCategory="<?php echo $row["itemCategory"]; ?>" title="Buy and Schedule Now" style="width: 100%;">
 											<button class="btn btn-success" style="width: 100%; margin-bottom:10px;">
 												&#xe8cc;
 											</button>
@@ -308,8 +308,8 @@ include '../include/disableTimeScript.php';
 									<h3><a href="#" style="text-decoration: none;"><?php echo $row["itemName"]; ?></a></h3>
 									<p><b>PRICE:</b> <?php echo $row["itemPrice"]; ?></p>
 									<p><b>CATEGORY:</b> <?php echo $row["itemCategory"]; ?></p>
-									<a href="#buyModal" class="edit" data-toggle="modal">
-										<i class="material-icons buy" data-toggle="tooltip" data-id_b="<?php echo $row["id"]; ?>" data-itemName_b="<?php echo $row["itemName"]; ?>" data-itemPrice_b="<?php echo $row["itemPrice"]; ?>" data-itemStocks_b="<?php echo $row["itemStocks"]; ?>" data-itemCategory_b="<?php echo $row["itemCategory"]; ?>" title="Buy and Schedule Now" style="width: 100%;">
+									<a href="#addEmployeeModal" class="edit" data-toggle="modal">
+										<i class="material-icons buy" data-toggle="tooltip" data-id_s="<?php echo $row["id"]; ?>" data-selectedItem="<?php echo $row["itemName"]; ?>" data-selectedPrice="<?php echo $row["itemPrice"]; ?>" data-selectedStocks="<?php echo $row["itemStocks"]; ?>" data-selectedCategory="<?php echo $row["itemCategory"]; ?>" title="Buy and Schedule Now" style="width: 100%;">
 											<button class="btn btn-success" style="width: 100%; margin-bottom:10px;">
 												&#xe8cc;
 											</button>
@@ -364,8 +364,8 @@ include '../include/disableTimeScript.php';
 									<p><b>PRICE:</b> <?php echo $row["itemPrice"]; ?></p>
 									<p><b>AVAILABLE STOCKS:</b> <?php echo $row["itemStocks"]; ?></p>
 									<p><b>CATEGORY:</b> <?php echo $row["itemCategory"]; ?></p>
-									<a href="#buyModal" class="edit" data-toggle="modal">
-										<i class="material-icons buy" data-toggle="tooltip" data-id_b="<?php echo $row["id"]; ?>" data-itemName_b="<?php echo $row["itemName"]; ?>" data-itemPrice_b="<?php echo $row["itemPrice"]; ?>" data-itemStocks_b="<?php echo $row["itemStocks"]; ?>" data-itemCategory_b="<?php echo $row["itemCategory"]; ?>" title="Buy and Schedule Now" style="width: 100%;">
+									<a href="#addEmployeeModal" class="edit" data-toggle="modal">
+										<i class="material-icons buy" data-toggle="tooltip" data-id_s="<?php echo $row["id"]; ?>" data-selectedItem="<?php echo $row["itemName"]; ?>" data-selectedPrice="<?php echo $row["itemPrice"]; ?>" data-selectedStocks="<?php echo $row["itemStocks"]; ?>" data-selectedCategory="<?php echo $row["itemCategory"]; ?>" title="Buy and Schedule Now" style="width: 100%;">
 											<button class="btn btn-success" style="width: 100%; margin-bottom:10px;">
 												&#xe8cc;
 											</button>
