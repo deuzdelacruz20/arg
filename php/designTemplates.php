@@ -459,7 +459,7 @@ include '../include/disableTimeScript.php';
 								<option value="SUVs">SUVs</option>
 								<option value="Vans">Vans</option>
 								<option value="Materials">Materials</option>
-								<option value="Stickers">Vans</option>
+								<option value="Stickers">Stickers</option>
 							</select>
 						</div>
 					</div>

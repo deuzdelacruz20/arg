@@ -1,9 +1,23 @@
 // <!-- Add user -->
 $(document).on('click', '#btn-add', function (e) {
 	//start added shepo changes
-	if($("#selectedStocks").val()=="0" || $("#selectedStocks").val()== undefined || $("#selectedStocks").val()=="" || $("#selectedStocks").val()==null){
-		alert('No Available Stock!'); return;
-	}
+
+	$(function () {
+
+		var currPath = window.location.pathname; // Gets the current pathname ( /_display/ )
+
+		$('.path').text('Current path is : ' + currPath);
+		if (currPath == '/arg/php/designTemplates.php') { // Checks if the pathname equals the webpage you want the sidebar to be displayed on
+			if ($("#selectedStocks").val() == "0" || $("#selectedStocks").val() == undefined || $("#selectedStocks").val() == "" || $("#selectedStocks").val() == null) {
+				alert('No Available Stock!');
+				location.reload();
+			}
+		} else { }
+
+	})
+
+
+
 	//end added shepo changes
 	var data = $("#user_form").serialize();
 	$.ajax({
