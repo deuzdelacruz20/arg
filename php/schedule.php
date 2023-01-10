@@ -124,6 +124,7 @@ include '../include/disableTimeScript.php';
                                             </span>
                                         </th>
                                         <th>ID</th>
+                                        <th>ITEM SELECTED</th>
                                         <?php
                                         if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == true && $_SESSION['isLoggedIn']) {
                                         ?>
@@ -160,6 +161,7 @@ include '../include/disableTimeScript.php';
                                                 </span>
                                             </td>
                                             <td><?php echo $row["id"]; ?></td>
+                                            <td><?php echo $row["selectedItem"]; ?></td>
                                             <td><?php echo $row["firstName"]; ?></td>
                                             <td><?php echo $row["lastName"]; ?></td>
                                             <td><?php echo $row["phoneNumber"]; ?></td>

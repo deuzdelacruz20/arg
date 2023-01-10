@@ -228,7 +228,7 @@
                                 <div class="col-sm-6" style="text-align: left;">
                                     ₱ <input type="number" value="200" name="reservationFee" id="reservationFee" readonly="readonly"><br>
                                     ₱  <input type="text" name="inputServices" id="inputServices" ></input><br>
-                                    ₱ <b><input type="number" value="3000" name="reservationFee" id="reservationFee" readonly="readonly"><br><b></b>
+                                    ₱ <b><input type="number" value="2200" name="reservationFee" id="reservationFee" readonly="readonly"><br></b>
                                 </div>
                             </div>
                         </div>
