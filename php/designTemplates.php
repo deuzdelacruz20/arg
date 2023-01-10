@@ -831,22 +831,6 @@ include '../include/disableTimeScript.php';
 
 	<!-- FILTER DATA -->
 	<script>
-		// function myFunction() {
-		// 	var input, filter, thumbnail, h3, a, i;
-		// 	input = document.getElementById("myFilter");
-		// 	filter = input.value.toUpperCase();
-		// 	thumbnail = document.getElementById("myItems");
-		// 	h3 = thumbnail.getElementsByTagName("h3");
-		// 	for (i = 0; i < h3.length; i++) {
-		// 		a = h3[i].getElementsByTagName("a")[0];
-		// 		if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-		// 			h3[i].parentElement.parentElement.style.display = "";
-		// 		} else {
-		// 			h3[i].parentElement.parentElement.style.display = "none";
-		// 		}
-		// 	}
-		// }
-
 		function myFunction() {
 			var input, filter, thumbnail, h3, a, i;
 
@@ -858,9 +842,9 @@ include '../include/disableTimeScript.php';
 			for (i = 0; i < h3.length; i++) {
 				a = h3[i].getElementsByTagName("a")[0];
 				if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-					h3[i].parentElement.parentElement.style.display = "";
+					h3[i].parentElement.parentElement.parentElement.style.display = "";
 				} else {
-					h3[i].parentElement.parentElement.style.display = "none";
+					h3[i].parentElement.parentElement.parentElement.style.display = "none";
 				}
 			}
 		}
