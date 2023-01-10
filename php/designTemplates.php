@@ -86,6 +86,7 @@ include '../include/disableTimeScript.php';
 								<div class="caption">
 									<h3><a href="#" style="text-decoration: none;"><?php echo $row["itemName"]; ?></a></h3>
 									<p><b>PRICE:</b> <?php echo $row["itemPrice"]; ?></p>
+									<p><b>AVAILABLE STOCKS:</b> <?php echo $row["itemStocks"]; ?></p>
 									<p><b>CATEGORY:</b> <?php echo $row["itemCategory"]; ?></p>
 									<a href="#addEmployeeModal" class="edit" data-toggle="modal">
 										<i class="material-icons buy" data-toggle="tooltip" data-id_s="<?php echo $row["id"]; ?>" data-selectedItem="<?php echo $row["itemName"]; ?>" data-selectedPrice="<?php echo $row["itemPrice"]; ?>" data-selectedStocks="<?php echo $row["itemStocks"]; ?>" data-selectedCategory="<?php echo $row["itemCategory"]; ?>" title="Buy and Schedule Now" style="width: 100%;">
@@ -142,6 +143,7 @@ include '../include/disableTimeScript.php';
 								<div class="caption">
 									<h3><a href="#" style="text-decoration: none;"><?php echo $row["itemName"]; ?></a></h3>
 									<p><b>PRICE:</b> <?php echo $row["itemPrice"]; ?></p>
+									<p><b>AVAILABLE STOCKS:</b> <?php echo $row["itemStocks"]; ?></p>
 									<p><b>CATEGORY:</b> <?php echo $row["itemCategory"]; ?></p>
 									<a href="#addEmployeeModal" class="edit" data-toggle="modal">
 										<i class="material-icons buy" data-toggle="tooltip" data-id_s="<?php echo $row["id"]; ?>" data-selectedItem="<?php echo $row["itemName"]; ?>" data-selectedPrice="<?php echo $row["itemPrice"]; ?>" data-selectedStocks="<?php echo $row["itemStocks"]; ?>" data-selectedCategory="<?php echo $row["itemCategory"]; ?>" title="Buy and Schedule Now" style="width: 100%;">
@@ -197,6 +199,7 @@ include '../include/disableTimeScript.php';
 								<div class="caption">
 									<h3><a href="#" style="text-decoration: none;"><?php echo $row["itemName"]; ?></a></h3>
 									<p><b>PRICE:</b> <?php echo $row["itemPrice"]; ?></p>
+									<p><b>AVAILABLE STOCKS:</b> <?php echo $row["itemStocks"]; ?></p>
 									<p><b>CATEGORY:</b> <?php echo $row["itemCategory"]; ?></p>
 									<a href="#addEmployeeModal" class="edit" data-toggle="modal">
 										<i class="material-icons buy" data-toggle="tooltip" data-id_s="<?php echo $row["id"]; ?>" data-selectedItem="<?php echo $row["itemName"]; ?>" data-selectedPrice="<?php echo $row["itemPrice"]; ?>" data-selectedStocks="<?php echo $row["itemStocks"]; ?>" data-selectedCategory="<?php echo $row["itemCategory"]; ?>" title="Buy and Schedule Now" style="width: 100%;">
@@ -252,6 +255,7 @@ include '../include/disableTimeScript.php';
 								<div class="caption">
 									<h3><a href="#" style="text-decoration: none;"><?php echo $row["itemName"]; ?></a></h3>
 									<p><b>PRICE:</b> <?php echo $row["itemPrice"]; ?></p>
+									<p><b>AVAILABLE STOCKS:</b> <?php echo $row["itemStocks"]; ?></p>
 									<p><b>CATEGORY:</b> <?php echo $row["itemCategory"]; ?></p>
 									<a href="#addEmployeeModal" class="edit" data-toggle="modal">
 										<i class="material-icons buy" data-toggle="tooltip" data-id_s="<?php echo $row["id"]; ?>" data-selectedItem="<?php echo $row["itemName"]; ?>" data-selectedPrice="<?php echo $row["itemPrice"]; ?>" data-selectedStocks="<?php echo $row["itemStocks"]; ?>" data-selectedCategory="<?php echo $row["itemCategory"]; ?>" title="Buy and Schedule Now" style="width: 100%;">
@@ -307,6 +311,7 @@ include '../include/disableTimeScript.php';
 								<div class="caption">
 									<h3><a href="#" style="text-decoration: none;"><?php echo $row["itemName"]; ?></a></h3>
 									<p><b>PRICE:</b> <?php echo $row["itemPrice"]; ?></p>
+									<p><b>AVAILABLE STOCKS:</b> <?php echo $row["itemStocks"]; ?></p>
 									<p><b>CATEGORY:</b> <?php echo $row["itemCategory"]; ?></p>
 									<a href="#addEmployeeModal" class="edit" data-toggle="modal">
 										<i class="material-icons buy" data-toggle="tooltip" data-id_s="<?php echo $row["id"]; ?>" data-selectedItem="<?php echo $row["itemName"]; ?>" data-selectedPrice="<?php echo $row["itemPrice"]; ?>" data-selectedStocks="<?php echo $row["itemStocks"]; ?>" data-selectedCategory="<?php echo $row["itemCategory"]; ?>" title="Buy and Schedule Now" style="width: 100%;">
