@@ -1,11 +1,17 @@
 // <!-- Add user -->
 $(document).on('click', '#btn-add', function (e) {
+	//start added shepo changes
+	if($("#selectedStocks").val()=="0" || $("#selectedStocks").val()== undefined || $("#selectedStocks").val()=="" || $("#selectedStocks").val()==null){
+		alert('No Available Stock!'); return;
+	}
+	//end added shepo changes
 	var data = $("#user_form").serialize();
 	$.ajax({
 		data: data,
 		type: "post",
 		url: "../backend/save.php",
 		success: function (dataResult) {
+			console.log(dataResult);
 			var dataResult = JSON.parse(dataResult);
 			if (dataResult.statusCode == 200) {
 				$('#addEmployeeModal').modal('hide');

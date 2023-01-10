@@ -15,6 +15,7 @@ if (count($_POST) > 0) {
 		$selectedPrice = $_POST['selectedPrice'];
 		$selectedStocks = $_POST['selectedStocks'];
 		$selectedCategory = $_POST['selectedCategory'];
+		$totalAmount = $_POST['totalAmount'];
 
 		if (empty($firstName)) {
 			$error = 'Enter Your First Name!';
@@ -35,14 +36,19 @@ if (count($_POST) > 0) {
 			$error = 'Choose a Timeslot!';
 		} 
 		else {
-			$sql = "INSERT INTO `customer_request`(`firstName`,`lastName`,`phoneNumber`,`date`,`services`,`time`,`timestamp`,`selectedItem`,`selectedPrice`,`selectedStocks`,`selectedCategory`) 
-		VALUES ('$firstName','$lastName','$phoneNumber','$date','$services','$time',current_timestamp(),'$selectedItem','$selectedPrice','$selectedStocks','$selectedCategory')";
-			if (mysqli_query($conn, $sql)) {
+			//start added shepo changes
+			$sql = "INSERT INTO `customer_request`(`firstName`,`lastName`,`phoneNumber`,`date`,`services`,`time`,`timestamp`,`selectedItem`,`selectedPrice`,`selectedStocks`,`selectedCategory`,`totalAmount`) 
+		VALUES ('$firstName','$lastName','$phoneNumber','$date','$services','$time',current_timestamp(),'$selectedItem','$selectedPrice','$selectedStocks','$selectedCategory','$totalAmount');\n
+
+					UPDATE `inventory` set itemStocks = itemStocks-1 WHERE upper(itemName)=upper('$selectedItem');";
+
+			if (mysqli_multi_query($conn, $sql)) {
 				echo json_encode(array("statusCode" => 200));
 			} else {
 				echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 			}
 			mysqli_close($conn);
+			//end added shepo changes
 		}
 	}
 }

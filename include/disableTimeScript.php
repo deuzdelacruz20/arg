@@ -21,6 +21,12 @@
 
         $("#services").change(function() {
             loadscheduletime();
+            //start add shepo
+            var services = $("#services option:selected").attr("price");
+            var reservationFee = $("#reservationFee").val();
+            var total = parseInt(services) + parseInt(reservationFee);
+            $("#totalAmount").val(total);
+            //end shepo
         });
 
         function loadscheduletime() {
@@ -167,11 +173,11 @@
                             <select class="form-control" name="services" id="services">
                                 <option value="0" selected disabled style="text-align: center;">-Select a Service-
                                 </option>
-                                <option value="2">5,000 - Full Wrap</option>
-                                <option value="2">2,000 - Hood Wrap</option>
-                                <option value="2">1,000 - HeadLight Film</option>
-                                <option value="2">500 - Customized Plate</option>
-                                <option value="2">500 - Signage</option>
+                                <option price="5000" value="2">5,000 - Full Wrap</option>
+                                <option price="2000" value="2">2,000 - Hood Wrap</option>
+                                <option price="1000" value="2">1,000 - HeadLight Film</option>
+                                <option price="500" value="2">500 - Customized Plate</option>
+                                <option price="500" value="2">500 - Signage</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -226,9 +232,11 @@
                                     <b><label>TOTAL AMOUNT:</label><br></b>
                                 </div>
                                 <div class="col-sm-6" style="text-align: left;">
+                                    <!-- start shepo apply changes -->
                                     ₱ <input type="number" value="200" name="reservationFee" id="reservationFee" readonly="readonly"><br>
-                                    ₱  <input type="text" name="inputServices" id="inputServices" ></input><br>
-                                    ₱ <b><input type="number" value="2200" name="reservationFee" id="reservationFee" readonly="readonly"><br></b>
+                                    ₱  <input type="text" name="inputServices" id="inputServices" readonly="readonly"></input><br>
+                                    ₱ <b><input type="text" name="totalAmount" id="totalAmount" readonly="readonly"><br></b>
+                                    <!-- start shepo apply changes -->
                                 </div>
                             </div>
                         </div>
