@@ -200,19 +200,19 @@
                             <hr>
                             <div class="form-group">
                                 <label>SELECTED ITEM</label>
-                                <input type="text" id="selectedItem" name="selectedItem" class="form-control" disabled>
+                                <input type="text" id="selectedItem" name="selectedItem" class="form-control" readonly="readonly"></input>
                             </div>
                             <div class="form-group">
                                 <label>PRICE</label>
-                                <input type="text" id="selectedPrice" name="selectedPrice" class="form-control" disabled>
+                                <input type="text" id="selectedPrice" name="selectedPrice" class="form-control" readonly="readonly">
                             </div>
                             <div class="form-group">
                                 <label>STOCKS</label>
-                                <input type="text" id="selectedStocks" name="selectedStocks" class="form-control" disabled>
+                                <input type="text" id="selectedStocks" name="selectedStocks" class="form-control" readonly="readonly">
                             </div>
                             <div class="form-group">
                                 <label>CATEGORY</label>
-                                <input type="text" id="selectedCategory" name="selectedCategory" class="form-control" disabled>
+                                <input type="text" id="selectedCategory" name="selectedCategory" class="form-control" readonly="readonly">
                             </div>
                             <hr>
                         </div>
@@ -226,9 +226,9 @@
                                     <b><label>TOTAL AMOUNT:</label><br></b>
                                 </div>
                                 <div class="col-sm-6" style="text-align: left;">
-                                    ₱ <input type="number" value="200" name="reservationFee" id="reservationFee" disabled><br>
-                                    ₱ <input type="text" name="inputServices" id="inputServices" disabled><br>
-                                    ₱ <b><input type="number" value="3000" name="reservationFee" id="reservationFee" disabled><br><b></b>
+                                    ₱ <input type="number" value="200" name="reservationFee" id="reservationFee" readonly="readonly"><br>
+                                    ₱  <input type="text" name="inputServices" id="inputServices" ></input><br>
+                                    ₱ <b><input type="number" value="3000" name="reservationFee" id="reservationFee" readonly="readonly"><br><b></b>
                                 </div>
                             </div>
                         </div>

@@ -11,6 +11,7 @@ if (count($_POST) > 0) {
 		$date = $_POST['date'];
 		$services = $_POST['inputServices'];
 		$time = $_POST['inputTime'];
+		$selectedItem = $_POST['selectedItem'];
 
 		if (empty($firstName)) {
 			$error = 'Enter Your First Name!';
@@ -31,8 +32,8 @@ if (count($_POST) > 0) {
 			$error = 'Choose a Timeslot!';
 		} 
 		else {
-			$sql = "INSERT INTO `customer_request`(`firstName`,`lastName`,`phoneNumber`,`date`,`services`,`time`, `timestamp`) 
-		VALUES ('$firstName','$lastName','$phoneNumber','$date','$services','$time',current_timestamp())";
+			$sql = "INSERT INTO `customer_request`(`firstName`,`lastName`,`phoneNumber`,`date`,`services`,`time`,`timestamp`,`selectedItem`) 
+		VALUES ('$firstName','$lastName','$phoneNumber','$date','$services','$time',current_timestamp(),'$selectedItem')";
 			if (mysqli_query($conn, $sql)) {
 				echo json_encode(array("statusCode" => 200));
 			} else {
