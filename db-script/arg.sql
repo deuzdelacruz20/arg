@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 08, 2023 at 06:38 PM
+-- Generation Time: Jan 10, 2023 at 07:39 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -55,22 +55,27 @@ CREATE TABLE `customer_request` (
   `time` varchar(255) NOT NULL,
   `timestamp` timestamp NOT NULL DEFAULT current_timestamp(),
   `user_status` varchar(255) NOT NULL DEFAULT 'Pending',
-  `earnings` int(11) NOT NULL DEFAULT 200
+  `earnings` int(11) NOT NULL DEFAULT 200,
+  `selectedItem` varchar(255) NOT NULL DEFAULT 'No Selected item',
+  `selectedPrice` int(11) NOT NULL,
+  `selectedStocks` int(11) NOT NULL,
+  `selectedCategory` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `customer_request`
 --
 
-INSERT INTO `customer_request` (`id`, `firstName`, `lastName`, `phoneNumber`, `date`, `services`, `time`, `timestamp`, `user_status`, `earnings`) VALUES
-(280, 'Deuz', 'De la Cruz', '09124567893', '2023-01-10', 'Full Wrap', '7:00 AM - 8:00 AM', '2022-12-28 08:18:38', 'Done', 200),
-(281, 'Vince', 'Mendoza', '09456789123', '2023-01-10', 'Hood Wrap', '8:00 AM - 9:00 AM', '2022-12-28 08:23:22', 'Pending', 200),
-(283, 'Ronel', 'Tagala', '09454654564', '2023-01-10', 'Hood Wrap', '7:00 AM - 8:00 AM', '2022-12-28 09:53:20', 'Pending', 200),
-(285, 'Leigh', 'Ayuma', '09456789123', '2023-01-10', 'Hood Wrap', '10:00 AM - 11:00 AM', '2022-12-28 09:56:12', 'Pending', 200),
-(286, 'Aldous', 'Turgo', '09789456456', '2023-01-10', 'Hood Wrap', '9:00 AM - 10:00 AM', '2022-12-28 11:10:29', 'Pending', 200),
-(287, 'Ronald', 'Parcarey', '09456789123', '2023-01-10', 'Customized Plate', '1:00 PM - 2:00 PM', '2023-01-05 17:21:40', 'Pending', 200),
-(295, 'Leigh ', 'Turgo', '09454645464', '2023-01-09', 'HeadLight Film', '7:00 AM - 8:00 AM', '2023-01-08 11:51:28', 'Pending', 200),
-(296, 'Leigh ', 'Turgo', '09454645464', '2023-01-09', 'HeadLight Film', '7:00 AM - 8:00 AM', '2023-01-08 11:51:48', 'Pending', 200);
+INSERT INTO `customer_request` (`id`, `firstName`, `lastName`, `phoneNumber`, `date`, `services`, `time`, `timestamp`, `user_status`, `earnings`, `selectedItem`, `selectedPrice`, `selectedStocks`, `selectedCategory`) VALUES
+(280, 'Deuz', 'De la Cruz', '09124567893', '2023-01-10', 'Full Wrap', '7:00 AM - 8:00 AM', '2022-12-28 08:18:38', 'Done', 200, '	No Selected item', 0, 0, ''),
+(281, 'Vince', 'Mendoza', '09456789123', '2023-01-10', 'Hood Wrap', '8:00 AM - 9:00 AM', '2022-12-28 08:23:22', 'Pending', 200, '	No Selected item', 0, 0, ''),
+(283, 'Ronel', 'Tagala', '09454654564', '2023-01-10', 'Hood Wrap', '7:00 AM - 8:00 AM', '2022-12-28 09:53:20', 'Pending', 200, '	No Selected item', 0, 0, ''),
+(285, 'Leigh', 'Ayuma', '09456789123', '2023-01-10', 'Hood Wrap', '10:00 AM - 11:00 AM', '2022-12-28 09:56:12', 'Pending', 200, '	No Selected item', 0, 0, ''),
+(286, 'Aldous', 'Turgo', '09789456456', '2023-01-10', 'Hood Wrap', '9:00 AM - 10:00 AM', '2022-12-28 11:10:29', 'Pending', 200, '	No Selected item', 0, 0, ''),
+(287, 'Ronald', 'Parcarey', '09456789123', '2023-01-10', 'Customized Plate', '1:00 PM - 2:00 PM', '2023-01-05 17:21:40', 'Pending', 200, '	No Selected item', 0, 0, ''),
+(295, 'Leigh ', 'Turgo', '09454645464', '2023-01-09', 'HeadLight Film', '7:00 AM - 8:00 AM', '2023-01-08 11:51:28', 'Pending', 200, '	No Selected item', 0, 0, ''),
+(296, 'Leigh ', 'Turgo', '09454645464', '2023-01-09', 'HeadLight Film', '7:00 AM - 8:00 AM', '2023-01-08 11:51:48', 'Pending', 200, '	No Selected item', 0, 0, ''),
+(297, 'asd', 'asd', '09456456456', '2023-01-11', '2,000 - Hood Wrap', '7:00 AM - 8:00 AM', '2023-01-10 06:37:42', 'Pending', 200, 'ARROW', 20, 10, 'Stickers');
 
 -- --------------------------------------------------------
 
@@ -225,7 +230,7 @@ ALTER TABLE `inventory_movement`
 -- AUTO_INCREMENT for table `customer_request`
 --
 ALTER TABLE `customer_request`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=297;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=298;
 
 --
 -- AUTO_INCREMENT for table `inventory`
