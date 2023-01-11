@@ -237,7 +237,9 @@
                                 <div class="col-sm-6" style="text-align: right;">
                                     <label>RESERVATION FEE:</label><br>
                                     <label>SERVICE FEE:</label><br>
-                                    <label>ITEM PRICE:</label><br>
+                                    <div class="designTemplatePage" hidden>
+                                        <label>ITEM PRICE:</label><br>
+                                    </div>
                                     <b><label>TOTAL AMOUNT:</label><br></b>
                                 </div>
                                 <div class="col-sm-6" style="text-align: left;">
@@ -245,7 +247,9 @@
                                     ₱ <input type="number" value="200" name="reservationFee" id="reservationFee" readonly="readonly"><br>
                                     ₱ <input type="text" name="inputServices" id="inputServices" readonly="readonly"></input><br>
                                     <!-- ₱ <input type="number" name="itemPrice" id="itemPrice" readonly="readonly"></input><br> -->
-                                    ₱ <input type="text" id="selectedPrice" name="selectedPrice"  readonly="readonly"></br>
+                                    <div class="designTemplatePage" hidden>
+                                        ₱ <input type="text" id="selectedPrice" name="selectedPrice" readonly="readonly"></br>
+                                    </div>
                                     ₱ <b><input type="text" name="totalAmount" id="totalAmount" readonly="readonly"><br></b>
                                     <!-- start shepo apply changes -->
                                 </div>
@@ -319,8 +323,6 @@ All fees are non-refundable. Fees shall be forfeited for the following:
             }
             return result;
         }
-
-    
     </script>
 </body>
 
