@@ -161,3 +161,30 @@ if (count($_POST) > 0) {
 		}
 	}
 }
+
+if (count($_POST) > 0) {
+	if ($_POST['type'] == 8) {
+		$id = $_POST['idBuy'];
+		$itemStocksBuy = $_POST['itemStocksBuy'];
+		$itemStocksToBuy = $_POST['itemStocksToBuy'];
+
+		$uploadOk = 1;
+
+		if (empty($itemStocksToBuy)) {
+			$error = 'Enter a number!';
+		} 
+		else if ($itemStocksToBuy > $itemStocksBuy) {
+			$error = 'Enter a valid number!';
+		}
+		else {
+			$sql = "UPDATE `inventory` SET `itemStocks`= `itemStocks` - '$itemStocksToBuy' WHERE id=$id";
+
+			if (mysqli_query($conn, $sql)) {
+				echo json_encode(array("statusCode" => 200));
+			} else {
+				echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+			}
+			mysqli_close($conn);
+		}
+	}
+}

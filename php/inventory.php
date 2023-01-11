@@ -88,7 +88,7 @@ include '../backend/database.php';
 									<p>AVAILABLE STOCKS: <?php echo $row["itemStocks"]; ?></p>
 									<p>CATEGORY: <?php echo $row["itemCategory"]; ?></p>
 									<div class="row">
-										<div class="col-xs-4">
+										<div class="col-xs-3">
 											<a href="#editEmployeeModal" class="edit" data-toggle="modal">
 												<i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-itemName="<?php echo $row["itemName"]; ?>" data-itemPrice="<?php echo $row["itemPrice"]; ?>" data-itemStocks="<?php echo $row["itemStocks"]; ?>" data-itemCategory="<?php echo $row["itemCategory"]; ?>" title="Edit" style="width: 100%;">
 													<button class="btn btn-primary" style="width: 100%;">
@@ -97,16 +97,25 @@ include '../backend/database.php';
 												</i>
 											</a>
 										</div>
-										<div class="col-xs-4">
+										<div class="col-xs-3">
+											<a href="#buyItemStock" class="edit" data-toggle="modal">
+												<i class="material-icons buyitemStock" data-toggle="tooltip" data-idStocksbuy="<?php echo $row["id"]; ?>" data-itemStocksbuy="<?php echo $row["itemStocks"]; ?>" title="Buy Stocks" style="width: 100%;">
+													<button class="btn btn-success" style="width: 100%;">
+														&#xe8cc;
+													</button>
+												</i>
+											</a>
+										</div>
+										<div class="col-xs-3">
 											<a href="#addItemStock" class="edit" data-toggle="modal">
 												<i class="material-icons additemStock" data-toggle="tooltip" data-idStocksAdd="<?php echo $row["id"]; ?>" data-itemStocksAdd="<?php echo $row["itemStocks"]; ?>" title="Add Stocks" style="width: 100%;">
-													<button class="btn btn-info" style="width: 100%;">
+													<button class="btn btn-success" style="width: 100%;">
 														&plus;
 													</button>
 												</i>
 											</a>
 										</div>
-										<div class="col-xs-4">
+										<div class="col-xs-3">
 											<a href="#deleteEmployeeModal" class="delete" data-id="<?php echo $row["id"]; ?>" data-toggle="modal">
 												<i class="material-icons" data-toggle="tooltip" title="Delete" style="width: 100%;">
 													<button class="btn btn-danger" style="width: 100%;">
@@ -591,6 +600,42 @@ include '../backend/database.php';
 						<input type="hidden" value="7" name="type">
 						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
 						<button type="button" class="btn btn-info" id="additemStock">Add</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div id="buyItemStock" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form id="buyitemStock_form">
+					<div class="modal-header">
+						<h4 class="modal-title">Edit Item</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					</div>
+					<div class="modal-body">
+						<input type="hidden" id="id_buy" name="idBuy" class="form-control" required>
+						<div class="row">
+							<div class="col-sm-6">
+								<div class="form-group">
+									<label>REMAINING STOCKS</label>
+									<input type="number" id="itemStocks_buy" name="itemStocksBuy" class="form-control" required readonly>
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="form-group">
+									<label>BUY ITEM STOCKS</label>
+									<input type="number" id="itemStocks_Tobuy" name="itemStocksToBuy" class="form-control" required>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="modal-footer">
+						<input type="hidden" value="8" name="type">
+						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+						<button type="button" class="btn btn-info" id="buyitemStock">Add</button>
 					</div>
 				</form>
 			</div>
