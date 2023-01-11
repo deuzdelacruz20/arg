@@ -315,15 +315,9 @@ All fees are non-refundable. Fees shall be forfeited for the following:
             }
             return result;
         }
-        $('#schedNowId').click(function() {
-            var refVal = $('#refNumber').val();
-            console.log("asdasd")
-            if (refVal.length < 1) $('#refNumber').val("ARG" + generateRefNumber(5).toUpperCase());
-        });
 
     
     </script>
-    
 </body>
 
 </html>
