@@ -135,8 +135,8 @@ include '../include/disableTimeScript.php';
                                         <?php
                                         }
                                         ?>
-                                        <th>DATE</th>
                                         <th>SERVICES</th>
+                                        <th>DATE</th>
                                         <th>TIMESLOT</th>
                                         <?php
                                         if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == true && $_SESSION['isLoggedIn']) {
@@ -166,8 +166,8 @@ include '../include/disableTimeScript.php';
                                             <td><?php echo $row["firstName"]; ?></td>
                                             <td><?php echo $row["lastName"]; ?></td>
                                             <td><?php echo $row["phoneNumber"]; ?></td>
-                                            <td><?php echo $row["date"]; ?></td>
                                             <td><?php echo $row["services"]; ?></td>
+                                            <td><?php echo $row["date"]; ?></td>
                                             <td><?php echo $row["time"]; ?></td>
                                             <td><?php echo $row["user_status"]; ?></td>
                                             <td>
@@ -215,8 +215,8 @@ include '../include/disableTimeScript.php';
                                         <th>FIRST NAME</th>
                                         <th>LAST NAME</th>
                                         <th>PHONE NUMBER</th>
-                                        <th>DATE</th>
                                         <th>SERVICES</th>
+                                        <th>DATE</th>
                                         <th>TIMESLOT</th>
                                         <th>STATUS</th>
                                         <th>ACTION</th>
@@ -239,8 +239,8 @@ include '../include/disableTimeScript.php';
                                             <td><?php echo $row["firstName"]; ?></td>
                                             <td><?php echo $row["lastName"]; ?></td>
                                             <td><?php echo $row["phoneNumber"]; ?></td>
-                                            <td><?php echo $row["date"]; ?></td>
                                             <td><?php echo $row["services"]; ?></td>
+                                            <td><?php echo $row["date"]; ?></td>
                                             <td><?php echo $row["time"]; ?></td>
                                             <td><?php echo $row["user_status"]; ?></td>
                                             <td>
@@ -302,8 +302,8 @@ include '../include/disableTimeScript.php';
                                     <?php
                                     }
                                     ?>
-                                    <th>DATE</th>
                                     <th>SERVICES</th>
+                                    <th>DATE</th>
                                     <th>TIMESLOT</th>
                                     <th>STATUS</th>
                                     <?php
@@ -338,8 +338,8 @@ include '../include/disableTimeScript.php';
                                         <?php
                                         }
                                         ?>
-                                        <td><?php echo $row["date"]; ?></td>
                                         <td><?php echo $row["services"]; ?></td>
+                                        <td><?php echo $row["date"]; ?></td>
                                         <td><?php echo $row["time"]; ?></td>
                                         <td><?php echo $row["user_status"]; ?></td>
                                         <?php
@@ -393,8 +393,8 @@ include '../include/disableTimeScript.php';
                                     <th>FIRST NAME</th>
                                     <th>LAST NAME</th>
                                     <th>PHONE NUMBER</th>
-                                    <th>DATE</th>
                                     <th>SERVICES</th>
+                                    <th>DATE</th>
                                     <th>TIMESLOT</th>
                                     <th>STATUS</th>
                                     <th>ACTION</th>
@@ -417,8 +417,8 @@ include '../include/disableTimeScript.php';
                                         <td><?php echo $row["firstName"]; ?></td>
                                         <td><?php echo $row["lastName"]; ?></td>
                                         <td><?php echo $row["phoneNumber"]; ?></td>
-                                        <td><?php echo $row["date"]; ?></td>
                                         <td><?php echo $row["services"]; ?></td>
+                                        <td><?php echo $row["date"]; ?></td>
                                         <td><?php echo $row["time"]; ?></td>
                                         <td><?php echo $row["user_status"]; ?></td>
                                         <td>
@@ -540,8 +540,8 @@ include '../include/disableTimeScript.php';
                                     <th>FIRST NAME</th>
                                     <th>LAST NAME</th>
                                     <th>PHONE NUMBER</th>
-                                    <th>DATE</th>
                                     <th>SERVICES</th>
+                                    <th>DATE</th>
                                     <th>TIMESLOT</th>
                                     <th>STATUS</th>
                                     <th>ACTION</th>
@@ -564,8 +564,8 @@ include '../include/disableTimeScript.php';
                                         <td><?php echo $row["firstName"]; ?></td>
                                         <td><?php echo $row["lastName"]; ?></td>
                                         <td><?php echo $row["phoneNumber"]; ?></td>
-                                        <td><?php echo $row["date"]; ?></td>
                                         <td><?php echo $row["services"]; ?></td>
+                                        <td><?php echo $row["date"]; ?></td>
                                         <td><?php echo $row["time"]; ?></td>
                                         <td><?php echo $row["user_status"]; ?></td>
                                         <td>
