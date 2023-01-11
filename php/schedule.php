@@ -211,7 +211,7 @@ include '../include/disableTimeScript.php';
                                                 <label for="selectAllPending"></label>
                                             </span>
                                         </th>
-                                        <th>ID</th>
+                                        <th>REFERENCE NO.</th>
                                         <th>FIRST NAME</th>
                                         <th>LAST NAME</th>
                                         <th>PHONE NUMBER</th>
@@ -235,7 +235,7 @@ include '../include/disableTimeScript.php';
                                                     <label for="checkbox2"></label>
                                                 </span>
                                             </td>
-                                            <td><?php echo $row["id"]; ?></td>
+                                            <td><?php echo $row["refNumber"]; ?></td>
                                             <td><?php echo $row["firstName"]; ?></td>
                                             <td><?php echo $row["lastName"]; ?></td>
                                             <td><?php echo $row["phoneNumber"]; ?></td>
@@ -292,7 +292,7 @@ include '../include/disableTimeScript.php';
                                             <label for="selectAllAccepted"></label>
                                         </span>
                                     </th>
-                                    <th>ID</th>
+                                    <th>REFERENCE NO.</th>
                                     <?php
                                     if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == true && $_SESSION['isLoggedIn']) {
                                     ?>
@@ -328,7 +328,7 @@ include '../include/disableTimeScript.php';
                                                 <label for="checkbox2"></label>
                                             </span>
                                         </td>
-                                        <td><?php echo $row["id"]; ?></td>
+                                        <td><?php echo $row["refNumber"]; ?></td>
                                         <?php
                                         if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == true && $_SESSION['isLoggedIn']) {
                                         ?>
@@ -389,7 +389,7 @@ include '../include/disableTimeScript.php';
                                             <label for="selectAllRejected"></label>
                                         </span>
                                     </th>
-                                    <th>ID</th>
+                                    <th>REFERENCE NO.</th>
                                     <th>FIRST NAME</th>
                                     <th>LAST NAME</th>
                                     <th>PHONE NUMBER</th>
@@ -413,7 +413,7 @@ include '../include/disableTimeScript.php';
                                                 <label for="checkbox2"></label>
                                             </span>
                                         </td>
-                                        <td><?php echo $row["id"]; ?></td>
+                                        <td><?php echo $row["refNumber"]; ?></td>
                                         <td><?php echo $row["firstName"]; ?></td>
                                         <td><?php echo $row["lastName"]; ?></td>
                                         <td><?php echo $row["phoneNumber"]; ?></td>
@@ -462,7 +462,7 @@ include '../include/disableTimeScript.php';
                                             <label for="selectAll"></label>
                                         </span>
                                     </th>
-                                    <th>ID</th>
+                                    <th>REFERENCE NO.</th>
                                     <th>FIRST NAME</th>
                                     <th>LAST NAME</th>
                                     <th>PHONE NUMBER</th>
@@ -486,7 +486,7 @@ include '../include/disableTimeScript.php';
                                                 <label for="checkbox2"></label>
                                             </span>
                                         </td>
-                                        <td><?php echo $row["id"]; ?></td>
+                                        <td><?php echo $row["refNumber"]; ?></td>
                                         <td><?php echo $row["firstName"]; ?></td>
                                         <td><?php echo $row["lastName"]; ?></td>
                                         <td><?php echo $row["phoneNumber"]; ?></td>
@@ -592,10 +592,10 @@ include '../include/disableTimeScript.php';
         $(document).ready(function() {
             $(".nav-tabs a").click(function() {
                 $('[data-toggle="tooltip"]').tooltip();
-	var checkbox = $('table tbody input[type="checkbox"],#selectAll, #selectAllPending, #selectAllAccepted, #selectAllRejected, #selectAllSuccessful');
-    checkbox.each(function () {
-				this.checked = false;
-			});
+                var checkbox = $('table tbody input[type="checkbox"],#selectAll, #selectAllPending, #selectAllAccepted, #selectAllRejected, #selectAllSuccessful');
+                checkbox.each(function() {
+                    this.checked = false;
+                });
 
                 $(this).tab('show');
             });
