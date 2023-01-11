@@ -28,7 +28,7 @@
             $("#totalAmount").val(total);
             //end shepo
         });
-       
+
         function loadscheduletime() {
             $("#time option").each(function() {
                 $(this).prop("disabled", false);
@@ -114,7 +114,7 @@
         }
 
 
-        
+
     });
 </script>
 
@@ -227,9 +227,9 @@
                         </div>
 
                         <div class="form-group">
-                                <label>REFERENCE NUMBER</label>
-                                <input type="text" id="refNumber" name="refNumber" class="form-control" readonly="readonly">
-                            </div>
+                            <label>REFERENCE NUMBER</label>
+                            <input type="text" id="refNumber" name="refNumber" class="form-control" readonly="readonly">
+                        </div>
                         <hr>
                         <div class="form-group">
                             <div class="row">
@@ -303,6 +303,27 @@ All fees are non-refundable. Fees shall be forfeited for the following:
 
         })
     </script>
+
+    <!-- REFERENCE NUMBER GENERATE -->
+    <script>
+        function generateRefNumber(length) {
+            var result = '';
+            var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            var charactersLength = characters.length;
+            for (var i = 0; i < length; i++) {
+                result += characters.charAt(Math.floor(Math.random() * charactersLength));
+            }
+            return result;
+        }
+        $('#schedNowId').click(function() {
+            var refVal = $('#refNumber').val();
+            console.log("asdasd")
+            if (refVal.length < 1) $('#refNumber').val("ARG" + generateRefNumber(5).toUpperCase());
+        });
+
+    
+    </script>
+    
 </body>
 
 </html>

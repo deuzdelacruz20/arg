@@ -89,6 +89,7 @@ include '../include/disableTimeScript.php';
             ?>
                 <li><a href="#rejected">Rejected</a></li>
                 <li><a href="#done">Done</a></li>
+                <a href="#addEmployeeModal" id="addSchedule" class="btn btn-success" data-toggle="modal" style="float: right;"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
             <?php
             }
             ?>
@@ -109,7 +110,7 @@ include '../include/disableTimeScript.php';
                                         <h2>ALL <b>SCHEDULES</b></h2>
                                     </div>
                                     <div class="col-sm-6">
-                                        <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
+
                                         <a href="JavaScript:void(0);" class="btn btn-danger" id="delete_multiple"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>
                                     </div>
                                 </div>
@@ -196,7 +197,7 @@ include '../include/disableTimeScript.php';
                                         <h2>PENDING <b>SCHEDULES</b></h2>
                                     </div>
                                     <div class="col-sm-6">
-                                        <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
+
                                         <a href="JavaScript:void(0);" class="btn btn-danger" id="delete_multiple"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>
                                     </div>
                                 </div>
@@ -206,8 +207,8 @@ include '../include/disableTimeScript.php';
                                     <tr>
                                         <th>
                                             <span class="custom-checkbox">
-                                                <input type="checkbox" id="selectAll">
-                                                <label for="selectAll"></label>
+                                                <input type="checkbox" id="selectAllPending">
+                                                <label for="selectAllPending"></label>
                                             </span>
                                         </th>
                                         <th>ID</th>
@@ -274,7 +275,7 @@ include '../include/disableTimeScript.php';
                                     <?php
                                     if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == true && $_SESSION['isLoggedIn']) {
                                     ?>
-                                        <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
+
                                         <a href="JavaScript:void(0);" class="btn btn-danger" id="delete_multiple"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>
                                     <?php
                                     }
@@ -287,8 +288,8 @@ include '../include/disableTimeScript.php';
                                 <tr>
                                     <th>
                                         <span class="custom-checkbox">
-                                            <input type="checkbox" id="selectAll">
-                                            <label for="selectAll"></label>
+                                            <input type="checkbox" id="selectAllAccepted">
+                                            <label for="selectAllAccepted"></label>
                                         </span>
                                     </th>
                                     <th>ID</th>
@@ -374,7 +375,7 @@ include '../include/disableTimeScript.php';
                                     <h2>REJECTED <b>SCHEDULES</b></h2>
                                 </div>
                                 <div class="col-sm-6">
-                                    <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
+
                                     <a href="JavaScript:void(0);" class="btn btn-danger" id="delete_multiple"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>
                                 </div>
                             </div>
@@ -384,8 +385,8 @@ include '../include/disableTimeScript.php';
                                 <tr>
                                     <th>
                                         <span class="custom-checkbox">
-                                            <input type="checkbox" id="selectAll">
-                                            <label for="selectAll"></label>
+                                            <input type="checkbox" id="selectAllRejected">
+                                            <label for="selectAllRejected"></label>
                                         </span>
                                     </th>
                                     <th>ID</th>
@@ -447,7 +448,7 @@ include '../include/disableTimeScript.php';
                                     <h2>SUCCESSFUL <b>SCHEDULES</b></h2>
                                 </div>
                                 <div class="col-sm-6">
-                                    <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
+                                    
                                     <a href="JavaScript:void(0);" class="btn btn-danger" id="delete_multiple"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>
                                 </div>
                             </div>
@@ -521,7 +522,7 @@ include '../include/disableTimeScript.php';
                                     <h2>SUCCESSFUL <b>SCHEDULES</b></h2>
                                 </div>
                                 <div class="col-sm-6">
-                                    <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
+
                                     <a href="JavaScript:void(0);" class="btn btn-danger" id="delete_multiple"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>
                                 </div>
                             </div>
@@ -531,8 +532,8 @@ include '../include/disableTimeScript.php';
                                 <tr>
                                     <th>
                                         <span class="custom-checkbox">
-                                            <input type="checkbox" id="selectAll">
-                                            <label for="selectAll"></label>
+                                            <input type="checkbox" id="selectAllSuccessful">
+                                            <label for="selectAllSuccessful"></label>
                                         </span>
                                     </th>
                                     <th>REFERENCE NO.</th>
@@ -590,6 +591,12 @@ include '../include/disableTimeScript.php';
     <script>
         $(document).ready(function() {
             $(".nav-tabs a").click(function() {
+                $('[data-toggle="tooltip"]').tooltip();
+	var checkbox = $('table tbody input[type="checkbox"],#selectAll, #selectAllPending, #selectAllAccepted, #selectAllRejected, #selectAllSuccessful');
+    checkbox.each(function () {
+				this.checked = false;
+			});
+
                 $(this).tab('show');
             });
             // $('.nav-tabs a').on('shown.bs.tab', function(event) {
@@ -1070,18 +1077,19 @@ include '../include/disableTimeScript.php';
     <script>
         $(document).ready(function() {
             $('#table').DataTable();
-        });
-        $(document).ready(function() {
             $('#tablePending').DataTable();
-        });
-        $(document).ready(function() {
             $('#tableAccepted').DataTable();
-        });
-        $(document).ready(function() {
-            $('#tableRejected').DataTable();
-        });
-        $(document).ready(function() {
+            $('#tableRejected').DataTable()
             $('#tableDone').DataTable();
+
+            $('#addSchedule').click(function() {
+                var refVal = $('#refNumber').val();
+
+                if (refVal.length < 1) $('#refNumber').val("ARG" + generateRefNumber(5).toUpperCase());
+                console.log("asdasd")
+            });
+
+
         });
     </script>
 

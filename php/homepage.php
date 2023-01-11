@@ -396,20 +396,21 @@ include '../include/disableTimeScript.php';
 
     <!-- DISABLE ADD BUTTON IF EMPTY -->
     <script>
-         function generateRefNumber(length) {
-            var result           = '';
-            var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        function generateRefNumber(length) {
+            var result = '';
+            var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
             var charactersLength = characters.length;
-            for ( var i = 0; i < length; i++ ) {
+            for (var i = 0; i < length; i++) {
                 result += characters.charAt(Math.floor(Math.random() * charactersLength));
             }
             return result;
         }
-$('#schedNowId').click(function() {
+        $('#schedNowId').click(function() {
             var refVal = $('#refNumber').val();
 
-            if(refVal.length < 1) $('#refNumber').val("ARG" + generateRefNumber(5).toUpperCase());
+            if (refVal.length < 1) $('#refNumber').val("ARG" + generateRefNumber(5).toUpperCase());
         });
+        
         // DISABLE ADD BUTTON
         $("#firstName").keyup(function(event) {
             validateInputs();
@@ -421,16 +422,16 @@ $('#schedNowId').click(function() {
             validateInputs();
         });
         $("#date").change(function(event) {
-        	validateInputs();
+            validateInputs();
         });
         $("#services").change(function(event) {
-        	validateInputs();
+            validateInputs();
         });
         $("#time").change(function(event) {
-        	validateInputs();
+            validateInputs();
         });
         $("#checkbox").change(function(event) {
-        	validateInputs();
+            validateInputs();
         });
 
         function validateInputs() {
@@ -451,7 +452,7 @@ $('#schedNowId').click(function() {
                 date.length == 0 ||
                 services.length == 0 ||
                 time.length == 0 ||
-                checkbox.is(":checked")==false
+                checkbox.is(":checked") == false
             )
                 disableButton = true;
 
@@ -469,13 +470,13 @@ $('#schedNowId').click(function() {
             updateValidateInputs();
         });
         $("#date_u").change(function(event) {
-        	updateValidateInputs();
+            updateValidateInputs();
         });
         $("#services_u").change(function(event) {
-        	updateValidateInputs();
+            updateValidateInputs();
         });
         $("#time_u").change(function(event) {
-        	updateValidateInputs();
+            updateValidateInputs();
         });
 
         function updateValidateInputs() {
@@ -494,7 +495,7 @@ $('#schedNowId').click(function() {
                 phoneNumber_u.length == 0 ||
                 date_u.length == 0 ||
                 services_u.length == 0 ||
-                time_u.length == 0 
+                time_u.length == 0
             )
                 disableButton = true;
 

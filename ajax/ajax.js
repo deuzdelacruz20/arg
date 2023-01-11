@@ -174,7 +174,7 @@ $(document).on("click", "#delete_multiple", function () {
 $(document).ready(function () {
 	$('[data-toggle="tooltip"]').tooltip();
 	var checkbox = $('table tbody input[type="checkbox"]');
-	$("#selectAll").click(function () {
+	$("#selectAll, #selectAllPending, #selectAllAccepted, #selectAllRejected, #selectAllSuccessful").click(function () {
 		if (this.checked) {
 			checkbox.each(function () {
 				this.checked = true;
@@ -187,7 +187,8 @@ $(document).ready(function () {
 	});
 	checkbox.click(function () {
 		if (!this.checked) {
-			$("#selectAll").prop("checked", false);
+			$("#selectAll, #selectAllPending, #selectAllAccepted, #selectAllRejected, #selectAllSuccessful").prop("checked", false);
 		}
 	});
 });
+
