@@ -138,3 +138,26 @@ if (count($_POST) > 0) {
 		mysqli_close($conn);
 	}
 }
+
+if (count($_POST) > 0) {
+	if ($_POST['type'] == 7) {
+		$id = $_POST['idAdd'];
+		$itemStocks = $_POST['itemStocks'];
+		$itemStocksToadd = $_POST['itemStocksToadd'];
+
+		$uploadOk = 1;
+
+		if (empty($itemStocksToadd)) {
+			$error = 'Enter a number!';
+		} else {
+			$sql = "UPDATE `inventory` SET `itemStocks`= `itemStocks` + '$itemStocksToadd' WHERE id=$id";
+
+			if (mysqli_query($conn, $sql)) {
+				echo json_encode(array("statusCode" => 200));
+			} else {
+				echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+			}
+			mysqli_close($conn);
+		}
+	}
+}

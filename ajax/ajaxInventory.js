@@ -214,3 +214,40 @@ $(document).on('click', '#buy', function (e) {
 		}
 	});
 });
+
+$(document).on('click', '.additemStock', function (e) {
+	var idAdd = $(this).attr("data-idStocksAdd");
+	var itemStocksAdd = $(this).attr("data-itemStocksAdd");
+
+	$('#id_add').val(idAdd);
+	$('#itemStocks_add').val(itemStocksAdd);
+});
+
+// ADD STOCKS TO INVENTORY
+$(document).on('click', '#additemStock', function (e) {
+	var data = $("#additemStock_form").serialize();
+	$.ajax({
+		data: data,
+		type: "post",
+		url: "../backend/saveInventory.php",
+		success: function (dataResult) {
+			var dataResult = JSON.parse(dataResult);
+			if (dataResult.statusCode == 200) {
+				$('#additemStock').modal('hide');
+				Swal.fire(
+					'Added!',
+					'Data added succesfully!',
+					'success'
+				).then((result) => {
+					/* Read more about isConfirmed, isDenied below */
+					if (result.isConfirmed) {
+						location.reload();
+					}
+				})
+			}
+			else if (dataResult.statusCode == 201) {
+				alert(dataResult);
+			}
+		}
+	});
+});
