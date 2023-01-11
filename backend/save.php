@@ -16,7 +16,6 @@ if (count($_POST) > 0) {
 		$selectedStocks = $_POST['selectedStocks'];
 		$selectedCategory = $_POST['selectedCategory'];
 		$totalAmount = $_POST['totalAmount'];
-		$user_status = $_POST['user_status'];
 
 		if (empty($firstName)) {
 			$error = 'Enter Your First Name!';
@@ -36,7 +35,7 @@ if (count($_POST) > 0) {
 		else if (empty($_POST['inputTime'])) {
 			$error = 'Choose a Timeslot!';
 		} 
-		else if ($selectedCategory == 'Stickers' && $user_status == 'Accepted' || $user_status == "Done"){
+		else if ($selectedCategory == 'Stickers'){
 			$sql = "INSERT INTO `customer_request`(`firstName`,`lastName`,`phoneNumber`,`date`,`services`,`time`,`timestamp`,`selectedItem`,`selectedPrice`,`selectedStocks`,`selectedCategory`,`totalAmount`) 
 		VALUES ('$firstName','$lastName','$phoneNumber','$date','$services','$time',current_timestamp(),'$selectedItem','$selectedPrice','$selectedStocks','$selectedCategory','$totalAmount');\n
 
