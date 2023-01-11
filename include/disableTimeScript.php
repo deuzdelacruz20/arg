@@ -28,7 +28,7 @@
             $("#totalAmount").val(total);
             //end shepo
         });
-
+       
         function loadscheduletime() {
             $("#time option").each(function() {
                 $(this).prop("disabled", false);
@@ -112,6 +112,9 @@
                 });
             }
         }
+
+
+        
     });
 </script>
 
@@ -223,6 +226,10 @@
                             <hr>
                         </div>
 
+                        <div class="form-group">
+                                <label>REFERENCE NUMBER</label>
+                                <input type="text" id="refNumber" name="refNumber" class="form-control" readonly="readonly">
+                            </div>
                         <hr>
                         <div class="form-group">
                             <div class="row">
@@ -234,7 +241,7 @@
                                 <div class="col-sm-6" style="text-align: left;">
                                     <!-- start shepo apply changes -->
                                     ₱ <input type="number" value="200" name="reservationFee" id="reservationFee" readonly="readonly"><br>
-                                    ₱  <input type="text" name="inputServices" id="inputServices" readonly="readonly"></input><br>
+                                    ₱ <input type="text" name="inputServices" id="inputServices" readonly="readonly"></input><br>
                                     ₱ <b><input type="text" name="totalAmount" id="totalAmount" readonly="readonly"><br></b>
                                     <!-- start shepo apply changes -->
                                 </div>

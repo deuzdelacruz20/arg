@@ -123,7 +123,7 @@ include '../include/disableTimeScript.php';
                                                 <label for="selectAll"></label>
                                             </span>
                                         </th>
-                                        <th>ID</th>
+                                        <th>REFERENCE NO.</th>
                                         <th>ITEM SELECTED</th>
                                         <?php
                                         if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == true && $_SESSION['isLoggedIn']) {
@@ -160,7 +160,7 @@ include '../include/disableTimeScript.php';
                                                     <label for="checkbox2"></label>
                                                 </span>
                                             </td>
-                                            <td><?php echo $row["id"]; ?></td>
+                                            <td><?php echo $row["refNumber"]; ?></td>
                                             <td><?php echo $row["selectedItem"]; ?></td>
                                             <td><?php echo $row["firstName"]; ?></td>
                                             <td><?php echo $row["lastName"]; ?></td>
@@ -535,7 +535,7 @@ include '../include/disableTimeScript.php';
                                             <label for="selectAll"></label>
                                         </span>
                                     </th>
-                                    <th>ID</th>
+                                    <th>REFERENCE NO.</th>
                                     <th>FIRST NAME</th>
                                     <th>LAST NAME</th>
                                     <th>PHONE NUMBER</th>
@@ -559,7 +559,7 @@ include '../include/disableTimeScript.php';
                                                 <label for="checkbox2"></label>
                                             </span>
                                         </td>
-                                        <td><?php echo $row["id"]; ?></td>
+                                        <td><?php echo $row["refNumber"]; ?></td>
                                         <td><?php echo $row["firstName"]; ?></td>
                                         <td><?php echo $row["lastName"]; ?></td>
                                         <td><?php echo $row["phoneNumber"]; ?></td>

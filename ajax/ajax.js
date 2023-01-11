@@ -32,7 +32,7 @@ $(document).on('click', '#btn-add', function (e) {
 				// alert('Data added successfully !');
 
 				const el = document.createElement('div')
-				el.innerHTML = "Please proceed to the payment tab to settle your <a href='../php/payment.php'>payment</a> within the given time."
+				el.innerHTML = "Proceed to the payment tab to settle your <a href='../php/payment.php'>payment</a> within the given time. </br><strong></br>Your Referrence Number:</strong> " + dataResult.refNumber
 
 				Swal.fire(
 					'Success!',

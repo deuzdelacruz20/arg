@@ -138,7 +138,7 @@ include '../include/disableTimeScript.php';
             </div>
         </div>
         <div class="col-md-6">
-            <a href="#addEmployeeModal" class="btn btn-info" data-toggle="modal" style="padding: 50px; margin-top: 75px; margin-bottom: 25px;">
+            <a href="#addEmployeeModal" id="schedNowId" class="btn btn-info" data-toggle="modal" style="padding: 50px; margin-top: 75px; margin-bottom: 25px;">
                 <h1>Schedule Now!</h1>
                 <h5>Reserve your timeslot now!</h5>
             </a>
@@ -396,6 +396,20 @@ include '../include/disableTimeScript.php';
 
     <!-- DISABLE ADD BUTTON IF EMPTY -->
     <script>
+         function generateRefNumber(length) {
+            var result           = '';
+            var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            var charactersLength = characters.length;
+            for ( var i = 0; i < length; i++ ) {
+                result += characters.charAt(Math.floor(Math.random() * charactersLength));
+            }
+            return result;
+        }
+$('#schedNowId').click(function() {
+            var refVal = $('#refNumber').val();
+
+            if(refVal.length < 1) $('#refNumber').val("ARG" + generateRefNumber(5).toUpperCase());
+        });
         // DISABLE ADD BUTTON
         $("#firstName").keyup(function(event) {
             validateInputs();

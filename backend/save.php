@@ -11,11 +11,12 @@ if (count($_POST) > 0) {
 		$date = $_POST['date'];
 		$services = $_POST['inputServices'];
 		$time = $_POST['inputTime'];
-		$selectedItem = $_POST['selectedItem'];
+		$selectedItem = isset($_POST['selectedPrice']) && !empty($_POST['selectedPrice']) ? $_POST['selectedPrice'] : "No Selected item";
 		$selectedPrice = $_POST['selectedPrice'];
 		$selectedStocks = $_POST['selectedStocks'];
 		$selectedCategory = $_POST['selectedCategory'];
 		$totalAmount = $_POST['totalAmount'];
+		$referrenceNumber = $_POST['refNumber'];
 
 		if (empty($firstName)) {
 			$error = 'Enter Your First Name!';
@@ -36,24 +37,24 @@ if (count($_POST) > 0) {
 			$error = 'Choose a Timeslot!';
 		} 
 		else if ($selectedCategory == 'Stickers'){
-			$sql = "INSERT INTO `customer_request`(`firstName`,`lastName`,`phoneNumber`,`date`,`services`,`time`,`timestamp`,`selectedItem`,`selectedPrice`,`selectedStocks`,`selectedCategory`,`totalAmount`) 
-		VALUES ('$firstName','$lastName','$phoneNumber','$date','$services','$time',current_timestamp(),'$selectedItem','$selectedPrice','$selectedStocks','$selectedCategory','$totalAmount');\n
+			$sql = "INSERT INTO `customer_request`(`firstName`,`lastName`,`phoneNumber`,`date`,`services`,`time`,`timestamp`,`selectedItem`,`selectedPrice`,`selectedStocks`,`selectedCategory`,`totalAmount`,`refNumber`) 
+		VALUES ('$firstName','$lastName','$phoneNumber','$date','$services','$time',current_timestamp(),'$selectedItem','$selectedPrice','$selectedStocks','$selectedCategory','$totalAmount','$referrenceNumber');\n
 
 					UPDATE `inventory` set itemStocks = itemStocks-1 WHERE upper(itemName)=upper('$selectedItem');";
 
 			if (mysqli_multi_query($conn, $sql)) {
-				echo json_encode(array("statusCode" => 200));
+				echo json_encode(array("statusCode" => 200, "refNumber" => $referrenceNumber));
 			} else {
 				echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 			}
 			mysqli_close($conn);
 		}
 		else {
-			$sql = "INSERT INTO `customer_request`(`firstName`,`lastName`,`phoneNumber`,`date`,`services`,`time`,`timestamp`,`selectedItem`,`selectedPrice`,`selectedStocks`,`selectedCategory`,`totalAmount`) 
-		VALUES ('$firstName','$lastName','$phoneNumber','$date','$services','$time',current_timestamp(),'$selectedItem','$selectedPrice','$selectedStocks','$selectedCategory','$totalAmount');";
+			$sql = "INSERT INTO `customer_request`(`firstName`,`lastName`,`phoneNumber`,`date`,`services`,`time`,`timestamp`,`selectedItem`,`selectedPrice`,`selectedStocks`,`selectedCategory`,`totalAmount`,`refNumber`) 
+		VALUES ('$firstName','$lastName','$phoneNumber','$date','$services','$time',current_timestamp(),'$selectedItem','$selectedPrice','$selectedStocks','$selectedCategory','$totalAmount','$referrenceNumber');";
 
 			if (mysqli_multi_query($conn, $sql)) {
-				echo json_encode(array("statusCode" => 200));
+				echo json_encode(array("statusCode" => 200, "refNumber" => $referrenceNumber));
 			} else {
 				echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 			}
