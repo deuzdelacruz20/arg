@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 include '../include/navigation.php';
 ?>
@@ -27,93 +27,70 @@ include '../include/navigation.php';
       background: linear-gradient(120deg, #71b7e6, #9b59b6);
       background-attachment: fixed;
     }
+
+    .fa {
+      padding: 20px;
+      font-size: 30px;
+      width: 100px;
+      text-align: center;
+      text-decoration: none;
+      margin: 5px 2px;
+    }
+
+    .fa:hover {
+      opacity: 0.7;
+    }
+
+    .fa-facebook {
+      background: #3B5998;
+      color: white;
+      border-radius: 20px;
+    }
   </style>
 </head>
 
 <body>
+  <h1 style="font-size: 50px; font-weight: bold; text-align:center;">About us</h1>
   <div class="container" style="text-align: center; width: 100%; margin-top: 20px;">
     <div class="row" style="margin-top: 35px;">
       <div class="col-md-6">
         <div class="content" style="text-align: left; font-size: 25px;">
-          <h1 style="font-size: 50px; font-weight: bold;">About us</h1>
           <h1 style="font-weight: bold;">Mission</h1>
           <p>
-          To povide efficient and effective services delivery to all vehicle owners by customizing any vehicle with safe economical full and hood wrap, headlight film, customize plates and signages. Through this mission, ARG AuthoSign Shop provides cost-effective, faster and more durable products.
+            To provide efficient and effective services delivery to all vehicle owners by customizing any vehicle with safe full and hood wrap, headlight film, customize plates and signages. Through this mission, ARG AuthoSign Shop provides cost-effective, faster and more durable products.
           </p>
           <h1 style="font-weight: bold;">Vision</h1>
           <p>
-          ARG AuthoSign Shop will employ the best service-giving practices and will provide cost-effective and timely Services to all customers to meet their needs and expectation to the services by our shop.
+            ARG AuthoSign Shop will employ the best service-giving practices and will provide cost-effective and timely Services to all customers to meet their needs and expectation to the services by our shop.
           </p>
         </div>
       </div>
-      <div class="col-md-6">
-        <img src="../image/arg logo.png" width="500" height="500"
-          style="padding: 30px; align-items: center; margin-bottom: 80px;" />
+      <div class="col-md-6" style="text-align: center;">
+        <h1 style="font-weight: bold;">Contact Us:</h1>
+        <h2><b>Gmail:</b></br> geraldvalderamos13@gmail.com</h2>
+        <h2><b>Phone Number: </br></b>0956-772-7083</h2></br>
+        <h2><b>Reach us on Facebook</b></h2>
+        <a href="https://www.facebook.com/ARGAutosignShop" target="_blank" class="fa fa-facebook"></a>
       </div>
     </div>
   </div>
-  <!-- <div class="container" style="background-color: white; text-align: center; width: 80%;">
-    <h1>Time Open</h1>
-    <h3>BUSINESS DAYS</h3>
-    <p>We are open from Mondays to Saturday
-      7:00AM to 6:00PM
-    </p>
-    <h3>BUSINESS HOURS</h3>
-    <div class="row">
-      <div class="col-md-6">
-        <h4>Morning</h4>
-        <p>7:00 AM - 8:00 AM</p>
-        <p>8:00 AM - 9:00 AM</p>
-        <p>9:00 AM - 10:00 AM</p>
-        <p>10:00 AM - 11:00 AM</p>
-      </div>
-      <div class="col-md-6">
-        <h4>Afternoon</h4>
-        <p>12:00 PM - 1:00 PM</p>
-        <p>1:00 PM - 2:00 PM</p>
-        <p>3:00 PM - 4:00 PM</p>
-        <p>4:00 PM - 5:00 PM</p>
-        <p>5:00 PM - 6:00 PM</p>
-      </div>
-    </div>
-  </div> -->
-
   <!-- SERVICES -->
   <div class="container" style="width: 100%;">
     <h1 style="text-align: center; font-size: 60px">TIME OPEN</h1>
     <div class="row">
       <div class="col-md-6">
-        <!-- <div class="iframe-container" style="margin: 5%; display: block; margin-left: 25%; margin-right: auto;">
-                  <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2FARGAutosignShop%2Fvideos%2F600802391554257%2F&show_text=false&width=268&t=0" width="268" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true">
-                      <style>
-                          iframe {
-                              display: block;
-                              border-style: none;
-                              margin-left: 30%;
-                          }
-                      </style>
-                  </iframe>
-              </div> -->
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
         <div class="container" style="background-color: rgb(41, 141, 124); width: 100%;">
-        <div class="row"
-            style="text-align:center; margin: 5% 5% 5% 5%; background-color: white ; border-radius: 10px;">
-        <h1 style="font-size: 50px; text-align:center">BUSINESS DAYS</h1>
-        <h1 style="font-size: 50px; text-align:center">We are open from <b>Monday</b> to <b>Saturday</b></h1>
-        <h1 style="font-size: 50px; text-align:center"><b>7:00AM</b> to <b>6:00PM</b></h1>
-        </div>
+          <div class="row" style="text-align:center; margin: 5% 5% 5% 5%; background-color: white ; border-radius: 10px;">
+            <h1 style="font-size: 50px; text-align:center">BUSINESS DAYS</h1>
+            <h1 style="font-size: 50px; text-align:center">We are open from <b>Monday</b> to <b>Saturday</b></h1>
+            <h1 style="font-size: 50px; text-align:center"><b>7:00AM</b> to <b>6:00PM</b></h1>
+          </div>
         </div>
       </div>
       <div class="col-md-6" style="text-align: center; margin: 10px 0px 50px 0px;">
         <!-- BUSINESS HOURS -->
         <div class="container" style="background-color: rgb(41, 141, 124); width: 100%;">
-          <div class="row"
-            style="text-align:center; margin: 5% 5% 5% 5%; background-color: white ; border-radius: 10px;">
+          <div class="row" style="text-align:center; margin: 5% 5% 5% 5%; background-color: white ; border-radius: 10px;">
             <h1>BUSINESS HOURS</h1>
             <div class="col-xs-6" style="padding: 0% 5% 5% 5%; ">
               <h2><b>Morning</b></h2>

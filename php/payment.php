@@ -34,12 +34,16 @@ include '../backend/database.php';
         <!-- <img src="../image/qrcode.jpg" style="border-radius: 5px;"> -->
         <div class="row">
             <div class="col-md-6" style="background-color:white; border-radius: 5px;">
-                <img src="../image/qrcode.jpg" style="max-width: 75%; display: block; margin-left: auto;margin-right: auto; width: 50%;">
-                <h3 style="text-align:center; background-color:#d5d5d5">SCAN THE QR CODE TO PAY</h3>
+                <a href="../image/qrcode.jpg" download>
+                    <img src="../image/qrcode.jpg" style="max-width: 75%; display: block; margin-left: auto;margin-right: auto; width: 50%;">
+                </a>
+                <h3 style="text-align:center; background-color:#d5d5d5">SCAN OR DOWNLOAD THE QR CODE ABOVE</h3>
             </div>
             <div class="col-md-6">
                 <h1 style="text-align: center; color:black;">GCASH PAYMENT</h1>
-                <h2 style="text-align: center; color:black;">To settle the payment, you can scan the QR code and pay <b>₱200</b> for your schedule request</h2>
+                <h2 style="text-align: center; color:black;">To settle the payment, you can scan the QR code and pay for your schedule request</h2>
+                <h2 style="text-align: center; color:black;">You need to pay for the schedule request within 24 hours.</h2>
+
             </div>
         </div>
         <br>
