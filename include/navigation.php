@@ -83,7 +83,7 @@
             <li class="nav-link"><a href="../../arg/php/inventory.php">Inventory</a></li>
           <li class="nav-link"><a href="../../arg/php/transactionHistory.php">Transaction History</a></li>
           
-          <li class="nav-link"><a href="../../arg/php/earningsAndExpenses.php">Earnings and Expenses</a></li>
+          <li class="nav-link"><a href="../../arg/php/earningsAndExpenses.php">Earnings and Inventory Cost</a></li>
           <?php
           }
           ?>

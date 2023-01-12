@@ -96,7 +96,7 @@ include '../backend/database.php';
     <div class="row" style="height:500px;">
         <div class="col-md-12"><br>
             <div class="col-md-5" style="background-color: aliceblue; height:200px; border-radius:10px;">
-                <h1>TOTAL SCHEDULE EARNINGS</h1>
+                <h1>TOTAL EARNINGS</h1>
                 <h1 id="earnings">
                 </h1>
             </div>
