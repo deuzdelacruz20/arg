@@ -73,8 +73,8 @@ include '../backend/database.php';
 
 		<div class="tab-content">
 			<div id="home" class="tab-pane fade in active">
-				<h3> </h3>
-				<div class="row">
+				<input type="text" id="myFilter" class="form-control" onkeyup="myFunction()" placeholder="Search for names..">
+				<div class="row" id="myItems">
 					<?php
 					$result = mysqli_query($conn, "SELECT * FROM inventory WHERE itemCategory = 'Stickers' OR itemCategory = 'Materials' ORDER BY itemName ASC");
 					while ($row = mysqli_fetch_array($result)) {
@@ -83,7 +83,7 @@ include '../backend/database.php';
 							<div class="thumbnail" style="background-color:#E8E8E8;">
 								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 450px; height:200px;">
 								<div class="caption">
-									<h3><?php echo $row["itemName"]; ?></h3>
+									<h3><a href="#" style="text-decoration: none;"><?php echo $row["itemName"]; ?></a></h3>
 									<p>PRICE: <?php echo $row["itemPrice"]; ?></p>
 									<p>AVAILABLE STOCKS: <?php echo $row["itemStocks"]; ?></p>
 									<p>CATEGORY: <?php echo $row["itemCategory"]; ?></p>
@@ -787,6 +787,27 @@ include '../backend/database.php';
 		$(document).ready(function() {
 			$('#transactionHistoryTable').DataTable();
 		});
+	</script>
+
+	<!-- FILTER DATA -->
+	<script>
+		function myFunction() {
+			var input, filter, thumbnail, h3, a, i;
+
+			input = document.getElementById("myFilter");
+			filter = input.value.toUpperCase();
+			thumbnail = document.getElementById("myItems");
+			h3 = thumbnail.getElementsByTagName("h3");
+
+			for (i = 0; i < h3.length; i++) {
+				a = h3[i].getElementsByTagName("a")[0];
+				if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+					h3[i].parentElement.parentElement.parentElement.style.display = "";
+				} else {
+					h3[i].parentElement.parentElement.parentElement.style.display = "none";
+				}
+			}
+		}
 	</script>
 </body>
 

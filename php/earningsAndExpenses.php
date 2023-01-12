@@ -103,7 +103,7 @@ include '../backend/database.php';
             <div class="col-md-2" style=" height:150px; border-radius:10px;">
             </div>
             <div class="col-md-5" style="background-color: aliceblue; height:200px; border-radius:10px;">
-                <h1>TOTAL SHOP EXPENSES</h1>
+                <h1>TOTAL INVENTORY COST</h1>
                 <h1 style="text-align: center" id="expenses">
                 </h1>
             </div>

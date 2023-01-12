@@ -69,12 +69,11 @@ include '../include/disableTimeScript.php';
 			<?php
 			}
 			?>
-			<input type="text" id="myFilter" class="form-control" onkeyup="myFunction()" placeholder="Search for names..">
 		</ul>
 
 		<div class="tab-content">
 			<div id="home" class="tab-pane fade in active">
-				<h3> </h3>
+				<input type="text" id="myFilter" class="form-control" onkeyup="myFunction()" placeholder="Search for names..">
 				<div class="row" id="myItems">
 					<?php
 					$result = mysqli_query($conn, "SELECT * FROM inventory WHERE itemCategory = 'Stickers' OR itemCategory = 'Motorcycles' or itemCategory = 'Cars' OR itemCategory = 'SUVs' or itemCategory = 'Vans' ORDER BY itemName ASC");
@@ -131,7 +130,6 @@ include '../include/disableTimeScript.php';
 				</div>
 			</div>
 			<div id="template1" class="tab-pane fade">
-				<h3> </h3>
 				<div class="row" id="myItems">
 					<?php
 					$result = mysqli_query($conn, "SELECT * FROM inventory WHERE itemCategory = 'Motorcycles' ORDER BY itemName ASC;");
@@ -141,7 +139,7 @@ include '../include/disableTimeScript.php';
 							<div class="thumbnail" style="background-color:#E8E8E8;">
 								<img src="<?php echo '../image/' .  $row["inventoryImage"] ?>" alt="..." style="width: 450px; height:200px;">
 								<div class="caption">
-									<h3><a href="#"  onkeyup="myFunction();" style="text-decoration: none;"><?php echo $row["itemName"]; ?></a></h3>
+									<h3><a href="#" onkeyup="myFunction();" style="text-decoration: none;"><?php echo $row["itemName"]; ?></a></h3>
 									<p><b>PRICE:</b> <?php echo $row["itemPrice"]; ?></p>
 									<p><b>AVAILABLE STOCKS:</b> <?php echo $row["itemStocks"]; ?></p>
 									<p><b>CATEGORY:</b> <?php echo $row["itemCategory"]; ?></p>
