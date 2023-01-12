@@ -227,9 +227,8 @@
                             <hr>
                         </div>
 
-                        <div class="form-group">
-                            <label>REFERENCE NUMBER</label>
-                            <input type="text" id="refNumber" name="refNumber" class="form-control" readonly="readonly">
+                        <div class="form-group" hidden>
+                            <input type="text" id="refNumber" name="refNumber" class="form-control" readonly="readonly" >
                         </div>
                         <hr>
                         <div class="form-group">
@@ -256,7 +255,14 @@
                             </div>
                         </div>
                         <hr>
+<!-- This appointment and scheduling system allocates slots on a first come, first served basis. Limited slots are available per site and there is no guarantee that a slot will always be available for a user's first choice for an appointment schedule.
 
+Users accept the responsibility for verifying the accuracy and correctness of the information they provide on this system in connection with their application, and consent to the collection and use of their personal information.
+
+All fees are non-refundable. Fees shall be forfeited for the following:
+1. Applicants who failed to show up ther confirmed scheduled appointment;
+2. Applicants whose application was rejected due to inconsistency and/or incorrect details indicated in their appointment application form.
+3. Applicants who present descrepant and/or spurious/fake documentary requirements. -->
                         <div class="form-group">
                             <label>TERMS AND CONDITIONS</label>
                             <textarea id="textarea" name="textarea" style="width: 100%; resize: none;" rows='8' disabled>
@@ -264,10 +270,29 @@ This appointment and scheduling system allocates slots on a first come, first se
 
 Users accept the responsibility for verifying the accuracy and correctness of the information they provide on this system in connection with their application, and consent to the collection and use of their personal information.
 
-All fees are non-refundable. Fees shall be forfeited for the following:
-1. Applicants who failed to show up ther confirmed scheduled appointment;
-2. Applicants whose application was rejected due to inconsistency and/or incorrect details indicated in their appointment application form.
-3. Applicants who present descrepant and/or spurious/fake documentary requirements.
+Scheduling of Appointments
+
+1. The Scheduling of Appointments is on a next-day basis. Customers will be unable to book appointments on the current date.
+2. Customers are given 1 hour to pay for the appointment fee after booking. If the customer is unable to settle their payment after 1 hour, we will reject your appointment booking
+and open the timeslot that you have chosen to give way for others.
+3. The system does not accept booking of appointments during SUNDAY.
+
+Cancellation of Appointment
+
+1. Customers can request for cancellation of their appointments during shop hours by contacting the mobile number provided on the Payment Tab of the website.
+
+Refunds
+
+Customers who failed to show up on their confirmed scheduled appointment are NOT entitled for a refund.
+For customers with appointments on the next day:
+1. Please cancel your appointments before the shop's closing time to get your refund.
+For customers with appointments 2 or more days ahead:
+1. Please cancel your appointment one day before the date of your appointment to get your refund.
+
+Payment
+
+For customers using others GCASH for payment:
+1. Please include your the same name that you have given on the fill out form before sending the payment.
                             </textarea>
                             <input id="checkbox" type="checkbox" />
                             <label for="checkbox" style="display: inline; color:red; font-style: italic;">
