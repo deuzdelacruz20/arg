@@ -25,7 +25,7 @@
             var services = $("#services option:selected").attr("price");
             var reservationFee = $("#reservationFee").val();
             var selectedPrice = $("#selectedPrice").val();
-            var total = parseInt(services) + parseInt(reservationFee) + parseInt(selectedPrice);
+            var total = parseInt(services) + parseInt(reservationFee) + (selectedPrice.length > 0 ? parseInt(selectedPrice) : 0) 
             $("#totalAmount").val(total);
             //end shepo
         });
@@ -215,15 +215,15 @@
                             <!-- <div class="form-group">
                                 <label>PRICE</label>
                                 <input type="text" id="selectedPrice" name="selectedPrice" class="form-control" readonly="readonly">
-                            </div>
+                            </div> -->
                             <div class="form-group">
                                 <label>STOCKS</label>
                                 <input type="text" id="selectedStocks" name="selectedStocks" class="form-control" readonly="readonly">
                             </div>
-                            <div class="form-group">
+                             <div class="form-group">
                                 <label>CATEGORY</label>
                                 <input type="text" id="selectedCategory" name="selectedCategory" class="form-control" readonly="readonly">
-                            </div> -->
+                            </div>  
                             <hr>
                         </div>
 

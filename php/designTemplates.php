@@ -681,17 +681,17 @@ include '../include/disableTimeScript.php';
 				$("#inputTime").val($(this).find("option:selected").text());
 			}
 
-			var servicesSel1 = document.getElementById("services_u");
+			//var servicesSel1 = document.getElementById("services_u");
 			var timeSel1 = document.getElementById("time_u");
 
-			servicesSel1.onchange = function() {
-				//display correct values
-				$("#inputServices_u").val($(this).find("option:selected").text());
-			}
-			timeSel1.onchange = function() {
-				//display correct values
-				$("#inputTime_u").val($(this).find("option:selected").text());
-			}
+			// servicesSel1.onchange = function() {
+			// 	//display correct values
+			// 	$("#inputServices_u").val($(this).find("option:selected").text());
+			// }
+			// timeSel1.onchange = function() {
+			// 	//display correct values
+			// 	$("#inputTime_u").val($(this).find("option:selected").text());
+			// }
 		}
 	</script>
 

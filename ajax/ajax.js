@@ -68,6 +68,8 @@ $(document).on('click', '.update', function (e) {
 	$('#date_u').val(date);
 	$('#inputTime_u').val(time);
 	$('#inputServices_u').val(services);
+	$('#selectedItemE').val($(this).attr("data-selected-item"));
+	
 
 	$('#user_status').val(user_status);
 
@@ -98,6 +100,7 @@ $(document).on('click', '#update', function (e) {
 		success: function (dataResult) {
 			var dataResult = JSON.parse(dataResult);
 			if (dataResult.statusCode == 200) {
+				alert(JSON.stringify(dataResult.selectedItem));
 				$('#editEmployeeModal').modal('hide');
 				// alert('Data added successfully !');
 				Swal.fire(
@@ -112,7 +115,7 @@ $(document).on('click', '#update', function (e) {
 				})
 			}
 			else if (dataResult.statusCode == 201) {
-				alert(dataResult);
+				alert(JSON.stringify(dataResult.err));
 			}
 		}
 	});

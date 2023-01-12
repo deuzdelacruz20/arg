@@ -219,9 +219,17 @@ $(document).on('click', '#buy', function (e) {
 $(document).on('click', '.additemStock', function (e) {
 	var idAdd = $(this).attr("data-idStocksAdd");
 	var itemStocksAdd = $(this).attr("data-itemStocksAdd");
+	var itemName = $(this).attr("data-itmName");
+	var itemPrice = $(this).attr("data-itmPrice");
+	var itemStocks = $(this).attr("data-itmStocks");
+	var itemCategory = $(this).attr("data-itmCategory");
 
 	$('#id_add').val(idAdd);
 	$('#itemStocks_add').val(itemStocksAdd);
+	$('#itmName').val(itemName);
+	$('#itmPrice').val(itemPrice);
+	$('#itmStocks').val(itemStocks);
+	$('#itmCategory').val(itemCategory);
 });
 
 $(document).on('click', '#additemStock', function (e) {

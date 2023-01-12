@@ -144,15 +144,22 @@ if (count($_POST) > 0) {
 		$id = $_POST['idAdd'];
 		$itemStocks = $_POST['itemStocks'];
 		$itemStocksToadd = $_POST['itemStocksToadd'];
-
+		$itemName = $_POST['itmName'];
+		$itemPrice = $_POST['itmPrice'];
+		$itemCategory = $_POST['itmCategory'];
 		$uploadOk = 1;
 
 		if (empty($itemStocksToadd)) {
 			$error = 'Enter a number!';
 		} else {
+			$sql2 = "UPDATE `inventory_movement` SET `itemStocks`= `itemStocks` + '$itemStocksToadd' WHERE id=$id";
+
 			$sql = "UPDATE `inventory` SET `itemStocks`= `itemStocks` + '$itemStocksToadd' WHERE id=$id";
 
-			if (mysqli_query($conn, $sql)) {
+			$sql1 = "INSERT INTO `inventory_movement`(`itemName`,`itemPrice`,`itemStocks`,`itemCategory`) 
+			VALUES ('$itemName','$itemPrice','$itemStocksToadd','$itemCategory')";
+
+			if (mysqli_query($conn, $sql2) && mysqli_query($conn, $sql) && mysqli_query($conn, $sql1)) {
 				echo json_encode(array("statusCode" => 200));
 			} else {
 				echo "Error: " . $sql . "<br>" . mysqli_error($conn);
@@ -172,11 +179,9 @@ if (count($_POST) > 0) {
 
 		if (empty($itemStocksToBuy)) {
 			$error = 'Enter a number!';
-		} 
-		else if ($itemStocksToBuy > $itemStocksBuy) {
+		} else if ($itemStocksToBuy > $itemStocksBuy) {
 			$error = 'Enter a valid number!';
-		}
-		else {
+		} else {
 			$sql = "UPDATE `inventory` SET `itemStocks`= `itemStocks` - '$itemStocksToBuy' WHERE id=$id";
 
 			if (mysqli_query($conn, $sql)) {

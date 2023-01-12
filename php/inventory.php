@@ -108,7 +108,7 @@ include '../backend/database.php';
 										</div>
 										<div class="col-xs-3">
 											<a href="#addItemStock" class="edit" data-toggle="modal">
-												<i class="material-icons additemStock" data-toggle="tooltip" data-idStocksAdd="<?php echo $row["id"]; ?>" data-itemStocksAdd="<?php echo $row["itemStocks"]; ?>" title="Add Stocks" style="width: 100%;">
+												<i class="material-icons additemStock" data-toggle="tooltip" data-idStocksAdd="<?php echo $row["id"]; ?>" data-itmName="<?php echo $row["itemName"]; ?>" data-itmPrice="<?php echo $row["itemPrice"]; ?>" data-itmStocks="<?php echo $row["itemStocks"]; ?>" data-itmCategory="<?php echo $row["itemCategory"]; ?>" data-itemStocksAdd="<?php echo $row["itemStocks"]; ?>" title="Add Stocks" style="width: 100%;">
 													<button class="btn btn-success" style="width: 100%;">
 														&plus;
 													</button>
@@ -545,7 +545,7 @@ include '../backend/database.php';
 						</div>
 						<div class="form-group">
 							<label>STOCKS</label>
-							<input type="number" id="itemStocks_u" name="itemStocks" class="form-control" required>
+							<input type="number" id="itemStocks_u" name="itemStocks" class="form-control" required readonly>
 						</div>
 						<div class="form-group">
 							<label>CATEGORY</label>
@@ -580,6 +580,18 @@ include '../backend/database.php';
 					</div>
 					<div class="modal-body">
 						<input type="hidden" id="id_add" name="idAdd" class="form-control" required>
+						<div class="form-group">
+							<input type="text" id="itmName" name="itmName" class="form-control" required>
+						</div>
+						<div class="form-group">
+							<input type="number" id="itmPrice" name="itmPrice" class="form-control" required>
+						</div>
+						<div class="form-group">
+							<input type="number" id="itmStocks" name="itmStocks" class="form-control" required>
+						</div>
+						<div class="form-group">
+							<input type="text" id="itmCategory" name="itmCategory" class="form-control" required>
+						</div>
 						<div class="row">
 							<div class="col-sm-6">
 								<div class="form-group">

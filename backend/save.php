@@ -11,7 +11,7 @@ if (count($_POST) > 0) {
 		$date = $_POST['date'];
 		$services = $_POST['inputServices'];
 		$time = $_POST['inputTime'];
-		$selectedItem = isset($_POST['selectedPrice']) && !empty($_POST['selectedPrice']) ? $_POST['selectedPrice'] : "No Selected item";
+		$selectedItem = isset($_POST['selectedItem']) && !empty($_POST['selectedItem']) ? $_POST['selectedItem'] : "No Selected item";
 		$selectedPrice = $_POST['selectedPrice'];
 		$selectedStocks = $_POST['selectedStocks'];
 		$selectedCategory = $_POST['selectedCategory'];
@@ -72,23 +72,70 @@ if (count($_POST) > 0) {
 		$services = $_POST['inputServices_u'];
 		$time = $_POST['inputTime_u'];
 		$user_status = $_POST['user_status'];
+		$selectedItem = $_POST['selectedItemE'];
 
-		$sql = "UPDATE `customer_request` SET 
-		`firstName`='$firstName',
-		`lastName`='$lastName',
-		`phoneNumber`='$phoneNumber',
-		`date`='$date',
-		`services`='$services',
-		`time`='$time',
-		`user_status`='$user_status'
-		WHERE id=$id";
+		try {
 
-		if (mysqli_query($conn, $sql)) {
+			
+
+			if($user_status == 'Rejected')
+			{
+					$sql = "UPDATE `customer_request` SET 
+				`firstName`='$firstName',
+				`lastName`='$lastName',
+				`phoneNumber`='$phoneNumber',
+				`date`='$date',
+				`services`='$services',
+				`time`='$time',
+				`user_status`='$user_status'
+				WHERE id=$id;" . " ";
+
+
+				if (mysqli_query($conn, $sql)) {
+					$statusCode = 200;
+				} else {
+					$statusCode = 201;
+					$error =  "Error: " . $sql . "<br>" . mysqli_error($conn);
+					
+				}
+
+				if (mysqli_query($conn, "UPDATE `inventory` SET itemStocks = itemStocks + 1 WHERE upper(itemName) = upper('$selectedItem');")) {
+					$statusCode = 200;
+					
+				} else {
+					$statusCode = 201;
+					$error =  "Error: " . $sql . "<br>" . mysqli_error($conn);
+				}
+			
+			}
+			else 
+			{
+					$sql = "UPDATE `customer_request` SET 
+				`firstName`='$firstName',
+				`lastName`='$lastName',
+				`phoneNumber`='$phoneNumber',
+				`date`='$date',
+				`services`='$services',
+				`time`='$time',
+				`user_status`='$user_status'
+				WHERE id=$id";
+
+				if (mysqli_query($conn, $sql)) {
+					$statusCode = 200;
+				} else {
+					$statusCode = 201;
+					$error =  "Error: " . $sql . "<br>" . mysqli_error($conn);
+					
+				}
+			}
+
 			echo json_encode(array("statusCode" => 200));
-		} else {
-			echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+			mysqli_close($conn);
 		}
-		mysqli_close($conn);
+		catch(\Exception $e)
+		{
+			echo json_encode(array("statusCode" => 201, "err" => $conn->error));
+		}
 	}
 }
 if (count($_POST) > 0) {
