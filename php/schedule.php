@@ -89,7 +89,7 @@ include '../include/disableTimeScript.php';
             ?>
                 <li><a href="#rejected">Rejected</a></li>
                 <li><a href="#done">Done</a></li>
-                <a href="#addEmployeeModal" id="addSchedule" class="btn btn-success" data-toggle="modal" style="float: right;"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
+                <a href="#addEmployeeModal" id="addSchedule" class="btn btn-success" data-toggle="modal" style="float: right;"><i class="material-icons">&#xE147;</i> <span>Add New Schedule</span></a>
             <?php
             }
             ?>
@@ -172,7 +172,7 @@ include '../include/disableTimeScript.php';
                                             <td><?php echo $row["user_status"]; ?></td>
                                             <td>
                                                 <a href="#editEmployeeModal" class="edit" data-toggle="modal">
-                                                <i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-firstName="<?php echo $row["firstName"]; ?>" data-lastName="<?php echo $row["lastName"]; ?>" data-phoneNumber="<?php echo $row["phoneNumber"]; ?>" data-date="<?php echo $row["date"]; ?>" data-services="<?php echo $row["services"]; ?>" data-time="<?php echo $row["time"]; ?>" data-user_status="<?php echo $row["user_status"]; ?>" data-selected-item ="<?php echo $row["selectedItem"]; ?>" title="Edit">&#xE254;</i>
+                                                    <i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-firstName="<?php echo $row["firstName"]; ?>" data-lastName="<?php echo $row["lastName"]; ?>" data-phoneNumber="<?php echo $row["phoneNumber"]; ?>" data-date="<?php echo $row["date"]; ?>" data-services="<?php echo $row["services"]; ?>" data-time="<?php echo $row["time"]; ?>" data-user_status="<?php echo $row["user_status"]; ?>" data-selected-item="<?php echo $row["selectedItem"]; ?>" title="Edit">&#xE254;</i>
                                                 </a>
                                                 <a href="#deleteEmployeeModal" class="delete" data-id="<?php echo $row["id"]; ?>" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                                             </td>
@@ -186,7 +186,7 @@ include '../include/disableTimeScript.php';
                         </div>
                     </div>
                 </div>
-                <div id="pending" class="tab-pane fade in active">
+                <div id="pending" class="tab-pane fade">
                     <h3> </h3>
                     <div class="container" style="width: 100%;">
                         <p id="success"></p>
@@ -247,7 +247,7 @@ include '../include/disableTimeScript.php';
                                             <td><?php echo $row["user_status"]; ?></td>
                                             <td>
                                                 <a href="#editEmployeeModal" class="edit" data-toggle="modal">
-                                                <i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-firstName="<?php echo $row["firstName"]; ?>" data-lastName="<?php echo $row["lastName"]; ?>" data-phoneNumber="<?php echo $row["phoneNumber"]; ?>" data-date="<?php echo $row["date"]; ?>" data-services="<?php echo $row["services"]; ?>" data-time="<?php echo $row["time"]; ?>" data-user_status="<?php echo $row["user_status"]; ?>" data-selected-item ="<?php echo $row["selectedItem"]; ?>" title="Edit">&#xE254;</i>
+                                                    <i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-firstName="<?php echo $row["firstName"]; ?>" data-lastName="<?php echo $row["lastName"]; ?>" data-phoneNumber="<?php echo $row["phoneNumber"]; ?>" data-date="<?php echo $row["date"]; ?>" data-services="<?php echo $row["services"]; ?>" data-time="<?php echo $row["time"]; ?>" data-user_status="<?php echo $row["user_status"]; ?>" data-selected-item="<?php echo $row["selectedItem"]; ?>" title="Edit">&#xE254;</i>
                                                 </a>
                                                 <a href="#deleteEmployeeModal" class="delete" data-id="<?php echo $row["id"]; ?>" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                                             </td>
@@ -264,7 +264,7 @@ include '../include/disableTimeScript.php';
             <?php
             }
             ?>
-            <div id="accepted" class="tab-pane fade">
+            <div id="accepted" class="tab-pane fade in active">
                 <div class="container" style="width: 100%;">
                     <p id="success"></p>
                     <div class="table-wrapper">
@@ -294,10 +294,12 @@ include '../include/disableTimeScript.php';
                                             <label for="selectAllAccepted"></label>
                                         </span>
                                     </th>
-                                    <th>REFERENCE NO.</th>
+                                    <th>ID</th>
+
                                     <?php
                                     if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == true && $_SESSION['isLoggedIn']) {
                                     ?>
+                                        <th>REFERENCE NO.</th>
                                         <th>FIRST NAME</th>
                                         <th>LAST NAME</th>
                                         <th>PHONE NUMBER</th>
@@ -330,10 +332,12 @@ include '../include/disableTimeScript.php';
                                                 <label for="checkbox2"></label>
                                             </span>
                                         </td>
-                                        <td><?php echo $row["refNumber"]; ?></td>
+                                        <td><?php echo $row["id"]; ?></td>
                                         <?php
                                         if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == true && $_SESSION['isLoggedIn']) {
                                         ?>
+
+                                            <td><?php echo $row["refNumber"]; ?></td>
                                             <td><?php echo $row["firstName"]; ?></td>
                                             <td><?php echo $row["lastName"]; ?></td>
                                             <td><?php echo $row["phoneNumber"]; ?></td>
@@ -349,7 +353,7 @@ include '../include/disableTimeScript.php';
                                         ?>
                                             <td>
                                                 <a href="#editEmployeeModal" class="edit" data-toggle="modal">
-                                                <i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-firstName="<?php echo $row["firstName"]; ?>" data-lastName="<?php echo $row["lastName"]; ?>" data-phoneNumber="<?php echo $row["phoneNumber"]; ?>" data-date="<?php echo $row["date"]; ?>" data-services="<?php echo $row["services"]; ?>" data-time="<?php echo $row["time"]; ?>" data-user_status="<?php echo $row["user_status"]; ?>" data-selected-item ="<?php echo $row["selectedItem"]; ?>" title="Edit">&#xE254;</i>
+                                                    <i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-firstName="<?php echo $row["firstName"]; ?>" data-lastName="<?php echo $row["lastName"]; ?>" data-phoneNumber="<?php echo $row["phoneNumber"]; ?>" data-date="<?php echo $row["date"]; ?>" data-services="<?php echo $row["services"]; ?>" data-time="<?php echo $row["time"]; ?>" data-user_status="<?php echo $row["user_status"]; ?>" data-selected-item="<?php echo $row["selectedItem"]; ?>" title="Edit">&#xE254;</i>
                                                 </a>
                                                 <a href="#deleteEmployeeModal" class="delete" data-id="<?php echo $row["id"]; ?>" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                                             </td>
@@ -541,7 +545,7 @@ include '../include/disableTimeScript.php';
                                         </span>
                                     </th>
                                     <th>REFERENCE NO.</th>
-                                    <th>ITEM SELECTED</th>    
+                                    <th>ITEM SELECTED</th>
                                     <th>FIRST NAME</th>
                                     <th>LAST NAME</th>
                                     <th>PHONE NUMBER</th>
@@ -576,7 +580,7 @@ include '../include/disableTimeScript.php';
                                         <td><?php echo $row["user_status"]; ?></td>
                                         <td>
                                             <a href="#editEmployeeModal" class="edit" data-toggle="modal">
-                                            <i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-firstName="<?php echo $row["firstName"]; ?>" data-lastName="<?php echo $row["lastName"]; ?>" data-phoneNumber="<?php echo $row["phoneNumber"]; ?>" data-date="<?php echo $row["date"]; ?>" data-services="<?php echo $row["services"]; ?>" data-time="<?php echo $row["time"]; ?>" data-user_status="<?php echo $row["user_status"]; ?>" data-selected-item ="<?php echo $row["selectedItem"]; ?>" title="Edit">&#xE254;</i>
+                                                <i class="material-icons update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-firstName="<?php echo $row["firstName"]; ?>" data-lastName="<?php echo $row["lastName"]; ?>" data-phoneNumber="<?php echo $row["phoneNumber"]; ?>" data-date="<?php echo $row["date"]; ?>" data-services="<?php echo $row["services"]; ?>" data-time="<?php echo $row["time"]; ?>" data-user_status="<?php echo $row["user_status"]; ?>" data-selected-item="<?php echo $row["selectedItem"]; ?>" title="Edit">&#xE254;</i>
                                             </a>
                                             <a href="#deleteEmployeeModal" class="delete" data-id="<?php echo $row["id"]; ?>" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                                         </td>
@@ -851,7 +855,7 @@ include '../include/disableTimeScript.php';
 
                         <div class="form-group">
 
-                            <input type="hidden" id="selectedItemE" name="selectedItemE" class="form-control" >
+                            <input type="hidden" id="selectedItemE" name="selectedItemE" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>DATE</label>
