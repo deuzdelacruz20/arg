@@ -67,7 +67,8 @@ include '../include/navigation.php';
 
             <div class="form-group">
               <label>Enter Your Message</label>
-              <input type="text" name="name" placeholder="Enter you message" class="form-control" required>
+              <!-- <input type="text" name="name" placeholder="Enter you message" class="form-control" required> -->
+              <textarea name="name" placeholder="Enter you message" class="form-control" style="resize:vertical; max-height:100px;" required></textarea>
             </div>
 
             <button type="submit" class="btn btn-primary" style="width: 100%;">Send</button>
