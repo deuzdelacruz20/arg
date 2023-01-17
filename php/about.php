@@ -50,19 +50,28 @@ include '../include/navigation.php';
 </head>
 
 <body>
+
+
+
   <h1 style="font-size: 50px; font-weight: bold; text-align:center;">About us</h1>
-  <div class="container" style="text-align: center; width: 100%; margin-top: 20px;">
+  <div class="container" style="width: 100%; margin-top: 20px;">
     <div class="row" style="margin-top: 35px;">
       <div class="col-md-6">
-        <div class="content" style="text-align: left; font-size: 25px;">
-          <h1 style="font-weight: bold;">Mission</h1>
-          <p>
-            To provide efficient and effective services delivery to all vehicle owners by customizing any vehicle with safe full and hood wrap, headlight film, customize plates and signages. Through this mission, ARG AuthoSign Shop provides cost-effective, faster and more durable products.
-          </p>
-          <h1 style="font-weight: bold;">Vision</h1>
-          <p>
-            ARG AuthoSign Shop will employ the best service-giving practices and will provide cost-effective and timely Services to all customers to meet their needs and expectation to the services by our shop.
-          </p>
+        <div class="container" style="background-color: #fff; padding:80px; border-radius:10px; width:auto;">
+          <form action="https://formsubmit.co/ardeuzdelacruz300@gmail.com" method="POST">
+
+            <div class="form-group">
+              <label>Enter Your Email</label>
+              <input type="email" name="email" placeholder="Enter you email" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+              <label>Enter Your Message</label>
+              <input type="text" name="name" placeholder="Enter you message" class="form-control" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Send</button>
+          </form>
         </div>
       </div>
       <div class="col-md-6" style="text-align: center;">
@@ -143,28 +152,6 @@ include '../include/navigation.php';
         </div>
       </div>
 
-      <!-- <div class="row">
-        <div class="col-md-6">
-          <div class="thumbnail">
-            <a href="../image/plate.jpg" target="_blank">
-              <img src="../image/plate.jpg" alt="Lights" style="width:100%">
-              <div class="caption">
-                <p>Customize Plate</p>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="thumbnail">
-            <a href="../image/signage.jpg" target="_blank">
-              <img src="../image/car5.png" alt="Nature" style="width:100%">
-              <div class="caption">
-                <p>Signage</p>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div> -->
     </div>
     <div class="row">
       <div class="col-md-4">
@@ -184,28 +171,6 @@ include '../include/navigation.php';
         </div>
       </div>
 
-      <!-- <div class="row">
-        <div class="col-md-6">
-          <div class="thumbnail">
-            <a href="../image/plate.jpg" target="_blank">
-              <img src="../image/plate.jpg" alt="Lights" style="width:100%">
-              <div class="caption">
-                <p>Customize Plate</p>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="thumbnail">
-            <a href="../image/signage.jpg" target="_blank">
-              <img src="../image/car5.png" alt="Nature" style="width:100%">
-              <div class="caption">
-                <p>Signage</p>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div> -->
     </div>
   </div>
 
